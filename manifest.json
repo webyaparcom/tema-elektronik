@@ -1,0 +1,29 @@
+{
+  "name": "Voltaj Elektronik",
+  "short_name": "Voltaj Elekt",
+  "description": "Voltaj Elektronik: kulaklık, akıllı saat, bilgisayar ve aksesuarlar — 2 yıl garanti ve açık iade koşulları. (Demo site)",
+  "start_url": "/tr/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0B5FFF",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

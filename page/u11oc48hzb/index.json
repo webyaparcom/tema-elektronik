@@ -1,0 +1,60 @@
+{
+  "id": "u11oc48hzb",
+  "name": {
+    "tr": "Mekanik klavye",
+    "en": "Mechanical keyboard",
+    "ar": "لوحة مفاتيح ميكانيكية"
+  },
+  "description": {
+    "tr": "Kompakt 75% düzen, sessiz anahtarlar, kablolu ve kablosuz kullanım.",
+    "en": "Compact 75% layout, quiet switches, wired and wireless use.",
+    "ar": "تخطيط مدمج 75٪ ومفاتيح هادئة واستخدام سلكي ولاسلكي."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "mekanik-klavye",
+  "icon": "inventory_2",
+  "category": "81vj6ab339",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {
+    "tr": "<p>Kompakt 75% düzen, sessiz anahtarlar, kablolu ve kablosuz kullanım.</p>",
+    "en": "<p>Compact 75% layout, quiet switches, wired and wireless use.</p>",
+    "ar": "<p>تخطيط مدمج 75٪ ومفاتيح هادئة واستخدام سلكي ولاسلكي.</p>"
+  },
+  "title": {
+    "tr": "Mekanik klavye",
+    "en": "Mechanical keyboard",
+    "ar": "لوحة مفاتيح ميكانيكية"
+  },
+  "date": "2026-10-30T22:21:59.792Z",
+  "update": "2026-10-30T22:29:44.621Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "Bluetooth 5.1, USB-C",
+    "guc": {
+      "tr": "Yaklaşık 40 saat",
+      "en": "About 40 hours",
+      "ar": "نحو 40 ساعة"
+    }
+  },
+  "price": 2290,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-urun-klavye.webp",
+  "badges": [],
+  "sku": "mekanik-klavye"
+}

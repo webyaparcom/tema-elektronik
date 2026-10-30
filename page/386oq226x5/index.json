@@ -1,0 +1,39 @@
+{
+  "id": "386oq226x5",
+  "name": {
+    "tr": "Teslimat ve iade",
+    "en": "Delivery and returns",
+    "ar": "التسليم والاسترجاع"
+  },
+  "description": {
+    "tr": "Teslimat, iade, garanti ve cayma hakkı bilgileri.",
+    "en": "Delivery, returns, warranty and withdrawal information.",
+    "ar": "معلومات التسليم والاسترجاع والضمان وحق العدول."
+  },
+  "keyword": {
+    "tr": "teslimat, iade, garanti",
+    "en": "delivery, returns, warranty",
+    "ar": "تسليم، استرجاع، ضمان"
+  },
+  "path": "teslimat",
+  "icon": "local_shipping",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "98ij4u"
+    ],
+    "footer": []
+  },
+  "index": 1,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Teslimat ve iade",
+    "en": "Delivery and returns",
+    "ar": "التسليم والاسترجاع"
+  },
+  "date": "2026-10-30T22:21:59.832Z",
+  "update": "2026-10-30T22:29:44.681Z"
+}

@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Ürünler",
+    "en": "Products",
+    "ar": "المنتجات"
+  },
+  "status": "play",
+  "category": "",
+  "id": "urunler",
+  "url": "",
+  "path": "urunler",
+  "index": 0,
+  "icon": "storefront",
+  "desing": {
+    "header": [],
+    "body": [
+      "e1kv01",
+      "n19unk"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Ses, giyilebilir teknoloji, bilgisayar ve aksesuar ürünleri.",
+    "en": "Audio, wearables, computers and accessories.",
+    "ar": "منتجات الصوت والتقنيات القابلة للارتداء والحواسيب والإكسسوارات."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Ürünler",
+    "en": "Products",
+    "ar": "المنتجات"
+  },
+  "keyword": {
+    "tr": "elektronik, kulaklık, akıllı saat, dizüstü, aksesuar",
+    "en": "electronics, headphones, smartwatch, laptop, accessories",
+    "ar": "إلكترونيات، سماعات، ساعة ذكية، حاسوب محمول، إكسسوارات"
+  },
+  "text": {},
+  "update": "2026-10-30T22:29:44.679Z",
+  "date": "2026-10-30"
+}

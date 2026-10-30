@@ -1,0 +1,38 @@
+{
+  "id": "bck_odeme",
+  "name": {
+    "tr": "Ödeme",
+    "en": "Checkout",
+    "ar": "إتمام الدفع"
+  },
+  "description": {
+    "tr": "Demo ödeme adımı — gerçek ödeme alınmaz.",
+    "en": "Demo checkout — no real payment is taken.",
+    "ar": "خطوة دفع تجريبية — لا يتم تحصيل أي دفعة."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "odeme",
+  "icon": "credit_card",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "ocu8tl"
+    ],
+    "footer": []
+  },
+  "index": 4,
+  "url": "",
+  "title": {
+    "tr": "Ödeme",
+    "en": "Checkout",
+    "ar": "إتمام الدفع"
+  },
+  "date": "2026-10-30T22:21:59.640Z",
+  "update": "2026-10-30T22:29:44.672Z"
+}

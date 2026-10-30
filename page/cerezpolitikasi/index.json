@@ -1,0 +1,41 @@
+{
+  "id": "cerezpolitikasi",
+  "name": {
+    "tr": "Çerez Politikası",
+    "en": "Cookie Policy",
+    "ar": "سياسة ملفات تعريف الارتباط"
+  },
+  "description": {
+    "tr": "Çerez Politikası",
+    "en": "Cookie Policy",
+    "ar": "سياسة ملفات تعريف الارتباط"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "cerez-politikasi",
+  "icon": "gavel",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 12,
+  "url": "",
+  "text": {
+    "tr": "<h2>Çerez Politikası</h2>\n<p>Bu demo site yalnızca sepetinizi ve çerez tercihinizi tarayıcınızda saklayan zorunlu depolama kullanır. Analitik ve pazarlama çerezleri kapalıdır.</p>\n<p><em>Bu metin demo amaçlı örnektir; hukuki danışmanlık yerine geçmez.</em></p>",
+    "en": "<h2>Cookie Policy</h2>\n<p>This demo site uses only the strictly necessary storage that keeps your cart and cookie choice in your browser. Analytics and marketing cookies are off.</p>\n<p><em>This text is a sample for demonstration purposes and is not legal advice.</em></p>",
+    "ar": "<h2>سياسة ملفات تعريف الارتباط</h2>\n<p>يستخدم هذا الموقع التجريبي تخزينًا ضروريًا فقط يحفظ سلتك وتفضيل ملفات تعريف الارتباط في متصفحك. ملفات التحليل والتسويق معطّلة.</p>\n<p><em>هذا النص مثال لأغراض العرض التجريبي ولا يُعدّ استشارة قانونية.</em></p>"
+  },
+  "title": {
+    "tr": "Çerez Politikası",
+    "en": "Cookie Policy",
+    "ar": "سياسة ملفات تعريف الارتباط"
+  },
+  "date": "2026-10-30T22:21:59.640Z",
+  "update": "2026-10-30T22:29:44.785Z"
+}

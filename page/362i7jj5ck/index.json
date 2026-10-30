@@ -1,0 +1,62 @@
+{
+  "id": "362i7jj5ck",
+  "name": {
+    "tr": "Kablosuz kulaklık",
+    "en": "Wireless headphones",
+    "ar": "سماعات لاسلكية"
+  },
+  "description": {
+    "tr": "Aktif gürültü engelleme, kulak üstü, katlanabilir tasarım.",
+    "en": "Active noise cancelling, over-ear, foldable design.",
+    "ar": "عزل ضوضاء نشط وتصميم فوق الأذن قابل للطي."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "kablosuz-kulaklik",
+  "icon": "inventory_2",
+  "category": "rud8tpzjuq",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 5,
+  "url": "",
+  "text": {
+    "tr": "<p>Aktif gürültü engelleme, kulak üstü, katlanabilir tasarım.</p>",
+    "en": "<p>Active noise cancelling, over-ear, foldable design.</p>",
+    "ar": "<p>عزل ضوضاء نشط وتصميم فوق الأذن قابل للطي.</p>"
+  },
+  "title": {
+    "tr": "Kablosuz kulaklık",
+    "en": "Wireless headphones",
+    "ar": "سماعات لاسلكية"
+  },
+  "date": "2026-10-30T22:21:59.768Z",
+  "update": "2026-10-30T22:29:44.579Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "Bluetooth 5.3",
+    "guc": {
+      "tr": "Yaklaşık 30 saat",
+      "en": "About 30 hours",
+      "ar": "نحو 30 ساعة"
+    }
+  },
+  "price": 3490,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-urun-kulaklik.webp",
+  "badges": [
+    "new"
+  ],
+  "sku": "kablosuz-kulaklik"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "mesafelisatis",
+  "name": {
+    "tr": "Mesafeli Satış Sözleşmesi",
+    "en": "Distance Sales Agreement",
+    "ar": "عقد البيع عن بُعد"
+  },
+  "description": {
+    "tr": "Mesafeli Satış Sözleşmesi",
+    "en": "Distance Sales Agreement",
+    "ar": "عقد البيع عن بُعد"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "mesafeli-satis-sozlesmesi",
+  "icon": "gavel",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 10,
+  "url": "",
+  "text": {
+    "tr": "<h2>Mesafeli Satış Sözleşmesi</h2>\n<p>Bu sözleşme, Voltaj Elektronik ile alıcı arasında 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği çerçevesinde, ürünün sipariş edildiği tarihte kurulur.</p>\n<p>Ürünün cinsi, miktarı, KDV dahil satış bedeli, teslimat ve ödeme bilgileri sipariş özetinde yer alır. Alıcı, ürünü teslim aldığı tarihten itibaren 14 gün içinde gerekçe göstermeden cayma hakkını kullanabilir; istisnalar iade ve teslimat sayfasında belirtilmiştir.</p>\n<p>Bu demo sitede gerçek bir sipariş oluşturulmaz ve ödeme alınmaz.</p>\n<p><em>Bu metin demo amaçlı örnektir; hukuki danışmanlık yerine geçmez.</em></p>",
+    "en": "<h2>Distance Sales Agreement</h2>\n<p>This agreement is formed between Voltaj Elektronik and the buyer on the date the product is ordered, under Consumer Protection Law No. 6502 and the Distance Contracts Regulation.</p>\n<p>The product type, quantity, VAT-inclusive price, delivery and payment details appear in the order summary. The buyer may withdraw within 14 days of receiving the product without giving a reason; exceptions are listed on the returns and delivery page.</p>\n<p>No real order is created and no payment is taken on this demo site.</p>\n<p><em>This text is a sample for demonstration purposes and is not legal advice.</em></p>",
+    "ar": "<h2>عقد البيع عن بُعد</h2>\n<p>يُبرم هذا العقد بين «Voltaj Elektronik» والمشتري في تاريخ طلب المنتج، في إطار القانون التركي رقم 6502 لحماية المستهلك ولائحة العقود عن بُعد.</p>\n<p>تظهر في ملخص الطلب بيانات المنتج ونوعه وكميته وسعره شاملًا ضريبة القيمة المضافة والتسليم والدفع. يحق للمشتري العدول خلال 14 يومًا من تسلّم المنتج دون إبداء سبب، وتُذكر الاستثناءات في صفحة الاسترجاع والتسليم.</p>\n<p>لا يُنشأ في هذا الموقع التجريبي أي طلب فعلي ولا يتم تحصيل أي دفعة.</p>\n<p><em>هذا النص مثال لأغراض العرض التجريبي ولا يُعدّ استشارة قانونية.</em></p>"
+  },
+  "title": {
+    "tr": "Mesafeli Satış Sözleşmesi",
+    "en": "Distance Sales Agreement",
+    "ar": "عقد البيع عن بُعد"
+  },
+  "date": "2026-10-30T22:21:59.640Z",
+  "update": "2026-10-30T22:29:44.773Z"
+}

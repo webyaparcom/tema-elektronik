@@ -1,0 +1,41 @@
+{
+  "id": "onbilgilendirmeformu",
+  "name": {
+    "tr": "Ön Bilgilendirme Formu",
+    "en": "Pre-Contract Information",
+    "ar": "نموذج المعلومات المسبقة"
+  },
+  "description": {
+    "tr": "Ön Bilgilendirme Formu",
+    "en": "Pre-Contract Information",
+    "ar": "نموذج المعلومات المسبقة"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "on-bilgilendirme-formu",
+  "icon": "gavel",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 9,
+  "url": "",
+  "text": {
+    "tr": "<h2>Ön Bilgilendirme Formu</h2>\n<p>Sipariş vermeden önce satıcının kimliği, ürünün temel nitelikleri, KDV dahil toplam bedeli, ödeme ve teslimat bilgileri ile cayma hakkı sipariş sayfasında alıcıya bildirilir.</p>\n<p>Bu form, demo sitede örnek olarak gösterilir.</p>\n<p><em>Bu metin demo amaçlı örnektir; hukuki danışmanlık yerine geçmez.</em></p>",
+    "en": "<h2>Pre-Contract Information</h2>\n<p>Before ordering, the buyer is told the seller’s identity, the main characteristics of the product, the total VAT-inclusive price, payment and delivery details and the right of withdrawal on the checkout page.</p>\n<p>This form is shown as a sample on the demo site.</p>\n<p><em>This text is a sample for demonstration purposes and is not legal advice.</em></p>",
+    "ar": "<h2>نموذج المعلومات المسبقة</h2>\n<p>قبل إتمام الطلب يُعلَم المشتري في صفحة الدفع بهوية البائع والخصائص الأساسية للمنتج والسعر الإجمالي شاملًا ضريبة القيمة المضافة وبيانات الدفع والتسليم وحق العدول.</p>\n<p>يُعرض هذا النموذج كمثال في الموقع التجريبي.</p>\n<p><em>هذا النص مثال لأغراض العرض التجريبي ولا يُعدّ استشارة قانونية.</em></p>"
+  },
+  "title": {
+    "tr": "Ön Bilgilendirme Formu",
+    "en": "Pre-Contract Information",
+    "ar": "نموذج المعلومات المسبقة"
+  },
+  "date": "2026-10-30T22:21:59.640Z",
+  "update": "2026-10-30T22:29:44.760Z"
+}

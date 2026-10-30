@@ -1,0 +1,63 @@
+{
+  "order": true,
+  "user": false,
+  "description": {
+    "tr": "Voltaj Elektronik: kulaklık, akıllı saat, bilgisayar ve aksesuarlar — 2 yıl garanti ve açık iade koşulları. (Demo site)",
+    "en": "Voltaj Elektronik: headphones, smartwatches, computers and accessories — 2-year warranty and clear return terms. (Demo site)",
+    "ar": "فولتاج للإلكترونيات: سماعات وساعات ذكية وحواسيب وإكسسوارات — ضمان سنتين وشروط إرجاع واضحة. (موقع تجريبي)"
+  },
+  "keyword": {
+    "tr": "elektronik, kulaklık, akıllı saat, dizüstü, aksesuar",
+    "en": "electronics, headphones, smartwatch, laptop, accessories",
+    "ar": "إلكترونيات، سماعات، ساعة ذكية، حاسوب محمول، إكسسوارات"
+  },
+  "category": "Eticaret",
+  "name": "Voltaj Elektronik",
+  "domain": "elektronik.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "inter",
+    "heading": "poppins",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#0B5FFF",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "7px",
+    "--mx-radius-md": "12px",
+    "--mx-radius-lg": "17px",
+    "--mx-radius-xl": "23px"
+  },
+  "eticaret": true,
+  "siteType": "eticaret",
+  "modSepet": true,
+  "modSiparis": true,
+  "modOdeme": true,
+  "currency": "₺",
+  "icon": "icon.png",
+  "modKargo": true,
+  "modUyeler": true,
+  "modUyeAdres": true
+}

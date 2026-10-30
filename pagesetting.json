@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "name": {
+        "tr": "Sayfalar",
+        "en": "Sayfalar",
+        "ar": "Sayfalar"
+      },
+      "path": "page",
+      "desc": [],
+      "data": [],
+      "index": 0,
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "modulestatus": {
+        "page": true,
+        "bgimg": true,
+        "detail": true,
+        "body": true
+      }
+    },
+    {
+      "name": {
+        "tr": "Ürünler",
+        "en": "Ürünler",
+        "ar": "Ürünler"
+      },
+      "path": "products",
+      "desc": [
+        {
+          "path": "garanti",
+          "name": {
+            "tr": "Garanti",
+            "en": "Warranty",
+            "ar": "الضمان"
+          }
+        },
+        {
+          "path": "baglanti",
+          "name": {
+            "tr": "Bağlantı",
+            "en": "Connectivity",
+            "ar": "الاتصال"
+          }
+        },
+        {
+          "path": "guc",
+          "name": {
+            "tr": "Pil / güç",
+            "en": "Battery / power",
+            "ar": "البطارية / الطاقة"
+          }
+        }
+      ],
+      "data": [],
+      "index": 1,
+      "desing": {
+        "header": [],
+        "body": [
+          "hm6p2i"
+        ],
+        "footer": []
+      },
+      "modulestatus": {
+        "img": true,
+        "bgimg": true,
+        "detail": true
+      }
+    },
+    {
+      "name": {
+        "tr": "Kurumsal",
+        "en": "Kurumsal",
+        "ar": "Kurumsal"
+      },
+      "path": "kurumsal",
+      "desc": [],
+      "data": [],
+      "index": 2,
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "modulestatus": {
+        "page": true,
+        "bgimg": true,
+        "detail": true,
+        "body": true
+      }
+    },
+    {
+      "path": "user",
+      "name": {
+        "tr": "Uye",
+        "en": "",
+        "ar": ""
+      },
+      "icon": "person",
+      "active": true,
+      "modulestatus": {
+        "body": true,
+        "icon": true,
+        "detail": false
+      },
+      "index": 3
+    },
+    {
+      "path": "back",
+      "name": {
+        "tr": "Misafir",
+        "en": "",
+        "ar": ""
+      },
+      "icon": "lock_open",
+      "active": true,
+      "modulestatus": {
+        "body": true,
+        "icon": true,
+        "detail": false
+      },
+      "index": 4
+    },
+    {
+      "name": {
+        "tr": "Kategoriler",
+        "en": "Categories",
+        "ar": "الفئات"
+      },
+      "path": "category",
+      "icon": "category",
+      "active": true,
+      "desc": [],
+      "data": [],
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "modulestatus": {},
+      "index": 5
+    }
+  ]
+}

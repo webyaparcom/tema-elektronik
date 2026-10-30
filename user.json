@@ -1,0 +1,117 @@
+{
+  "name": "User",
+  "path": "user",
+  "modulestatus": {
+    "body": true,
+    "icon": true,
+    "detail": false
+  },
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "data": [
+    {
+      "id": "usr_siparis",
+      "name": {
+        "tr": "Siparişlerim",
+        "en": "My orders",
+        "ar": "طلباتي"
+      },
+      "description": {
+        "tr": "",
+        "en": "",
+        "ar": ""
+      },
+      "path": "siparislerim",
+      "icon": "receipt_long",
+      "category": "",
+      "status": "pause",
+      "desing": {
+        "header": [],
+        "body": [
+          "ut5h88"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "id": "usr_favori",
+      "name": {
+        "tr": "Favorilerim",
+        "en": "My favourites",
+        "ar": "مفضلتي"
+      },
+      "description": {
+        "tr": "",
+        "en": "",
+        "ar": ""
+      },
+      "path": "favorilerim",
+      "icon": "favorite",
+      "category": "",
+      "status": "pause",
+      "desing": {
+        "header": [],
+        "body": [
+          "1og2rj"
+        ],
+        "footer": []
+      },
+      "index": 1
+    },
+    {
+      "id": "usr_adres",
+      "name": {
+        "tr": "Adreslerim",
+        "en": "My addresses",
+        "ar": "عناويني"
+      },
+      "description": {
+        "tr": "",
+        "en": "",
+        "ar": ""
+      },
+      "path": "adreslerim",
+      "icon": "location_on",
+      "category": "",
+      "status": "pause",
+      "desing": {
+        "header": [],
+        "body": [
+          "p42lcy"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "id": "usr_bilgi",
+      "name": {
+        "tr": "Hesabım",
+        "en": "My account",
+        "ar": "حسابي"
+      },
+      "description": {
+        "tr": "",
+        "en": "",
+        "ar": ""
+      },
+      "path": "hesabim",
+      "icon": "person",
+      "category": "",
+      "status": "pause",
+      "desing": {
+        "header": [],
+        "body": [
+          "6p63ke"
+        ],
+        "footer": []
+      },
+      "index": 3
+    }
+  ],
+  "desc": []
+}

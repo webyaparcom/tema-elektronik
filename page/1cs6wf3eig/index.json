@@ -1,0 +1,60 @@
+{
+  "id": "1cs6wf3eig",
+  "name": {
+    "tr": "Akıllı saat",
+    "en": "Smartwatch",
+    "ar": "ساعة ذكية"
+  },
+  "description": {
+    "tr": "AMOLED ekran, adım ve uyku takibi, 5 ATM suya dayanıklılık.",
+    "en": "AMOLED display, step and sleep tracking, 5 ATM water resistance.",
+    "ar": "شاشة AMOLED وتتبّع الخطوات والنوم ومقاومة ماء 5 ATM."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "akilli-saat",
+  "icon": "inventory_2",
+  "category": "9tcwrrpzgq",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 3,
+  "url": "",
+  "text": {
+    "tr": "<p>AMOLED ekran, adım ve uyku takibi, 5 ATM suya dayanıklılık.</p>",
+    "en": "<p>AMOLED display, step and sleep tracking, 5 ATM water resistance.</p>",
+    "ar": "<p>شاشة AMOLED وتتبّع الخطوات والنوم ومقاومة ماء 5 ATM.</p>"
+  },
+  "title": {
+    "tr": "Akıllı saat",
+    "en": "Smartwatch",
+    "ar": "ساعة ذكية"
+  },
+  "date": "2026-10-30T22:21:59.778Z",
+  "update": "2026-10-30T22:29:44.605Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "Bluetooth 5.2",
+    "guc": {
+      "tr": "Yaklaşık 7 gün",
+      "en": "About 7 days",
+      "ar": "نحو 7 أيام"
+    }
+  },
+  "price": 2790,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-urun-saat.webp",
+  "badges": [],
+  "sku": "akilli-saat"
+}

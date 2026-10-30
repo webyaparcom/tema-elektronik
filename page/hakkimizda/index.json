@@ -1,0 +1,46 @@
+{
+  "name": {
+    "tr": "Hakkımızda",
+    "en": "About",
+    "ar": "من نحن"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 7,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "e1in01"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Voltaj Elektronik, ürün bilgisini ve garanti koşullarını açık yazan kurgusal bir demo elektronik mağazasıdır. Bu sitedeki ürünler, fiyatlar ve adresler kurgusaldır; gerçek bir satış yapılmaz.",
+    "en": "Voltaj Elektronik is a fictional demo electronics store that states product details and warranty terms clearly. Products, prices and addresses on this site are fictional and no real sale takes place.",
+    "ar": "فولتاج للإلكترونيات متجر إلكترونيات تجريبي افتراضي يذكر معلومات المنتج وشروط الضمان بوضوح. المنتجات والأسعار والعناوين في هذا الموقع افتراضية ولا يتم أي بيع فعلي."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Hakkımızda",
+    "en": "About",
+    "ar": "من نحن"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "text": {},
+  "update": "2026-10-30T22:29:44.683Z",
+  "date": "2026-10-30"
+}
