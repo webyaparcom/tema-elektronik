@@ -1,0 +1,41 @@
+{
+  "id": "iadeveteslimat",
+  "name": {
+    "tr": "İade ve Teslimat",
+    "en": "Returns and Delivery",
+    "ar": "الاسترجاع والتسليم"
+  },
+  "description": {
+    "tr": "İade ve Teslimat",
+    "en": "Returns and Delivery",
+    "ar": "الاسترجاع والتسليم"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "iade-ve-teslimat",
+  "icon": "gavel",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 11,
+  "url": "",
+  "text": {
+    "tr": "<h2>İade ve Teslimat</h2>\n<p>Siparişler 1–3 iş günü içinde kargoya verilir. 500 ₺ ve üzeri siparişlerde kargo ücretsizdir; altındaki siparişlerde kargo ücreti 49,90 ₺’dir.</p>\n<p>14 gün içinde cayma hakkınızı kullanabilirsiniz; ürün kullanılmamış ve ambalajı bozulmamış olmalıdır.</p>\n<p>Ambalajı açılmış yazılım ve dijital içerik ürünlerinde Mesafeli Sözleşmeler Yönetmeliği md. 15/ı uyarınca cayma hakkı kullanılamaz. Diğer ürünlerde eksiksiz ve kullanılmamış olmak koşuluyla 14 gün içinde iade kabul edilir. Tüm ürünlerde 2 yıl garanti vardır.</p>\n<p><em>Bu metin demo amaçlı örnektir; hukuki danışmanlık yerine geçmez.</em></p>",
+    "en": "<h2>Returns and Delivery</h2>\n<p>Orders are handed to the carrier within 1–3 business days. Shipping is free for orders of 500 TRY and above; below that the shipping fee is 49.90 TRY.</p>\n<p>You may use your right of withdrawal within 14 days; the product must be unused and in its original packaging.</p>\n<p>For software and digital-content products with opened packaging the right of withdrawal cannot be used, under Article 15 of the Distance Contracts Regulation. Other products can be returned within 14 days if complete and unused. All products carry a 2-year warranty.</p>\n<p><em>This text is a sample for demonstration purposes and is not legal advice.</em></p>",
+    "ar": "<h2>الاسترجاع والتسليم</h2>\n<p>تُسلَّم الطلبات إلى شركة الشحن خلال 1–3 أيام عمل. الشحن مجاني للطلبات التي تبلغ 500 ليرة تركية فأكثر، وتبلغ رسوم الشحن 49.90 ليرة للطلبات الأقل.</p>\n<p>يمكنك ممارسة حق العدول خلال 14 يومًا، بشرط أن يكون المنتج غير مستخدم وفي عبوته الأصلية.</p>\n<p>في منتجات البرمجيات والمحتوى الرقمي المفتوحة العبوة لا يمكن ممارسة حق العدول وفق المادة 15 من لائحة العقود عن بُعد. أما المنتجات الأخرى فتُقبل للإرجاع خلال 14 يومًا بشرط أن تكون كاملة وغير مستعملة. وجميع المنتجات بضمان سنتين.</p>\n<p><em>هذا النص مثال لأغراض العرض التجريبي ولا يُعدّ استشارة قانونية.</em></p>"
+  },
+  "title": {
+    "tr": "İade ve Teslimat",
+    "en": "Returns and Delivery",
+    "ar": "الاسترجاع والتسليم"
+  },
+  "date": "2026-10-30T22:21:59.640Z",
+  "update": "2026-10-30T22:29:44.779Z"
+}

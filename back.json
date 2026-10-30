@@ -1,0 +1,167 @@
+{
+  "name": "Back",
+  "path": "back",
+  "modulestatus": {
+    "body": true,
+    "icon": true,
+    "detail": false
+  },
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "data": [
+    {
+      "id": "bck_login",
+      "name": {
+        "tr": "Giriş",
+        "en": "Sign in",
+        "ar": "تسجيل الدخول"
+      },
+      "description": {
+        "tr": "",
+        "en": "",
+        "ar": ""
+      },
+      "path": "login",
+      "icon": "login",
+      "category": "",
+      "status": "pause",
+      "desing": {
+        "header": [],
+        "body": [
+          "b3gkb0"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "id": "bck_kayit",
+      "name": {
+        "tr": "Kayıt",
+        "en": "Register",
+        "ar": "إنشاء حساب"
+      },
+      "description": {
+        "tr": "",
+        "en": "",
+        "ar": ""
+      },
+      "path": "kayit",
+      "icon": "person_add",
+      "category": "",
+      "status": "pause",
+      "desing": {
+        "header": [],
+        "body": [
+          "1l7zzq"
+        ],
+        "footer": []
+      },
+      "index": 1
+    },
+    {
+      "id": "bck_sifre",
+      "name": {
+        "tr": "Şifre sıfırlama",
+        "en": "Reset password",
+        "ar": "استعادة كلمة المرور"
+      },
+      "description": {
+        "tr": "",
+        "en": "",
+        "ar": ""
+      },
+      "path": "sifre-sifirlama",
+      "icon": "lock_reset",
+      "category": "",
+      "status": "pause",
+      "desing": {
+        "header": [],
+        "body": [
+          "w9lfsd"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "id": "bck_sepet",
+      "name": {
+        "tr": "Sepetim",
+        "en": "My cart",
+        "ar": "سلتي"
+      },
+      "description": {
+        "tr": "Sepetinizdeki ürünler.",
+        "en": "The products in your cart.",
+        "ar": "المنتجات في سلتك."
+      },
+      "path": "sepetim",
+      "icon": "shopping_cart",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "tkkv6r"
+        ],
+        "footer": []
+      },
+      "index": 3
+    },
+    {
+      "id": "bck_odeme",
+      "name": {
+        "tr": "Ödeme",
+        "en": "Checkout",
+        "ar": "إتمام الدفع"
+      },
+      "description": {
+        "tr": "Demo ödeme adımı — gerçek ödeme alınmaz.",
+        "en": "Demo checkout — no real payment is taken.",
+        "ar": "خطوة دفع تجريبية — لا يتم تحصيل أي دفعة."
+      },
+      "path": "odeme",
+      "icon": "credit_card",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "ocu8tl"
+        ],
+        "footer": []
+      },
+      "index": 4
+    },
+    {
+      "id": "bck_onay",
+      "name": {
+        "tr": "Sipariş onayı",
+        "en": "Order confirmation",
+        "ar": "تأكيد الطلب"
+      },
+      "description": {
+        "tr": "Demo sipariş onayı.",
+        "en": "Demo order confirmation.",
+        "ar": "تأكيد طلب تجريبي."
+      },
+      "path": "siparis-onay",
+      "icon": "check_circle",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "jrtdmm"
+        ],
+        "footer": []
+      },
+      "index": 5
+    }
+  ],
+  "desc": []
+}

@@ -1,0 +1,503 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<footer class="modulex-efoot" aria-label="{{footer-aria}}">
+  <!-- Tema3: güven bandı -->
+  <div class="modulex-efoot-trust-wrap">
+    <div class="modulex-efoot-trust">{{trust_html}}</div>
+  </div>
+
+  <!-- Tema3: özellik şeridi (kaydırılabilir) -->
+  <div class="modulex-efoot-features-wrap">
+    <div class="modulex-efoot-features-track">{{features_html}}</div>
+  </div>
+
+  <!-- Ana footer — çok sütun -->
+  <div class="modulex-efoot-main">
+    <div class="modulex-efoot-grid">
+      {{columns_html}}
+      <div class="modulex-efoot-col modulex-efoot-newsletter">
+        <h3 class="modulex-efoot-col-title">{{newsletter-title}}</h3>
+        <p class="modulex-efoot-newsletter-desc">{{newsletter-desc}}</p>
+        <form class="modulex-efoot-newsletter-form" action="#" method="post" onsubmit="return modulexEfootNewsletterSubmit(this);">
+          <div class="modulex-efoot-newsletter-row">
+            <input
+              type="email"
+              name="email"
+              class="modulex-efoot-newsletter-input"
+              placeholder="{{newsletter-placeholder}}"
+              aria-label="{{newsletter-placeholder}}"
+              required
+            />
+            <button type="submit" class="modulex-efoot-newsletter-btn">{{newsletter-btn}}</button>
+          </div>
+          <label class="modulex-efoot-newsletter-consent">
+            <input type="checkbox" name="consent" value="1" required />
+            <span>{{newsletter-consent-prefix}} <a href="{{newsletter-consent-url}}">{{newsletter-consent-link}}</a>{{newsletter-consent-suffix}}</span>
+          </label>
+        </form>
+        <div class="modulex-efoot-social">{{social_html}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alt şerit: telif + ödeme -->
+  <div class="modulex-efoot-bottom">
+    <div class="modulex-efoot-bottom-inner">
+      <p class="modulex-efoot-copy">{{copyright}}</p>
+      <div class="modulex-efoot-payments" aria-label="{{payments-aria}}">{{payments_html}}</div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .modulex-efoot {
+    box-sizing: border-box;
+    width: 100%;
+    font-family: inherit;
+    color: --footer_text--;
+    animation: modulexEfootIn 0.45s ease both;
+  }
+
+  .modulex-efoot-trust-wrap {
+    background: --trust_bg--;
+    border-top: 1px solid --trust_border--;
+    border-bottom: 1px solid --trust_border--;
+  }
+
+  .modulex-efoot-trust {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .modulex-efoot-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .modulex-efoot-trust-item:hover {
+    background: --trust_hover_bg--;
+    transform: translateY(-2px);
+  }
+
+  .modulex-efoot-trust-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: --footer_bg--;
+    color: --footer_text--;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .modulex-efoot-trust-icon .material-icons {
+    font-size: 26px;
+  }
+
+  .modulex-efoot-trust-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: --footer_bg--;
+    margin: 0 0 4px;
+  }
+
+  .modulex-efoot-trust-desc {
+    font-size: 12px;
+    line-height: 1.45;
+    color: --trust_muted--;
+    margin: 0;
+  }
+
+  .modulex-efoot-features-wrap {
+    overflow: hidden;
+    background: --features_bg--;
+    border-bottom: 1px solid --trust_border--;
+  }
+
+  .modulex-efoot-features-track {
+    display: flex;
+    width: max-content;
+    animation: modulexEfootMarquee 38s linear infinite;
+  }
+
+  /* AN5/WCAG 2.2.2: kayan bant uzerine gelince / odakta durur */
+  .modulex-efoot-features-wrap:hover .modulex-efoot-features-track,
+  .modulex-efoot-features-wrap:focus-within .modulex-efoot-features-track {
+    animation-play-state: paused;
+  }
+
+  .modulex-efoot-feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: --footer_bg--;
+  }
+
+  .modulex-efoot-feature .material-icons {
+    font-size: 18px;
+    color: --accent--;
+  }
+
+  .modulex-efoot-main {
+    background: --footer_main_bg--;
+    padding: 48px 20px 36px;
+  }
+
+  .modulex-efoot-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(240px, 1.1fr);
+    gap: 32px 24px;
+  }
+
+  .modulex-efoot-col-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    color: --footer_bg--;
+  }
+
+  .modulex-efoot-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .modulex-efoot-links li {
+    margin-bottom: 10px;
+  }
+
+  .modulex-efoot-links a {
+    color: --footer_link--;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+    display: inline-block;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+
+  .modulex-efoot-links a:hover {
+    color: --accent--;
+    transform: translateX(4px);
+  }
+
+  .modulex-efoot-newsletter-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: --footer_link--;
+    margin: 0 0 14px;
+  }
+
+  .modulex-efoot-newsletter-row {
+    display: flex;
+    gap: 0;
+    margin-bottom: 10px;
+  }
+
+  .modulex-efoot-newsletter-input {
+    flex: 1;
+    min-width: 0;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid --trust_border--;
+    border-right: none;
+    background: --features_bg--;
+    font-size: 13px;
+    box-sizing: border-box;
+  }
+
+  .modulex-efoot-newsletter-btn {
+    height: 44px;
+    min-width: 88px;
+    padding: 0 18px;
+    border: none;
+    background: --footer_bg--;
+    color: --footer_text--;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  .modulex-efoot-newsletter-btn:hover {
+    background: --accent--;
+    transform: translateY(-1px);
+  }
+
+  .modulex-efoot-newsletter-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 11px;
+    line-height: 1.45;
+    color: --footer_link--;
+    cursor: pointer;
+  }
+
+  .modulex-efoot-newsletter-consent a {
+    color: --footer_bg--;
+    font-weight: 600;
+  }
+
+  .modulex-efoot-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .modulex-efoot-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: --footer_bg--;
+    color: --footer_text--;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.25s ease, background 0.25s ease;
+    cursor: pointer;
+  }
+
+  .modulex-efoot-social a:hover {
+    background: --accent--;
+    transform: scale(1.08);
+  }
+
+  .modulex-efoot-social svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .modulex-efoot-bottom {
+    background: --footer_bg--;
+    color: --footer_text--;
+    padding: 16px 20px;
+  }
+
+  .modulex-efoot-bottom-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .modulex-efoot-copy {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  .modulex-efoot-payments {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .modulex-efoot-pay {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .modulex-efoot-pay:hover {
+    opacity: 0.88;
+    transform: scale(1.06);
+  }
+
+  .modulex-efoot-pay svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .modulex-efoot-pay-text {
+    width: auto;
+    min-width: 44px;
+    padding: 0 10px;
+    background: --footer_text--;
+    color: --footer_bg--;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Mobil accordion */
+  .modulex-efoot-accordion {
+    border-bottom: 1px solid --trust_border--;
+  }
+
+  .modulex-efoot-accordion summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: --footer_bg--;
+  }
+
+  .modulex-efoot-accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .modulex-efoot-accordion summary .material-icons {
+    transition: transform 0.25s ease;
+  }
+
+  .modulex-efoot-accordion[open] summary .material-icons {
+    transform: rotate(180deg);
+  }
+
+  .modulex-efoot-accordion-body {
+    padding-bottom: 12px;
+  }
+
+  @keyframes modulexEfootIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes modulexEfootMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .modulex-efoot-trust {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .modulex-efoot-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .modulex-efoot-trust {
+      grid-template-columns: 1fr;
+    }
+
+    .modulex-efoot-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .modulex-efoot-col:not(.modulex-efoot-newsletter) {
+      display: none;
+    }
+
+    .modulex-efoot-mobile-cols {
+      display: block;
+    }
+
+    .modulex-efoot-main {
+      padding-top: 24px;
+    }
+
+    .modulex-efoot-bottom-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .modulex-efoot-newsletter-row {
+      flex-direction: column;
+    }
+
+    .modulex-efoot-newsletter-input {
+      border-right: 1px solid --trust_border--;
+      border-bottom: none;
+    }
+
+    .modulex-efoot-newsletter-btn {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .modulex-efoot-mobile-cols {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-efoot,
+    .modulex-efoot * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+function modulexEfootNewsletterSubmit(form) {
+  var emailEl = form.querySelector('input[name="email"]');
+  var consentEl = form.querySelector('input[name="consent"]');
+  if (!emailEl || !emailEl.value) {
+    return false;
+  }
+  if (!consentEl || !consentEl.checked) {
+    if (typeof window.mxToast === "function") {
+      window.mxToast("{{newsletter-consent-error}}", true);
+    }
+    return false;
+  }
+  if (typeof window.mxToast === "function") {
+    window.mxToast("{{newsletter-success}}", false);
+  }
+  form.reset();
+  return false;
+}
+</script>

@@ -1,0 +1,41 @@
+{
+  "id": "saticibilgileri",
+  "name": {
+    "tr": "Satıcı Bilgileri",
+    "en": "Seller Information",
+    "ar": "بيانات البائع"
+  },
+  "description": {
+    "tr": "Satıcı Bilgileri",
+    "en": "Seller Information",
+    "ar": "بيانات البائع"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "satici-bilgileri",
+  "icon": "gavel",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 14,
+  "url": "",
+  "text": {
+    "tr": "<h2>Satıcı Bilgileri</h2>\n<p>Unvan: Voltaj Elektronik Ticaret A.Ş. (kurgusal) · Adres: Atatürk Bulvarı No: 12, Şahinbey, Gaziantep (kurgusal adres) · Telefon: +90 342 000 00 00 · E-posta: destek@voltajelektronik.example · Mersis No: DEMO-0000000000000000</p>\n<p>Bu bilgiler gerçek bir işletmeye ait değildir.</p>\n<p><em>Bu metin demo amaçlı örnektir; hukuki danışmanlık yerine geçmez.</em></p>",
+    "en": "<h2>Seller Information</h2>\n<p>Company name: Voltaj Elektronik Trading Inc. (fictional) · Address: 12 Ataturk Boulevard, Sahinbey, Gaziantep (fictional address) · Phone: +90 342 000 00 00 · Email: destek@voltajelektronik.example · Mersis No: DEMO-0000000000000000</p>\n<p>This information does not belong to a real business.</p>\n<p><em>This text is a sample for demonstration purposes and is not legal advice.</em></p>",
+    "ar": "<h2>بيانات البائع</h2>\n<p>اسم الشركة: Voltaj Elektronik للتجارة (افتراضية) · العنوان: شارع أتاتورك رقم 12، شاهين بي، غازي عنتاب (عنوان افتراضي) · الهاتف: +90 342 000 00 00 · البريد: destek@voltajelektronik.example · رقم ميرسيس: DEMO-0000000000000000</p>\n<p>هذه البيانات لا تخص نشاطًا تجاريًا حقيقيًا.</p>\n<p><em>هذا النص مثال لأغراض العرض التجريبي ولا يُعدّ استشارة قانونية.</em></p>"
+  },
+  "title": {
+    "tr": "Satıcı Bilgileri",
+    "en": "Seller Information",
+    "ar": "بيانات البائع"
+  },
+  "date": "2026-10-30T22:21:59.640Z",
+  "update": "2026-10-30T22:29:44.796Z"
+}

@@ -1,0 +1,589 @@
+<style>
+.modulexWrap {
+    width: min(100%, var(--max));
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(12px, 3vw, 20px);
+    box-sizing: border-box;
+    background-color: --bgcolor--;
+    color: --color--;
+    font-family: var(--mx-font-sans, Rubik, sans-serif);
+    animation: modulexFadeIn 0.35s ease both;
+}
+
+@keyframes modulexFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Breadcrumb */
+.modulexBreadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 0;
+    font-size: 14px;
+    color: --color--;
+    flex-wrap: wrap;
+}
+.modulexBreadcrumb a {
+    color: --primarycolor--;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modulexBreadcrumb a:hover {
+    text-decoration: underline;
+}
+.modulexBreadcrumb .material-symbols-outlined {
+    font-size: 18px;
+    color: --bordercolor--;
+}
+
+/* Detail Row */
+.modulexDetailRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(16px, 4vw, 30px);
+    margin-top: 20px;
+}
+
+/* Gallery */
+.modulexGallery {
+    flex: 1 1 280px;
+    min-width: 0;
+    max-width: 100%;
+}
+.modulexGalleryMain {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid --bordercolor--;
+}
+.modulexGalleryMain img {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+.modulexGalleryThumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.modulexGalleryThumbs img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid --bordercolor--;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+.modulexGalleryThumbs img:hover,
+.modulexGalleryThumbs img.modulexThumbActive {
+    border-color: --primarycolor--;
+}
+
+/* Info */
+.modulexInfo {
+    flex: 1 1 280px;
+    min-width: 0;
+    max-width: 100%;
+}
+.modulexInfo h1 {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+    color: --color--;
+}
+
+/* Rating */
+.modulexRating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+.modulexRating .material-symbols-outlined {
+    font-size: 20px;
+    color: --starcolor--;
+}
+.modulexRating span.modulexRatingCount {
+    font-size: 14px;
+    color: --oldpricecolor--;
+    margin-left: 6px;
+}
+
+/* Price Block */
+.modulexPriceBlock {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+.modulexOldPrice {
+    font-size: 18px;
+    color: --oldpricecolor--;
+    text-decoration: line-through;
+}
+.modulexPrice {
+    font-size: 28px;
+    font-weight: bold;
+    color: --pricecolor--;
+}
+.modulexDiscountBadge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background-color: --badgebg-sale--;
+    color: --bgcolor--;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Stock Status */
+.modulexStockStatus {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.modulexStockStatus .material-symbols-outlined {
+    font-size: 18px;
+}
+.modulexStockStatus.modulexInStock {
+    color: --primarycolor--;
+}
+.modulexStockStatus.modulexOutOfStock {
+    color: --pricecolor--;
+}
+
+.modulexEmptyNote {
+    color: --color--;
+    opacity: 0.65;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Quantity Selector */
+.modulexQuantityRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.modulexQuantityRow label {
+    font-size: 14px;
+    color: --color--;
+}
+.modulexQuantitySelector {
+    display: flex;
+    align-items: center;
+    border: 1px solid --bordercolor--;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.modulexQuantitySelector button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: --bgcolor--;
+    color: --color--;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+.modulexQuantitySelector button:hover {
+    background: --bordercolor--;
+}
+.modulexQuantitySelector input {
+    width: 50px;
+    height: 36px;
+    border: none;
+    border-left: 1px solid --bordercolor--;
+    border-right: 1px solid --bordercolor--;
+    text-align: center;
+    font-size: 16px;
+    color: --color--;
+    background: --bgcolor--;
+    outline: none;
+}
+
+/* Add to Cart */
+.modulexAddCart {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: --primarycolor--;
+    color: --bgcolor--;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+}
+.modulexAddCart:hover {
+    opacity: 0.9;
+}
+
+/* Tabs */
+.modulexTabs {
+    margin-top: 40px;
+}
+.modulexTabHeader {
+    display: flex;
+    border-bottom: 2px solid --bordercolor--;
+    gap: 0;
+}
+.modulexTabHeader button {
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: --color--;
+    font-size: 15px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.modulexTabHeader button:hover {
+    color: --primarycolor--;
+}
+.modulexTabHeader button.modulexTabActive {
+    border-bottom: 2px solid --primarycolor--;
+    font-weight: bold;
+    color: --primarycolor--;
+}
+.modulexTabContent {
+    display: none;
+    padding: 24px 0;
+    line-height: 1.7;
+    font-size: 15px;
+    color: --color--;
+}
+.modulexTabContent.modulexTabShow {
+    display: block;
+}
+
+/* Specifications Table */
+.modulexSpecTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+.modulexSpecTable tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+}
+.modulexSpecTable td {
+    padding: 10px 14px;
+    border-bottom: 1px solid --bordercolor--;
+    font-size: 14px;
+}
+.modulexSpecTable td:first-child {
+    font-weight: bold;
+    width: 35%;
+    color: --color--;
+}
+
+/* Reviews */
+.modulexReviewItem {
+    padding: 16px 0;
+    border-bottom: 1px solid --bordercolor--;
+}
+.modulexReviewHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.modulexReviewUser {
+    font-weight: bold;
+    font-size: 15px;
+    color: --color--;
+}
+.modulexReviewDate {
+    font-size: 13px;
+    color: --oldpricecolor--;
+}
+.modulexReviewStars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+.modulexReviewStars .material-symbols-outlined {
+    font-size: 16px;
+    color: --starcolor--;
+}
+.modulexReviewText {
+    font-size: 14px;
+    color: --color--;
+    line-height: 1.6;
+}
+
+/* Related Products */
+.modulexRelated {
+    margin-top: 40px;
+}
+.modulexRelated h3 {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: --color--;
+}
+.modulexRelatedGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+    gap: clamp(12px, 3vw, 20px);
+}
+.modulexRelatedCard {
+    border: 1px solid --bordercolor--;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    background: --bgcolor--;
+}
+.modulexRelatedCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.modulexRelatedCard img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+}
+.modulexRelatedCardBody {
+    padding: 14px;
+}
+.modulexRelatedCardBody h4 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    color: --color--;
+}
+.modulexRelatedCardPrice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.modulexRelatedCardPrice .modulexPrice {
+    font-size: 18px;
+}
+.modulexRelatedCardPrice .modulexOldPrice {
+    font-size: 14px;
+}
+
+/* Responsive — dar viewport: tek kolon, galeri + bilgi stack */
+@media (max-width: 768px) {
+    .modulexDetailRow {
+        flex-direction: column;
+    }
+    .modulexGallery,
+    .modulexInfo {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+    .modulexInfo h1 {
+        font-size: 20px;
+    }
+    .modulexTabHeader {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .modulexTabHeader button {
+        padding: 10px 16px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .modulexSpecTable td:first-child {
+        width: 40%;
+    }
+}
+@media (max-width: 600px) {
+    .modulexRelatedGrid {
+        grid-template-columns: 1fr;
+    }
+    .modulexGalleryThumbs img {
+        width: 60px;
+        height: 60px;
+    }
+    .modulexPrice {
+        font-size: 22px;
+    }
+    .modulexQuantityRow {
+        flex-wrap: wrap;
+    }
+}
+
+/* W2: mobil tasma kontrolu */
+@media (max-width: 768px) {
+    .modulexWrap,
+    .modulexWrap * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .modulexGalleryMain img {
+        max-height: 360px;
+    }
+}
+
+/* W2: erisilebilirlik — animasyon kapatma */
+@media (prefers-reduced-motion: reduce) {
+    .modulexWrap,
+    .modulexWrap * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+
+<!-- Breadcrumb -->
+<div class="modulexWrap">
+    <div class="modulexBreadcrumb">
+        <a href="/">@breadcrumbHome@</a>
+        <span class="material-symbols-outlined">chevron_right</span>
+        <a href="{{categoryHref}}">{{category}}</a>
+        <span class="material-symbols-outlined">chevron_right</span>
+        <span>{{name}}</span>
+    </div>
+
+    <!-- Detail Row: Gallery + Info -->
+    <div class="modulexDetailRow">
+        <!-- Gallery -->
+        <div class="modulexGallery">
+            <div class="modulexGalleryMain">
+                <img id="modulexMainImg_{{id}}" src="{{img}}" alt="{{name}}" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <div class="modulexGalleryThumbs" id="modulexThumbs_{{id}}">
+                {{galleryThumbs}}
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="modulexInfo">
+            <h1>{{name}}</h1>
+
+            <div class="modulexRating">
+                {{ratingStars}}
+                <span class="modulexRatingCount">({{reviewCount}})</span>
+            </div>
+
+            <div class="modulexPriceBlock">
+                {{priceHtml}}
+            </div>
+
+            <div class="modulexStockStatus {{stockClass}}">
+                <span class="material-symbols-outlined">{{stockIcon}}</span>
+                {{stockText}}
+            </div>
+
+            <div class="modulexQuantityRow">
+                <label>@quantity@</label>
+                <div class="modulexQuantitySelector">
+                    <button type="button" onclick="changeQty(-1, '{{id}}')" title="-">−</button>
+                    <input type="text" id="modulexQty_{{id}}" data-mx-qty-for="{{mxProductId}}" value="1" readonly>
+                    <button type="button" onclick="changeQty(1, '{{id}}')" title="+">+</button>
+                </div>
+            </div>
+
+            <button class="modulexAddCart" onclick="detailAddToCart(this)" {{cartDisabled}}>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                @addToCart@
+            </button>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="modulexTabs">
+        <div class="modulexTabHeader">
+            <button class="modulexTabActive" onclick="openTab('modulexTabDesc_{{id}}', this)">@description@</button>
+            <button onclick="openTab('modulexTabSpec_{{id}}', this)">@specifications@</button>
+            <button onclick="openTab('modulexTabReview_{{id}}', this)">@reviews@</button>
+        </div>
+        <div class="modulexTabContent modulexTabShow" id="modulexTabDesc_{{id}}">
+            {{description}}
+        </div>
+        <div class="modulexTabContent" id="modulexTabSpec_{{id}}">
+            {{specifications}}
+        </div>
+        <div class="modulexTabContent" id="modulexTabReview_{{id}}">
+            {{reviewsHtml}}
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="modulexRelated">
+        <h3>@relatedProducts@</h3>
+        <div class="modulexRelatedGrid">
+            {{relatedHtml}}
+        </div>
+    </div>
+</div>
+
+<script>
+/* Sepete ekle: sepet-widget (mxCartAddFromEl) varsa gercek sepete yazar */
+var detailAddToCart = function(btn) {
+    if (typeof window.mxCartAddFromEl === "function") {
+        window.mxCartAddFromEl(btn);
+    }
+};
+
+var changeQty = function(delta, productId) {
+    var input = document.getElementById("modulexQty_" + productId);
+    if (!input) return;
+    var current = parseInt(input.value) || 1;
+    var newVal = current + delta;
+    if (newVal < 1) newVal = 1;
+    input.value = newVal;
+};
+
+var openTab = function(tabId, btnEl) {
+    var tabsWrap = btnEl.closest(".modulexTabs");
+    if (!tabsWrap) return;
+    var panels = tabsWrap.querySelectorAll(".modulexTabContent");
+    var buttons = tabsWrap.querySelectorAll(".modulexTabHeader button");
+    var i;
+    for (i = 0; i < panels.length; i++) {
+        panels[i].classList.remove("modulexTabShow");
+    }
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("modulexTabActive");
+    }
+    var target = document.getElementById(tabId);
+    if (target) {
+        target.classList.add("modulexTabShow");
+    }
+    btnEl.classList.add("modulexTabActive");
+};
+
+var selectThumb = function(imgSrc, thumbEl) {
+    var gallery = thumbEl.closest(".modulexGallery");
+    if (!gallery) return;
+    var mainImg = gallery.querySelector(".modulexGalleryMain img");
+    if (mainImg) {
+        mainImg.src = imgSrc;
+    }
+    var allThumbs = gallery.querySelectorAll(".modulexGalleryThumbs img");
+    for (var i = 0; i < allThumbs.length; i++) {
+        allThumbs[i].classList.remove("modulexThumbActive");
+    }
+    thumbEl.classList.add("modulexThumbActive");
+};
+</script>

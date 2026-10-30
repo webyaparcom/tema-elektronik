@@ -1,0 +1,472 @@
+<section class="modulex-uyegiris" id="uyegiris-{{id}}">
+  <div class="modulex-uyegiris-kart mx-card">
+    <div class="mx-tabs__list modulex-uyegiris-sekmeler" role="tablist" aria-label="{{tabsLabel}}">
+      <a class="mx-tabs__tab is-active" role="tab" aria-selected="true" href="/{{lang}}/{{girisUrl}}/">{{tabGiris}}</a>
+      <a class="mx-tabs__tab" role="tab" aria-selected="false" href="/{{lang}}/{{kayitUrl}}/">{{tabKayit}}</a>
+    </div>
+
+    <div class="modulex-uyegiris-bas">
+      <span class="material-symbols-outlined modulex-uyegiris-ikon" aria-hidden="true">lock_person</span>
+      <h1 class="modulex-uyegiris-baslik">{{baslik}}</h1>
+      <p class="modulex-uyegiris-alt">{{altBaslik}}</p>
+    </div>
+
+    <div class="modulex-uyegiris-durum" id="uyegiris-durum-{{id}}" role="status" aria-live="polite"></div>
+
+    <div class="modulex-uyegiris-yuk" id="uyegiris-yuk-{{id}}" aria-hidden="true">
+      <span class="mx-skeleton mx-skeleton--text"></span>
+      <span class="mx-skeleton modulex-uyegiris-yukleme"></span>
+      <span class="mx-skeleton mx-skeleton--text"></span>
+      <span class="mx-skeleton modulex-uyegiris-yukleme"></span>
+    </div>
+
+    <div class="mx-alert mx-alert--info modulex-uyegiris-yok" id="uyegiris-yok-{{id}}" hidden>
+      <span class="material-symbols-outlined" aria-hidden="true">info</span>
+      <div>
+        <strong class="mx-alert__title">{{yokBaslik}}</strong>
+        <p>{{yokMetin}}</p>
+        <a class="mx-btn mx-btn--outline mx-btn--sm" href="/{{lang}}/{{urunlerUrl}}/">{{alisveriseDevam}}</a>
+      </div>
+    </div>
+
+    <div class="modulex-uyegiris-girisli" id="uyegiris-girisli-{{id}}" hidden>
+      <span class="material-symbols-outlined modulex-uyegiris-ok" aria-hidden="true">verified_user</span>
+      <p class="modulex-uyegiris-merhaba">{{girisliMetin}} <strong data-mx-uye-ad></strong></p>
+      <a class="mx-btn mx-btn--primary mx-btn--block" href="/{{lang}}/{{hesabimUrl}}/">{{hesabimaGit}}</a>
+      <button type="button" class="mx-btn mx-btn--ghost mx-btn--block" id="uyegiris-cikis-{{id}}">{{cikisYap}}</button>
+    </div>
+
+    <form class="modulex-uyegiris-form mx-stack" id="uyegiris-form-{{id}}" onsubmit="return false;" hidden>
+      <div class="mx-field">
+        <label class="mx-label" for="uyegiris-email-{{id}}">{{emailLabel}}</label>
+        <input class="mx-input" type="email" id="uyegiris-email-{{id}}" name="email" autocomplete="email" inputmode="email" placeholder="{{emailPlaceholder}}" required />
+        <span class="mx-error" id="uyegiris-email-hata-{{id}}" data-alan-hata="email"></span>
+      </div>
+      <div class="mx-field">
+        <div class="modulex-uyegiris-satir">
+          <label class="mx-label" for="uyegiris-sifre-{{id}}">{{sifreLabel}}</label>
+          <a class="modulex-uyegiris-unuttum" href="/{{lang}}/{{sifreUrl}}/">{{sifremiUnuttum}}</a>
+        </div>
+        <div class="modulex-uyegiris-sifrekutu">
+          <input class="mx-input" type="password" id="uyegiris-sifre-{{id}}" name="sifre" autocomplete="current-password" placeholder="{{sifrePlaceholder}}" required />
+          <button type="button" class="modulex-uyegiris-goster" id="uyegiris-goster-{{id}}" aria-label="{{sifreGoster}}" aria-pressed="false">
+            <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+          </button>
+        </div>
+        <span class="mx-error" id="uyegiris-sifre-hata-{{id}}" data-alan-hata="sifre"></span>
+      </div>
+      <button type="submit" class="mx-btn mx-btn--primary mx-btn--lg mx-btn--block" id="uyegiris-gonder-{{id}}">{{girisButon}}</button>
+      <p class="modulex-uyegiris-kayitol">{{hesapYok}} <a href="/{{lang}}/{{kayitUrl}}/">{{kayitOlLink}}</a></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .modulex-uyegiris {
+    width: 100%;
+    padding: var(--mx-space-8, 48px) var(--mx-space-4, 16px);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .modulex-uyegiris [hidden] {
+    display: none !important;
+  }
+
+  .modulex-uyegiris-kart {
+    width: 100%;
+    max-width: --maxWidth--;
+    padding: var(--mx-space-7, 32px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-5, 20px);
+    animation: uyegirisGiris 0.4s var(--mx-ease, ease) both;
+  }
+
+  @keyframes uyegirisGiris {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modulex-uyegiris-sekmeler .mx-tabs__tab {
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  .modulex-uyegiris-bas {
+    text-align: center;
+  }
+
+  .modulex-uyegiris-ikon {
+    font-size: 40px;
+    color: var(--mx-color-primary);
+  }
+
+  .modulex-uyegiris-baslik {
+    margin: var(--mx-space-2, 8px) 0 var(--mx-space-1, 4px);
+    font-size: var(--mx-fs-2xl, 26px);
+    color: var(--mx-color-text);
+  }
+
+  .modulex-uyegiris-alt {
+    margin: 0;
+    color: var(--mx-color-text-muted);
+    font-size: var(--mx-fs-sm, 14px);
+  }
+
+  .modulex-uyegiris-yuk {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-2, 8px);
+  }
+
+  .modulex-uyegiris-yukleme {
+    height: 44px;
+    border-radius: var(--mx-radius-md, 8px);
+  }
+
+  .modulex-uyegiris-yok p {
+    margin: 0 0 var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyegiris-girisli {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--mx-space-3, 12px);
+    text-align: center;
+  }
+
+  .modulex-uyegiris-ok {
+    font-size: 52px;
+    color: var(--mx-color-success);
+    animation: uyegirisPop 0.45s var(--mx-ease, ease) both;
+  }
+
+  @keyframes uyegirisPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .modulex-uyegiris-merhaba {
+    margin: 0;
+    color: var(--mx-color-text);
+  }
+
+  .modulex-uyegiris-satir {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyegiris-unuttum,
+  .modulex-uyegiris-kayitol a {
+    color: var(--mx-color-primary) !important;
+    font-size: var(--mx-fs-sm, 14px);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .modulex-uyegiris-unuttum:hover,
+  .modulex-uyegiris-kayitol a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  .modulex-uyegiris-sifrekutu {
+    position: relative;
+  }
+
+  .modulex-uyegiris-sifrekutu .mx-input {
+    padding-right: 52px;
+  }
+
+  .modulex-uyegiris-goster {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: var(--mx-color-text-muted);
+    cursor: pointer;
+    border-radius: var(--mx-radius-md, 8px);
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .modulex-uyegiris-goster:hover {
+    color: var(--mx-color-primary);
+  }
+
+  .modulex-uyegiris-kayitol {
+    margin: 0;
+    text-align: center;
+    font-size: var(--mx-fs-sm, 14px);
+    color: var(--mx-color-text-muted);
+  }
+
+  .modulex-uyegiris-durum:empty {
+    display: none;
+  }
+
+  .modulex-uyegiris-durum .mx-alert {
+    animation: uyegirisGiris 0.3s var(--mx-ease, ease) both;
+  }
+
+  @media (max-width: 768px) {
+    .modulex-uyegiris {
+      padding: var(--mx-space-5, 20px) var(--mx-space-3, 12px);
+    }
+
+    .modulex-uyegiris-kart {
+      padding: var(--mx-space-5, 20px);
+    }
+
+    .modulex-uyegiris-satir {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* O4: klavye odagi — mx-btn/mx-input kendi halkasini tasir; modul ozel ogeler burada */
+  .modulex-uyegiris a:not(.mx-btn):focus-visible,
+  .modulex-uyegiris button:not(.mx-btn):focus-visible,
+  .modulex-uyegiris summary:focus-visible {
+    outline: 2px solid var(--mx-color-primary, #2563eb);
+    outline-offset: 2px;
+    border-radius: var(--mx-radius-sm, 4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-uyegiris,
+    .modulex-uyegiris * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  /* uye-giris — MxStore.uye.giris (POST /api/public/uye/giris). Metinler desing. */
+  (function () {
+    var T = {
+      errGeneric: "{{errGeneric}}",
+      errTimeout: "{{errTimeout}}",
+      errNetwork: "{{errNetwork}}",
+      yokMetin: "{{yokMetin}}",
+      basari: "{{basariMetin}}",
+      zorunlu: "{{zorunluMesaj}}",
+      emailGecersiz: "{{emailGecersiz}}",
+      sifreGoster: "{{sifreGoster}}",
+      sifreGizle: "{{sifreGizle}}",
+      hesabimYol: "/{{lang}}/{{hesabimUrl}}/"
+    };
+    var kok = document.getElementById("uyegiris-{{id}}");
+    if (!kok) {
+      return;
+    }
+    function el(ad) {
+      return document.getElementById("uyegiris-" + ad + "-{{id}}");
+    }
+    var form = el("form");
+    var btn = el("gonder");
+    var durumEl = el("durum");
+
+    function goster(ad, acik) {
+      var e = el(ad);
+      if (e) {
+        if (acik) {
+          e.removeAttribute("hidden");
+        } else {
+          e.setAttribute("hidden", "");
+        }
+      }
+    }
+
+    function durumYaz(tur, metin) {
+      if (!durumEl) {
+        return;
+      }
+      if (!metin) {
+        durumEl.innerHTML = "";
+        return;
+      }
+      var s = window.MxStore ? window.MxStore.esc(metin) : String(metin == null ? "" : metin).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+      durumEl.innerHTML = '<div class="mx-alert mx-alert--' + tur + '">' + s + "</div>";
+    }
+
+    function hataYazi(err) {
+      if (!err) {
+        return T.errGeneric;
+      }
+      if (err.kod === "zaman-asimi") {
+        return T.errTimeout;
+      }
+      if (err.kod === "ag") {
+        return T.errNetwork;
+      }
+      if (err.kod === "api-yok" || err.kod === "uye-kullanilamiyor") {
+        return T.yokMetin;
+      }
+      return window.MxStore ? window.MxStore.hataMetni(err, T.errGeneric) : T.errGeneric;
+    }
+
+    function alanHatasiTemizle() {
+      var hatalar = form ? form.querySelectorAll("[data-alan-hata]") : [];
+      for (var i = 0; i < hatalar.length; i++) {
+        hatalar[i].textContent = "";
+      }
+      var girdiler = form ? form.querySelectorAll("input") : [];
+      for (var j = 0; j < girdiler.length; j++) {
+        girdiler[j].removeAttribute("aria-invalid");
+      }
+    }
+
+    function alanHatasi(alan, metin) {
+      var h = form ? form.querySelector('[data-alan-hata="' + alan + '"]') : null;
+      var g = form ? form.querySelector('[name="' + alan + '"]') : null;
+      if (h) {
+        h.textContent = metin;
+      }
+      if (g) {
+        g.setAttribute("aria-invalid", "true");
+        g.setAttribute("aria-describedby", h ? h.id : "");
+      }
+    }
+
+    function yukleniyor(acik) {
+      if (!btn) {
+        return;
+      }
+      btn.disabled = !!acik;
+      if (acik) {
+        btn.classList.add("is-loading");
+        btn.setAttribute("aria-busy", "true");
+      } else {
+        btn.classList.remove("is-loading");
+        btn.removeAttribute("aria-busy");
+      }
+    }
+
+    var gosterBtn = el("goster");
+    if (gosterBtn) {
+      gosterBtn.addEventListener("click", function () {
+        var inp = el("sifre");
+        if (!inp) {
+          return;
+        }
+        var acik = inp.type === "password";
+        inp.type = acik ? "text" : "password";
+        gosterBtn.setAttribute("aria-pressed", acik ? "true" : "false");
+        gosterBtn.setAttribute("aria-label", acik ? T.sifreGizle : T.sifreGoster);
+        var ikon = gosterBtn.querySelector(".material-symbols-outlined");
+        if (ikon) {
+          ikon.textContent = acik ? "visibility_off" : "visibility";
+        }
+      });
+    }
+
+    function gonder(S) {
+      alanHatasiTemizle();
+      durumYaz("", "");
+      var email = String(el("email").value || "").trim();
+      var sifre = String(el("sifre").value || "");
+      if (!email) {
+        alanHatasi("email", T.zorunlu);
+        return;
+      }
+      if (!sifre) {
+        alanHatasi("sifre", T.zorunlu);
+        return;
+      }
+      yukleniyor(true);
+      S.uye.giris(email, sifre).then(function () {
+        durumYaz("success", T.basari);
+        window.location.href = S.uye.donusYolu(T.hesabimYol);
+      }, function (err) {
+        yukleniyor(false);
+        if (err && (err.kod === "api-yok" || err.kod === "uye-kullanilamiyor")) {
+          goster("form", false);
+          goster("yok", true);
+          return;
+        }
+        if (err && err.alan && (err.alan === "email" || err.alan === "sifre")) {
+          alanHatasi(err.alan, hataYazi(err));
+        }
+        durumYaz("danger", hataYazi(err));
+      });
+    }
+
+    function dogrulamaKur(S) {
+      if (!form) {
+        return;
+      }
+      if (typeof window.mxValidateForm === "function") {
+        form.setAttribute("data-mx-jv", "1");
+        window.mxValidateForm(form, [
+          { selector: '[name="email"]', rules: [{ rule: "required", errorMessage: T.zorunlu }, { rule: "email", errorMessage: T.emailGecersiz }] },
+          { selector: '[name="sifre"]', rules: [{ rule: "required", errorMessage: T.zorunlu }] }
+        ], function () {
+          gonder(S);
+        });
+      }
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (form.getAttribute("data-mx-jv") === "1") {
+          return;
+        }
+        if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+          if (typeof form.reportValidity === "function") {
+            form.reportValidity();
+          }
+          return;
+        }
+        gonder(S);
+      });
+    }
+
+    (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
+      var cikisBtn = el("cikis");
+      if (cikisBtn) {
+        cikisBtn.addEventListener("click", function () {
+          cikisBtn.disabled = true;
+          S.uye.cikis().then(function () {
+            cikisBtn.disabled = false;
+            goster("girisli", false);
+            goster("form", true);
+          });
+        });
+      }
+      dogrulamaKur(S);
+      S.uye.ben().then(function (u) {
+        goster("yuk", false);
+        var durum = S.uye.durum();
+        if (u && durum === "giris") {
+          goster("girisli", true);
+          S.bagla(kok);
+        } else if (durum === "kullanilamiyor") {
+          goster("yok", true);
+        } else {
+          goster("form", true);
+        }
+      });
+    });
+
+    window.addEventListener("load", function () {
+      if (!window.MxStore) {
+        var s = document.createElement("script");
+        s.src = "/src/mx-store.js";
+        document.head.appendChild(s);
+      }
+    });
+  })();
+</script>

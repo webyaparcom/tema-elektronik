@@ -1,0 +1,673 @@
+<div class="modulex">
+  <div class="modulexTitle">
+    <span class="material-symbols-outlined">location_on</span>
+    {{moduleTitle}}
+  </div>
+  <div class="modulexBody">
+    <div class="addresses-container">
+      <div class="addresses-header">
+        <button class="add-address-btn">
+          <span class="material-symbols-outlined">add</span>
+          {{addButton}}
+        </button>
+        <button class="demo-address-btn" onclick="addDemoAddress()" style="margin-left: 10px; display: none;">
+          <span class="material-symbols-outlined">science</span>
+          {{demoAdresEkle}}
+        </button>
+      </div>
+      <form class="modulexAdrForm" id="adrForm-{{id}}" data-mx-adr-form hidden novalidate>
+        <input type="hidden" name="id" />
+        <div class="modulexAdrGrid">
+          <div class="mx-field"><label class="mx-label" for="adr-baslik-{{id}}">{{lblBaslik}}</label><input class="mx-input" id="adr-baslik-{{id}}" name="baslik" maxlength="60" /></div>
+          <div class="mx-field"><label class="mx-label" for="adr-adsoyad-{{id}}">{{lblAdSoyad}}</label><input class="mx-input" id="adr-adsoyad-{{id}}" name="ad_soyad" maxlength="120" autocomplete="name" /></div>
+          <div class="mx-field"><label class="mx-label" for="adr-tel-{{id}}">{{lblTelefon}}</label><input class="mx-input" id="adr-tel-{{id}}" name="telefon" type="tel" maxlength="32" autocomplete="tel" /></div>
+          <div class="mx-field"><label class="mx-label" for="adr-il-{{id}}">{{lblIl}}</label><input class="mx-input" id="adr-il-{{id}}" name="il" maxlength="60" /></div>
+          <div class="mx-field"><label class="mx-label" for="adr-ilce-{{id}}">{{lblIlce}}</label><input class="mx-input" id="adr-ilce-{{id}}" name="ilce" maxlength="60" /></div>
+          <div class="mx-field"><label class="mx-label" for="adr-pk-{{id}}">{{lblPostaKodu}}</label><input class="mx-input" id="adr-pk-{{id}}" name="posta_kodu" maxlength="16" inputmode="numeric" autocomplete="postal-code" /></div>
+          <div class="mx-field modulexAdrWide"><label class="mx-label" for="adr-adres-{{id}}">{{lblAdres}}</label><textarea class="mx-textarea" id="adr-adres-{{id}}" name="adres" rows="3" maxlength="500" required></textarea></div>
+          <label class="mx-checkbox modulexAdrWide"><input type="checkbox" name="varsayilan" /> <span>{{lblVarsayilan}}</span></label>
+        </div>
+        <div class="mx-cluster">
+          <button type="submit" class="mx-btn mx-btn--primary">{{saveButton}}</button>
+          <button type="button" class="mx-btn mx-btn--ghost" data-mx-adr-iptal>{{cancelButton}}</button>
+        </div>
+      </form>
+      <div class="addresses-list" id="addressesList">
+        <!-- Adresler veri kaynağından yüklenecek -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modulex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: var(--max);
+    width: 100%;
+  }
+
+  .modulexTitle {
+    background: linear-gradient(135deg, #333 0%, #4a4a4a 100%);
+    border-radius: 8px;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .modulexBody {
+    display: flex;
+    min-height: 500px;
+  }
+
+  .addresses-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .addresses-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .add-address-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .add-address-btn:hover {
+    background: #2980b9;
+  }
+
+  .demo-address-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .demo-address-btn:hover {
+    background: #d35400;
+  }
+
+  .addresses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .address-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .address-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+
+  .address-badge.default {
+    background: #e3fcef;
+    color: #00875a;
+  }
+
+  .address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .address-title {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .address-type {
+    padding: 4px 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #666;
+  }
+
+  .address-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .address-name {
+    font-weight: 500;
+    color: #333;
+  }
+
+  .address-text {
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .address-phone {
+    color: #666;
+  }
+
+  .address-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  .address-action {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #f5f5f5;
+    color: #666;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+
+  .address-action:hover {
+    background: #e9ecef;
+    color: #333;
+  }
+
+  .address-action.delete {
+    color: #dc3545;
+  }
+
+  .address-action.delete:hover {
+    background: #fee2e2;
+  }
+
+  .address-action.set-default {
+    color: #00875a;
+  }
+
+  .address-action.set-default:hover {
+    background: #e3fcef;
+  }
+
+  @media (max-width: 768px) {
+    .addresses-list {
+      grid-template-columns: 1fr;
+    }
+
+    .address-actions {
+      flex-direction: column;
+    }
+
+    .address-action {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* W2: mobil tasma kontrolu */
+  @media (max-width: 768px) {
+    [class*="modulex"] {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* W2: erisilebilirlik — animasyon kapatma */
+  /* PLAN-PRO F3: adres ekle/duzenle formu (mx-ds bilesenleri) */
+  .modulexAdrForm {
+    border: 1px solid --bordercolor--;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+    background: --bgcolor--;
+    box-sizing: border-box;
+    animation: modulexAdrIn 0.3s ease;
+  }
+
+  .modulexAdrForm[hidden] { display: none; }
+
+  .modulexAdrGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+    margin-bottom: 14px;
+  }
+
+  .modulexAdrWide { grid-column: 1 / -1; }
+
+  @keyframes modulexAdrIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .modulexAdrGrid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulexAdrForm { animation: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"],
+    [class*="modulex"] * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  //
+  async function loadAddresses() {
+    if (adrStore()) { return adrMxLoad(adrStore()); }
+    try {
+      //
+      if (!user.isLoggedIn || !user.id) {
+        var addressesList = document.getElementById('addressesList');
+        addressesList.innerHTML = '<div class="no-addresses">{{adresleriniziGormekIcinGiris}}</div>';
+        return;
+      }
+
+      //
+      var addressesSnapshot = await dataListWeb(`users/${user.id}/addresses`);
+      var addressesList = document.getElementById('addressesList');
+
+      addressesList.innerHTML = '';
+
+      if (addressesSnapshot.empty) {
+        addressesList.innerHTML = '<div style="text-align: center; padding: 50px;">{{henuzAdresinizBulunmuyor}}</div>';
+        return;
+      }
+
+      //
+      addressesSnapshot.forEach(function(doc) {
+        var address = doc.data();
+        var addressId = doc.id;
+
+        var addressHTML = `
+          <div class="address-item" data-address-id="${addressId}">
+            <div class="address-badge ${address.isDefault ? 'default' : ''}" style="${address.isDefault ? '' : 'display:none'}">{{varsayilan}}</div>
+            <div class="address-header">
+              <div class="address-title">${address.title}</div>
+              <div class="address-type">${address.type}</div>
+            </div>
+            <div class="address-content">
+              <div class="address-name">${address.fullName}</div>
+              <div class="address-text">${address.addressLine}</div>
+              <div class="address-phone">${address.phone}</div>
+            </div>
+            <div class="address-actions">
+              <button class="address-action" onclick="editAddress('{{addressid}}')">
+                <span class="material-symbols-outlined">edit</span>
+                {{editButton}}
+              </button>
+              <button class="{{addressactionDelete}}" onclick="deleteAddress('{{addressid2}}')">
+                <span class="material-symbols-outlined">delete</span>
+                {{deleteButton}}
+              </button>
+              <button class="{{addressactionSetdefault}}" onclick="setDefaultAddress('{{addressid3}}')" ${address.isDefault ? '{{styledisplaynone}}' : ''}>
+                <span class="material-symbols-outlined">star</span>
+                {{varsayilanYap}}
+              </button>
+            </div>
+          </div>
+        `;
+
+        addressesList.innerHTML += addressHTML;
+      });
+
+    } catch (error) {
+      console.error('{{adreslerYuklenirkenHata}}', error);
+      document.getElementById('addressesList').innerHTML =
+        '<div style="text-align: center; padding: 50px; color: #dc3545;">{{adreslerYuklenirkenBirHata}}</div>';
+    }
+  }
+
+  // Adres silme
+  async function deleteAddress(addressId) {
+    if (!confirm('{{buAdresiSilmekIstediginizden}}')) return;
+    if (adrStore()) {
+      return adrStore().uye.adresSil(addressId).then(function () {
+        showNotification('{{adresBasariylaSilindi}}', 'success');
+        loadAddresses();
+      }, function (err) {
+        showNotification(adrStore().hataMetni(err, '{{adresSilinirkenBirHata}}'), 'error');
+      });
+    }
+
+    try {
+      await dataDeleteWeb(`users/${user.id}/addresses/${addressId}`);
+      showNotification('{{adresBasariylaSilindi}}', 'success');
+      loadAddresses(); // Listeyi yenile
+    } catch (error) {
+      console.error('{{adresSilinirkenHata}}', error);
+      showNotification('{{adresSilinirkenBirHata}}', 'error');
+    }
+  }
+
+  //
+  async function setDefaultAddress(addressId) {
+    if (adrStore()) {
+      return adrStore().uye.adresGuncelle(addressId, { varsayilan: true }).then(function () {
+        showNotification('{{varsayilanAdresGuncellendi}}', 'success');
+        loadAddresses();
+      }, function (err) {
+        showNotification(adrStore().hataMetni(err, '{{islemSirasindaBirHata}}'), 'error');
+      });
+    }
+    try {
+      //
+      var addressesSnapshot = await dataListWeb(`users/${user.id}/addresses`);
+      var updatePromises = [];
+
+      addressesSnapshot.forEach(function(doc) {
+        updatePromises.push(
+          dataUpdateWeb(`users/${user.id}/addresses/${doc.id}`, { isDefault: false })
+        );
+      });
+
+      await Promise.all(updatePromises);
+
+      //
+      await dataUpdateWeb(`users/${user.id}/addresses/${addressId}`, { isDefault: true });
+
+      showNotification('{{varsayilanAdresGuncellendi}}', 'success');
+      loadAddresses(); // Listeyi yenile
+    } catch (error) {
+      console.error('{{varsayilanAdresGuncellenirkenHata}}', error);
+      showNotification('{{islemSirasindaBirHata}}', 'error');
+    }
+  }
+
+  // Demo adres ekleme
+  async function addDemoAddress() {
+    if (!user.isLoggedIn || !user.id) {
+      showNotification('{{demoAdresEklemekIcin}}', 'error');
+      return;
+    }
+
+    var demoAddress = {
+      title: "{{demoAdres}}",
+      type: "Ev",
+      fullName: "{{demoKullanici}}",
+      addressLine: "{{demoMahalleDemoSokak}}",
+      phone: "{{jsText}}",
+      isDefault: false,
+      createdAt: new Date()
+    };
+
+    try {
+      await dataAddWeb(`users/${user.id}/addresses`, demoAddress);
+      showNotification('{{demoAdresEklendi}}', 'success');
+      loadAddresses();
+    } catch (error) {
+      console.error('{{demoAdresEklenirkenHata}}', error);
+      showNotification('{{adresEklenirkenBirHata}}', 'error');
+    }
+  }
+
+  //
+  function showNotification(message, type = 'info') {
+    var existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+      existingNotification.remove();
+    }
+
+    var notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+      <span class="material-symbols-outlined">
+        ${type === 'success' ? 'check_circle' : type === 'error' ? 'error' : 'info'}
+      </span>
+      ${message}
+    `;
+
+    notification.style.cssText = `
+      position: fixed; top: 20px; right: 20px;
+      background: ${type === 'success' ? '#22c55e' : type === 'error' ? '#ef4444' : '#3b82f6'};
+      color: white; padding: 12px 16px; border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;
+      display: flex; align-items: center; gap: 8px; font-weight: 500;
+      animation: slideIn 0.3s ease-out;
+    `;
+
+    if (!document.querySelector('#notification-styles')) {
+      var style = document.createElement('style');
+      style.id = 'notification-styles';
+      style.textContent = `{{keyframesSlideinFromTransform}}`;
+      document.head.appendChild(style);
+    }
+
+    document.body.appendChild(notification);
+
+    setTimeout(function() {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 3000);
+  }
+
+  //
+  authStateListenerWeb(function(authUser) {
+    /* PLAN-PRO F3: MxStore varsa liste oradan (mxStoreQ) */
+    if (window.MxStore || adrMxBekle) { return; }
+    if (authUser) {
+      //
+      setTimeout(function() {
+        loadAddresses();
+
+        //
+        if (user && user.id === 's8RDlo2GsQblcPLWTsMHrudF0sm2') {
+          document.querySelectorAll('.demo-address-btn').forEach(function(btn) {
+            btn.style.display = 'flex';
+          });
+        }
+      }, 500); // Kullanıcı objesi güncellenmesi için biraz bekle
+    } else {
+      //
+      document.getElementById('addressesList').innerHTML =
+        '<div class="no-addresses">{{adresleriniziGormekIcinGiris2}}</div>';
+    }
+  });
+
+  // Yeni adres ekleme butonu
+  document.querySelector('.add-address-btn').addEventListener('click', function() {
+    if (adrStore()) { adrFormAc(null); return; }
+    addDemoAddress(); // Demo için, gerçek uygulamada modal açılır
+  });
+</script>
+<script>
+  /* eticaret-adresler — PLAN-PRO F3 MxStore katmani: GET|POST /api/public/uye/adres, PATCH|DELETE /api/public/uye/adres/:id.
+     Alanlar: baslik, ad_soyad, telefon, il, ilce, adres, posta_kodu, varsayilan. */
+  var adrMxBekle = true;
+  var adrMxListe = [];
+
+  function adrStore() {
+    return window.MxStore && window.MxStore.__mxStore === true ? window.MxStore : null;
+  }
+
+  function adrForm() {
+    return document.querySelector('[data-mx-adr-form]');
+  }
+
+  function adrFormAc(a) {
+    var f = adrForm();
+    if (!f) { return; }
+    var v = a || {};
+    var alanlar = ['id', 'baslik', 'ad_soyad', 'telefon', 'il', 'ilce', 'adres', 'posta_kodu'];
+    for (var i = 0; i < alanlar.length; i++) {
+      if (f.elements[alanlar[i]]) { f.elements[alanlar[i]].value = v[alanlar[i]] || ''; }
+    }
+    f.elements.varsayilan.checked = !!v.varsayilan;
+    f.hidden = false;
+    if (f.elements.baslik && f.elements.baslik.focus) { f.elements.baslik.focus(); }
+  }
+
+  function adrFormKapat() {
+    var f = adrForm();
+    if (f) { f.hidden = true; if (f.reset) { f.reset(); } }
+  }
+
+  window.editAddress = function (id) {
+    for (var i = 0; i < adrMxListe.length; i++) {
+      if (String(adrMxListe[i].id) === String(id)) { adrFormAc(adrMxListe[i]); return; }
+    }
+  };
+
+  /* O3: olay yetkilendirmesi — adres id'si onclick metnine gomulmez (data-adr-id) */
+  var ADR_EYLEM = { edit: 'editAddress', 'delete': 'deleteAddress', varsayilan: 'setDefaultAddress' };
+  function adrBagla(el) {
+    if (el.getAttribute('data-adr-bagli')) { return; }
+    el.setAttribute('data-adr-bagli', '1');
+    el.addEventListener('click', function (ev) {
+      var b = ev.target && ev.target.closest ? ev.target.closest('[data-adr-act]') : null;
+      if (!b || !el.contains(b)) { return; }
+      var fn = window[ADR_EYLEM[b.getAttribute('data-adr-act')]];
+      if (typeof fn === 'function') { fn(b.getAttribute('data-adr-id')); }
+    });
+  }
+
+  function adrMxRender(S, list) {
+    var el = document.getElementById('addressesList');
+    if (!el) { return; }
+    if (!list.length) {
+      el.innerHTML = '<div class="mx-empty"><span class="material-symbols-outlined mx-empty__icon" aria-hidden="true">location_off</span><p class="mx-empty__text">{{henuzAdresinizBulunmuyor}}</p></div>';
+      return;
+    }
+    var e = S.esc;
+    var out = '';
+    for (var i = 0; i < list.length; i++) {
+      var a = list[i];
+      var id = e(a.id);
+      var yer = [a.ilce, a.il, a.posta_kodu].filter(function (x) { return !!x; }).join(' / ');
+      out += '<div class="address-item" data-address-id="' + id + '">';
+      out += '<div class="address-badge default" style="' + (a.varsayilan ? '' : 'display:none') + '">{{varsayilan}}</div>';
+      out += '<div class="address-header"><div class="address-title">' + e(a.baslik || '{{addressType}}') + '</div></div>';
+      out += '<div class="address-content"><div class="address-name">' + e(a.ad_soyad) + '</div>';
+      out += '<div class="address-text">' + e(a.adres) + (yer ? '<br>' + e(yer) : '') + '</div>';
+      out += '<div class="address-phone">' + e(a.telefon) + '</div></div>';
+      out += '<div class="address-actions">';
+      out += '<button type="button" class="address-action" data-adr-act="edit" data-adr-id="' + id + '"><span class="material-symbols-outlined" aria-hidden="true">edit</span>{{editButton}}</button>';
+      out += '<button type="button" class="address-action delete" data-adr-act="delete" data-adr-id="' + id + '"><span class="material-symbols-outlined" aria-hidden="true">delete</span>{{deleteButton}}</button>';
+      if (!a.varsayilan) {
+        out += '<button type="button" class="address-action set-default" data-adr-act="varsayilan" data-adr-id="' + id + '"><span class="material-symbols-outlined" aria-hidden="true">star</span>{{varsayilanYap}}</button>';
+      }
+      out += '</div></div>';
+    }
+    el.innerHTML = out;
+    adrBagla(el);
+  }
+
+  function adrMxLoad(S) {
+    var el = document.getElementById('addressesList');
+    if (el) { el.innerHTML = '<div class="mx-skeleton mx-skeleton--text"></div><div class="mx-skeleton mx-skeleton--text"></div>'; }
+    return S.uye.oturumGerekli('/{{lang}}/{{girisUrl}}/').then(function (u) {
+      if (!u) {
+        if (el) { el.innerHTML = '<div class="no-addresses">' + (S.uye.durum() === 'kullanilamiyor' ? '{{uyeKullanilamiyor}}' : '{{adresleriniziGormekIcinGiris}}') + '</div>'; }
+        return;
+      }
+      return S.uye.adresler().then(function (list) {
+        adrMxListe = list;
+        adrMxRender(S, list);
+      }, function (err) {
+        if (el) { el.innerHTML = '<div class="mx-alert mx-alert--danger">' + S.esc(S.hataMetni(err, '{{adreslerYuklenirkenBirHata}}')) + '</div>'; }
+      });
+    });
+  }
+
+  function adrMxSubmit(S, f) {
+    var veri = {
+      baslik: f.elements.baslik.value.trim(),
+      ad_soyad: f.elements.ad_soyad.value.trim(),
+      telefon: f.elements.telefon.value.trim(),
+      il: f.elements.il.value.trim(),
+      ilce: f.elements.ilce.value.trim(),
+      adres: f.elements.adres.value.trim(),
+      posta_kodu: f.elements.posta_kodu.value.trim(),
+      varsayilan: !!f.elements.varsayilan.checked
+    };
+    if (!veri.adres) {
+      showNotification('{{adresZorunlu}}', 'error');
+      return;
+    }
+    var id = f.elements.id.value;
+    var p = id ? S.uye.adresGuncelle(id, veri) : S.uye.adresEkle(veri);
+    p.then(function () {
+      showNotification('{{adresKaydedildi}}', 'success');
+      adrFormKapat();
+      adrMxLoad(S);
+    }, function (err) {
+      showNotification(S.hataMetni(err, '{{adresEklenirkenBirHata}}'), 'error');
+    });
+  }
+
+  (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
+    var f = adrForm();
+    if (f) {
+      f.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        adrMxSubmit(S, f);
+      });
+      var iptal = f.querySelector('[data-mx-adr-iptal]');
+      if (iptal) { iptal.addEventListener('click', adrFormKapat); }
+    }
+    adrMxLoad(S);
+  });
+  window.addEventListener('load', function () {
+    if (!window.MxStore) {
+      var s = document.createElement('script');
+      s.src = '/src/mx-store.js';
+      s.onerror = function () { adrMxBekle = false; };
+      document.head.appendChild(s);
+      setTimeout(function () {
+        if (!window.MxStore) {
+          adrMxBekle = false;
+          var el = document.getElementById('addressesList');
+          if (el) { el.innerHTML = '<div class="no-addresses">{{adresleriniziGormekIcinGiris2}}</div>'; }
+        }
+      }, 3000);
+    }
+  });
+</script>

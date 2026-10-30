@@ -1,0 +1,80 @@
+{
+  "name": "Urun Detay",
+  "description": "E-ticaret urun detay sayfasi modulu. Gorsel galerisi, urun bilgisi, sepete ekle, sekmeli icerik ve iliskili urunler icerir.",
+  "version": "1.0.0",
+  "icon": "inventory_2",
+  "category": "e-commerce",
+  "desing": {
+    "color": "#333333",
+    "bgcolor": "#ffffff",
+    "pricecolor": "#e53935",
+    "oldpricecolor": "#999999",
+    "primarycolor": "#2196f3",
+    "bordercolor": "#e0e0e0",
+    "starcolor": "#ffc107",
+    "badgebg-sale": "#ff9800",
+    "title": {
+      "tr": "Ürün Detayı",
+      "en": "Product Detail"
+    },
+    "addToCart": {
+      "tr": "Sepete Ekle",
+      "en": "Add to Cart"
+    },
+    "description": {
+      "tr": "Açıklama",
+      "en": "Description"
+    },
+    "specifications": {
+      "tr": "Özellikler",
+      "en": "Specifications"
+    },
+    "reviews": {
+      "tr": "Değerlendirmeler",
+      "en": "Reviews"
+    },
+    "relatedProducts": {
+      "tr": "İlişkili Ürünler",
+      "en": "Related Products"
+    },
+    "quantity": {
+      "tr": "Adet",
+      "en": "Quantity"
+    },
+    "inStock": {
+      "tr": "Stokta Var",
+      "en": "In Stock"
+    },
+    "outOfStock": {
+      "tr": "Stokta Yok",
+      "en": "Out of Stock"
+    },
+    "discount": {
+      "tr": "İndirim",
+      "en": "Discount"
+    },
+    "breadcrumbHome": {
+      "tr": "Anasayfa",
+      "en": "Home"
+    },
+    "currency": "₺",
+    "relatedCount": 4,
+    "noSpecs": {
+      "tr": "Bu ürün için özellik bilgisi eklenmemiş.",
+      "en": "No specifications added for this product."
+    },
+    "noReviews": {
+      "tr": "Henüz değerlendirme yapılmamış.",
+      "en": "No reviews yet."
+    },
+    "noRelated": {
+      "tr": "İlişkili ürün bulunamadı.",
+      "en": "No related products found."
+    },
+    "noDescription": {
+      "tr": "Bu ürün için açıklama eklenmemiş.",
+      "en": "No description added for this product."
+    }
+  },
+  "data": {}
+}

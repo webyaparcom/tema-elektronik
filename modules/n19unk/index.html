@@ -1,0 +1,549 @@
+<style>
+  .modulex {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    color: --color--;
+  }
+
+  .modulexHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 18px 0 12px;
+  }
+
+  .modulexTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: --color--;
+  }
+
+  .modulexCount {
+    font-size: 0.9em;
+    opacity: 0.7;
+  }
+
+  .modulexCount b {
+    font-weight: 700;
+  }
+
+  /* Kategori cipleri */
+  .modulexChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 0 18px;
+  }
+
+  .modulexChip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid --bordercolor--;
+    background: transparent;
+    color: --color--;
+    font: inherit;
+    font-size: 0.9em;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  }
+
+  .modulexChip:hover {
+    border-color: --buttonbg--;
+    transform: translateY(-1px);
+  }
+
+  .modulexChip:focus-visible {
+    outline: 2px solid --buttonbg--;
+    outline-offset: 2px;
+  }
+
+  .modulexChipActive {
+    background: --buttonbg--;
+    border-color: --buttonbg--;
+    color: --buttoncolor--;
+    font-weight: 600;
+  }
+
+  .modulexChipCount {
+    font-size: 0.8em;
+    opacity: 0.75;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(127, 127, 127, 0.16);
+  }
+
+  /* Izgara */
+  .modulexGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 22px;
+    align-items: stretch;
+  }
+
+  .modulexCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid --bordercolor--;
+    border-radius: 14px;
+    overflow: hidden;
+    background: --bgcolor--;
+    box-sizing: border-box;
+    min-width: 0;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+
+  .modulexCard:hover,
+  .modulexCard:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+    border-color: --buttonbg--;
+  }
+
+  .modulexCardHidden {
+    display: none !important;
+  }
+
+  .modulexCardImage {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: rgba(127, 127, 127, 0.08);
+  }
+
+  .modulexCardImage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .modulexCard:hover .modulexCardImage img {
+    transform: scale(1.04);
+  }
+
+  .modulexCardNoImage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: --color--;
+    opacity: 0.4;
+  }
+
+  .modulexCardNoImage .material-symbols-outlined {
+    font-size: 48px;
+  }
+
+  .modulexBadges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2;
+  }
+
+  .modulexBadge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: --badgecolor--;
+  }
+
+  .modulexBadgeNew {
+    background: --badgebg-new--;
+  }
+
+  .modulexBadgeSale {
+    background: --badgebg-sale--;
+  }
+
+  .modulexSoldout {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    color: --badgecolor--;
+    font-size: 17px;
+    font-weight: 700;
+    z-index: 2;
+  }
+
+  .modulexCardSoldout .modulexCardImage img {
+    filter: grayscale(0.6);
+  }
+
+  .modulexCardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 16px 16px;
+    flex: 1;
+  }
+
+  .modulexCardCat {
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: --pricecolor--;
+    opacity: 0.9;
+  }
+
+  .modulexCardName {
+    font-size: 1.02em;
+    font-weight: 600;
+    line-height: 1.35;
+    color: --color--;
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Ad linki kartin tamamina yayilir: tam kart tiklanabilir, HTML gecerli kalir */
+  .modulexCardName::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .modulexCardName:focus-visible {
+    outline: none;
+  }
+
+  .modulexCard:focus-within {
+    outline: 2px solid --buttonbg--;
+    outline-offset: 2px;
+  }
+
+  .modulexCardDesc {
+    margin: 0;
+    font-size: 0.86em;
+    line-height: 1.45;
+    color: --color--;
+    opacity: 0.72;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .modulexCardBottom {
+    margin-top: auto;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modulexCardPrice {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .modulexOldPrice {
+    text-decoration: line-through;
+    color: --oldpricecolor--;
+    font-size: 0.88em;
+  }
+
+  .modulexPrice {
+    color: --pricecolor--;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+
+  .modulexAddCart {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 11px 12px;
+    background: --buttonbg--;
+    color: --buttoncolor--;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font: inherit;
+    font-size: 0.92em;
+    font-weight: 600;
+    transition: filter 0.18s ease, transform 0.18s ease;
+  }
+
+  .modulexAddCart .material-symbols-outlined {
+    font-size: 20px;
+  }
+
+  .modulexAddCart:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+
+  .modulexAddCart:focus-visible {
+    outline: 2px solid --buttonbg--;
+    outline-offset: 2px;
+  }
+
+  .modulexAddCart:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  @media screen and (max-width: 900px) {
+    .modulexGrid {
+      gap: 16px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .modulexGrid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .modulexCardInfo {
+      padding: 10px 12px 12px;
+    }
+    .modulexCardDesc {
+      display: none;
+    }
+    .modulexPrice {
+      font-size: 1.05em;
+    }
+    .modulexAddCart {
+      padding: 9px 10px;
+      font-size: 0.86em;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .modulexGrid {
+      grid-template-columns: 1fr;
+    }
+    .modulexCardDesc {
+      display: -webkit-box;
+    }
+  }
+
+
+  /* ---- Opt-in arama + siralama araci (desing.search / desing.sort) — mantiksal CSS, yalniz yeni siniflar ---- */
+  .modulexTools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding-block-end: 14px; }
+  .modulexVh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .modulexSearch {
+    display: flex; align-items: center; gap: 8px; flex: 1 1 220px; max-width: 380px; min-height: 44px; padding-inline: 12px;
+    border: 1px solid --bordercolor--; border-radius: 999px; background: --bgcolor--; color: --color--;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .modulexSearch:focus-within { border-color: --buttonbg--; box-shadow: 0 0 0 3px rgba(127, 127, 127, 0.2); }
+  .modulexSearch input { flex: 1; min-width: 0; min-height: 42px; border: 0; background: transparent; color: inherit; font: inherit; outline: none; }
+  .modulexSortBox { display: inline-flex; align-items: center; gap: 8px; }
+  .modulexSortLabel { font-size: 0.9em; opacity: 0.7; }
+  .modulexSortSel {
+    min-height: 44px; max-width: 100%; padding-inline: 12px; border: 1px solid --bordercolor--; border-radius: 999px;
+    background: --bgcolor--; color: --color--; font: inherit; cursor: pointer;
+  }
+  .modulexSortSel:focus-visible, .modulexSearch input:focus-visible { outline: 2px solid --buttonbg--; outline-offset: 2px; }
+  .modulexEmpty { grid-column: 1 / -1; padding: 40px 16px; text-align: center; border: 1px dashed --bordercolor--; border-radius: 14px; }
+  .modulexEmpty p { margin: 0 0 12px; color: --color--; }
+  .modulexEmpty[hidden] { display: none; }
+  @media (max-width: 768px) {
+    .modulexSearch { max-width: none; flex-basis: 100%; }
+    .modulexSortBox { width: 100%; justify-content: space-between; }
+    .modulexSortSel { flex: 1; }
+  }
+
+  /* W2: mobil tasma kontrolu */
+  @media (max-width: 768px) {
+    [class*="modulex"] {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* W2: erisilebilirlik — animasyon kapatma */
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"],
+    [class*="modulex"] * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<div class="modulex"{{vtRoot}}>
+  <div class="modulexHead">
+    <div class="modulexTitle">
+      <span class="material-symbols-outlined" aria-hidden="true">storefront</span>
+      {{title}}
+    </div>
+    <div class="modulexCount"><b class="modulexCountNum">{{count}}</b> {{resultCount}}</div>
+  </div>
+  {{vtToolbar}}
+  {{chips}}
+  <div class="modulexGrid">
+    {{html}}
+  </div>
+  {{vtEmpty}}
+</div>
+
+<script>
+/* Kategori cipi: yalniz bu modulun kartlarini suzer (modulex on eki render'da esszsiz olur) */
+function modulexFilter(btn) {
+  var root = btn.closest(".modulex");
+  if (!root) { return; }
+  var cat = btn.getAttribute("data-cat") || "all";
+  var chips = root.querySelectorAll(".modulexChip");
+  var i;
+  for (i = 0; i < chips.length; i++) {
+    var on = chips[i] === btn;
+    chips[i].classList.toggle("modulexChipActive", on);
+    chips[i].setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  var cards = root.querySelectorAll(".modulexCard");
+  var n = 0;
+  for (i = 0; i < cards.length; i++) {
+    var show = cat === "all" || cards[i].getAttribute("data-category") === cat;
+    cards[i].classList.toggle("modulexCardHidden", !show);
+    if (show) { n++; }
+  }
+  var countEl = root.querySelector(".modulexCountNum");
+  if (countEl) { countEl.textContent = String(n); }
+}
+
+/* Sepete ekle: kart linkini tetiklemez; urun bilgisi tiklanan kartin data-mx-* alanlarindan okunur */
+function modulexAddCart(btn, ev) {
+  if (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+  }
+  if (!btn || btn.disabled) { return; }
+  var card = btn.closest(".modulexCard") || btn;
+  if (typeof window.mxCartAddFromEl === "function") {
+    window.mxCartAddFromEl(card);
+    return;
+  }
+  if (typeof window.addToCart === "function") {
+    window.addToCart(card.getAttribute("data-mx-id"));
+  }
+}
+
+/* ---- Opt-in arama + siralama + ?q=&cat=&sort= URL durumu (yalniz desing.search/sort aciksa; ham mx-filtre.js) ---- */
+(function () {
+  var kok = document.getElementById("modulex-vt-{{id}}");
+  if (!kok || kok.getAttribute("data-vt-enh") !== "1") { return; }
+  function hazir(fn) {
+    if (window.mxLoad) { fn(); }
+    else if (document.readyState === "complete") { setTimeout(fn, 50); }
+    else { window.addEventListener("load", fn); }
+  }
+  function basla() {
+    var MxF = window.MxFiltre;
+    if (!MxF) { return; }
+    var kartlar = kok.querySelectorAll("[data-mx-id][data-category]");
+    if (!kartlar.length) { return; }
+    var grid = kartlar[0].parentNode;
+    var items = [];
+    var i;
+    for (i = 0; i < kartlar.length; i++) {
+      var k = kartlar[i];
+      var tarih = parseFloat(k.getAttribute("data-date"));
+      items.push({
+        id: i,
+        name: k.getAttribute("data-mx-name") || "",
+        cat: k.getAttribute("data-category") || "",
+        price: parseFloat(k.getAttribute("data-price")) || 0,
+        /* yeni: once rozetli, sonra tarihe gore (tarih yoksa katalog sirasi korunur — kararli siralama) */
+        rank: (k.getAttribute("data-new") === "1" ? 1e14 : 0) + (isFinite(tarih) ? tarih : 0)
+      });
+    }
+    var f = MxF.olustur({
+      items: items,
+      arama: { alanlar: ["name", "cat"] },
+      facets: { cat: { tip: "tek" } },
+      siralama: { priceAsc: { alan: "price", yon: 1 }, priceDesc: { alan: "price", yon: -1 }, "new": { alan: "rank", yon: -1 } },
+      url: true,
+      dil: document.documentElement.getAttribute("lang") || "tr"
+    });
+    var araEl = kok.querySelector("[data-vt-q]");
+    var sirEl = kok.querySelector("[data-vt-sort]");
+    var bosEl = kok.querySelector("[data-vt-empty]");
+    var sayEl = kok.querySelector(".modulexCountNum");
+    var cipler = kok.querySelectorAll(".modulexChip[data-cat]");
+    var cipSay = {};
+    for (i = 0; i < cipler.length; i++) {
+      var sp = cipler[i].querySelector(".modulexChipCount");
+      cipSay[cipler[i].getAttribute("data-cat")] = sp;
+      cipler[i].addEventListener("click", function () {
+        var c = this.getAttribute("data-cat");
+        f.ayarla({ cat: c === "all" ? "" : c });
+      });
+    }
+    if (araEl) { MxF.aramaBagla(araEl, f, 150); }
+    if (sirEl) { sirEl.addEventListener("change", function () { f.sirala(sirEl.value); }); }
+    var sifirla = kok.querySelector("[data-vt-reset]");
+    if (sifirla) { sifirla.addEventListener("click", function () { f.sifirla(); if (araEl) { araEl.value = ""; } }); }
+
+    function guncelle(s) {
+      var d = s.durum;
+      var goster = {};
+      var j;
+      for (j = 0; j < s.tumu.length; j++) { goster[s.tumu[j].id] = j; }
+      /* DOM sirasi: suzulmus+siralanmis once, kalanlar katalog sirasinda sonra */
+      for (j = 0; j < s.tumu.length; j++) { grid.appendChild(kartlar[s.tumu[j].id]); }
+      for (j = 0; j < kartlar.length; j++) {
+        var acik = goster[j] !== undefined;
+        kartlar[j].classList.toggle("modulexCardHidden", !acik);
+        if (!acik) { grid.appendChild(kartlar[j]); }
+      }
+      if (sayEl) { sayEl.textContent = String(s.toplam); }
+      if (bosEl) { bosEl.hidden = s.toplam !== 0; }
+      if (araEl && document.activeElement !== araEl) { araEl.value = d.q || ""; }
+      if (sirEl) { sirEl.value = d.sirala || ""; }
+      var secili = d.facet.cat || "all";
+      var sayim = f.sayim("cat");
+      var toplam = 0;
+      for (var key in sayim) { if (Object.prototype.hasOwnProperty.call(sayim, key)) { toplam += sayim[key]; } }
+      for (j = 0; j < cipler.length; j++) {
+        var cv = cipler[j].getAttribute("data-cat");
+        var on = cv === secili;
+        cipler[j].classList.toggle("modulexChipActive", on);
+        cipler[j].setAttribute("aria-pressed", on ? "true" : "false");
+        if (cipSay[cv]) { cipSay[cv].textContent = String(cv === "all" ? toplam : (sayim[cv] || 0)); }
+      }
+    }
+    f.abone(guncelle);
+    guncelle(f.sonuc());
+  }
+  hazir(function () {
+    if (window.MxFiltre) { basla(); }
+    else if (window.mxLoad) { window.mxLoad("mxfiltre").then(basla, function () {}); }
+  });
+})();
+</script>

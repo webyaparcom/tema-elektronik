@@ -1,0 +1,180 @@
+{
+  "data": [
+    {
+      "id": "u11oc48hzb",
+      "name": {
+        "tr": "Mekanik klavye",
+        "en": "Mechanical keyboard",
+        "ar": "لوحة مفاتيح ميكانيكية"
+      },
+      "description": {
+        "tr": "Kompakt 75% düzen, sessiz anahtarlar, kablolu ve kablosuz kullanım.",
+        "en": "Compact 75% layout, quiet switches, wired and wireless use.",
+        "ar": "تخطيط مدمج 75٪ ومفاتيح هادئة واستخدام سلكي ولاسلكي."
+      },
+      "path": "mekanik-klavye",
+      "icon": "inventory_2",
+      "category": "81vj6ab339",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "id": "lb3jjrds6o",
+      "name": {
+        "tr": "Powerbank 20.000 mAh",
+        "en": "Power bank 20,000 mAh",
+        "ar": "شاحن متنقل 20,000 مللي أمبير"
+      },
+      "description": {
+        "tr": "65 W hızlı şarj, iki USB-C çıkışı, dizüstüyü de şarj eder.",
+        "en": "65 W fast charging, two USB-C ports, also charges laptops.",
+        "ar": "شحن سريع 65 واط ومنفذان USB-C ويشحن الحواسيب المحمولة أيضًا."
+      },
+      "path": "powerbank-20000",
+      "icon": "inventory_2",
+      "category": "81vj6ab339",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 1
+    },
+    {
+      "id": "swltzk9ogi",
+      "name": {
+        "tr": "İnce dizüstü bilgisayar 14\"",
+        "en": "Slim laptop 14\"",
+        "ar": "حاسوب محمول نحيف 14 بوصة"
+      },
+      "description": {
+        "tr": "14 inç IPS ekran, 16 GB bellek, 512 GB SSD; günlük iş ve eğitim için.",
+        "en": "14-inch IPS display, 16 GB memory, 512 GB SSD; for everyday work and study.",
+        "ar": "شاشة IPS 14 بوصة وذاكرة 16 جيجابايت وSSD 512 جيجابايت؛ للعمل والدراسة اليومية."
+      },
+      "path": "ince-dizustu-bilgisayar",
+      "icon": "inventory_2",
+      "category": "81vj6ab339",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "id": "1cs6wf3eig",
+      "name": {
+        "tr": "Akıllı saat",
+        "en": "Smartwatch",
+        "ar": "ساعة ذكية"
+      },
+      "description": {
+        "tr": "AMOLED ekran, adım ve uyku takibi, 5 ATM suya dayanıklılık.",
+        "en": "AMOLED display, step and sleep tracking, 5 ATM water resistance.",
+        "ar": "شاشة AMOLED وتتبّع الخطوات والنوم ومقاومة ماء 5 ATM."
+      },
+      "path": "akilli-saat",
+      "icon": "inventory_2",
+      "category": "9tcwrrpzgq",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 3
+    },
+    {
+      "id": "n3k6qillmf",
+      "name": {
+        "tr": "Taşınabilir hoparlör",
+        "en": "Portable speaker",
+        "ar": "مكبر صوت محمول"
+      },
+      "description": {
+        "tr": "Suya dayanıklı gövde, 360° ses, USB-C şarj.",
+        "en": "Water-resistant body, 360° sound, USB-C charging.",
+        "ar": "هيكل مقاوم للماء وصوت 360° وشحن USB-C."
+      },
+      "path": "tasinabilir-hoparlor",
+      "icon": "inventory_2",
+      "category": "rud8tpzjuq",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 4
+    },
+    {
+      "id": "362i7jj5ck",
+      "name": {
+        "tr": "Kablosuz kulaklık",
+        "en": "Wireless headphones",
+        "ar": "سماعات لاسلكية"
+      },
+      "description": {
+        "tr": "Aktif gürültü engelleme, kulak üstü, katlanabilir tasarım.",
+        "en": "Active noise cancelling, over-ear, foldable design.",
+        "ar": "عزل ضوضاء نشط وتصميم فوق الأذن قابل للطي."
+      },
+      "path": "kablosuz-kulaklik",
+      "icon": "inventory_2",
+      "category": "rud8tpzjuq",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 5
+    }
+  ],
+  "desc": [
+    {
+      "path": "garanti",
+      "name": {
+        "tr": "Garanti",
+        "en": "Warranty",
+        "ar": "الضمان"
+      }
+    },
+    {
+      "path": "baglanti",
+      "name": {
+        "tr": "Bağlantı",
+        "en": "Connectivity",
+        "ar": "الاتصال"
+      }
+    },
+    {
+      "path": "guc",
+      "name": {
+        "tr": "Pil / güç",
+        "en": "Battery / power",
+        "ar": "البطارية / الطاقة"
+      }
+    }
+  ],
+  "desing": {
+    "header": [],
+    "body": [
+      "hm6p2i"
+    ],
+    "footer": []
+  },
+  "modulestatus": {
+    "img": true,
+    "bgimg": true,
+    "detail": true
+  }
+}

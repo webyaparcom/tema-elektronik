@@ -1,0 +1,41 @@
+{
+  "id": "vizyon",
+  "name": {
+    "tr": "Vizyon",
+    "en": "Vision",
+    "ar": "الرؤية"
+  },
+  "description": {
+    "tr": "Vizyonumuz",
+    "en": "Our vision",
+    "ar": "رؤيتنا"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "vizyon",
+  "icon": "visibility",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 1,
+  "url": "",
+  "text": {
+    "tr": "<h2>Vizyonumuz</h2>\n<p>Teknolojiyi herkes için anlaşılır ve güvenli kılan bir mağaza olmak.</p>",
+    "en": "<h2>Our vision</h2>\n<p>To be a store that makes technology understandable and safe for everyone.</p>",
+    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون متجرًا يجعل التقنية مفهومة وآمنة للجميع.</p>"
+  },
+  "title": {
+    "tr": "Vizyon",
+    "en": "Vision",
+    "ar": "الرؤية"
+  },
+  "date": "2026-10-30T22:21:59.567Z",
+  "update": "2026-10-30T22:29:44.719Z"
+}

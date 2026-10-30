@@ -1,0 +1,526 @@
+<header class="modulex-header-wrapper" id="menu-eticaret-2-root">
+  <div class="modulex-header">
+    <div class="modulex-header-top">
+      <a href="/{{lang}}/" class="modulex-header-left">
+        <img src="/img/{{logo}}?v={{random}}" alt="Logo" class="modulex-logo" loading="lazy" />
+      </a>
+
+      <div class="modulex-search-box">
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        <input type="text" placeholder="{{searchPlaceholder}}" aria-label="{{searchAria}}" />
+        <button type="submit" aria-label="{{searchBtn}}">{{searchBtn}}</button>
+      </div>
+
+      <div class="modulex-support-info">
+        <span class="material-symbols-outlined" aria-hidden="true">headphones</span>
+        <div>
+          <small>{{supportText}}</small>
+          <strong>{{supportPhone}}</strong>
+        </div>
+      </div>
+
+      {{langbar}}
+      <div class="modulex-icons">
+        <a class="modulex-iconlink" href="/{{lang}}/{{girisUrl}}/" data-mx-uye-goster="misafir" aria-label="{{loginText}}" title="{{loginText}}"><span class="material-symbols-outlined" aria-hidden="true">person</span></a>
+        <a class="modulex-iconlink" href="/{{lang}}/{{hesabimUrl}}/" data-mx-uye-goster="giris" style="display: none" aria-label="{{hesabimText}}" title="{{hesabimText}}"><span class="material-symbols-outlined" aria-hidden="true">manage_accounts</span></a>
+        <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+        <a class="modulex-iconlink" href="/{{lang}}/{{urlsepet}}/" aria-label="{{cartText}}" title="{{cartText}}"><span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span><sup class="modulex-mxbadge" data-mx-sepet-sayi data-mx-bos="1" aria-label="{{sepetSayiAria}}">0</sup></a>
+        <a class="modulex-iconlink" href="#" data-mx-uye-goster="giris" data-mx-cikis style="display: none" aria-label="{{cikisText}}" title="{{cikisText}}"><span class="material-symbols-outlined" aria-hidden="true">logout</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modulex-header-bottom">
+    <div class="modulex-header-bottom-inner">
+      <button type="button" class="modulex-category-btn" aria-haspopup="true">
+        <span class="material-symbols-outlined">menu</span> {{categoryText}}
+      </button>
+      <button type="button" class="modulex-mobile-toggle" onclick="eticaret2_toggle()" aria-label="{{ariaToggle}}">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="modulex-main-menu" aria-label="{{menuAria}}">
+        {{html}}
+      </nav>
+    </div>
+  </div>
+  <div class="modulex-menu-backdrop" onclick="eticaret2_toggle()" aria-hidden="true"></div>
+  <div class="modulex-menu-drawer" aria-hidden="true">
+    <div class="modulex-menu-drawer-head">
+      <span>{{menuDrawerTitle}}</span>
+      <button type="button" class="modulex-menu-drawer-close" onclick="eticaret2_toggle()" aria-label="{{ariaClose}}">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="modulex-menu-drawer-nav">
+      {{html}}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .modulex-header-wrapper {
+    background: #ffffff;
+    width: 100%;
+  }
+
+  .modulex-header {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modulex-header-left {
+    display: inline-flex;
+    align-items: center;
+    max-width: min(40vw, 220px);
+    min-width: 0;
+    flex-shrink: 1;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .modulex-logo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  /* SVG logo korumasi (2026-09-13): intrinsic boyutu OLMAYAN bir SVG
+     (yalniz viewBox) `height:auto` ile flex icinde 0'a coker ve logo
+     GORUNMEZ. `max-height` yetmez -- ust sinirdir, olcu vermez. */
+  .modulex-logo[src*=".svg"] {
+    height: 60px;
+    width: auto;
+  }
+
+  .modulex-header-top {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .modulex-search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--mxe-fef7e7, #fef7e7);
+    border-radius: 25px;
+    border: 1px solid var(--mxe-e0dccb, #e0dccb);
+    margin: 0 20px;
+  }
+
+  .modulex-search-box span {
+    margin-left: 10px;
+    color: var(--mxe-cd9624, #cd9624);
+  }
+
+  .modulex-search-box input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .modulex-search-box button {
+    background: var(--mxe-cd9624, #cd9624);
+    color: white;
+    border: none;
+    border-radius: 0px 25px 25px 0px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .modulex-search-box button:hover {
+    background: var(--mxe-238b23, #238b23);
+    color: white;
+    border: none;
+    border-radius: 0px 25px 25px 0px;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  .modulex-support-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+  }
+
+  .modulex-support-info span {
+    font-size: 40px;
+    color: var(--mxe-cd9624, #cd9624);
+  }
+
+  .modulex-support-info small {
+    display: block;
+    font-size: 13px;
+    color: #000;
+  }
+
+  .modulex-support-info strong {
+    font-size: 16px;
+  }
+
+  .modulex-icons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .modulex-icons span {
+    background: var(--mxe-fef7e7, #fef7e7);
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--mxe-cd9624, #cd9624);
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .modulex-icons span:hover {
+    background: var(--mxe-cd9624, #cd9624);
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--mxe-on, #fff);
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .modulex-iconlink {
+    position: relative;
+    display: inline-flex;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+
+  .modulex-iconlink .modulex-mxbadge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+
+  /* PLAN-PRO F3: MxStore uye/sepet baglantisi — sepet rozeti (data-mx-sepet-sayi; 0 iken data-mx-bos) */
+  .modulex-mxbadge,
+  .modulex-login > .modulex-mxbadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    margin-left: 2px;
+    border-radius: 999px;
+    background: #e11d48;
+    color: var(--mxe-on, #ffffff) !important;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .modulex-mxbadge[data-mx-bos],
+  .modulex-login > .modulex-mxbadge[data-mx-bos] {
+    display: none !important;
+  }
+
+  .modulex-mxcikis {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    transition: opacity 0.2s ease;
+  }
+
+  .modulex-mxcikis:hover {
+    opacity: 0.75;
+  }
+
+  @media (max-width: 768px) {
+    .modulex-mxbadge {
+      min-width: 16px;
+      height: 16px;
+      font-size: 10px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-mxbadge,
+    .modulex-mxcikis {
+      transition: none !important;
+    }
+  }
+
+  .modulex-header-bottom {
+    background: var(--mxe-cd9624, #cd9624);
+    width: 100%;
+  }
+
+  .modulex-header-bottom-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 14px 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .modulex-category-btn {
+    background: var(--mxe-238b23, #238b23);
+    color: var(--mxe-on, #fff);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .modulex-main-menu {
+    display: flex;
+    gap: 20px;
+    margin-left: 30px;
+  }
+
+  .modulex-main-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .modulex-main-menu a:hover {
+    color: var(--mxe-238b23, #238b23);
+  }
+
+  .modulex-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+  }
+
+  .modulex-mobile-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .modulex-menu-backdrop,
+  .modulex-menu-drawer {
+    display: none;
+  }
+
+  .modulex-menu-drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--mxe-on, #fff);
+    font-weight: 600;
+  }
+
+  .modulex-menu-drawer-close {
+    border: none;
+    background: transparent;
+    color: var(--mxe-on, #fff);
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .modulex-menu-drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+  }
+
+  .modulex-menu-drawer-nav a {
+    color: var(--mxe-on, #fff);
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+
+  .modulex-menu-drawer-nav a:hover,
+  .modulex-menu-drawer-nav a.modulex-menulistactive {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Responsive: Mobil */
+  @media screen and (max-width: 768px) {
+    .modulex-header {
+      padding: 10px 15px;
+    }
+
+    .modulex-header-top {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .modulex-main-menu {
+      display: none;
+    }
+
+    .modulex-mobile-toggle {
+      display: flex;
+      margin-left: auto;
+    }
+
+    #menu-eticaret-2-root.modulexmenu-open .modulex-menu-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 9998;
+    }
+
+    #menu-eticaret-2-root.modulexmenu-open .modulex-menu-drawer {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(88vw, 320px);
+      height: 100%;
+      background: var(--mxe-cd9624, #cd9624);
+      z-index: 9999;
+      box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+      animation: modulexDrawerIn 0.28s ease;
+    }
+
+    @keyframes modulexDrawerIn {
+      from { transform: translateX(100%); opacity: 0.9; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .modulex-header-bottom-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 10px 15px;
+    }
+
+    .modulex-search-box {
+      margin: 0;
+      width: 100%;
+      flex: unset;
+    }
+
+    .modulex-support-info {
+      display: none;
+    }
+
+    .modulex-header-left {
+      max-width: min(55vw, 180px);
+    }
+
+    .modulex-logo {
+      max-height: 60px;
+    }
+
+    .modulex-category-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 10px 20px;
+    }
+  }
+
+  /* W2 — animasyon, mobil, erisilebilirlik */
+  @keyframes modulexW2Enter {
+    from { opacity: 0.98; }
+    to { opacity: 1; }
+  }
+
+  [class*="modulex"] {
+    box-sizing: border-box;
+    animation: modulexW2Enter 0.3s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    [class*="modulex"] {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"] {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+<script>
+  if (typeof eticaret2_toggle === "undefined") {
+    function eticaret2_toggle() {
+      var root = document.getElementById("menu-eticaret-2-root");
+      if (!root) return;
+      var bar = root.querySelector(".modulex-header-bottom-inner");
+      if (!bar) return;
+      var open = root.classList.contains("modulexmenu-open");
+      if (open) {
+        root.classList.remove("modulexmenu-open");
+        document.body.style.overflow = "";
+      } else {
+        root.classList.add("modulexmenu-open");
+        document.body.style.overflow = "hidden";
+      }
+    }
+  }
+</script>
+<script>
+  /* PLAN-PRO F3: cikis dugmesi (data-mx-cikis) → MxStore.uye.cikis; rozet/gorunurluk MxStore tarafindan */
+  (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
+    var bs = document.querySelectorAll("[data-mx-cikis]");
+    for (var i = 0; i < bs.length; i++) {
+      if (bs[i].getAttribute("data-mx-cikis-bagli")) {
+        continue;
+      }
+      bs[i].setAttribute("data-mx-cikis-bagli", "1");
+      bs[i].addEventListener("click", function (ev) {
+        ev.preventDefault();
+        S.uye.cikis().then(function () {
+          window.location.href = "/{{lang}}/";
+        });
+      });
+    }
+  });
+  window.addEventListener("load", function () {
+    if (!window.MxStore) {
+      var s = document.createElement("script");
+      s.src = "/src/mx-store.js";
+      document.head.appendChild(s);
+    }
+  });
+</script>

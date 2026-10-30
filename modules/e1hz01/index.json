@@ -1,0 +1,52 @@
+{
+  "name": "E-ticaret Hızlı Erişim",
+  "desing": {
+    "color": "#1d3557",
+    "bgcolor": "#f1f5f9",
+    "pillhover": "#2196f3",
+    "border_radius": "24px",
+    "max": "1200px"
+  },
+  "category": "footer",
+  "description": "E-ticaret sitelerinde sepet, siparişler, hesap ve iletişim sayfalarına yönlendiren yatay hızlı erişim şeridi. Material ikonlar, çok dilli başlıklar ve 768px altında kaydırılabilir yatay düzen sunar.",
+  "version": "1.0.1",
+  "icon": "bolt",
+  "data": [
+    {
+      "id": "cart",
+      "icon": "shopping_cart",
+      "href": "/sepetim",
+      "label": {
+        "tr": "Sepetim",
+        "en": "My cart"
+      }
+    },
+    {
+      "id": "orders",
+      "icon": "receipt_long",
+      "href": "/siparislerim",
+      "label": {
+        "tr": "Siparişlerim",
+        "en": "My orders"
+      }
+    },
+    {
+      "id": "account",
+      "icon": "person",
+      "href": "/hesabim",
+      "label": {
+        "tr": "Hesabım",
+        "en": "Account"
+      }
+    },
+    {
+      "id": "contact",
+      "icon": "support_agent",
+      "href": "/iletisim",
+      "label": {
+        "tr": "Destek",
+        "en": "Support"
+      }
+    }
+  ]
+}

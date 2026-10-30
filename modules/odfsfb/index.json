@@ -1,0 +1,354 @@
+{
+  "name": "Ödeme Pro",
+  "desing": {
+    "max": "1200px",
+    "bgcolor": "transparent",
+    "currency": "₺",
+    "number": "",
+    "kapidaAktif": "1",
+    "havaleAktif": "1",
+    "urunlerUrl": "urunler",
+    "sepetUrl": "sepetim",
+    "tamamUrl": "siparis-onay",
+    "girisUrl": "login",
+    "sozlesmeUrl": "mesafeli-satis-sozlesmesi",
+    "onBilgiUrl": "on-bilgilendirme-formu",
+    "title": {
+      "tr": "Ödeme",
+      "en": "Checkout"
+    },
+    "loadingText": {
+      "tr": "Ödeme sayfası yükleniyor",
+      "en": "Loading checkout"
+    },
+    "emptyTitle": {
+      "tr": "Sepetiniz boş",
+      "en": "Your cart is empty"
+    },
+    "emptyText": {
+      "tr": "Ödemeye geçmek için önce sepetinize ürün ekleyin.",
+      "en": "Add products to your cart before checking out."
+    },
+    "shopText": {
+      "tr": "Ürünlere göz at",
+      "en": "Browse products"
+    },
+    "stepsLabel": {
+      "tr": "Ödeme adımları",
+      "en": "Checkout steps"
+    },
+    "step1": {
+      "tr": "Bilgiler ve Adres",
+      "en": "Details and Address"
+    },
+    "step2": {
+      "tr": "Ödeme Yöntemi",
+      "en": "Payment Method"
+    },
+    "step3": {
+      "tr": "Onay",
+      "en": "Review"
+    },
+    "step1Title": {
+      "tr": "Teslimat bilgileri",
+      "en": "Delivery details"
+    },
+    "step2Title": {
+      "tr": "Ödeme yöntemini seçin",
+      "en": "Choose a payment method"
+    },
+    "step3Title": {
+      "tr": "Siparişinizi onaylayın",
+      "en": "Review your order"
+    },
+    "memberHello": {
+      "tr": "Hoş geldiniz,",
+      "en": "Welcome,"
+    },
+    "addrListLabel": {
+      "tr": "Kayıtlı adresleriniz",
+      "en": "Your saved addresses"
+    },
+    "newAddrText": {
+      "tr": "Yeni adres gir",
+      "en": "Enter a new address"
+    },
+    "defaultBadge": {
+      "tr": "Varsayılan",
+      "en": "Default"
+    },
+    "saveAddrText": {
+      "tr": "Bu adresi adreslerime kaydet",
+      "en": "Save this address to my address book"
+    },
+    "guestText": {
+      "tr": "Üye olmadan sipariş verebilirsiniz. Hesabınız var mı?",
+      "en": "You can order without an account. Already have one?"
+    },
+    "loginText": {
+      "tr": "Giriş yap",
+      "en": "Sign in"
+    },
+    "nameLabel": {
+      "tr": "Ad Soyad",
+      "en": "Full name"
+    },
+    "namePh": {
+      "tr": "Adınız ve soyadınız",
+      "en": "Your full name"
+    },
+    "emailLabel": {
+      "tr": "E-posta",
+      "en": "Email"
+    },
+    "emailPh": {
+      "tr": "ornek@alanadi.com",
+      "en": "name@example.com"
+    },
+    "phoneLabel": {
+      "tr": "Telefon",
+      "en": "Phone"
+    },
+    "phonePh": {
+      "tr": "05xx xxx xx xx",
+      "en": "Your phone number"
+    },
+    "ilLabel": {
+      "tr": "İl",
+      "en": "City"
+    },
+    "ilPh": {
+      "tr": "İl",
+      "en": "City"
+    },
+    "ilceLabel": {
+      "tr": "İlçe",
+      "en": "District"
+    },
+    "ilcePh": {
+      "tr": "İlçe",
+      "en": "District"
+    },
+    "postaLabel": {
+      "tr": "Posta kodu",
+      "en": "Postal code"
+    },
+    "postaPh": {
+      "tr": "34000",
+      "en": "Postal code"
+    },
+    "adresLabel": {
+      "tr": "Açık adres",
+      "en": "Street address"
+    },
+    "adresPh": {
+      "tr": "Mahalle, cadde, sokak, bina ve daire no",
+      "en": "Street, building and apartment number"
+    },
+    "optionalText": {
+      "tr": "(isteğe bağlı)",
+      "en": "(optional)"
+    },
+    "backToCart": {
+      "tr": "Sepete dön",
+      "en": "Back to cart"
+    },
+    "nextText": {
+      "tr": "Devam et",
+      "en": "Continue"
+    },
+    "prevText": {
+      "tr": "Geri",
+      "en": "Back"
+    },
+    "payLabel": {
+      "tr": "Ödeme yöntemleri",
+      "en": "Payment methods"
+    },
+    "codTitle": {
+      "tr": "Kapıda ödeme",
+      "en": "Cash on delivery"
+    },
+    "codText": {
+      "tr": "Ürünü teslim alırken nakit veya kartla ödeyin.",
+      "en": "Pay by cash or card when you receive the order."
+    },
+    "havaleTitle": {
+      "tr": "Havale / EFT",
+      "en": "Bank transfer"
+    },
+    "havaleText": {
+      "tr": "Sipariş sonrası banka hesabımıza ödeme yapın.",
+      "en": "Pay to our bank account after placing the order."
+    },
+    "havaleBilgi": {
+      "tr": "Havale bilgileri sipariş onayından sonra e-posta ile iletilir. Açıklama alanına sipariş numaranızı yazmayı unutmayın.",
+      "en": "Bank details are sent by email after the order is confirmed. Please add your order number to the transfer description."
+    },
+    "reviewAddrTitle": {
+      "tr": "Teslimat adresi",
+      "en": "Delivery address"
+    },
+    "reviewPayTitle": {
+      "tr": "Ödeme yöntemi",
+      "en": "Payment method"
+    },
+    "noteLabel": {
+      "tr": "Sipariş notu",
+      "en": "Order note"
+    },
+    "notePh": {
+      "tr": "Eklemek istedikleriniz",
+      "en": "Anything you would like to add"
+    },
+    "agreePre": {
+      "tr": "Okudum ve kabul ediyorum:",
+      "en": "I have read and accept the"
+    },
+    "sozlesmeText": {
+      "tr": "Mesafeli Satış Sözleşmesi",
+      "en": "Distance Sales Agreement"
+    },
+    "andText": {
+      "tr": "ve",
+      "en": "and the"
+    },
+    "onBilgiText": {
+      "tr": "Ön Bilgilendirme Formu",
+      "en": "Preliminary Information Form"
+    },
+    "submitText": {
+      "tr": "Siparişi tamamla",
+      "en": "Place order"
+    },
+    "summaryTitle": {
+      "tr": "Sipariş Özeti",
+      "en": "Order Summary"
+    },
+    "subtotalText": {
+      "tr": "Ara toplam",
+      "en": "Subtotal"
+    },
+    "shippingText": {
+      "tr": "Kargo",
+      "en": "Shipping"
+    },
+    "shipServerText": {
+      "tr": "Sunucuda hesaplanır",
+      "en": "Calculated on server"
+    },
+    "serverNote": {
+      "tr": "Kargo ve kesin toplam siparişiniz oluşturulurken sunucuda güncel fiyatlarla hesaplanır.",
+      "en": "Shipping and the final total are calculated on the server with current prices when your order is placed."
+    },
+    "closedText": {
+      "tr": "Çevrimiçi sipariş bu sitede şu an kapalı. Lütfen bizimle iletişime geçin.",
+      "en": "Online ordering is currently closed on this site. Please contact us."
+    },
+    "waHint": {
+      "tr": "Siparişiniz WhatsApp üzerinden iletilecektir.",
+      "en": "Your order will be sent via WhatsApp."
+    },
+    "errGeneric": {
+      "tr": "Sipariş oluşturulamadı. Lütfen tekrar deneyin.",
+      "en": "The order could not be created. Please try again."
+    },
+    "errNetwork": {
+      "tr": "Bağlantı kurulamadı. İnternet bağlantınızı kontrol edip tekrar deneyin.",
+      "en": "Could not connect. Check your internet connection and try again."
+    },
+    "errTimeout": {
+      "tr": "İstek zaman aşımına uğradı. Lütfen tekrar deneyin.",
+      "en": "The request timed out. Please try again."
+    },
+    "errEmptyCart": {
+      "tr": "Sepetiniz boş.",
+      "en": "Your cart is empty."
+    },
+    "requiredMsg": {
+      "tr": "Bu alan zorunludur",
+      "en": "This field is required"
+    },
+    "emailMsg": {
+      "tr": "Geçerli bir e-posta adresi girin",
+      "en": "Enter a valid email address"
+    },
+    "phoneMsg": {
+      "tr": "Geçerli bir telefon numarası girin",
+      "en": "Enter a valid phone number"
+    },
+    "minLengthMsg": {
+      "tr": "Daha uzun bir değer girin",
+      "en": "Enter a longer value"
+    },
+    "agreeMsg": {
+      "tr": "Devam etmek için sözleşmeleri onaylayın",
+      "en": "Please accept the agreements to continue"
+    },
+    "payMsg": {
+      "tr": "Bir ödeme yöntemi seçin",
+      "en": "Choose a payment method"
+    },
+    "waHeader": {
+      "tr": "Yeni Sipariş",
+      "en": "New Order"
+    },
+    "waTotal": {
+      "tr": "Toplam",
+      "en": "Total"
+    },
+    "waName": {
+      "tr": "Ad Soyad",
+      "en": "Name"
+    },
+    "waPhone": {
+      "tr": "Telefon",
+      "en": "Phone"
+    },
+    "waAddress": {
+      "tr": "Adres",
+      "en": "Address"
+    },
+    "waNote": {
+      "tr": "Not",
+      "en": "Note"
+    },
+    "waPay": {
+      "tr": "Ödeme",
+      "en": "Payment"
+    },
+    "successText": {
+      "tr": "Siparişiniz alındı",
+      "en": "Your order has been received"
+    },
+    "waConfirmTitle": {
+      "tr": "WhatsApp mesajınızı gönderdiniz mi?",
+      "en": "Did you send your WhatsApp message?"
+    },
+    "waConfirmText": {
+      "tr": "Sipariş özetiniz WhatsApp'ta hazırlandı. Mesajı gönderdiyseniz onaylayın; sipariş onayı mağaza tarafından verilecek. Göndermediyseniz sepetiniz korunur.",
+      "en": "Your order summary was prepared in WhatsApp. Confirm if you sent the message; the store will confirm the order. If you did not send it, your cart is kept."
+    },
+    "waOpenAgain": {
+      "tr": "WhatsApp açılmadıysa buradan açın",
+      "en": "Open WhatsApp here if it did not open"
+    },
+    "waConfirmNo": {
+      "tr": "Hayır, göndermedim",
+      "en": "No, I did not send it"
+    },
+    "waConfirmYes": {
+      "tr": "Evet, gönderdim",
+      "en": "Yes, I sent it"
+    },
+    "waPendingText": {
+      "tr": "Sipariş talebiniz WhatsApp'a yönlendirildi; onay mağaza tarafından verilecek",
+      "en": "Your order request was forwarded to WhatsApp; the store will confirm it"
+    }
+  },
+  "data": [],
+  "category": "e-commerce",
+  "description": "Profesyonel 3 adımlı ödeme (PLAN-PRO F3): Bilgiler/Adres → Ödeme yöntemi (kapıda / havale) → Onay. Üye ise kayıtlı adres seçimi + yeni adres (isteğe bağlı adres defterine kaydetme), misafir ise misafir formu + giriş bağlantısı. MxStore.siparis.olustur ile POST /api/public/siparis (fiyat sunucuda); başarıda siparis-tamam sayfasına no ile geçer, sepet temizlenir. Sunucu alan hatası ilgili adıma döner. API yoksa (statik yayın) desing.number doluysa WhatsApp + mxOrdersV1 yedeği; o da yoksa kapalı uyarısı.",
+  "version": "1.0.0",
+  "icon": "payments"
+}

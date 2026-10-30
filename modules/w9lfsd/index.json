@@ -1,0 +1,169 @@
+{
+  "name": "Login",
+  "desing": {
+    "color": "#ff671d",
+    "bgcolor": "#101010",
+    "nextUrl": "sepet",
+    "loginTitle": {
+      "tr": "Giriş Yap",
+      "en": "Login"
+    },
+    "registerTitle": {
+      "tr": "Üye Ol",
+      "en": "Register"
+    },
+    "emailPlaceholder": {
+      "tr": "Mail Adresiniz",
+      "en": "Your Email"
+    },
+    "userPlaceholder": {
+      "tr": "Kullanıcı adı",
+      "en": "Username"
+    },
+    "surnamePlaceholder": {
+      "tr": "Soyad",
+      "en": "Surname"
+    },
+    "passwordPlaceholder": {
+      "tr": "Şifre",
+      "en": "Password"
+    },
+    "passwordConfirmPlaceholder": {
+      "tr": "Şifre Tekrar",
+      "en": "Confirm Password"
+    },
+    "namePlaceholder": {
+      "tr": "Ad Soyad",
+      "en": "Full Name"
+    },
+    "loginButton": {
+      "tr": "Giriş Yap",
+      "en": "Login"
+    },
+    "registerButton": {
+      "tr": "Üye Ol",
+      "en": "Register"
+    },
+    "forgotPassword": {
+      "tr": "Şifremi Unuttum",
+      "en": "Forgot Password"
+    },
+    "alreadyMember": {
+      "tr": "Üye misin?",
+      "en": "Already a member?"
+    },
+    "googleLogin": {
+      "tr": "Google İle Giriş Yap",
+      "en": "Login with Google"
+    },
+    "resetPasswordButton": {
+      "tr": "Şifre Sıfırlama Maili Gönder",
+      "en": "Send Password Reset Email"
+    },
+    "backToLogin": {
+      "tr": "Giriş Sayfasına Dön",
+      "en": "Back to Login"
+    },
+    "nameRequired": {
+      "tr": "Ad soyad giriniz!",
+      "en": "Please enter your full name!"
+    },
+    "userRequired": {
+      "tr": "Kullanıcı adı giriniz!",
+      "en": "Please enter username!"
+    },
+    "validEmailRequired": {
+      "tr": "Geçerli bir email adresi giriniz!",
+      "en": "Please enter a valid email address!"
+    },
+    "passwordMinLength": {
+      "tr": "Şifre en az 6 karakter olmalıdır!",
+      "en": "Password must be at least 6 characters!"
+    },
+    "passwordsNotMatch": {
+      "tr": "Şifreler eşleşmiyor!",
+      "en": "Passwords do not match!"
+    },
+    "emailAlreadyExists": {
+      "tr": "Bu email adresi zaten kullanımda!",
+      "en": "This email address is already in use!"
+    },
+    "userAlreadyExists": {
+      "tr": "Bu kullanıcı adı zaten kullanılıyor!",
+      "en": "This username is already in use!"
+    },
+    "registrationSuccess": {
+      "tr": "Üyelik başarıyla oluşturuldu!",
+      "en": "Registration successful!"
+    },
+    "registrationError": {
+      "tr": "Üyelik oluşturulurken bir hata oluştu!",
+      "en": "An error occurred during registration!"
+    },
+    "passwordRequired": {
+      "tr": "Şifre giriniz!",
+      "en": "Please enter your password!"
+    },
+    "invalidCredentials": {
+      "tr": "Kullanıcı adı veya şifre hatalı!",
+      "en": "Invalid username or password!"
+    },
+    "accountDeactivated": {
+      "tr": "Hesabınız deaktif durumda!",
+      "en": "Your account is deactivated!"
+    },
+    "loginSuccess": {
+      "tr": "Giriş başarılı!",
+      "en": "Login successful!"
+    },
+    "loginError": {
+      "tr": "Giriş yapılırken bir hata oluştu!",
+      "en": "An error occurred during login!"
+    },
+    "userNotFound": {
+      "tr": "Bu email adresine kayıtlı kullanıcı bulunamadı!",
+      "en": "No user found with this email address!"
+    },
+    "resetEmailSent": {
+      "tr": "Şifre sıfırlama maili gönderildi!",
+      "en": "Password reset email sent!"
+    },
+    "resetEmailError": {
+      "tr": "Şifre sıfırlama maili gönderilirken bir hata oluştu!",
+      "en": "An error occurred while sending reset email!"
+    },
+    "googleLoginDevelopment": {
+      "tr": "Google login özelliği geliştiriliyor...",
+      "en": "Google login feature is under development..."
+    },
+    "alreadyLoggedIn": {
+      "tr": "Zaten giriş yapmışsınız!",
+      "en": "You are already logged in!"
+    },
+    "kvkkUrl": "gizlilik-politikasi",
+    "kvkkText": {
+      "tr": "Kişisel verilerimin işlenmesine ilişkin aydınlatma metnini okudum, onaylıyorum.",
+      "en": "I have read and accept the privacy notice on processing my personal data."
+    },
+    "kvkkLinkText": {
+      "tr": "Aydınlatma metni",
+      "en": "Privacy notice"
+    },
+    "kvkkRequired": {
+      "tr": "Devam etmek için aydınlatma metnini onaylayın.",
+      "en": "Please accept the privacy notice to continue."
+    },
+    "uyeKullanilamiyor": {
+      "tr": "Üyelik bu sitede şu an kullanılamıyor. Siparişinizi üye olmadan verebilirsiniz.",
+      "en": "Membership is currently unavailable on this site. You can still order as a guest."
+    },
+    "sessionExpired": {
+      "tr": "Oturumunuzun süresi doldu, lütfen tekrar giriş yapın.",
+      "en": "Your session has expired, please log in again."
+    }
+  },
+  "category": "login",
+  "description": "Giriş ve kayıt modülü (PLAN-PRO F3). Varsayılan MxStore: /api/public/uye/giris + /kayit (mx_uye çerezi, KVKK onayı, donus/nextUrl yönlendirmesi); üyelik kullanılamıyorsa bilgi kutusu. MxStore yüklenmezse eski desing apiBase (https://{{domain}}/api /user /newuser) yolu yedek.",
+  "version": "1.1.0",
+  "icon": "login"
+}

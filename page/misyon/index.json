@@ -1,0 +1,41 @@
+{
+  "id": "misyon",
+  "name": {
+    "tr": "Misyon",
+    "en": "Mission",
+    "ar": "المهمة"
+  },
+  "description": {
+    "tr": "Misyonumuz",
+    "en": "Our mission",
+    "ar": "مهمتنا"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "misyon",
+  "icon": "flag",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {
+    "tr": "<h2>Misyonumuz</h2>\n<p>Misyonumuz, güvenilir elektronik ürünleri açık garanti ve satış sonrası destekle sunmaktır.</p>",
+    "en": "<h2>Our mission</h2>\n<p>Our mission is to offer reliable electronics with a clear warranty and after-sales support.</p>",
+    "ar": "<h2>مهمتنا</h2>\n<p>مهمتنا تقديم إلكترونيات موثوقة بضمان واضح ودعم بعد البيع.</p>"
+  },
+  "title": {
+    "tr": "Misyon",
+    "en": "Mission",
+    "ar": "المهمة"
+  },
+  "date": "2026-10-30T22:21:59.567Z",
+  "update": "2026-10-30T22:29:44.710Z"
+}

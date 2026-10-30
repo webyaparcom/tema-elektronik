@@ -1,0 +1,215 @@
+{
+  "name": "Adreslerim",
+  "description": "Müşteri teslimat ve fatura adresleri yönetim modülü. Ev, iş, diğer adres türlerini kaydeder, düzenler ve varsayılan adres seçimi yapar. 3 farklı e-ticaret projesinde sipariş teslimatı için kayıtlı adresleri saklar. Hızlı ödeme akışı için adres seçimi ve düzenleme form popup'ı sunar. PLAN-PRO F3: MxStore varsa GET|POST /api/public/uye/adres + PATCH|DELETE /:id (başlık, ad soyad, telefon, il, ilçe, açık adres, posta kodu, varsayılan) ekle/düzenle formu; oturum yoksa girisUrl sayfasına. Eski dataListWeb yolu MxStore yoksa yedek.",
+  "version": "1.1.0",
+  "icon": "location_on",
+  "category": "e-commerce",
+  "desing": {
+    "color": "#333333",
+    "bgcolor": "#ffffff",
+    "bordercolor": "#e0e0e0",
+    "primarycolor": "#007bff",
+    "successcolor": "#28a745",
+    "moduleTitle": {
+      "tr": "Adreslerim",
+      "en": "My Addresses"
+    },
+    "addButton": {
+      "tr": "Yeni Adres Ekle",
+      "en": "Add New Address"
+    },
+    "defaultBadge": {
+      "tr": "Varsayılan",
+      "en": "Default"
+    },
+    "addressType": {
+      "tr": "Ev",
+      "en": "Home"
+    },
+    "editButton": {
+      "tr": "Düzenle",
+      "en": "Edit"
+    },
+    "deleteButton": {
+      "tr": "Sil",
+      "en": "Delete"
+    },
+    "setDefaultButton": {
+      "tr": "Varsayılan Yap",
+      "en": "Set as Default"
+    },
+    "adresleriniziGormekIcinGiris": {
+      "tr": "Adreslerinizi görmek için giriş yapmanız gerekiyor.",
+      "en": "Adreslerinizi gormek icin giris yapmaniz gerekiyor."
+    },
+    "henuzAdresinizBulunmuyor": {
+      "tr": "Henüz adresiniz bulunmuyor.",
+      "en": "Not yet adresiniz not found."
+    },
+    "varsayilan": {
+      "tr": "Varsayılan",
+      "en": "Varsayilan"
+    },
+    "adreslerYuklenirkenBirHata": {
+      "tr": "Adresler yüklenirken bir hata oluştu.",
+      "en": "Adresler yuklenirken bir hata olustu."
+    },
+    "adresleriniziGormekIcinGiris2": {
+      "tr": "Adreslerinizi görmek için giriş yapmanız gerekiyor.",
+      "en": "Adreslerinizi gormek icin giris yapmaniz gerekiyor."
+    },
+    "styledisplaynone": {
+      "tr": "style=\"display:none\"",
+      "en": "style=\"display:none\""
+    },
+    "adreslerYuklenirkenHata": {
+      "tr": "Adresler yüklenirken hata:",
+      "en": "Adresler yuklenirken hata:"
+    },
+    "buAdresiSilmekIstediginizden": {
+      "tr": "Bu adresi silmek istediğinizden emin misiniz?",
+      "en": "Bu adresi silmek istediginizden emin misiniz?"
+    },
+    "adresBasariylaSilindi": {
+      "tr": "Adres başarıyla silindi!",
+      "en": "Adres basariyla silindi!"
+    },
+    "adresSilinirkenHata": {
+      "tr": "Adres silinirken hata:",
+      "en": "Adres silinirken hata:"
+    },
+    "adresSilinirkenBirHata": {
+      "tr": "Adres silinirken bir hata oluştu!",
+      "en": "Adres silinirken bir hata olustu!"
+    },
+    "varsayilanAdresGuncellendi": {
+      "tr": "Varsayılan adres güncellendi!",
+      "en": "Varsayilan adres guncellendi!"
+    },
+    "varsayilanAdresGuncellenirkenHata": {
+      "tr": "Varsayılan adres güncellenirken hata:",
+      "en": "Varsayilan adres guncellenirken hata:"
+    },
+    "islemSirasindaBirHata": {
+      "tr": "İşlem sırasında bir hata oluştu!",
+      "en": "islem sirasinda bir hata olustu!"
+    },
+    "demoAdresEklemekIcin": {
+      "tr": "Demo adres eklemek için giriş yapmanız gerekiyor.",
+      "en": "Demo adres eklemek icin giris yapmaniz gerekiyor."
+    },
+    "demoAdresEklendi": {
+      "tr": "Demo adres eklendi!",
+      "en": "Demo adres eklendi!"
+    },
+    "demoAdresEklenirkenHata": {
+      "tr": "Demo adres eklenirken hata:",
+      "en": "Demo adres eklenirken hata:"
+    },
+    "adresEklenirkenBirHata": {
+      "tr": "Adres eklenirken bir hata oluştu!",
+      "en": "Adres eklenirken bir hata olustu!"
+    },
+    "addressactionDelete": {
+      "tr": "address-action delete",
+      "en": "address-action delete"
+    },
+    "addressactionSetdefault": {
+      "tr": "address-action set-default",
+      "en": "address-action set-default"
+    },
+    "demoAdres": {
+      "tr": "Demo Adres",
+      "en": "Demo Adres"
+    },
+    "demoKullanici": {
+      "tr": "Demo Kullanıcı",
+      "en": "Demo Kullanici"
+    },
+    "demoMahalleDemoSokak": {
+      "tr": "Demo Mahalle, Demo Sokak No:1 Demo/İstanbul",
+      "en": "Demo Mahalle, Demo Sokak No:1 Demo/istanbul"
+    },
+    "jsText": {
+      "tr": "+90 555 000 0000",
+      "en": "+90 555 000 0000"
+    },
+    "demoAdresEkle": {
+      "tr": "Demo Adres Ekle",
+      "en": "Demo Adres Add"
+    },
+    "addressid": {
+      "tr": "${addressId}",
+      "en": "${addressId}"
+    },
+    "addressid2": {
+      "tr": "${addressId}",
+      "en": "${addressId}"
+    },
+    "addressid3": {
+      "tr": "${addressId}",
+      "en": "${addressId}"
+    },
+    "varsayilanYap": {
+      "tr": "Varsayılan Yap",
+      "en": "Varsayilan Yap"
+    },
+    "keyframesSlideinFromTransform": {
+      "tr": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      ",
+      "en": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      "
+    },
+    "girisUrl": "login",
+    "lblBaslik": {
+      "tr": "Adres başlığı",
+      "en": "Address title"
+    },
+    "lblAdSoyad": {
+      "tr": "Ad soyad",
+      "en": "Full name"
+    },
+    "lblTelefon": {
+      "tr": "Telefon",
+      "en": "Phone"
+    },
+    "lblIl": {
+      "tr": "İl",
+      "en": "City"
+    },
+    "lblIlce": {
+      "tr": "İlçe",
+      "en": "District"
+    },
+    "lblPostaKodu": {
+      "tr": "Posta kodu",
+      "en": "Postal code"
+    },
+    "lblAdres": {
+      "tr": "Açık adres",
+      "en": "Street address"
+    },
+    "lblVarsayilan": {
+      "tr": "Varsayılan teslimat adresi yap",
+      "en": "Set as default delivery address"
+    },
+    "saveButton": {
+      "tr": "Kaydet",
+      "en": "Save"
+    },
+    "cancelButton": {
+      "tr": "Vazgeç",
+      "en": "Cancel"
+    },
+    "adresZorunlu": {
+      "tr": "Açık adres zorunludur.",
+      "en": "Street address is required."
+    },
+    "adresKaydedildi": {
+      "tr": "Adres kaydedildi.",
+      "en": "Address saved."
+    },
+    "uyeKullanilamiyor": {
+      "tr": "Üyelik bu sitede şu an kullanılamıyor.",
+      "en": "Membership is currently unavailable on this site."
+    }
+  }
+}

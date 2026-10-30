@@ -1,0 +1,3740 @@
+{
+  "data": [
+    {
+      "name": "Demo Bandı",
+      "path": "demo-bandi",
+      "local": "header",
+      "category": "demo",
+      "id": "e1db01",
+      "desing": {
+        "tone": "info",
+        "bandBg": "",
+        "bandFg": "",
+        "ctaHref": "https://webyapar.com/temalar",
+        "ariaLabel": {
+          "tr": "Demo site uyarısı",
+          "en": "Demo site notice",
+          "ar": "تنبيه الموقع التجريبي"
+        },
+        "text": {
+          "tr": "Bu bir demo sitedir — içerik kurgusaldır, ödeme alınmaz",
+          "en": "This is a demo site — the content is fictional and no payment is taken",
+          "ar": "هذا موقع تجريبي — المحتوى افتراضي ولا يتم تحصيل أي مدفوعات"
+        },
+        "ctaText": {
+          "tr": "Bu temayı iste",
+          "en": "Get this theme",
+          "ar": "اطلب هذا القالب"
+        },
+        "newTabText": {
+          "tr": "(yeni sekmede açılır)",
+          "en": "(opens in a new tab)",
+          "ar": "(يفتح في علامة تبويب جديدة)"
+        }
+      },
+      "version": "1.0.0",
+      "icon": "info",
+      "index": 0
+    },
+    {
+      "name": "Menü E-Ticaret",
+      "path": "menu-eticaret-2",
+      "local": "header",
+      "category": "menu",
+      "id": "e1mn01",
+      "desing": {
+        "logo": "logo.png",
+        "color": "var(--mx-site-text, #1b1b1b)",
+        "colorhover": "var(--mx-site-primary, #2563eb)",
+        "height": "78px",
+        "urlsepet": "sepetim",
+        "bgcolor": "var(--mx-site-bg, #ffffff)",
+        "bgcolorhover": "var(--mx-site-surface-2, #f1f1ee)",
+        "searchPlaceholder": {
+          "tr": "Ürün ara...",
+          "en": "Search products...",
+          "ar": "ابحث عن منتج..."
+        },
+        "searchAria": {
+          "tr": "Ürün ara",
+          "en": "Search products",
+          "ar": "ابحث عن منتج"
+        },
+        "searchBtn": {
+          "tr": "Ara",
+          "en": "Search",
+          "ar": "بحث"
+        },
+        "supportText": {
+          "tr": "7/24 Destek",
+          "en": "24/7 Support",
+          "ar": "دعم على مدار الساعة"
+        },
+        "supportPhone": "+90 342 000 00 00",
+        "categoryText": {
+          "tr": "Kategoriler",
+          "en": "Categories",
+          "ar": "الفئات"
+        },
+        "ariaToggle": {
+          "tr": "Menüyü aç/kapat",
+          "en": "Toggle menu",
+          "ar": "فتح/إغلاق القائمة"
+        },
+        "ariaClose": {
+          "tr": "Menüyü kapat",
+          "en": "Close menu",
+          "ar": "إغلاق القائمة"
+        },
+        "menuAria": {
+          "tr": "Ana menü",
+          "en": "Main menu",
+          "ar": "القائمة الرئيسية"
+        },
+        "menuDrawerTitle": {
+          "tr": "Menü",
+          "en": "Menu",
+          "ar": "القائمة"
+        },
+        "girisUrl": "login",
+        "hesabimUrl": "hesabim",
+        "hesabimText": {
+          "tr": "Hesabım",
+          "en": "My Account",
+          "ar": "حسابي"
+        },
+        "cikisText": {
+          "tr": "Çıkış yap",
+          "en": "Log out",
+          "ar": "تسجيل الخروج"
+        },
+        "sepetSayiAria": {
+          "tr": "Sepetteki ürün adedi",
+          "en": "Items in cart",
+          "ar": "عدد المنتجات في السلة"
+        },
+        "loginText": {
+          "tr": "Üye Girişi",
+          "en": "Member Login",
+          "ar": "تسجيل دخول الأعضاء"
+        },
+        "cartText": {
+          "tr": "Sepetim",
+          "en": "My Cart",
+          "ar": "سلتي"
+        },
+        "uyelik": false
+      },
+      "version": "1.1.0",
+      "icon": "widgets",
+      "index": 1
+    },
+    {
+      "name": "Hero 1",
+      "path": "hero-1",
+      "local": "body",
+      "category": "hero",
+      "id": "e1hr01",
+      "desing": {
+        "max": "1200px",
+        "gradient": "linear-gradient(135deg, color-mix(in srgb, var(--mx-site-primary, #2563eb) 42%, #000), color-mix(in srgb, var(--mx-site-primary, #2563eb) 24%, #000))",
+        "overlay": "linear-gradient(135deg, rgba(0,0,0,.55), rgba(0,0,0,.35))",
+        "title_accent": "linear-gradient(135deg, #ffffff, #ffffff)",
+        "btn_primary_bg": "var(--mx-site-primary, #2563eb)",
+        "btn_primary_color": "var(--mx-site-primary-contrast, #ffffff)",
+        "stat_accent": "#ffffff",
+        "shape1": "linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.04))",
+        "shape2": "linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.03))",
+        "shape3": "linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.02))",
+        "title": {
+          "tr": "Günlük teknoloji, açık garantiyle",
+          "en": "Everyday technology, with a clear warranty",
+          "ar": "تقنية يومية بضمان واضح"
+        },
+        "description": {
+          "tr": "Kulaklıktan dizüstüne seçili ürünler; hepsinde 2 yıl garanti ve Türkçe yetkili servis bilgisi.",
+          "en": "Selected products from headphones to laptops, all with a 2-year warranty and authorised-service information.",
+          "ar": "منتجات مختارة من السماعات إلى الحواسيب المحمولة، جميعها بضمان سنتين ومعلومات الخدمة المعتمدة."
+        },
+        "badge": {
+          "tr": "Yeni ürünler",
+          "en": "New arrivals",
+          "ar": "وصل حديثًا"
+        },
+        "image": "/img/elektronik-hero-masa.webp",
+        "alt": {
+          "tr": "Dizüstü, kulaklık ve akıllı saatle düzenli bir çalışma masası",
+          "en": "A tidy desk with a laptop, headphones and a smartwatch",
+          "ar": "مكتب مرتب عليه حاسوب محمول وسماعات وساعة ذكية"
+        },
+        "btn1": {
+          "tr": "Ürünleri keşfet",
+          "en": "Shop products",
+          "ar": "تسوّق المنتجات"
+        },
+        "btn1_url": "urunler",
+        "btn2": {
+          "tr": "Garanti ve iade",
+          "en": "Warranty and returns",
+          "ar": "الضمان والاسترجاع"
+        },
+        "btn2_url": "teslimat",
+        "stats": ""
+      },
+      "version": "1.1.0",
+      "icon": "hero",
+      "index": 2
+    },
+    {
+      "name": "Kategori Vitrin (Görselli Ürün Grupları)",
+      "path": "kategori-vitrin",
+      "local": "body",
+      "category": "page-category",
+      "id": "e1kv01",
+      "desing": {
+        "max": "1200px",
+        "bgcolor": "var(--mx-site-bg, #ffffff)",
+        "cardbg": "var(--mx-site-surface, #ffffff)",
+        "color": "var(--mx-site-text, #1b1b1b)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+        "title": {
+          "tr": "Kategoriler",
+          "en": "Categories",
+          "ar": "الفئات"
+        },
+        "subtitle": {
+          "tr": "Ses, giyilebilir ve bilgisayar.",
+          "en": "Audio, wearables and computing.",
+          "ar": "الصوت والقابلة للارتداء والحوسبة."
+        }
+      },
+      "version": "1.0.0",
+      "icon": "grid_view",
+      "data": [
+        {
+          "img": "/img/elektronik-kategori-1.webp",
+          "name": {
+            "tr": "Ses",
+            "en": "Audio",
+            "ar": "الصوت"
+          },
+          "url": "urunler"
+        },
+        {
+          "img": "/img/elektronik-kategori-2.webp",
+          "name": {
+            "tr": "Giyilebilir",
+            "en": "Wearables",
+            "ar": "القابلة للارتداء"
+          },
+          "url": "urunler"
+        },
+        {
+          "img": "/img/elektronik-kategori-3.webp",
+          "name": {
+            "tr": "Bilgisayar ve aksesuar",
+            "en": "Computers and accessories",
+            "ar": "الحواسيب والإكسسوارات"
+          },
+          "url": "urunler"
+        }
+      ],
+      "index": 3
+    },
+    {
+      "name": "Urun Vitrin",
+      "path": "eticaret-urun-vitrin",
+      "local": "body",
+      "category": "e-commerce",
+      "id": "e1uv01",
+      "desing": {
+        "color": "var(--mx-site-text, #1b1b1b)",
+        "bgcolor": "var(--mx-site-bg, #ffffff)",
+        "pricecolor": "var(--mx-site-text, #1b1b1b)",
+        "oldpricecolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
+        "badgecolor": "var(--mx-site-primary-contrast, #ffffff)",
+        "badgebg-new": "var(--mx-site-primary, #2563eb)",
+        "badgebg-sale": "var(--mx-site-primary, #2563eb)",
+        "badgebg-soldout": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
+        "buttonbg": "var(--mx-site-primary, #2563eb)",
+        "buttoncolor": "var(--mx-site-primary-contrast, #ffffff)",
+        "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+        "currency": "₺",
+        "showFilter": true,
+        "descLength": 120,
+        "title": {
+          "tr": "Öne çıkan ürünler",
+          "en": "Featured products",
+          "ar": "منتجات مميزة"
+        },
+        "allText": {
+          "tr": "Tümü",
+          "en": "All",
+          "ar": "الكل"
+        },
+        "resultCount": {
+          "tr": "ürün",
+          "en": "products",
+          "ar": "منتج"
+        },
+        "addToCart": {
+          "tr": "Sepete Ekle",
+          "en": "Add to Cart",
+          "ar": "أضف إلى السلة"
+        },
+        "soldOutText": {
+          "tr": "Tukendi",
+          "en": "Sold Out",
+          "ar": "نفدت الكمية"
+        },
+        "newText": {
+          "tr": "Yeni",
+          "en": "New",
+          "ar": "جديد"
+        },
+        "saleText": {
+          "tr": "Indirim",
+          "en": "Sale",
+          "ar": "تخفيض"
+        },
+        "search": true,
+        "sort": true,
+        "searchLabel": {
+          "tr": "Urun ara",
+          "en": "Search products",
+          "ar": "ابحث عن منتج"
+        },
+        "searchPlaceholder": {
+          "tr": "Urun adi veya kategori…",
+          "en": "Product name or category…",
+          "ar": "اسم المنتج أو الفئة…"
+        },
+        "sortLabel": {
+          "tr": "Sirala",
+          "en": "Sort by",
+          "ar": "ترتيب حسب"
+        },
+        "sortDefault": {
+          "tr": "Onerilen siralama",
+          "en": "Recommended",
+          "ar": "الترتيب الموصى به"
+        },
+        "sortPriceAsc": {
+          "tr": "Fiyat: dusukten yuksege",
+          "en": "Price: low to high",
+          "ar": "السعر: من الأقل إلى الأعلى"
+        },
+        "sortPriceDesc": {
+          "tr": "Fiyat: yuksekten dusuge",
+          "en": "Price: high to low",
+          "ar": "السعر: من الأعلى إلى الأقل"
+        },
+        "sortNew": {
+          "tr": "En yeniler",
+          "en": "Newest first",
+          "ar": "الأحدث أولًا"
+        },
+        "noResult": {
+          "tr": "Aramaniza uygun urun bulunamadi.",
+          "en": "No products match your search.",
+          "ar": "لم يتم العثور على منتجات مطابقة لبحثك."
+        },
+        "clearSearch": {
+          "tr": "Filtreleri temizle",
+          "en": "Clear filters",
+          "ar": "مسح عوامل التصفية"
+        },
+        "urlState": true
+      },
+      "version": "2.0.0",
+      "icon": "storefront",
+      "data": [],
+      "index": 4
+    },
+    {
+      "name": "CTA Şerit 1",
+      "path": "cta-1",
+      "local": "body",
+      "category": "cta",
+      "id": "e1ca01",
+      "desing": {
+        "max": "1200px",
+        "gradient": "linear-gradient(135deg, color-mix(in srgb, var(--mx-site-primary, #2563eb) 42%, #000), color-mix(in srgb, var(--mx-site-primary, #2563eb) 24%, #000))",
+        "btnbg": "var(--mx-site-surface, #ffffff)",
+        "btncolor": "var(--mx-site-text, #1b1b1b)",
+        "title": {
+          "tr": "Garanti ve satış sonrası destek",
+          "en": "Warranty and after-sales support",
+          "ar": "الضمان والدعم بعد البيع"
+        },
+        "description": {
+          "tr": "Tüm ürünlerde 2 yıl garanti; yetkili servis ve yedek parça bilgisi ürün sayfasındadır.",
+          "en": "All products carry a 2-year warranty; authorised-service and spare-part information is on the product page.",
+          "ar": "جميع المنتجات بضمان سنتين؛ ومعلومات الخدمة المعتمدة وقطع الغيار في صفحة المنتج."
+        },
+        "btn1Text": {
+          "tr": "Ürünleri gör",
+          "en": "See products",
+          "ar": "شاهد المنتجات"
+        },
+        "btn1Url": "urunler",
+        "btn2Text": {
+          "tr": "Teslimat ve iade",
+          "en": "Delivery and returns",
+          "ar": "التسليم والاسترجاع"
+        },
+        "btn2Url": "teslimat"
+      },
+      "version": "1.1.0",
+      "icon": "campaign",
+      "index": 5
+    },
+    {
+      "name": "E-ticaret Alt",
+      "path": "eticaret-alt",
+      "local": "footer",
+      "category": "footer",
+      "id": "e1ft01",
+      "desing": {
+        "color": "var(--mx-site-text, #1b1b1b)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "bgcolor": "var(--mx-site-bg, #ffffff)",
+        "footer_bg": "var(--mx-site-text, #1b1b1b)",
+        "footer_text": "var(--mx-site-bg, #ffffff)",
+        "footer_main_bg": "var(--mx-site-surface-2, #f1f1ee)",
+        "footer_link": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
+        "trust_bg": "var(--mx-site-surface, #ffffff)",
+        "trust_border": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+        "trust_hover_bg": "var(--mx-site-surface-2, #f1f1ee)",
+        "trust_muted": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
+        "features_bg": "var(--mx-site-surface, #ffffff)",
+        "footer_aria": {
+          "tr": "Site alt bilgisi",
+          "en": "Site footer",
+          "ar": "تذييل الموقع"
+        },
+        "payments_aria": {
+          "tr": "Kabul edilen ödeme yöntemleri",
+          "en": "Accepted payment methods",
+          "ar": "طرق الدفع المقبولة"
+        },
+        "newsletter_title": {
+          "tr": "Bülten Aboneliği",
+          "en": "Newsletter",
+          "ar": "الاشتراك في النشرة"
+        },
+        "newsletter_desc": {
+          "tr": "Mail listemize kayıt olup en yeni ürün ve kampanyalardan ilk siz haberdar olabilirsiniz.",
+          "en": "Subscribe to our mailing list and be the first to know about new products and campaigns.",
+          "ar": "اشترك في قائمتنا البريدية لتكون أول من يعلم بأحدث المنتجات والعروض."
+        },
+        "newsletter_placeholder": {
+          "tr": "Mail Adresiniz",
+          "en": "Your email address",
+          "ar": "بريدك الإلكتروني"
+        },
+        "newsletter_btn": {
+          "tr": "Gönder",
+          "en": "Send",
+          "ar": "إرسال"
+        },
+        "newsletter_consent_prefix": {
+          "tr": "",
+          "en": ""
+        },
+        "newsletter_consent_link": {
+          "tr": "İade Koşulları",
+          "en": "Return Terms",
+          "ar": "شروط الإرجاع"
+        },
+        "newsletter_consent_suffix": {
+          "tr": "'nı okudum ve kabul ediyorum.",
+          "en": " — I have read and accept.",
+          "ar": " — قرأتها وأوافق عليها."
+        },
+        "newsletter_consent_url": "/iade-ve-teslimat",
+        "newsletter_consent_error": {
+          "tr": "Devam etmek için şartları kabul etmelisiniz.",
+          "en": "You must accept the terms to continue.",
+          "ar": "يجب قبول الشروط للمتابعة."
+        },
+        "newsletter_success": {
+          "tr": "Bülten kaydınız alındı. Teşekkürler!",
+          "en": "Newsletter subscription received. Thank you!",
+          "ar": "تم استلام اشتراكك في النشرة. شكرًا لك!"
+        },
+        "copyright": {
+          "tr": "Voltaj Elektronik © 2026 — demo site.",
+          "en": "Voltaj Elektronik © 2026 — demo site.",
+          "ar": "Voltaj Elektronik © 2026 — موقع تجريبي."
+        }
+      },
+      "version": "2.0.0",
+      "icon": "web_asset",
+      "data": {
+        "trust": [
+          {
+            "id": "trust_secure",
+            "icon": "verified_user",
+            "title": {
+              "tr": "Güvenli Alışveriş",
+              "en": "Secure Shopping",
+              "ar": "تسوّق آمن"
+            },
+            "desc": {
+              "tr": "Demo sitedir; gerçek ödeme alınmaz.",
+              "en": "This is a demo site; no real payment is taken.",
+              "ar": "هذا موقع تجريبي؛ لا يتم تحصيل دفعات حقيقية."
+            }
+          },
+          {
+            "id": "trust_installment",
+            "icon": "credit_card",
+            "title": {
+              "tr": "Kolay Ödeme",
+              "en": "Easy Payment",
+              "ar": "دفع سهل"
+            },
+            "desc": {
+              "tr": "Kart, havale veya kapıda ödeme seçenekleri.",
+              "en": "Card, bank transfer or cash on delivery options.",
+              "ar": "خيارات البطاقة أو التحويل أو الدفع عند الاستلام."
+            }
+          },
+          {
+            "id": "trust_cod",
+            "icon": "local_shipping",
+            "title": {
+              "tr": "Hızlı Teslimat",
+              "en": "Fast Delivery",
+              "ar": "توصيل سريع"
+            },
+            "desc": {
+              "tr": "Siparişleriniz özenle paketlenir ve gönderilir.",
+              "en": "Your orders are carefully packed and shipped.",
+              "ar": "يتم تغليف طلباتك وشحنها بعناية."
+            }
+          },
+          {
+            "id": "trust_exchange",
+            "icon": "sync_alt",
+            "title": {
+              "tr": "Kolay İade",
+              "en": "Easy Returns",
+              "ar": "إرجاع سهل"
+            },
+            "desc": {
+              "tr": "Koşulları sağlayan ürünlerde 14 gün içinde iade.",
+              "en": "Returns within 14 days for eligible products.",
+              "ar": "إرجاع خلال 14 يومًا للمنتجات المؤهلة."
+            }
+          }
+        ],
+        "features": [
+          {
+            "id": "feat_info",
+            "icon": "fact_check",
+            "label": {
+              "tr": "Açık ürün bilgisi",
+              "en": "Clear product information",
+              "ar": "معلومات منتج واضحة"
+            }
+          },
+          {
+            "id": "feat_return",
+            "icon": "replay",
+            "label": {
+              "tr": "14 gün içinde iade",
+              "en": "Returns within 14 days",
+              "ar": "إرجاع خلال 14 يومًا"
+            }
+          },
+          {
+            "id": "feat_shipping",
+            "icon": "local_shipping",
+            "label": {
+              "tr": "500 ₺ üzeri ücretsiz kargo",
+              "en": "Free shipping over 500 ₺",
+              "ar": "شحن مجاني فوق 500 ليرة"
+            }
+          }
+        ],
+        "columns": [
+          {
+            "id": "col_corp",
+            "title": {
+              "tr": "Kurumsal",
+              "en": "Corporate",
+              "ar": "المؤسسة"
+            },
+            "links": [
+              {
+                "name": {
+                  "tr": "Hakkımızda",
+                  "en": "About us",
+                  "ar": "من نحن"
+                },
+                "url": "/hakkimizda"
+              },
+              {
+                "name": {
+                  "tr": "Gizlilik politikası",
+                  "en": "Privacy policy",
+                  "ar": "سياسة الخصوصية"
+                },
+                "url": "/gizlilik-politikasi"
+              },
+              {
+                "name": {
+                  "tr": "İletişim",
+                  "en": "Contact",
+                  "ar": "اتصل بنا"
+                },
+                "url": "/iletisim"
+              }
+            ]
+          },
+          {
+            "id": "col_service",
+            "title": {
+              "tr": "Müşteri hizmetleri",
+              "en": "Customer service",
+              "ar": "خدمة العملاء"
+            },
+            "links": [
+              {
+                "name": {
+                  "tr": "İade ve teslimat",
+                  "en": "Returns and delivery",
+                  "ar": "الاسترجاع والتسليم"
+                },
+                "url": "/iade-ve-teslimat"
+              },
+              {
+                "name": {
+                  "tr": "Mesafeli satış sözleşmesi",
+                  "en": "Distance sales agreement",
+                  "ar": "عقد البيع عن بُعد"
+                },
+                "url": "/mesafeli-satis-sozlesmesi"
+              },
+              {
+                "name": {
+                  "tr": "Satıcı bilgileri",
+                  "en": "Seller information",
+                  "ar": "بيانات البائع"
+                },
+                "url": "/satici-bilgileri"
+              },
+              {
+                "name": {
+                  "tr": "Ön bilgilendirme formu",
+                  "en": "Pre-contract information",
+                  "ar": "نموذج المعلومات المسبقة"
+                },
+                "url": "/on-bilgilendirme-formu"
+              }
+            ]
+          },
+          {
+            "id": "col_categories",
+            "title": {
+              "tr": "Alışveriş",
+              "en": "Shop",
+              "ar": "التسوق"
+            },
+            "links": [
+              {
+                "name": {
+                  "tr": "Tüm ürünler",
+                  "en": "All products",
+                  "ar": "كل المنتجات"
+                },
+                "url": "/urunler"
+              },
+              {
+                "name": {
+                  "tr": "Sepetim",
+                  "en": "My cart",
+                  "ar": "سلتي"
+                },
+                "url": "/sepetim"
+              }
+            ]
+          }
+        ],
+        "social": [],
+        "payments": []
+      },
+      "index": 6
+    },
+    {
+      "name": "Sepet Widget",
+      "path": "sepet-widget",
+      "local": "footer",
+      "category": "e-commerce",
+      "id": "e1sw01",
+      "desing": {
+        "fabbg": "var(--mx-site-primary, #2563eb)",
+        "fabcolor": "var(--mx-site-primary-contrast, #ffffff)",
+        "badgebg": "var(--mx-site-text, #1b1b1b)",
+        "badgecolor": "var(--mx-site-bg, #ffffff)",
+        "drawerbg": "var(--mx-site-surface, #ffffff)",
+        "drawercolor": "var(--mx-site-text, #1b1b1b)",
+        "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+        "pricecolor": "var(--mx-site-text, #1b1b1b)",
+        "removecolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
+        "toastbg": "var(--mx-site-text, #1b1b1b)",
+        "toastcolor": "var(--mx-site-bg, #ffffff)",
+        "currency": "₺",
+        "cartUrl": "sepetim",
+        "cartTitle": {
+          "tr": "Sepetim",
+          "en": "My Cart",
+          "ar": "سلتي"
+        },
+        "closeText": {
+          "tr": "Kapat",
+          "en": "Close",
+          "ar": "إغلاق"
+        },
+        "emptyText": {
+          "tr": "Sepetiniz boş.",
+          "en": "Your cart is empty.",
+          "ar": "سلتك فارغة."
+        },
+        "totalText": {
+          "tr": "Toplam",
+          "en": "Total",
+          "ar": "الإجمالي"
+        },
+        "goCartText": {
+          "tr": "Sepete Git",
+          "en": "Go to Cart",
+          "ar": "اذهب إلى السلة"
+        },
+        "addedText": {
+          "tr": "Ürün sepete eklendi",
+          "en": "Product added to cart",
+          "ar": "تمت إضافة المنتج إلى السلة"
+        },
+        "removeText": {
+          "tr": "Sepetten çıkar",
+          "en": "Remove from cart",
+          "ar": "إزالة من السلة"
+        },
+        "favAddedText": {
+          "tr": "Favorilere eklendi",
+          "en": "Added to favorites",
+          "ar": "تمت الإضافة إلى المفضلة"
+        },
+        "favRemovedText": {
+          "tr": "Favorilerden çıkarıldı",
+          "en": "Removed from favorites",
+          "ar": "تمت الإزالة من المفضلة"
+        },
+        "compareAddedText": {
+          "tr": "Karşılaştırma listesine eklendi",
+          "en": "Added to compare list",
+          "ar": "تمت الإضافة إلى قائمة المقارنة"
+        },
+        "compareRemovedText": {
+          "tr": "Karşılaştırma listesinden çıkarıldı",
+          "en": "Removed from compare list",
+          "ar": "تمت الإزالة من قائمة المقارنة"
+        },
+        "compareMaxText": {
+          "tr": "En fazla 4 ürün karşılaştırılabilir",
+          "en": "You can compare up to 4 products",
+          "ar": "يمكن مقارنة 4 منتجات كحد أقصى"
+        },
+        "quickViewTitle": {
+          "tr": "Hızlı Görünüm",
+          "en": "Quick View",
+          "ar": "نظرة سريعة"
+        },
+        "quickViewDetailText": {
+          "tr": "Ürün Detayı",
+          "en": "Product Details",
+          "ar": "تفاصيل المنتج"
+        },
+        "quickViewAddText": {
+          "tr": "Sepete Ekle",
+          "en": "Add to Cart",
+          "ar": "أضف إلى السلة"
+        },
+        "compareUrl": {
+          "tr": "karsilastirma",
+          "en": "compare",
+          "ar": "مقارنة"
+        }
+      },
+      "version": "1.0.0",
+      "icon": "shopping_cart",
+      "index": 7
+    },
+    {
+      "name": "E-ticaret Hızlı Erişim",
+      "path": "eticaret-hizli-erisim",
+      "local": "footer",
+      "category": "footer",
+      "id": "e1hz01",
+      "desing": {
+        "color": "var(--mx-site-text, #1b1b1b)",
+        "bgcolor": "var(--mx-site-surface, #ffffff)",
+        "pillhover": "#2196f3",
+        "border_radius": "24px",
+        "max": "1200px"
+      },
+      "version": "1.0.1",
+      "icon": "bolt",
+      "data": [
+        {
+          "id": "cart",
+          "icon": "shopping_cart",
+          "href": "/sepetim",
+          "label": {
+            "tr": "Sepetim",
+            "en": "My cart",
+            "ar": "سلتي"
+          }
+        },
+        {
+          "id": "contact",
+          "icon": "support_agent",
+          "href": "/iletisim",
+          "label": {
+            "tr": "Destek",
+            "en": "Support",
+            "ar": "الدعم"
+          }
+        }
+      ],
+      "index": 8
+    },
+    {
+      "name": "İletişim",
+      "path": "contact-3",
+      "local": "body",
+      "category": "contact",
+      "id": "e1ct01",
+      "desing": {
+        "color": "var(--mx-site-text, #1b1b1b)",
+        "name": {
+          "tr": "Bize ulaşın",
+          "en": "Contact us",
+          "ar": "تواصل معنا"
+        },
+        "margin": "30px 0px 30px 0px",
+        "linkcolor": "var(--mx-site-primary, #2563eb)"
+      },
+      "version": "1.0.0",
+      "icon": "contact_mail",
+      "data": [
+        {
+          "icon": "phone",
+          "text": "+90 342 000 00 00"
+        },
+        {
+          "icon": "email",
+          "text": "destek@voltajelektronik.example"
+        },
+        {
+          "icon": "map",
+          "text": {
+            "tr": "Teknoloji Cd. No: 9, Şehitkamil, Gaziantep (kurgusal adres)",
+            "en": "9 Teknoloji Street, Sehitkamil, Gaziantep (fictional address)",
+            "ar": "شارع التكنولوجيا رقم 9، شهيد كامل، غازي عنتاب (عنوان افتراضي)"
+          }
+        }
+      ],
+      "index": 9
+    },
+    {
+      "name": "Maps",
+      "path": "map-2",
+      "local": "body",
+      "category": "map",
+      "id": "e1mp01",
+      "desing": {
+        "height": "200px",
+        "opacity": "0.5",
+        "backgroundcolor": "#ffffff",
+        "color": "var(--mx-site-text, #1b1b1b)",
+        "img": "map.png",
+        "externalUrl": "",
+        "margin": "0px"
+      },
+      "version": "1.0.0",
+      "icon": "widgets",
+      "index": 10
+    },
+    {
+      "name": "Tanıtım Modülü",
+      "path": "module-1",
+      "local": "body",
+      "category": "module",
+      "id": "e1in01",
+      "desing": {
+        "name": {
+          "tr": "Voltaj Elektronik",
+          "en": "Voltaj Elektronik",
+          "ar": "فولتاج للإلكترونيات"
+        },
+        "description": {
+          "tr": "Voltaj Elektronik, ürün bilgisini ve garanti koşullarını açık yazan kurgusal bir demo elektronik mağazasıdır. Bu sitedeki ürünler, fiyatlar ve adresler kurgusaldır; gerçek bir satış yapılmaz.",
+          "en": "Voltaj Elektronik is a fictional demo electronics store that states product details and warranty terms clearly. Products, prices and addresses on this site are fictional and no real sale takes place.",
+          "ar": "فولتاج للإلكترونيات متجر إلكترونيات تجريبي افتراضي يذكر معلومات المنتج وشروط الضمان بوضوح. المنتجات والأسعار والعناوين في هذا الموقع افتراضية ولا يتم أي بيع فعلي."
+        },
+        "name2": {
+          "tr": "2 yıl garanti",
+          "en": "2-year warranty",
+          "ar": "ضمان سنتان"
+        },
+        "spot2": {
+          "tr": "Tüm ürünlerde yetkili servis ve yedek parça güvencesi.",
+          "en": "Authorised service and spare-part assurance on all products.",
+          "ar": "خدمة معتمدة وضمان قطع غيار لجميع المنتجات."
+        },
+        "icon2": "verified",
+        "name3": {
+          "tr": "Uygunluk",
+          "en": "Conformity",
+          "ar": "المطابقة"
+        },
+        "spot3": {
+          "tr": "Ürünler CE uygunluk işaretiyle satılır.",
+          "en": "Products are sold with CE conformity marking.",
+          "ar": "تُباع المنتجات بعلامة مطابقة CE."
+        },
+        "icon3": "fact_check",
+        "img": "elektronik-servis.webp",
+        "bgcolor": "var(--mx-site-surface, #ffffff)",
+        "fontcolor": "var(--mx-site-text, #1b1b1b)",
+        "margintop": "20",
+        "marginbotton": "20",
+        "title": {
+          "tr": "Hakkımızda",
+          "en": "About us",
+          "ar": "من نحن"
+        }
+      },
+      "version": "1.1.0",
+      "icon": "business",
+      "index": 11
+    },
+    {
+      "name": "Siparişlerim (Pro)",
+      "desing": {
+        "maxWidth": "980px",
+        "girisUrl": "login",
+        "urunlerUrl": "urunler",
+        "currency": "₺",
+        "baslik": {
+          "tr": "Siparişlerim",
+          "en": "My Orders"
+        },
+        "altBaslik": {
+          "tr": "Siparişlerinizin durumunu ve detaylarını buradan takip edin.",
+          "en": "Track the status and details of your orders here."
+        },
+        "detayButon": {
+          "tr": "Detayı göster",
+          "en": "Show details"
+        },
+        "sayfalamaLabel": {
+          "tr": "Sipariş sayfaları",
+          "en": "Order pages"
+        },
+        "oncekiButon": {
+          "tr": "Önceki",
+          "en": "Previous"
+        },
+        "sonrakiButon": {
+          "tr": "Sonraki",
+          "en": "Next"
+        },
+        "sayfaMetin": {
+          "tr": "Sayfa",
+          "en": "Page"
+        },
+        "kalemlerBaslik": {
+          "tr": "Ürünler",
+          "en": "Items"
+        },
+        "adetKisa": {
+          "tr": "adet",
+          "en": "pcs"
+        },
+        "araToplamLabel": {
+          "tr": "Ara toplam",
+          "en": "Subtotal"
+        },
+        "kargoLabel": {
+          "tr": "Kargo",
+          "en": "Shipping"
+        },
+        "ucretsizMetin": {
+          "tr": "Ücretsiz",
+          "en": "Free"
+        },
+        "toplamLabel": {
+          "tr": "Toplam",
+          "en": "Total"
+        },
+        "teslimatBaslik": {
+          "tr": "Teslimat adresi",
+          "en": "Delivery address"
+        },
+        "odemeLabel": {
+          "tr": "Ödeme",
+          "en": "Payment"
+        },
+        "odeme_kapida": {
+          "tr": "Kapıda ödeme",
+          "en": "Cash on delivery"
+        },
+        "odeme_havale": {
+          "tr": "Havale / EFT",
+          "en": "Bank transfer"
+        },
+        "iptalMetin": {
+          "tr": "Bu sipariş iptal edildi.",
+          "en": "This order has been cancelled."
+        },
+        "durum_beklemede": {
+          "tr": "Beklemede",
+          "en": "Pending"
+        },
+        "durum_onaylandi": {
+          "tr": "Onaylandı",
+          "en": "Confirmed"
+        },
+        "durum_hazirlaniyor": {
+          "tr": "Hazırlanıyor",
+          "en": "Preparing"
+        },
+        "durum_kargoda": {
+          "tr": "Kargoda",
+          "en": "Shipped"
+        },
+        "durum_teslim": {
+          "tr": "Teslim edildi",
+          "en": "Delivered"
+        },
+        "durum_iptal": {
+          "tr": "İptal edildi",
+          "en": "Cancelled"
+        },
+        "durum_whatsapp_bekliyor": {
+          "tr": "Mağaza onayı bekleniyor",
+          "en": "Awaiting store confirmation"
+        },
+        "misafirBaslik": {
+          "tr": "Tüm siparişlerinizi görmek için giriş yapın",
+          "en": "Sign in to see all your orders"
+        },
+        "misafirMetin": {
+          "tr": "Aşağıda bu cihazda verilen siparişler listelenir; üye olmadan verdiğiniz siparişi numarası ve e-postanızla sorgulayabilirsiniz.",
+          "en": "Orders placed on this device are listed below; you can look up a guest order with its number and your email."
+        },
+        "girisYapButon": {
+          "tr": "Giriş Yap",
+          "en": "Sign In"
+        },
+        "sorguBaslik": {
+          "tr": "Sipariş sorgula",
+          "en": "Look up an order"
+        },
+        "siparisNoLabel": {
+          "tr": "Sipariş no",
+          "en": "Order number"
+        },
+        "siparisNoPlaceholder": {
+          "tr": "S20261025001",
+          "en": "S20261025001"
+        },
+        "emailLabel": {
+          "tr": "E-posta",
+          "en": "Email"
+        },
+        "sorgulaButon": {
+          "tr": "Sorgula",
+          "en": "Look Up"
+        },
+        "bulunamadiMetin": {
+          "tr": "Bu numara ve e-posta ile eşleşen sipariş bulunamadı.",
+          "en": "No order matches this number and email."
+        },
+        "yerelBaslik": {
+          "tr": "Bu cihazdaki siparişler",
+          "en": "Orders on this device"
+        },
+        "yerelNotMetin": {
+          "tr": "Bu kayıt cihazınızda saklanan sipariş özetidir; güncel durum için mağazayla iletişime geçin.",
+          "en": "This is the order summary stored on your device; contact the store for the latest status."
+        },
+        "bosBaslik": {
+          "tr": "Henüz siparişiniz yok",
+          "en": "No orders yet"
+        },
+        "bosMetin": {
+          "tr": "Beğendiğiniz ürünleri sepete ekleyerek ilk siparişinizi verin.",
+          "en": "Add products you like to your cart and place your first order."
+        },
+        "alisveriseBasla": {
+          "tr": "Alışverişe Başla",
+          "en": "Start Shopping"
+        },
+        "tekrarDeneButon": {
+          "tr": "Tekrar Dene",
+          "en": "Try Again"
+        },
+        "yokBaslik": {
+          "tr": "Üyelik şu an kullanılamıyor",
+          "en": "Membership is not available"
+        },
+        "yokMetin": {
+          "tr": "Bu sitede üyelik hizmeti etkin değil. Bu cihazdaki siparişleriniz aşağıda listelenir.",
+          "en": "Membership is not enabled on this site. Orders on this device are listed below."
+        },
+        "errGeneric": {
+          "tr": "İşlem tamamlanamadı. Lütfen tekrar deneyin.",
+          "en": "Something went wrong. Please try again."
+        },
+        "errTimeout": {
+          "tr": "Sunucu yanıt vermedi. Lütfen tekrar deneyin.",
+          "en": "The server did not respond. Please try again."
+        },
+        "errNetwork": {
+          "tr": "Bağlantı kurulamadı. İnternet bağlantınızı kontrol edin.",
+          "en": "Could not connect. Check your internet connection."
+        }
+      },
+      "category": "e-commerce",
+      "description": "Sipariş geçmişi (PLAN-PRO F3). Üyede MxStore.siparis.listem → GET /api/public/siparis?sayfa= (sayfalama) ve açılır detay MxStore.siparis.detay → GET /api/public/siparis/:no: kalemler, ara toplam/kargo/toplam, adres, ödeme yöntemi, mx-stepper durum ilerlemesi (beklemede→onaylandı→hazırlanıyor→kargoda→teslim; iptal uyarısı). Misafirde / üyelik kullanılamıyorsa mxOrdersV1 yerel geçmişi + sipariş no + e-posta sorgusu (?email=).",
+      "version": "1.0.0",
+      "icon": "receipt_long",
+      "id": "ut5h88",
+      "path": "uye-siparislerim",
+      "local": "body",
+      "data": [],
+      "index": 12
+    },
+    {
+      "name": "Favorilerim",
+      "description": "Beğenilen ürünleri kaydetme ve wishlist yönetim modülü. Kullanıcıların ilgilendiği ürünleri favorilere ekler, sepete hızlı ekleme yapar. 3 farklı e-ticaret projesinde müşterilerin istek listesini saklar. Favori ürün bildirim sistemi ve fiyat düşüşü takibi özellikleri vardır.",
+      "version": "1.0.0",
+      "icon": "favorite",
+      "category": "e-commerce",
+      "desing": {
+        "color": "#333333",
+        "bgcolor": "#ffffff",
+        "bordercolor": "#e0e0e0",
+        "favoritecolor": "#dc3545",
+        "primarycolor": "#007bff",
+        "moduleTitle": {
+          "tr": "Favorilerim",
+          "en": "My Favorites"
+        },
+        "addToCart": {
+          "tr": "Sepete Ekle",
+          "en": "Add to Cart"
+        },
+        "removeFromFavorites": {
+          "tr": "Favorilerden Çıkar",
+          "en": "Remove from Favorites"
+        },
+        "noFavorites": {
+          "tr": "Henüz favori ürününüz bulunmuyor",
+          "en": "No favorite products yet"
+        },
+        "favoriUrunleriniziGormekIcin": {
+          "tr": "Favori ürünlerinizi görmek için giriş yapmanız gerekiyor.",
+          "en": "Favori urunlerinizi gormek icin giris yapmaniz gerekiyor."
+        },
+        "henuzFavoriUrununuzBulunmuyor": {
+          "tr": "Henüz favori ürününüz bulunmuyor.",
+          "en": "Henuz favori urununuz bulunmuyor."
+        },
+        "favorilerYuklenirkenBirHata": {
+          "tr": "Favoriler yüklenirken bir hata oluştu.",
+          "en": "Favoriler yuklenirken bir hata olustu."
+        },
+        "favoriUrunleriniziGormekIcin2": {
+          "tr": "Favori ürünlerinizi görmek için giriş yapmanız gerekiyor.",
+          "en": "Favori urunlerinizi gormek icin giris yapmaniz gerekiyor."
+        },
+        "favorilerYuklenirkenHata": {
+          "tr": "Favoriler yüklenirken hata:",
+          "en": "Favoriler yuklenirken hata:"
+        },
+        "buUrunuFavorilerdenCikarmak": {
+          "tr": "Bu ürünü favorilerden çıkarmak istediğinizden emin misiniz?",
+          "en": "Bu urunu favorilerden cikarmak istediginizden emin misiniz?"
+        },
+        "urunFavorilerdenCikarildi": {
+          "tr": "Ürün favorilerden çıkarıldı!",
+          "en": "urun favorilerden cikarildi!"
+        },
+        "favoriCikarilirkenHata": {
+          "tr": "Favori çıkarılırken hata:",
+          "en": "Favori cikarilirken hata:"
+        },
+        "islemSirasindaHataOlustu": {
+          "tr": "İşlem sırasında hata oluştu!",
+          "en": "islem sirasinda hata olustu!"
+        },
+        "urunBulunamadi": {
+          "tr": "Ürün bulunamadı!",
+          "en": "urun bulunamadi!"
+        },
+        "urunSepeteEklendi": {
+          "tr": "Ürün sepete eklendi!",
+          "en": "Product sepete eklendi!"
+        },
+        "sepeteEklenirkenHata": {
+          "tr": "Sepete eklenirken hata:",
+          "en": "Sepete eklenirken hata:"
+        },
+        "sepeteEklemeSirasindaHata": {
+          "tr": "Sepete ekleme sırasında hata oluştu!",
+          "en": "Sepete ekleme sirasinda hata olustu!"
+        },
+        "demoUrunEklemekIcin": {
+          "tr": "Demo ürün eklemek için giriş yapmanız gerekiyor.",
+          "en": "Demo urun eklemek icin giris yapmaniz gerekiyor."
+        },
+        "demoUrunFavorilereEklendi": {
+          "tr": "Demo ürün favorilere eklendi!",
+          "en": "Demo product favorilere eklendi!"
+        },
+        "demoUrunEklenirkenHata": {
+          "tr": "Demo ürün eklenirken hata:",
+          "en": "Demo product eklenirken hata:"
+        },
+        "demoUrunEklenirkenHata2": {
+          "tr": "Demo ürün eklenirken hata oluştu!",
+          "en": "Demo urun eklenirken hata olustu!"
+        },
+        "nikeAirMax270": {
+          "tr": "Nike Air Max 270",
+          "en": "Nike Air Max 270"
+        },
+        "sporAyakkabi": {
+          "tr": "Spor Ayakkabı",
+          "en": "Spor Ayakkabi"
+        },
+        "favoriteid": {
+          "tr": "${favoriteId}",
+          "en": "${favoriteId}"
+        },
+        "favoriteid2": {
+          "tr": "${favoriteId}",
+          "en": "${favoriteId}"
+        },
+        "favoriteproductid": {
+          "tr": "${favorite.productId}",
+          "en": "${favorite.productId}"
+        },
+        "keyframesSlideinFromTransform": {
+          "tr": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      ",
+          "en": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      "
+        }
+      },
+      "id": "1og2rj",
+      "path": "eticaret-favorilerim",
+      "local": "body",
+      "data": [],
+      "index": 13
+    },
+    {
+      "name": "Adreslerim",
+      "description": "Müşteri teslimat ve fatura adresleri yönetim modülü. Ev, iş, diğer adres türlerini kaydeder, düzenler ve varsayılan adres seçimi yapar. 3 farklı e-ticaret projesinde sipariş teslimatı için kayıtlı adresleri saklar. Hızlı ödeme akışı için adres seçimi ve düzenleme form popup'ı sunar. PLAN-PRO F3: MxStore varsa GET|POST /api/public/uye/adres + PATCH|DELETE /:id (başlık, ad soyad, telefon, il, ilçe, açık adres, posta kodu, varsayılan) ekle/düzenle formu; oturum yoksa girisUrl sayfasına. Eski dataListWeb yolu MxStore yoksa yedek.",
+      "version": "1.1.0",
+      "icon": "location_on",
+      "category": "e-commerce",
+      "desing": {
+        "color": "#333333",
+        "bgcolor": "#ffffff",
+        "bordercolor": "#e0e0e0",
+        "primarycolor": "#007bff",
+        "successcolor": "#28a745",
+        "moduleTitle": {
+          "tr": "Adreslerim",
+          "en": "My Addresses"
+        },
+        "addButton": {
+          "tr": "Yeni Adres Ekle",
+          "en": "Add New Address"
+        },
+        "defaultBadge": {
+          "tr": "Varsayılan",
+          "en": "Default"
+        },
+        "addressType": {
+          "tr": "Ev",
+          "en": "Home"
+        },
+        "editButton": {
+          "tr": "Düzenle",
+          "en": "Edit"
+        },
+        "deleteButton": {
+          "tr": "Sil",
+          "en": "Delete"
+        },
+        "setDefaultButton": {
+          "tr": "Varsayılan Yap",
+          "en": "Set as Default"
+        },
+        "adresleriniziGormekIcinGiris": {
+          "tr": "Adreslerinizi görmek için giriş yapmanız gerekiyor.",
+          "en": "Adreslerinizi gormek icin giris yapmaniz gerekiyor."
+        },
+        "henuzAdresinizBulunmuyor": {
+          "tr": "Henüz adresiniz bulunmuyor.",
+          "en": "Not yet adresiniz not found."
+        },
+        "varsayilan": {
+          "tr": "Varsayılan",
+          "en": "Varsayilan"
+        },
+        "adreslerYuklenirkenBirHata": {
+          "tr": "Adresler yüklenirken bir hata oluştu.",
+          "en": "Adresler yuklenirken bir hata olustu."
+        },
+        "adresleriniziGormekIcinGiris2": {
+          "tr": "Adreslerinizi görmek için giriş yapmanız gerekiyor.",
+          "en": "Adreslerinizi gormek icin giris yapmaniz gerekiyor."
+        },
+        "styledisplaynone": {
+          "tr": "style=\"display:none\"",
+          "en": "style=\"display:none\""
+        },
+        "adreslerYuklenirkenHata": {
+          "tr": "Adresler yüklenirken hata:",
+          "en": "Adresler yuklenirken hata:"
+        },
+        "buAdresiSilmekIstediginizden": {
+          "tr": "Bu adresi silmek istediğinizden emin misiniz?",
+          "en": "Bu adresi silmek istediginizden emin misiniz?"
+        },
+        "adresBasariylaSilindi": {
+          "tr": "Adres başarıyla silindi!",
+          "en": "Adres basariyla silindi!"
+        },
+        "adresSilinirkenHata": {
+          "tr": "Adres silinirken hata:",
+          "en": "Adres silinirken hata:"
+        },
+        "adresSilinirkenBirHata": {
+          "tr": "Adres silinirken bir hata oluştu!",
+          "en": "Adres silinirken bir hata olustu!"
+        },
+        "varsayilanAdresGuncellendi": {
+          "tr": "Varsayılan adres güncellendi!",
+          "en": "Varsayilan adres guncellendi!"
+        },
+        "varsayilanAdresGuncellenirkenHata": {
+          "tr": "Varsayılan adres güncellenirken hata:",
+          "en": "Varsayilan adres guncellenirken hata:"
+        },
+        "islemSirasindaBirHata": {
+          "tr": "İşlem sırasında bir hata oluştu!",
+          "en": "islem sirasinda bir hata olustu!"
+        },
+        "demoAdresEklemekIcin": {
+          "tr": "Demo adres eklemek için giriş yapmanız gerekiyor.",
+          "en": "Demo adres eklemek icin giris yapmaniz gerekiyor."
+        },
+        "demoAdresEklendi": {
+          "tr": "Demo adres eklendi!",
+          "en": "Demo adres eklendi!"
+        },
+        "demoAdresEklenirkenHata": {
+          "tr": "Demo adres eklenirken hata:",
+          "en": "Demo adres eklenirken hata:"
+        },
+        "adresEklenirkenBirHata": {
+          "tr": "Adres eklenirken bir hata oluştu!",
+          "en": "Adres eklenirken bir hata olustu!"
+        },
+        "addressactionDelete": {
+          "tr": "address-action delete",
+          "en": "address-action delete"
+        },
+        "addressactionSetdefault": {
+          "tr": "address-action set-default",
+          "en": "address-action set-default"
+        },
+        "demoAdres": {
+          "tr": "Demo Adres",
+          "en": "Demo Adres"
+        },
+        "demoKullanici": {
+          "tr": "Demo Kullanıcı",
+          "en": "Demo Kullanici"
+        },
+        "demoMahalleDemoSokak": {
+          "tr": "Demo Mahalle, Demo Sokak No:1 Demo/İstanbul",
+          "en": "Demo Mahalle, Demo Sokak No:1 Demo/istanbul"
+        },
+        "jsText": {
+          "tr": "+90 555 000 0000",
+          "en": "+90 555 000 0000"
+        },
+        "demoAdresEkle": {
+          "tr": "Demo Adres Ekle",
+          "en": "Demo Adres Add"
+        },
+        "addressid": {
+          "tr": "${addressId}",
+          "en": "${addressId}"
+        },
+        "addressid2": {
+          "tr": "${addressId}",
+          "en": "${addressId}"
+        },
+        "addressid3": {
+          "tr": "${addressId}",
+          "en": "${addressId}"
+        },
+        "varsayilanYap": {
+          "tr": "Varsayılan Yap",
+          "en": "Varsayilan Yap"
+        },
+        "keyframesSlideinFromTransform": {
+          "tr": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      ",
+          "en": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      "
+        },
+        "girisUrl": "login",
+        "lblBaslik": {
+          "tr": "Adres başlığı",
+          "en": "Address title"
+        },
+        "lblAdSoyad": {
+          "tr": "Ad soyad",
+          "en": "Full name"
+        },
+        "lblTelefon": {
+          "tr": "Telefon",
+          "en": "Phone"
+        },
+        "lblIl": {
+          "tr": "İl",
+          "en": "City"
+        },
+        "lblIlce": {
+          "tr": "İlçe",
+          "en": "District"
+        },
+        "lblPostaKodu": {
+          "tr": "Posta kodu",
+          "en": "Postal code"
+        },
+        "lblAdres": {
+          "tr": "Açık adres",
+          "en": "Street address"
+        },
+        "lblVarsayilan": {
+          "tr": "Varsayılan teslimat adresi yap",
+          "en": "Set as default delivery address"
+        },
+        "saveButton": {
+          "tr": "Kaydet",
+          "en": "Save"
+        },
+        "cancelButton": {
+          "tr": "Vazgeç",
+          "en": "Cancel"
+        },
+        "adresZorunlu": {
+          "tr": "Açık adres zorunludur.",
+          "en": "Street address is required."
+        },
+        "adresKaydedildi": {
+          "tr": "Adres kaydedildi.",
+          "en": "Address saved."
+        },
+        "uyeKullanilamiyor": {
+          "tr": "Üyelik bu sitede şu an kullanılamıyor.",
+          "en": "Membership is currently unavailable on this site."
+        }
+      },
+      "id": "p42lcy",
+      "path": "eticaret-adresler",
+      "local": "body",
+      "data": [],
+      "index": 14
+    },
+    {
+      "name": "Hesabım (Pro)",
+      "desing": {
+        "maxWidth": "1180px",
+        "girisUrl": "login",
+        "siparislerimUrl": "siparislerim",
+        "urunlerUrl": "urunler",
+        "currency": "₺",
+        "menuLabel": {
+          "tr": "Hesap menüsü",
+          "en": "Account menu"
+        },
+        "menuBilgi": {
+          "tr": "Bilgilerim",
+          "en": "My Details"
+        },
+        "menuAdres": {
+          "tr": "Adreslerim",
+          "en": "My Addresses"
+        },
+        "menuSiparis": {
+          "tr": "Siparişlerim",
+          "en": "My Orders"
+        },
+        "menuSifre": {
+          "tr": "Şifre",
+          "en": "Password"
+        },
+        "menuCikis": {
+          "tr": "Çıkış",
+          "en": "Sign Out"
+        },
+        "bilgiBaslik": {
+          "tr": "Kişisel bilgilerim",
+          "en": "Personal details"
+        },
+        "adLabel": {
+          "tr": "Ad",
+          "en": "First name"
+        },
+        "soyadLabel": {
+          "tr": "Soyad",
+          "en": "Last name"
+        },
+        "emailLabel": {
+          "tr": "E-posta",
+          "en": "Email"
+        },
+        "emailYardim": {
+          "tr": "E-posta adresi değiştirilemez.",
+          "en": "Email address cannot be changed."
+        },
+        "telefonLabel": {
+          "tr": "Telefon",
+          "en": "Phone"
+        },
+        "kaydetButon": {
+          "tr": "Kaydet",
+          "en": "Save"
+        },
+        "vazgecButon": {
+          "tr": "Vazgeç",
+          "en": "Cancel"
+        },
+        "kaydedildiMetin": {
+          "tr": "Bilgileriniz kaydedildi.",
+          "en": "Your details have been saved."
+        },
+        "adresBaslik": {
+          "tr": "Adreslerim",
+          "en": "My addresses"
+        },
+        "adresEkleButon": {
+          "tr": "Yeni Adres",
+          "en": "New Address"
+        },
+        "adresFormYeni": {
+          "tr": "Yeni adres ekle",
+          "en": "Add a new address"
+        },
+        "adresFormDuzenle": {
+          "tr": "Adresi düzenle",
+          "en": "Edit address"
+        },
+        "adresBaslikLabel": {
+          "tr": "Adres başlığı",
+          "en": "Address title"
+        },
+        "adresBaslikPlaceholder": {
+          "tr": "Ev, İş…",
+          "en": "Home, Work…"
+        },
+        "adSoyadLabel": {
+          "tr": "Ad Soyad",
+          "en": "Full name"
+        },
+        "postaKoduLabel": {
+          "tr": "Posta kodu",
+          "en": "Postal code"
+        },
+        "ilLabel": {
+          "tr": "İl",
+          "en": "City"
+        },
+        "ilceLabel": {
+          "tr": "İlçe",
+          "en": "District"
+        },
+        "adresLabel": {
+          "tr": "Açık adres",
+          "en": "Street address"
+        },
+        "varsayilanYap": {
+          "tr": "Varsayılan teslimat adresim olsun",
+          "en": "Use as my default delivery address"
+        },
+        "varsayilanYapKisa": {
+          "tr": "Varsayılan yap",
+          "en": "Make default"
+        },
+        "varsayilanRozet": {
+          "tr": "Varsayılan",
+          "en": "Default"
+        },
+        "duzenleButon": {
+          "tr": "Düzenle",
+          "en": "Edit"
+        },
+        "silButon": {
+          "tr": "Sil",
+          "en": "Delete"
+        },
+        "evetButon": {
+          "tr": "Evet, sil",
+          "en": "Yes, delete"
+        },
+        "adresSilOnay": {
+          "tr": "Bu adres silinsin mi?",
+          "en": "Delete this address?"
+        },
+        "adresSilindiMetin": {
+          "tr": "Adres silindi.",
+          "en": "Address deleted."
+        },
+        "adresYokMetin": {
+          "tr": "Henüz kayıtlı adresiniz yok.",
+          "en": "You have no saved addresses yet."
+        },
+        "siparisBaslik": {
+          "tr": "Son siparişlerim",
+          "en": "Recent orders"
+        },
+        "tumunuGor": {
+          "tr": "Tümünü Gör",
+          "en": "View All"
+        },
+        "siparisYokMetin": {
+          "tr": "Henüz siparişiniz yok.",
+          "en": "You have no orders yet."
+        },
+        "sifreBaslik": {
+          "tr": "Şifre değiştir",
+          "en": "Change password"
+        },
+        "eskiSifreLabel": {
+          "tr": "Mevcut şifre",
+          "en": "Current password"
+        },
+        "yeniSifreLabel": {
+          "tr": "Yeni şifre",
+          "en": "New password"
+        },
+        "yeniSifre2Label": {
+          "tr": "Yeni şifre (tekrar)",
+          "en": "Confirm new password"
+        },
+        "sifreKural": {
+          "tr": "En az 8 karakter; harf ve rakam içermeli.",
+          "en": "At least 8 characters with letters and numbers."
+        },
+        "sifreUyusmuyor": {
+          "tr": "Şifreler eşleşmiyor",
+          "en": "Passwords do not match"
+        },
+        "sifreDegistirButon": {
+          "tr": "Şifreyi Değiştir",
+          "en": "Change Password"
+        },
+        "sifreDegistiMetin": {
+          "tr": "Şifreniz güncellendi. Diğer cihazlardaki oturumlar kapatıldı.",
+          "en": "Your password was updated. Other sessions were signed out."
+        },
+        "durum_beklemede": {
+          "tr": "Beklemede",
+          "en": "Pending"
+        },
+        "durum_onaylandi": {
+          "tr": "Onaylandı",
+          "en": "Confirmed"
+        },
+        "durum_hazirlaniyor": {
+          "tr": "Hazırlanıyor",
+          "en": "Preparing"
+        },
+        "durum_kargoda": {
+          "tr": "Kargoda",
+          "en": "Shipped"
+        },
+        "durum_teslim": {
+          "tr": "Teslim edildi",
+          "en": "Delivered"
+        },
+        "durum_iptal": {
+          "tr": "İptal edildi",
+          "en": "Cancelled"
+        },
+        "oturumGerekliBaslik": {
+          "tr": "Bu sayfayı görmek için giriş yapın.",
+          "en": "Please sign in to view this page."
+        },
+        "girisYapButon": {
+          "tr": "Giriş Yap",
+          "en": "Sign In"
+        },
+        "tekrarDeneButon": {
+          "tr": "Tekrar Dene",
+          "en": "Try Again"
+        },
+        "yokBaslik": {
+          "tr": "Üyelik şu an kullanılamıyor",
+          "en": "Membership is not available"
+        },
+        "yokMetin": {
+          "tr": "Bu sitede üyelik hizmeti etkin değil. Üye olmadan alışverişe devam edebilirsiniz.",
+          "en": "Membership is not enabled on this site. You can keep shopping as a guest."
+        },
+        "alisveriseDevam": {
+          "tr": "Alışverişe Devam Et",
+          "en": "Continue Shopping"
+        },
+        "zorunluMesaj": {
+          "tr": "Bu alan zorunludur",
+          "en": "This field is required"
+        },
+        "errGeneric": {
+          "tr": "İşlem tamamlanamadı. Lütfen tekrar deneyin.",
+          "en": "Something went wrong. Please try again."
+        },
+        "errTimeout": {
+          "tr": "Sunucu yanıt vermedi. Lütfen tekrar deneyin.",
+          "en": "The server did not respond. Please try again."
+        },
+        "errNetwork": {
+          "tr": "Bağlantı kurulamadı. İnternet bağlantınızı kontrol edin.",
+          "en": "Could not connect. Check your internet connection."
+        }
+      },
+      "category": "e-commerce",
+      "description": "Üye hesap paneli (PLAN-PRO F3). Sol menü: Bilgilerim (MxStore.uye.guncelle → PATCH /api/public/uye/ben), Adreslerim (GET|POST /api/public/uye/adres, PATCH|DELETE /api/public/uye/adres/:id; varsayılan rozeti), Siparişlerim özeti (GET /api/public/siparis), Şifre (POST /api/public/uye/sifre), Çıkış (POST /api/public/uye/cikis). Oturum yoksa desing girisUrl sayfasına ?donus= ile yönlendirir; URL hash (#adreslerim…) ile panel açılır; mobilde menü üstte yatay kaydırmalı.",
+      "version": "1.0.0",
+      "icon": "account_circle",
+      "id": "6p63ke",
+      "path": "uye-hesabim",
+      "local": "body",
+      "data": [],
+      "index": 15
+    },
+    {
+      "name": "Üye Girişi (Pro)",
+      "desing": {
+        "maxWidth": "460px",
+        "girisUrl": "login",
+        "kayitUrl": "kayit",
+        "hesabimUrl": "hesabim",
+        "sifreUrl": "sifre-sifirlama",
+        "urunlerUrl": "urunler",
+        "tabsLabel": {
+          "tr": "Giriş veya üyelik",
+          "en": "Sign in or register"
+        },
+        "tabGiris": {
+          "tr": "Giriş Yap",
+          "en": "Sign In"
+        },
+        "tabKayit": {
+          "tr": "Üye Ol",
+          "en": "Register"
+        },
+        "baslik": {
+          "tr": "Hesabınıza giriş yapın",
+          "en": "Sign in to your account"
+        },
+        "altBaslik": {
+          "tr": "Siparişlerinizi takip edin, adreslerinizi yönetin.",
+          "en": "Track your orders and manage your addresses."
+        },
+        "emailLabel": {
+          "tr": "E-posta",
+          "en": "Email"
+        },
+        "emailPlaceholder": {
+          "tr": "ornek@eposta.com",
+          "en": "you@example.com"
+        },
+        "sifreLabel": {
+          "tr": "Şifre",
+          "en": "Password"
+        },
+        "sifrePlaceholder": {
+          "tr": "Şifreniz",
+          "en": "Your password"
+        },
+        "sifreGoster": {
+          "tr": "Şifreyi göster",
+          "en": "Show password"
+        },
+        "sifreGizle": {
+          "tr": "Şifreyi gizle",
+          "en": "Hide password"
+        },
+        "sifremiUnuttum": {
+          "tr": "Şifremi unuttum",
+          "en": "Forgot password?"
+        },
+        "girisButon": {
+          "tr": "Giriş Yap",
+          "en": "Sign In"
+        },
+        "hesapYok": {
+          "tr": "Hesabınız yok mu?",
+          "en": "No account yet?"
+        },
+        "kayitOlLink": {
+          "tr": "Hemen üye olun",
+          "en": "Create one now"
+        },
+        "girisliMetin": {
+          "tr": "Zaten giriş yaptınız:",
+          "en": "You are already signed in:"
+        },
+        "hesabimaGit": {
+          "tr": "Hesabıma Git",
+          "en": "Go to My Account"
+        },
+        "cikisYap": {
+          "tr": "Çıkış Yap",
+          "en": "Sign Out"
+        },
+        "basariMetin": {
+          "tr": "Giriş başarılı, yönlendiriliyorsunuz…",
+          "en": "Signed in, redirecting…"
+        },
+        "yokBaslik": {
+          "tr": "Üyelik şu an kullanılamıyor",
+          "en": "Membership is not available"
+        },
+        "yokMetin": {
+          "tr": "Bu sitede üyelik hizmeti etkin değil. Üye olmadan alışverişe devam edebilirsiniz.",
+          "en": "Membership is not enabled on this site. You can keep shopping as a guest."
+        },
+        "alisveriseDevam": {
+          "tr": "Alışverişe Devam Et",
+          "en": "Continue Shopping"
+        },
+        "zorunluMesaj": {
+          "tr": "Bu alan zorunludur",
+          "en": "This field is required"
+        },
+        "emailGecersiz": {
+          "tr": "Geçerli bir e-posta adresi girin",
+          "en": "Enter a valid email address"
+        },
+        "errGeneric": {
+          "tr": "İşlem tamamlanamadı. Lütfen tekrar deneyin.",
+          "en": "Something went wrong. Please try again."
+        },
+        "errTimeout": {
+          "tr": "Sunucu yanıt vermedi. Lütfen tekrar deneyin.",
+          "en": "The server did not respond. Please try again."
+        },
+        "errNetwork": {
+          "tr": "Bağlantı kurulamadı. İnternet bağlantınızı kontrol edin.",
+          "en": "Could not connect. Check your internet connection."
+        }
+      },
+      "category": "e-commerce",
+      "description": "Müşteri giriş modülü (PLAN-PRO F3). MxStore.uye.giris → POST /api/public/uye/giris (mx_uye çerezi); Giriş | Üye ol sekmeleri, şifre göster/gizle, şifremi unuttum bağlantısı, just-validate doğrulama, sunucu hata mesajları (401/429), zaten girişliyse Hesabım kartı, üyelik kullanılamıyorsa bilgi kutusu. Başarıda ?donus= yoluna ya da hesabim sayfasına yönlendirir.",
+      "version": "1.0.0",
+      "icon": "login",
+      "id": "b3gkb0",
+      "path": "uye-giris",
+      "local": "body",
+      "data": [],
+      "index": 16
+    },
+    {
+      "name": "Üye Kayıt (Pro)",
+      "desing": {
+        "maxWidth": "560px",
+        "girisUrl": "login",
+        "kayitUrl": "kayit",
+        "hesabimUrl": "hesabim",
+        "urunlerUrl": "urunler",
+        "sozlesmeUrl": "uyelik-sozlesmesi",
+        "kvkkUrl": "gizlilik-politikasi",
+        "tabsLabel": {
+          "tr": "Giriş veya üyelik",
+          "en": "Sign in or register"
+        },
+        "tabGiris": {
+          "tr": "Giriş Yap",
+          "en": "Sign In"
+        },
+        "tabKayit": {
+          "tr": "Üye Ol",
+          "en": "Register"
+        },
+        "baslik": {
+          "tr": "Yeni hesap oluşturun",
+          "en": "Create a new account"
+        },
+        "altBaslik": {
+          "tr": "Hızlı ödeme, sipariş takibi ve kayıtlı adresler için üye olun.",
+          "en": "Register for faster checkout, order tracking and saved addresses."
+        },
+        "adLabel": {
+          "tr": "Ad",
+          "en": "First name"
+        },
+        "soyadLabel": {
+          "tr": "Soyad",
+          "en": "Last name"
+        },
+        "emailLabel": {
+          "tr": "E-posta",
+          "en": "Email"
+        },
+        "emailPlaceholder": {
+          "tr": "ornek@eposta.com",
+          "en": "you@example.com"
+        },
+        "telefonLabel": {
+          "tr": "Telefon",
+          "en": "Phone"
+        },
+        "telefonPlaceholder": {
+          "tr": "05xx xxx xx xx",
+          "en": "Your phone number"
+        },
+        "telefonYardim": {
+          "tr": "İsteğe bağlı — kargo bilgilendirmesi için.",
+          "en": "Optional — used for delivery updates."
+        },
+        "sifreLabel": {
+          "tr": "Şifre",
+          "en": "Password"
+        },
+        "sifre2Label": {
+          "tr": "Şifre (tekrar)",
+          "en": "Confirm password"
+        },
+        "sifreGoster": {
+          "tr": "Şifreyi göster",
+          "en": "Show password"
+        },
+        "sifreGizle": {
+          "tr": "Şifreyi gizle",
+          "en": "Hide password"
+        },
+        "sifreKural": {
+          "tr": "En az 8 karakter; harf ve rakam içermeli.",
+          "en": "At least 8 characters with letters and numbers."
+        },
+        "sifreKisa": {
+          "tr": "Şifre en az 8 karakter olmalı",
+          "en": "Password must be at least 8 characters"
+        },
+        "sifreUyusmuyor": {
+          "tr": "Şifreler eşleşmiyor",
+          "en": "Passwords do not match"
+        },
+        "gucZayif": {
+          "tr": "Şifre gücü: zayıf",
+          "en": "Password strength: weak"
+        },
+        "gucOrta": {
+          "tr": "Şifre gücü: orta",
+          "en": "Password strength: fair"
+        },
+        "gucGuclu": {
+          "tr": "Şifre gücü: güçlü",
+          "en": "Password strength: strong"
+        },
+        "kvkkLink": {
+          "tr": "KVKK Aydınlatma Metni",
+          "en": "Privacy Notice"
+        },
+        "kvkkMetin": {
+          "tr": "'ni okudum ve ",
+          "en": " has been read and I accept the "
+        },
+        "sozlesmeLink": {
+          "tr": "Üyelik Sözleşmesi",
+          "en": "Membership Agreement"
+        },
+        "sozlesmeMetin": {
+          "tr": "'ni kabul ediyorum.",
+          "en": "."
+        },
+        "kvkkZorunlu": {
+          "tr": "Devam etmek için aydınlatma metni ve sözleşmeyi onaylayın",
+          "en": "Please accept the privacy notice and agreement to continue"
+        },
+        "kayitButon": {
+          "tr": "Üye Ol",
+          "en": "Create Account"
+        },
+        "hesapVar": {
+          "tr": "Zaten üye misiniz?",
+          "en": "Already registered?"
+        },
+        "girisLink": {
+          "tr": "Giriş yapın",
+          "en": "Sign in"
+        },
+        "girisliMetin": {
+          "tr": "Zaten giriş yaptınız:",
+          "en": "You are already signed in:"
+        },
+        "hesabimaGit": {
+          "tr": "Hesabıma Git",
+          "en": "Go to My Account"
+        },
+        "basariMetin": {
+          "tr": "Hesabınız oluşturuldu, yönlendiriliyorsunuz…",
+          "en": "Your account has been created, redirecting…"
+        },
+        "yokBaslik": {
+          "tr": "Üyelik şu an kullanılamıyor",
+          "en": "Membership is not available"
+        },
+        "yokMetin": {
+          "tr": "Bu sitede üyelik hizmeti etkin değil. Üye olmadan alışverişe devam edebilirsiniz.",
+          "en": "Membership is not enabled on this site. You can keep shopping as a guest."
+        },
+        "alisveriseDevam": {
+          "tr": "Alışverişe Devam Et",
+          "en": "Continue Shopping"
+        },
+        "zorunluMesaj": {
+          "tr": "Bu alan zorunludur",
+          "en": "This field is required"
+        },
+        "emailGecersiz": {
+          "tr": "Geçerli bir e-posta adresi girin",
+          "en": "Enter a valid email address"
+        },
+        "errGeneric": {
+          "tr": "İşlem tamamlanamadı. Lütfen tekrar deneyin.",
+          "en": "Something went wrong. Please try again."
+        },
+        "errTimeout": {
+          "tr": "Sunucu yanıt vermedi. Lütfen tekrar deneyin.",
+          "en": "The server did not respond. Please try again."
+        },
+        "errNetwork": {
+          "tr": "Bağlantı kurulamadı. İnternet bağlantınızı kontrol edin.",
+          "en": "Could not connect. Check your internet connection."
+        }
+      },
+      "category": "e-commerce",
+      "description": "Müşteri kayıt modülü (PLAN-PRO F3). MxStore.uye.kayit → POST /api/public/uye/kayit {ad, soyad, email, telefon, sifre, kvkk:true} (201 + mx_uye çerezi). Ad/soyad/e-posta/telefon/şifre + tekrar, şifre güç göstergesi (sunucu şartı: ≥8, harf+rakam), KVKK + üyelik sözleşmesi onayı, just-validate doğrulama, sunucu 'alan' hatası ilgili alanın altına; başarıda ?donus= ya da hesabim.",
+      "version": "1.0.0",
+      "icon": "person_add",
+      "id": "1l7zzq",
+      "path": "uye-kayit",
+      "local": "body",
+      "data": [],
+      "index": 17
+    },
+    {
+      "name": "Login",
+      "desing": {
+        "color": "#ff671d",
+        "bgcolor": "#101010",
+        "nextUrl": "sepetim",
+        "loginTitle": {
+          "tr": "Giriş Yap",
+          "en": "Login"
+        },
+        "registerTitle": {
+          "tr": "Üye Ol",
+          "en": "Register"
+        },
+        "emailPlaceholder": {
+          "tr": "Mail Adresiniz",
+          "en": "Your Email"
+        },
+        "userPlaceholder": {
+          "tr": "Kullanıcı adı",
+          "en": "Username"
+        },
+        "surnamePlaceholder": {
+          "tr": "Soyad",
+          "en": "Surname"
+        },
+        "passwordPlaceholder": {
+          "tr": "Şifre",
+          "en": "Password"
+        },
+        "passwordConfirmPlaceholder": {
+          "tr": "Şifre Tekrar",
+          "en": "Confirm Password"
+        },
+        "namePlaceholder": {
+          "tr": "Ad Soyad",
+          "en": "Full Name"
+        },
+        "loginButton": {
+          "tr": "Giriş Yap",
+          "en": "Login"
+        },
+        "registerButton": {
+          "tr": "Üye Ol",
+          "en": "Register"
+        },
+        "forgotPassword": {
+          "tr": "Şifremi Unuttum",
+          "en": "Forgot Password"
+        },
+        "alreadyMember": {
+          "tr": "Üye misin?",
+          "en": "Already a member?"
+        },
+        "googleLogin": {
+          "tr": "Google İle Giriş Yap",
+          "en": "Login with Google"
+        },
+        "resetPasswordButton": {
+          "tr": "Şifre Sıfırlama Maili Gönder",
+          "en": "Send Password Reset Email"
+        },
+        "backToLogin": {
+          "tr": "Giriş Sayfasına Dön",
+          "en": "Back to Login"
+        },
+        "nameRequired": {
+          "tr": "Ad soyad giriniz!",
+          "en": "Please enter your full name!"
+        },
+        "userRequired": {
+          "tr": "Kullanıcı adı giriniz!",
+          "en": "Please enter username!"
+        },
+        "validEmailRequired": {
+          "tr": "Geçerli bir email adresi giriniz!",
+          "en": "Please enter a valid email address!"
+        },
+        "passwordMinLength": {
+          "tr": "Şifre en az 6 karakter olmalıdır!",
+          "en": "Password must be at least 6 characters!"
+        },
+        "passwordsNotMatch": {
+          "tr": "Şifreler eşleşmiyor!",
+          "en": "Passwords do not match!"
+        },
+        "emailAlreadyExists": {
+          "tr": "Bu email adresi zaten kullanımda!",
+          "en": "This email address is already in use!"
+        },
+        "userAlreadyExists": {
+          "tr": "Bu kullanıcı adı zaten kullanılıyor!",
+          "en": "This username is already in use!"
+        },
+        "registrationSuccess": {
+          "tr": "Üyelik başarıyla oluşturuldu!",
+          "en": "Registration successful!"
+        },
+        "registrationError": {
+          "tr": "Üyelik oluşturulurken bir hata oluştu!",
+          "en": "An error occurred during registration!"
+        },
+        "passwordRequired": {
+          "tr": "Şifre giriniz!",
+          "en": "Please enter your password!"
+        },
+        "invalidCredentials": {
+          "tr": "Kullanıcı adı veya şifre hatalı!",
+          "en": "Invalid username or password!"
+        },
+        "accountDeactivated": {
+          "tr": "Hesabınız deaktif durumda!",
+          "en": "Your account is deactivated!"
+        },
+        "loginSuccess": {
+          "tr": "Giriş başarılı!",
+          "en": "Login successful!"
+        },
+        "loginError": {
+          "tr": "Giriş yapılırken bir hata oluştu!",
+          "en": "An error occurred during login!"
+        },
+        "userNotFound": {
+          "tr": "Bu email adresine kayıtlı kullanıcı bulunamadı!",
+          "en": "No user found with this email address!"
+        },
+        "resetEmailSent": {
+          "tr": "Şifre sıfırlama maili gönderildi!",
+          "en": "Password reset email sent!"
+        },
+        "resetEmailError": {
+          "tr": "Şifre sıfırlama maili gönderilirken bir hata oluştu!",
+          "en": "An error occurred while sending reset email!"
+        },
+        "googleLoginDevelopment": {
+          "tr": "Google login özelliği geliştiriliyor...",
+          "en": "Google login feature is under development..."
+        },
+        "alreadyLoggedIn": {
+          "tr": "Zaten giriş yapmışsınız!",
+          "en": "You are already logged in!"
+        },
+        "kvkkUrl": "gizlilik-politikasi",
+        "kvkkText": {
+          "tr": "Kişisel verilerimin işlenmesine ilişkin aydınlatma metnini okudum, onaylıyorum.",
+          "en": "I have read and accept the privacy notice on processing my personal data."
+        },
+        "kvkkLinkText": {
+          "tr": "Aydınlatma metni",
+          "en": "Privacy notice"
+        },
+        "kvkkRequired": {
+          "tr": "Devam etmek için aydınlatma metnini onaylayın.",
+          "en": "Please accept the privacy notice to continue."
+        },
+        "uyeKullanilamiyor": {
+          "tr": "Üyelik bu sitede şu an kullanılamıyor. Siparişinizi üye olmadan verebilirsiniz.",
+          "en": "Membership is currently unavailable on this site. You can still order as a guest."
+        },
+        "sessionExpired": {
+          "tr": "Oturumunuzun süresi doldu, lütfen tekrar giriş yapın.",
+          "en": "Your session has expired, please log in again."
+        }
+      },
+      "category": "login",
+      "description": "Giriş ve kayıt modülü (PLAN-PRO F3). Varsayılan MxStore: /api/public/uye/giris + /kayit (mx_uye çerezi, KVKK onayı, donus/nextUrl yönlendirmesi); üyelik kullanılamıyorsa bilgi kutusu. MxStore yüklenmezse eski desing apiBase (https://{{domain}}/api /user /newuser) yolu yedek.",
+      "version": "1.1.0",
+      "icon": "login",
+      "id": "w9lfsd",
+      "path": "login",
+      "local": "body",
+      "data": [],
+      "index": 18
+    },
+    {
+      "name": "Sepet Pro",
+      "desing": {
+        "max": "1200px",
+        "bgcolor": "transparent",
+        "currency": "₺",
+        "kargoUcret": "0",
+        "ucretsizKargoLimit": "0",
+        "urunlerUrl": "urunler",
+        "odemeUrl": "odeme",
+        "title": {
+          "tr": "Sepetim",
+          "en": "My Cart",
+          "ar": "سلتي"
+        },
+        "loadingText": {
+          "tr": "Sepet yükleniyor",
+          "en": "Loading cart",
+          "ar": "جارٍ تحميل السلة"
+        },
+        "emptyTitle": {
+          "tr": "Sepetiniz boş",
+          "en": "Your cart is empty",
+          "ar": "سلتك فارغة"
+        },
+        "emptyText": {
+          "tr": "Beğendiğiniz ürünleri sepete ekleyin, siparişinizi birkaç adımda tamamlayın.",
+          "en": "Add the products you like to your cart and complete your order in a few steps.",
+          "ar": "أضف المنتجات التي أعجبتك إلى السلة وأتمم طلبك في بضع خطوات."
+        },
+        "shopText": {
+          "tr": "Alışverişe başla",
+          "en": "Start shopping",
+          "ar": "ابدأ التسوق"
+        },
+        "listLabel": {
+          "tr": "Sepetteki ürünler",
+          "en": "Products in cart",
+          "ar": "المنتجات في السلة"
+        },
+        "unitLabel": {
+          "tr": "Birim fiyat",
+          "en": "Unit price",
+          "ar": "سعر الوحدة"
+        },
+        "qtyLabel": {
+          "tr": "Adet",
+          "en": "Quantity",
+          "ar": "الكمية"
+        },
+        "decText": {
+          "tr": "Adedi azalt",
+          "en": "Decrease quantity",
+          "ar": "إنقاص الكمية"
+        },
+        "incText": {
+          "tr": "Adedi artır",
+          "en": "Increase quantity",
+          "ar": "زيادة الكمية"
+        },
+        "removeText": {
+          "tr": "Ürünü sepetten çıkar",
+          "en": "Remove product from cart",
+          "ar": "إزالة المنتج من السلة"
+        },
+        "removedText": {
+          "tr": "Ürün sepetten çıkarıldı",
+          "en": "Product removed from cart",
+          "ar": "تمت إزالة المنتج من السلة"
+        },
+        "updatedText": {
+          "tr": "Sepet güncellendi",
+          "en": "Cart updated",
+          "ar": "تم تحديث السلة"
+        },
+        "itemsText": {
+          "tr": "ürün",
+          "en": "items",
+          "ar": "منتج"
+        },
+        "summaryTitle": {
+          "tr": "Sipariş Özeti",
+          "en": "Order Summary",
+          "ar": "ملخص الطلب"
+        },
+        "subtotalText": {
+          "tr": "Ara toplam",
+          "en": "Subtotal",
+          "ar": "المجموع الفرعي"
+        },
+        "shippingText": {
+          "tr": "Kargo",
+          "en": "Shipping",
+          "ar": "الشحن"
+        },
+        "freeText": {
+          "tr": "Ücretsiz",
+          "en": "Free",
+          "ar": "مجاني"
+        },
+        "shipLaterText": {
+          "tr": "Ödeme adımında hesaplanır",
+          "en": "Calculated at checkout",
+          "ar": "يُحسب في خطوة الدفع"
+        },
+        "shipRemainText": {
+          "tr": "Ücretsiz kargo için %s daha ekleyin",
+          "en": "Add %s more for free shipping",
+          "ar": "أضف %s أخرى للحصول على شحن مجاني"
+        },
+        "shipReachedText": {
+          "tr": "Tebrikler, kargonuz ücretsiz!",
+          "en": "Congratulations, your shipping is free!",
+          "ar": "تهانينا، شحنك مجاني!"
+        },
+        "totalText": {
+          "tr": "Toplam",
+          "en": "Total",
+          "ar": "الإجمالي"
+        },
+        "serverNote": {
+          "tr": "Demo: kesin tutar ve kargo ücreti ödeme adımında gösterilir.",
+          "en": "Demo: the final amount and shipping fee are shown at the checkout step.",
+          "ar": "تجريبي: يظهر المبلغ النهائي ورسوم الشحن في خطوة الدفع."
+        },
+        "checkoutText": {
+          "tr": "Ödemeye geç",
+          "en": "Proceed to checkout",
+          "ar": "المتابعة إلى الدفع"
+        },
+        "continueText": {
+          "tr": "Alışverişe devam et",
+          "en": "Continue shopping",
+          "ar": "متابعة التسوق"
+        },
+        "secureText": {
+          "tr": "Güvenli alışveriş",
+          "en": "Secure shopping",
+          "ar": "تسوق آمن"
+        }
+      },
+      "data": [],
+      "category": "e-commerce",
+      "description": "Profesyonel sepet sayfası (PLAN-PRO F3). MxStore (mxCartV1) ile satır listesi, adet −/+ ve giriş alanı, satır silme (çıkış animasyonu), ara toplam / kargo / toplam özeti, ücretsiz kargo ilerleme çubuğu (desing.ucretsizKargoLimit), boş sepet durumu ve iskelet yükleme. Sepet değişince (mx:sepet, diğer sekmeler) yeniden çizer; footer/sepet-widget ile aynı veriyi paylaşır.",
+      "version": "1.0.0",
+      "icon": "shopping_cart",
+      "id": "tkkv6r",
+      "path": "sepet-pro",
+      "local": "body",
+      "index": 19
+    },
+    {
+      "name": "Ödeme Pro",
+      "desing": {
+        "max": "1200px",
+        "bgcolor": "transparent",
+        "currency": "₺",
+        "number": "",
+        "kapidaAktif": "1",
+        "havaleAktif": "1",
+        "urunlerUrl": "urunler",
+        "sepetUrl": "sepetim",
+        "tamamUrl": "siparis-onay",
+        "girisUrl": "login",
+        "sozlesmeUrl": "mesafeli-satis-sozlesmesi",
+        "onBilgiUrl": "on-bilgilendirme-formu",
+        "title": {
+          "tr": "Ödeme",
+          "en": "Checkout"
+        },
+        "loadingText": {
+          "tr": "Ödeme sayfası yükleniyor",
+          "en": "Loading checkout"
+        },
+        "emptyTitle": {
+          "tr": "Sepetiniz boş",
+          "en": "Your cart is empty"
+        },
+        "emptyText": {
+          "tr": "Ödemeye geçmek için önce sepetinize ürün ekleyin.",
+          "en": "Add products to your cart before checking out."
+        },
+        "shopText": {
+          "tr": "Ürünlere göz at",
+          "en": "Browse products"
+        },
+        "stepsLabel": {
+          "tr": "Ödeme adımları",
+          "en": "Checkout steps"
+        },
+        "step1": {
+          "tr": "Bilgiler ve Adres",
+          "en": "Details and Address"
+        },
+        "step2": {
+          "tr": "Ödeme Yöntemi",
+          "en": "Payment Method"
+        },
+        "step3": {
+          "tr": "Onay",
+          "en": "Review"
+        },
+        "step1Title": {
+          "tr": "Teslimat bilgileri",
+          "en": "Delivery details"
+        },
+        "step2Title": {
+          "tr": "Ödeme yöntemini seçin",
+          "en": "Choose a payment method"
+        },
+        "step3Title": {
+          "tr": "Siparişinizi onaylayın",
+          "en": "Review your order"
+        },
+        "memberHello": {
+          "tr": "Hoş geldiniz,",
+          "en": "Welcome,"
+        },
+        "addrListLabel": {
+          "tr": "Kayıtlı adresleriniz",
+          "en": "Your saved addresses"
+        },
+        "newAddrText": {
+          "tr": "Yeni adres gir",
+          "en": "Enter a new address"
+        },
+        "defaultBadge": {
+          "tr": "Varsayılan",
+          "en": "Default"
+        },
+        "saveAddrText": {
+          "tr": "Bu adresi adreslerime kaydet",
+          "en": "Save this address to my address book"
+        },
+        "guestText": {
+          "tr": "Üye olmadan sipariş verebilirsiniz. Hesabınız var mı?",
+          "en": "You can order without an account. Already have one?"
+        },
+        "loginText": {
+          "tr": "Giriş yap",
+          "en": "Sign in"
+        },
+        "nameLabel": {
+          "tr": "Ad Soyad",
+          "en": "Full name"
+        },
+        "namePh": {
+          "tr": "Adınız ve soyadınız",
+          "en": "Your full name"
+        },
+        "emailLabel": {
+          "tr": "E-posta",
+          "en": "Email"
+        },
+        "emailPh": {
+          "tr": "ornek@alanadi.com",
+          "en": "name@example.com"
+        },
+        "phoneLabel": {
+          "tr": "Telefon",
+          "en": "Phone"
+        },
+        "phonePh": {
+          "tr": "05xx xxx xx xx",
+          "en": "Your phone number"
+        },
+        "ilLabel": {
+          "tr": "İl",
+          "en": "City"
+        },
+        "ilPh": {
+          "tr": "İl",
+          "en": "City"
+        },
+        "ilceLabel": {
+          "tr": "İlçe",
+          "en": "District"
+        },
+        "ilcePh": {
+          "tr": "İlçe",
+          "en": "District"
+        },
+        "postaLabel": {
+          "tr": "Posta kodu",
+          "en": "Postal code"
+        },
+        "postaPh": {
+          "tr": "34000",
+          "en": "Postal code"
+        },
+        "adresLabel": {
+          "tr": "Açık adres",
+          "en": "Street address"
+        },
+        "adresPh": {
+          "tr": "Mahalle, cadde, sokak, bina ve daire no",
+          "en": "Street, building and apartment number"
+        },
+        "optionalText": {
+          "tr": "(isteğe bağlı)",
+          "en": "(optional)"
+        },
+        "backToCart": {
+          "tr": "Sepete dön",
+          "en": "Back to cart"
+        },
+        "nextText": {
+          "tr": "Devam et",
+          "en": "Continue"
+        },
+        "prevText": {
+          "tr": "Geri",
+          "en": "Back"
+        },
+        "payLabel": {
+          "tr": "Ödeme yöntemleri",
+          "en": "Payment methods"
+        },
+        "codTitle": {
+          "tr": "Kapıda ödeme",
+          "en": "Cash on delivery"
+        },
+        "codText": {
+          "tr": "Ürünü teslim alırken nakit veya kartla ödeyin.",
+          "en": "Pay by cash or card when you receive the order."
+        },
+        "havaleTitle": {
+          "tr": "Havale / EFT",
+          "en": "Bank transfer"
+        },
+        "havaleText": {
+          "tr": "Sipariş sonrası banka hesabımıza ödeme yapın.",
+          "en": "Pay to our bank account after placing the order."
+        },
+        "havaleBilgi": {
+          "tr": "Havale bilgileri sipariş onayından sonra e-posta ile iletilir. Açıklama alanına sipariş numaranızı yazmayı unutmayın.",
+          "en": "Bank details are sent by email after the order is confirmed. Please add your order number to the transfer description."
+        },
+        "reviewAddrTitle": {
+          "tr": "Teslimat adresi",
+          "en": "Delivery address"
+        },
+        "reviewPayTitle": {
+          "tr": "Ödeme yöntemi",
+          "en": "Payment method"
+        },
+        "noteLabel": {
+          "tr": "Sipariş notu",
+          "en": "Order note"
+        },
+        "notePh": {
+          "tr": "Eklemek istedikleriniz",
+          "en": "Anything you would like to add"
+        },
+        "agreePre": {
+          "tr": "Okudum ve kabul ediyorum:",
+          "en": "I have read and accept the"
+        },
+        "sozlesmeText": {
+          "tr": "Mesafeli Satış Sözleşmesi",
+          "en": "Distance Sales Agreement"
+        },
+        "andText": {
+          "tr": "ve",
+          "en": "and the"
+        },
+        "onBilgiText": {
+          "tr": "Ön Bilgilendirme Formu",
+          "en": "Preliminary Information Form"
+        },
+        "submitText": {
+          "tr": "Siparişi tamamla",
+          "en": "Place order"
+        },
+        "summaryTitle": {
+          "tr": "Sipariş Özeti",
+          "en": "Order Summary"
+        },
+        "subtotalText": {
+          "tr": "Ara toplam",
+          "en": "Subtotal"
+        },
+        "shippingText": {
+          "tr": "Kargo",
+          "en": "Shipping"
+        },
+        "shipServerText": {
+          "tr": "Sunucuda hesaplanır",
+          "en": "Calculated on server"
+        },
+        "serverNote": {
+          "tr": "Kargo ve kesin toplam siparişiniz oluşturulurken sunucuda güncel fiyatlarla hesaplanır.",
+          "en": "Shipping and the final total are calculated on the server with current prices when your order is placed."
+        },
+        "closedText": {
+          "tr": "Çevrimiçi sipariş bu sitede şu an kapalı. Lütfen bizimle iletişime geçin.",
+          "en": "Online ordering is currently closed on this site. Please contact us."
+        },
+        "waHint": {
+          "tr": "Siparişiniz WhatsApp üzerinden iletilecektir.",
+          "en": "Your order will be sent via WhatsApp."
+        },
+        "errGeneric": {
+          "tr": "Sipariş oluşturulamadı. Lütfen tekrar deneyin.",
+          "en": "The order could not be created. Please try again."
+        },
+        "errNetwork": {
+          "tr": "Bağlantı kurulamadı. İnternet bağlantınızı kontrol edip tekrar deneyin.",
+          "en": "Could not connect. Check your internet connection and try again."
+        },
+        "errTimeout": {
+          "tr": "İstek zaman aşımına uğradı. Lütfen tekrar deneyin.",
+          "en": "The request timed out. Please try again."
+        },
+        "errEmptyCart": {
+          "tr": "Sepetiniz boş.",
+          "en": "Your cart is empty."
+        },
+        "requiredMsg": {
+          "tr": "Bu alan zorunludur",
+          "en": "This field is required"
+        },
+        "emailMsg": {
+          "tr": "Geçerli bir e-posta adresi girin",
+          "en": "Enter a valid email address"
+        },
+        "phoneMsg": {
+          "tr": "Geçerli bir telefon numarası girin",
+          "en": "Enter a valid phone number"
+        },
+        "minLengthMsg": {
+          "tr": "Daha uzun bir değer girin",
+          "en": "Enter a longer value"
+        },
+        "agreeMsg": {
+          "tr": "Devam etmek için sözleşmeleri onaylayın",
+          "en": "Please accept the agreements to continue"
+        },
+        "payMsg": {
+          "tr": "Bir ödeme yöntemi seçin",
+          "en": "Choose a payment method"
+        },
+        "waHeader": {
+          "tr": "Yeni Sipariş",
+          "en": "New Order"
+        },
+        "waTotal": {
+          "tr": "Toplam",
+          "en": "Total"
+        },
+        "waName": {
+          "tr": "Ad Soyad",
+          "en": "Name"
+        },
+        "waPhone": {
+          "tr": "Telefon",
+          "en": "Phone"
+        },
+        "waAddress": {
+          "tr": "Adres",
+          "en": "Address"
+        },
+        "waNote": {
+          "tr": "Not",
+          "en": "Note"
+        },
+        "waPay": {
+          "tr": "Ödeme",
+          "en": "Payment"
+        },
+        "successText": {
+          "tr": "Siparişiniz alındı",
+          "en": "Your order has been received"
+        },
+        "waConfirmTitle": {
+          "tr": "WhatsApp mesajınızı gönderdiniz mi?",
+          "en": "Did you send your WhatsApp message?"
+        },
+        "waConfirmText": {
+          "tr": "Sipariş özetiniz WhatsApp'ta hazırlandı. Mesajı gönderdiyseniz onaylayın; sipariş onayı mağaza tarafından verilecek. Göndermediyseniz sepetiniz korunur.",
+          "en": "Your order summary was prepared in WhatsApp. Confirm if you sent the message; the store will confirm the order. If you did not send it, your cart is kept."
+        },
+        "waOpenAgain": {
+          "tr": "WhatsApp açılmadıysa buradan açın",
+          "en": "Open WhatsApp here if it did not open"
+        },
+        "waConfirmNo": {
+          "tr": "Hayır, göndermedim",
+          "en": "No, I did not send it"
+        },
+        "waConfirmYes": {
+          "tr": "Evet, gönderdim",
+          "en": "Yes, I sent it"
+        },
+        "waPendingText": {
+          "tr": "Sipariş talebiniz WhatsApp'a yönlendirildi; onay mağaza tarafından verilecek",
+          "en": "Your order request was forwarded to WhatsApp; the store will confirm it"
+        }
+      },
+      "data": [],
+      "category": "e-commerce",
+      "description": "Profesyonel 3 adımlı ödeme (PLAN-PRO F3): Bilgiler/Adres → Ödeme yöntemi (kapıda / havale) → Onay. Üye ise kayıtlı adres seçimi + yeni adres (isteğe bağlı adres defterine kaydetme), misafir ise misafir formu + giriş bağlantısı. MxStore.siparis.olustur ile POST /api/public/siparis (fiyat sunucuda); başarıda siparis-tamam sayfasına no ile geçer, sepet temizlenir. Sunucu alan hatası ilgili adıma döner. API yoksa (statik yayın) desing.number doluysa WhatsApp + mxOrdersV1 yedeği; o da yoksa kapalı uyarısı.",
+      "version": "1.0.0",
+      "icon": "payments",
+      "id": "odfsfb",
+      "path": "odeme-pro",
+      "local": "body",
+      "index": 20
+    },
+    {
+      "name": "Sipariş Tamamlandı",
+      "desing": {
+        "max": "860px",
+        "bgcolor": "transparent",
+        "currency": "₺",
+        "urunlerUrl": "urunler",
+        "siparislerimUrl": "iletisim",
+        "title": {
+          "tr": "Siparişiniz alındı!",
+          "en": "Your order has been received!",
+          "ar": "تم استلام طلبك!"
+        },
+        "text": {
+          "tr": "Teşekkür ederiz. Siparişinizin durumunu Siparişlerim sayfasından takip edebilirsiniz.",
+          "en": "Thank you. You can track your order status on the My Orders page.",
+          "ar": "شكرًا لك. يمكنك متابعة حالة طلبك من صفحة طلباتي."
+        },
+        "loadingText": {
+          "tr": "Sipariş bilgileri yükleniyor",
+          "en": "Loading order details",
+          "ar": "جارٍ تحميل تفاصيل الطلب"
+        },
+        "notFoundTitle": {
+          "tr": "Sipariş bulunamadı",
+          "en": "Order not found",
+          "ar": "لم يتم العثور على الطلب"
+        },
+        "notFoundText": {
+          "tr": "Görüntülenecek bir sipariş bilgisi yok. Siparişlerinizi hesabınızdan görebilirsiniz.",
+          "en": "There is no order to display. You can see your orders in your account.",
+          "ar": "لا توجد معلومات طلب لعرضها. يمكنك الاطلاع على طلباتك من حسابك."
+        },
+        "shopText": {
+          "tr": "Alışverişe devam et",
+          "en": "Continue shopping",
+          "ar": "متابعة التسوق"
+        },
+        "ordersText": {
+          "tr": "Bize ulaşın",
+          "en": "Contact us",
+          "ar": "تواصل معنا"
+        },
+        "orderNoLabel": {
+          "tr": "Sipariş numarası",
+          "en": "Order number",
+          "ar": "رقم الطلب"
+        },
+        "copyText": {
+          "tr": "Kopyala",
+          "en": "Copy",
+          "ar": "نسخ"
+        },
+        "copyAria": {
+          "tr": "Sipariş numarasını kopyala",
+          "en": "Copy order number",
+          "ar": "نسخ رقم الطلب"
+        },
+        "copiedText": {
+          "tr": "Kopyalandı",
+          "en": "Copied",
+          "ar": "تم النسخ"
+        },
+        "emailNote": {
+          "tr": "Sipariş bilgileri şu adrese gönderilecek:",
+          "en": "Order details will be sent to:",
+          "ar": "سيتم إرسال تفاصيل الطلب إلى:"
+        },
+        "statusLabel": {
+          "tr": "Durum",
+          "en": "Status",
+          "ar": "الحالة"
+        },
+        "paymentLabel": {
+          "tr": "Ödeme",
+          "en": "Payment",
+          "ar": "الدفع"
+        },
+        "dateLabel": {
+          "tr": "Tarih",
+          "en": "Date",
+          "ar": "التاريخ"
+        },
+        "itemsTitle": {
+          "tr": "Sipariş özeti",
+          "en": "Order summary",
+          "ar": "ملخص الطلب"
+        },
+        "subtotalText": {
+          "tr": "Ara toplam",
+          "en": "Subtotal",
+          "ar": "المجموع الفرعي"
+        },
+        "shippingText": {
+          "tr": "Kargo",
+          "en": "Shipping",
+          "ar": "الشحن"
+        },
+        "discountText": {
+          "tr": "İndirim",
+          "en": "Discount",
+          "ar": "الخصم"
+        },
+        "totalText": {
+          "tr": "Toplam",
+          "en": "Total",
+          "ar": "الإجمالي"
+        },
+        "freeText": {
+          "tr": "Ücretsiz",
+          "en": "Free",
+          "ar": "مجاني"
+        },
+        "waTitle": {
+          "tr": "WhatsApp sipariş talebi",
+          "en": "WhatsApp order request",
+          "ar": "طلب عبر واتساب"
+        },
+        "waNote": {
+          "tr": "Sipariş talebiniz WhatsApp'a yönlendirildi; onay mağaza tarafından verilecek.",
+          "en": "Your order request was forwarded to WhatsApp; the store will confirm it.",
+          "ar": "تمت إحالة طلبك إلى واتساب؛ سيؤكده المتجر."
+        },
+        "durumBeklemede": {
+          "tr": "Beklemede",
+          "en": "Pending",
+          "ar": "قيد الانتظار"
+        },
+        "durumOnaylandi": {
+          "tr": "Onaylandı",
+          "en": "Confirmed",
+          "ar": "تم التأكيد"
+        },
+        "durumHazirlaniyor": {
+          "tr": "Hazırlanıyor",
+          "en": "Preparing",
+          "ar": "قيد التجهيز"
+        },
+        "durumKargoda": {
+          "tr": "Kargoda",
+          "en": "Shipped",
+          "ar": "تم الشحن"
+        },
+        "durumTeslim": {
+          "tr": "Teslim edildi",
+          "en": "Delivered",
+          "ar": "تم التسليم"
+        },
+        "durumIptal": {
+          "tr": "İptal edildi",
+          "en": "Cancelled",
+          "ar": "أُلغي"
+        },
+        "durumWaBekliyor": {
+          "tr": "Mağaza onayı bekleniyor",
+          "en": "Awaiting store confirmation",
+          "ar": "بانتظار تأكيد المتجر"
+        },
+        "odemeKapida": {
+          "tr": "Kapıda ödeme",
+          "en": "Cash on delivery",
+          "ar": "الدفع عند الاستلام"
+        },
+        "odemeHavale": {
+          "tr": "Havale / EFT",
+          "en": "Bank transfer",
+          "ar": "حوالة بنكية / EFT"
+        },
+        "odemeKart": {
+          "tr": "Kredi / banka kartı (demo)",
+          "en": "Credit / debit card (demo)",
+          "ar": "بطاقة ائتمان / خصم (تجريبي)"
+        },
+        "demoNote": {
+          "tr": "Bu bir DEMO siparişidir: gerçek ödeme alınmadı, sipariş hiçbir yere gönderilmedi.",
+          "en": "This is a DEMO order: no real payment was taken and nothing was sent anywhere.",
+          "ar": "هذا طلب تجريبي: لم يتم تحصيل أي دفعة حقيقية ولم يُرسل الطلب إلى أي جهة."
+        }
+      },
+      "data": [],
+      "category": "e-commerce",
+      "description": "Sipariş tamamlandı sayfası (PLAN-PRO F3). URL ?no= (+ ?email=) ve MxStore.siparis.son() ile sipariş numarası, kalemler, ara toplam/kargo/toplam, ödeme yöntemi ve durum rozetini gösterir; üye ya da e-posta varsa GET /api/public/siparis/:no ile sunucudan tazeler. Başarı animasyonu, sipariş no kopyalama, Siparişlerim ve alışverişe devam bağlantıları; numara yoksa boş durum.",
+      "version": "1.0.0",
+      "icon": "task_alt",
+      "id": "jrtdmm",
+      "path": "siparis-tamam",
+      "local": "body",
+      "index": 21
+    },
+    {
+      "name": "Ödeme (Demo)",
+      "description": "Statik e-ticaret demosu için SAHTE ödeme adımı: sepet özeti → iletişim/adres formu → ödeme yöntemi (kart / havale / kapıda) → kart formu (Luhn, SKT, CVC; hiçbir kart verisi saklanmaz, gönderilmez, günlüğe yazılmaz) → «3D Secure» SMS simülasyonu (doğru / yanlış / iptal / başarısız dene, failRate) → MxStore.siparis.olustur ile DEMO- numaralı kayıt → sipariş-tamam sayfasına yönlendirme. Üstte kalıcı DEMO uyarısı; TR/EN/AR, Arapçada RTL. API gerekmez.",
+      "version": "1.0.0",
+      "icon": "credit_score",
+      "category": "e-commerce",
+      "tags": [
+        "odeme",
+        "demo",
+        "checkout",
+        "3d-secure",
+        "luhn",
+        "rtl"
+      ],
+      "desing": {
+        "max": "1120px",
+        "bgcolor": "var(--mx-site-bg, #ffffff)",
+        "textcolor": "var(--mx-site-text, #1b1b1b)",
+        "surface": "var(--mx-site-surface, #f6f6f4)",
+        "surface2": "var(--mx-site-surface-2, #ececea)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+        "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+        "mutedcolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #fff))",
+        "currency": "₺",
+        "methods": [
+          "kart",
+          "havale",
+          "kapida"
+        ],
+        "shipping": {
+          "free_over": 500,
+          "fee": 49.9
+        },
+        "failRate": 0,
+        "showFailButton": true,
+        "smsCode": "123456",
+        "testCard": "4242 4242 4242 4242",
+        "demoIban": "TR00 0000 0000 0000 0000 0000 00",
+        "redirectMs": 1400,
+        "successHref": "siparis-onay",
+        "cartHref": "sepetim",
+        "shopHref": "urunler",
+        "badgeText": {
+          "tr": "DEMO",
+          "en": "DEMO",
+          "ar": "تجريبي"
+        },
+        "banner": {
+          "tr": "Gerçek ödeme alınmaz. Bu sayfa yalnızca ödeme akışını denemek içindir; kart bilgileri saklanmaz ve hiçbir yere gönderilmez.",
+          "en": "No real payment is taken. This page only lets you try the checkout flow; card details are never stored or sent anywhere.",
+          "ar": "لا يتم تحصيل أي مدفوعات حقيقية. هذه الصفحة مخصصة لتجربة مسار الدفع فقط؛ لا يتم حفظ بيانات البطاقة ولا إرسالها إلى أي جهة."
+        },
+        "title": {
+          "tr": "Ödeme",
+          "en": "Checkout",
+          "ar": "إتمام الدفع"
+        },
+        "stepsLabel": {
+          "tr": "Ödeme adımları",
+          "en": "Checkout steps",
+          "ar": "خطوات الدفع"
+        },
+        "step1": {
+          "tr": "Bilgiler",
+          "en": "Details",
+          "ar": "البيانات"
+        },
+        "step2": {
+          "tr": "Ödeme",
+          "en": "Payment",
+          "ar": "الدفع"
+        },
+        "step3": {
+          "tr": "3D Secure",
+          "en": "3D Secure",
+          "ar": "3D Secure"
+        },
+        "loadingText": {
+          "tr": "Ödeme sayfası yükleniyor",
+          "en": "Loading checkout",
+          "ar": "جارٍ تحميل صفحة الدفع"
+        },
+        "storeError": {
+          "tr": "Mağaza bileşeni yüklenemedi. Sayfayı yenileyip tekrar deneyin.",
+          "en": "The store component could not be loaded. Refresh the page and try again.",
+          "ar": "تعذر تحميل مكوّن المتجر. أعد تحميل الصفحة وحاول مرة أخرى."
+        },
+        "emptyTitle": {
+          "tr": "Sepetiniz boş",
+          "en": "Your cart is empty",
+          "ar": "سلتك فارغة"
+        },
+        "emptyText": {
+          "tr": "Ödemeyi denemek için önce sepete ürün ekleyin.",
+          "en": "Add products to your cart first to try the checkout.",
+          "ar": "أضف منتجات إلى السلة أولًا لتجربة الدفع."
+        },
+        "shopText": {
+          "tr": "Alışverişe dön",
+          "en": "Back to shopping",
+          "ar": "العودة إلى التسوق"
+        },
+        "cartCount": {
+          "tr": {
+            "one": "Sepetinizde {n} ürün var",
+            "other": "Sepetinizde {n} ürün var"
+          },
+          "en": {
+            "one": "{n} item in your cart",
+            "other": "{n} items in your cart"
+          },
+          "ar": {
+            "zero": "سلتك فارغة",
+            "one": "سلتك تحتوي على منتج واحد",
+            "two": "سلتك تحتوي على منتجين",
+            "few": "سلتك تحتوي على {n} منتجات",
+            "many": "سلتك تحتوي على {n} منتجًا",
+            "other": "سلتك تحتوي على {n} منتج"
+          }
+        },
+        "step1Title": {
+          "tr": "İletişim ve teslimat bilgileri",
+          "en": "Contact and delivery details",
+          "ar": "بيانات التواصل والتوصيل"
+        },
+        "nameLabel": {
+          "tr": "Ad soyad",
+          "en": "Full name",
+          "ar": "الاسم الكامل"
+        },
+        "emailLabel": {
+          "tr": "E-posta",
+          "en": "Email",
+          "ar": "البريد الإلكتروني"
+        },
+        "phoneLabel": {
+          "tr": "Telefon",
+          "en": "Phone",
+          "ar": "رقم الهاتف"
+        },
+        "cityLabel": {
+          "tr": "Şehir",
+          "en": "City",
+          "ar": "المدينة"
+        },
+        "addressLabel": {
+          "tr": "Açık adres",
+          "en": "Full address",
+          "ar": "العنوان التفصيلي"
+        },
+        "namePh": {
+          "tr": "Adınız ve soyadınız",
+          "en": "Your full name",
+          "ar": "اسمك الكامل"
+        },
+        "emailPh": {
+          "tr": "ornek@eposta.com",
+          "en": "name@example.com",
+          "ar": "name@example.com"
+        },
+        "phonePh": {
+          "tr": "05XX XXX XX XX",
+          "en": "+90 5XX XXX XX XX",
+          "ar": "+90 5XX XXX XX XX"
+        },
+        "cityPh": {
+          "tr": "Şehir",
+          "en": "City",
+          "ar": "المدينة"
+        },
+        "addressPh": {
+          "tr": "Mahalle, sokak, bina ve daire no",
+          "en": "Neighborhood, street, building and flat no.",
+          "ar": "الحي، الشارع، رقم المبنى والشقة"
+        },
+        "continueText": {
+          "tr": "Ödemeye geç",
+          "en": "Continue to payment",
+          "ar": "المتابعة إلى الدفع"
+        },
+        "errRequired": {
+          "tr": "Bu alan zorunludur.",
+          "en": "This field is required.",
+          "ar": "هذا الحقل مطلوب."
+        },
+        "errName": {
+          "tr": "Ad ve soyadınızı girin.",
+          "en": "Enter your first and last name.",
+          "ar": "أدخل الاسم الأول واسم العائلة."
+        },
+        "errEmail": {
+          "tr": "Geçerli bir e-posta adresi girin.",
+          "en": "Enter a valid email address.",
+          "ar": "أدخل عنوان بريد إلكتروني صالحًا."
+        },
+        "errPhone": {
+          "tr": "Geçerli bir telefon numarası girin (en az 10 hane).",
+          "en": "Enter a valid phone number (at least 10 digits).",
+          "ar": "أدخل رقم هاتف صالحًا (10 أرقام على الأقل)."
+        },
+        "errAddress": {
+          "tr": "Adres en az 10 karakter olmalı.",
+          "en": "The address must be at least 10 characters.",
+          "ar": "يجب ألا يقل العنوان عن 10 أحرف."
+        },
+        "errSummary": {
+          "tr": "Lütfen işaretli alanları düzeltin.",
+          "en": "Please fix the highlighted fields.",
+          "ar": "يرجى تصحيح الحقول المحددة."
+        },
+        "editCartText": {
+          "tr": "Sepeti düzenle",
+          "en": "Edit cart",
+          "ar": "تعديل السلة"
+        },
+        "step2Title": {
+          "tr": "Ödeme yöntemi",
+          "en": "Payment method",
+          "ar": "طريقة الدفع"
+        },
+        "methodLabel": {
+          "tr": "Ödeme yöntemini seçin",
+          "en": "Choose a payment method",
+          "ar": "اختر طريقة الدفع"
+        },
+        "methodKart": {
+          "tr": "Kredi / banka kartı",
+          "en": "Credit / debit card",
+          "ar": "بطاقة ائتمان / خصم"
+        },
+        "methodKartDesc": {
+          "tr": "Demo — gerçek çekim yapılmaz",
+          "en": "Demo — nothing is charged",
+          "ar": "تجريبي — لا يتم أي خصم فعلي"
+        },
+        "methodHavale": {
+          "tr": "Havale / EFT",
+          "en": "Bank transfer",
+          "ar": "تحويل بنكي"
+        },
+        "methodHavaleDesc": {
+          "tr": "Demo hesap bilgisi gösterilir",
+          "en": "A demo account is shown",
+          "ar": "يُعرض حساب تجريبي"
+        },
+        "methodKapida": {
+          "tr": "Kapıda ödeme",
+          "en": "Cash on delivery",
+          "ar": "الدفع عند الاستلام"
+        },
+        "methodKapidaDesc": {
+          "tr": "Teslimatta ödenir (demo)",
+          "en": "Pay on delivery (demo)",
+          "ar": "الدفع عند التسليم (تجريبي)"
+        },
+        "havaleInfo": {
+          "tr": "Demo hesap numarası aşağıdadır; gerçek bir hesap değildir. Havale beklenmez, sipariş demo olarak onaylanır.",
+          "en": "The demo account number is shown below; it is not a real account. No transfer is awaited and the order is confirmed as a demo.",
+          "ar": "رقم الحساب التجريبي مذكور أدناه وليس حسابًا حقيقيًا. لا يُنتظر أي تحويل ويتم تأكيد الطلب كطلب تجريبي."
+        },
+        "kapidaInfo": {
+          "tr": "Tutarı teslimat sırasında ödersiniz. Bu bir demodur; hiçbir ödeme alınmaz.",
+          "en": "You pay on delivery. This is a demo; no payment is taken.",
+          "ar": "تدفع المبلغ عند التسليم. هذا عرض تجريبي ولا يتم تحصيل أي مدفوعات."
+        },
+        "cardTitle": {
+          "tr": "Kart bilgileri",
+          "en": "Card details",
+          "ar": "بيانات البطاقة"
+        },
+        "cardNumLabel": {
+          "tr": "Kart numarası",
+          "en": "Card number",
+          "ar": "رقم البطاقة"
+        },
+        "cardNameLabel": {
+          "tr": "Karttaki ad",
+          "en": "Name on card",
+          "ar": "الاسم على البطاقة"
+        },
+        "cardNamePh": {
+          "tr": "Kart üzerindeki ad",
+          "en": "Name as printed on the card",
+          "ar": "الاسم كما هو مطبوع على البطاقة"
+        },
+        "expLabel": {
+          "tr": "Son kullanma tarihi",
+          "en": "Expiry date",
+          "ar": "تاريخ الانتهاء"
+        },
+        "expPh": {
+          "tr": "AA/YY",
+          "en": "MM/YY",
+          "ar": "MM/YY"
+        },
+        "cvcLabel": {
+          "tr": "Güvenlik kodu (CVC)",
+          "en": "Security code (CVC)",
+          "ar": "رمز الأمان (CVC)"
+        },
+        "demoCardHint": {
+          "tr": "Demo test kartı: {card} · Son kullanma: ileri bir tarih (ör. 12/35) · CVC: 123. Girdiğiniz kart bilgisi saklanmaz, kaydedilmez ve gönderilmez.",
+          "en": "Demo test card: {card} · Expiry: any future date (e.g. 12/35) · CVC: 123. The card details you enter are never stored, saved or sent.",
+          "ar": "بطاقة الاختبار التجريبية: {card} · تاريخ الانتهاء: أي تاريخ مستقبلي (مثل 12/35) · CVC: 123. لا يتم حفظ بيانات البطاقة التي تدخلها ولا تسجيلها ولا إرسالها."
+        },
+        "fillCardText": {
+          "tr": "Test kartını doldur",
+          "en": "Fill test card",
+          "ar": "تعبئة بطاقة الاختبار"
+        },
+        "errCardNum": {
+          "tr": "Kart numarası eksik veya hatalı.",
+          "en": "The card number is incomplete or invalid.",
+          "ar": "رقم البطاقة غير مكتمل أو غير صحيح."
+        },
+        "errCardLuhn": {
+          "tr": "Kart numarası doğrulanamadı. Demo test kartını deneyin.",
+          "en": "The card number could not be verified. Try the demo test card.",
+          "ar": "تعذر التحقق من رقم البطاقة. جرّب بطاقة الاختبار التجريبية."
+        },
+        "errCardName": {
+          "tr": "Karttaki adı girin.",
+          "en": "Enter the name on the card.",
+          "ar": "أدخل الاسم على البطاقة."
+        },
+        "errExp": {
+          "tr": "Tarihi AA/YY biçiminde girin.",
+          "en": "Enter the date as MM/YY.",
+          "ar": "أدخل التاريخ بصيغة MM/YY."
+        },
+        "errExpPast": {
+          "tr": "Kartın son kullanma tarihi geçmiş.",
+          "en": "The card has expired.",
+          "ar": "انتهت صلاحية البطاقة."
+        },
+        "errCvc": {
+          "tr": "Güvenlik kodu 3 haneli olmalı (American Express için 4).",
+          "en": "The security code must be 3 digits (4 for American Express).",
+          "ar": "يجب أن يتكون رمز الأمان من 3 أرقام (4 لبطاقة American Express)."
+        },
+        "backText": {
+          "tr": "Geri",
+          "en": "Back",
+          "ar": "رجوع"
+        },
+        "payText": {
+          "tr": "Ödemeyi tamamla",
+          "en": "Complete payment",
+          "ar": "إتمام الدفع"
+        },
+        "threeTitle": {
+          "tr": "3D Secure doğrulama",
+          "en": "3D Secure verification",
+          "ar": "التحقق عبر 3D Secure"
+        },
+        "threeBank": {
+          "tr": "Demo Banka · Güvenli Ödeme",
+          "en": "Demo Bank · Secure Payment",
+          "ar": "البنك التجريبي · دفع آمن"
+        },
+        "threeInfo": {
+          "tr": "Telefonunuza gönderilen 6 haneli SMS kodunu girin. Demo ipucu: kod {code}.",
+          "en": "Enter the 6-digit SMS code sent to your phone. Demo hint: the code is {code}.",
+          "ar": "أدخل رمز الرسالة المكوّن من 6 أرقام المُرسل إلى هاتفك. تلميح تجريبي: الرمز هو {code}."
+        },
+        "threeAmount": {
+          "tr": "Tutar",
+          "en": "Amount",
+          "ar": "المبلغ"
+        },
+        "threeCard": {
+          "tr": "Kart",
+          "en": "Card",
+          "ar": "البطاقة"
+        },
+        "codeLabel": {
+          "tr": "SMS doğrulama kodu",
+          "en": "SMS verification code",
+          "ar": "رمز التحقق عبر الرسالة"
+        },
+        "verifyText": {
+          "tr": "Doğrula",
+          "en": "Verify",
+          "ar": "تحقق"
+        },
+        "cancelText": {
+          "tr": "İptal et",
+          "en": "Cancel",
+          "ar": "إلغاء"
+        },
+        "failBtnText": {
+          "tr": "Başarısız dene",
+          "en": "Simulate failure",
+          "ar": "جرّب الفشل"
+        },
+        "errCodeFormat": {
+          "tr": "6 haneli kodu girin.",
+          "en": "Enter the 6-digit code.",
+          "ar": "أدخل الرمز المكوّن من 6 أرقام."
+        },
+        "errCode": {
+          "tr": "Kod hatalı. Kalan hak: {n}. Demo ipucu: {code}.",
+          "en": "Incorrect code. Attempts left: {n}. Demo hint: {code}.",
+          "ar": "الرمز غير صحيح. المحاولات المتبقية: {n}. تلميح تجريبي: {code}."
+        },
+        "processingText": {
+          "tr": "Ödeme işleniyor…",
+          "en": "Processing payment…",
+          "ar": "جارٍ معالجة الدفع…"
+        },
+        "successText": {
+          "tr": "Ödeme onaylandı (demo). Siparişiniz oluşturuldu; yönlendiriliyorsunuz…",
+          "en": "Payment approved (demo). Your order has been created; redirecting you…",
+          "ar": "تمت الموافقة على الدفع (تجريبي). تم إنشاء طلبك؛ جارٍ تحويلك…"
+        },
+        "successTitle": {
+          "tr": "Ödeme başarılı",
+          "en": "Payment successful",
+          "ar": "تم الدفع بنجاح"
+        },
+        "failTitle": {
+          "tr": "Ödeme başarısız",
+          "en": "Payment failed",
+          "ar": "فشل الدفع"
+        },
+        "failMessage": {
+          "tr": "Demo ödeme reddedildi. Sepetiniz korundu; yeniden deneyebilir ya da başka bir yöntem seçebilirsiniz.",
+          "en": "The demo payment was declined. Your cart is kept; you can try again or choose another method.",
+          "ar": "تم رفض الدفع التجريبي. تم الاحتفاظ بسلتك؛ يمكنك المحاولة مرة أخرى أو اختيار طريقة أخرى."
+        },
+        "tooManyText": {
+          "tr": "Çok fazla hatalı kod girildi; ödeme reddedildi.",
+          "en": "Too many incorrect codes were entered; the payment was declined.",
+          "ar": "تم إدخال عدد كبير من الرموز الخاطئة؛ تم رفض الدفع."
+        },
+        "cancelledMessage": {
+          "tr": "3D Secure doğrulaması iptal edildi; ödeme tamamlanmadı.",
+          "en": "3D Secure verification was cancelled; the payment was not completed.",
+          "ar": "تم إلغاء التحقق عبر 3D Secure؛ لم يكتمل الدفع."
+        },
+        "retryText": {
+          "tr": "Yeniden dene",
+          "en": "Try again",
+          "ar": "حاول مرة أخرى"
+        },
+        "summaryTitle": {
+          "tr": "Sipariş özeti",
+          "en": "Order summary",
+          "ar": "ملخص الطلب"
+        },
+        "subtotalText": {
+          "tr": "Ara toplam",
+          "en": "Subtotal",
+          "ar": "المجموع الفرعي"
+        },
+        "shippingText": {
+          "tr": "Kargo",
+          "en": "Shipping",
+          "ar": "الشحن"
+        },
+        "freeText": {
+          "tr": "Ücretsiz",
+          "en": "Free",
+          "ar": "مجاني"
+        },
+        "totalText": {
+          "tr": "Toplam",
+          "en": "Total",
+          "ar": "الإجمالي"
+        },
+        "freeShipNote": {
+          "tr": "{amount} daha ekleyin, kargo ücretsiz olsun.",
+          "en": "Add {amount} more to get free shipping.",
+          "ar": "أضف {amount} أخرى لتحصل على شحن مجاني."
+        },
+        "qtyLabel": {
+          "tr": "Adet",
+          "en": "Qty",
+          "ar": "الكمية"
+        }
+      },
+      "id": "ocu8tl",
+      "path": "odeme-demo",
+      "local": "body",
+      "data": [],
+      "index": 22
+    },
+    {
+      "name": "Demo Kredi Şeridi",
+      "description": "Demo sitelerin alt bilgisinde duran kredi şeridi: «Bu demo Webyapar tarafından hazırlanmıştır — Bu temayı iste». Marka adı çevrilmez (Latin, dir=ltr izole), bağlantı demo adına göre webyapar.com/temalar#<slug>. Üç dil (TR/EN/AR), mantıksal CSS (RTL), mobilde sarar, reduced-motion'a saygılı.",
+      "version": "1.0.0",
+      "icon": "campaign",
+      "category": "demo",
+      "tags": [
+        "demo",
+        "footer",
+        "kredi",
+        "rtl"
+      ],
+      "desing": {
+        "href": "https://webyapar.com/temalar#elektronik",
+        "brand": "Webyapar",
+        "text": {
+          "tr": "Bu demo {brand} tarafından hazırlanmıştır —",
+          "en": "This demo was prepared by {brand} —",
+          "ar": "تم إعداد هذا العرض التجريبي بواسطة {brand} —"
+        },
+        "ctaText": {
+          "tr": "Bu temayı iste",
+          "en": "Get this theme",
+          "ar": "اطلب هذا القالب"
+        },
+        "newTabText": {
+          "tr": "(yeni sekmede açılır)",
+          "en": "(opens in a new tab)",
+          "ar": "(يفتح في علامة تبويب جديدة)"
+        },
+        "ariaLabel": {
+          "tr": "Demo bilgisi",
+          "en": "Demo credit",
+          "ar": "معلومات العرض التجريبي"
+        }
+      },
+      "id": "o8ym0b",
+      "path": "demo-kredi",
+      "local": "footer",
+      "data": [],
+      "index": 23
+    },
+    {
+      "name": "Urun Vitrin",
+      "description": "Musteri tarafinda modern urun vitrini. Kategori cipleriyle filtre (urunlerin category alanindan + Tumu), tam karti tiklanabilir kart (urun detay sayfasina gider), gorsel, rozetler, ad, aciklama parcasi, fiyat (yoksa gizlenir) ve sepet-widget uyumlu data-mx-* sepete ekle butonu (kart linkini tetiklemez). Canli products.json kataloğunu okur, fiyat/gorseli page/<id>/index.json detayindan zenginlestirir.",
+      "version": "2.0.0",
+      "icon": "storefront",
+      "category": "e-commerce",
+      "desing": {
+        "color": "#333333",
+        "bgcolor": "#ffffff",
+        "pricecolor": "#e53935",
+        "oldpricecolor": "#999999",
+        "badgecolor": "#ffffff",
+        "badgebg-new": "#4caf50",
+        "badgebg-sale": "#ff9800",
+        "badgebg-soldout": "#9e9e9e",
+        "buttonbg": "#2196f3",
+        "buttoncolor": "#ffffff",
+        "bordercolor": "#e0e0e0",
+        "currency": "₺",
+        "showFilter": true,
+        "descLength": 120,
+        "title": {
+          "tr": "Tüm ürünler",
+          "en": "All products",
+          "ar": "كل المنتجات"
+        },
+        "allText": {
+          "tr": "Tümü",
+          "en": "All",
+          "ar": "الكل"
+        },
+        "resultCount": {
+          "tr": "ürün",
+          "en": "products",
+          "ar": "منتج"
+        },
+        "addToCart": {
+          "tr": "Sepete Ekle",
+          "en": "Add to Cart",
+          "ar": "أضف إلى السلة"
+        },
+        "soldOutText": {
+          "tr": "Tukendi",
+          "en": "Sold Out",
+          "ar": "نفدت الكمية"
+        },
+        "newText": {
+          "tr": "Yeni",
+          "en": "New",
+          "ar": "جديد"
+        },
+        "saleText": {
+          "tr": "Indirim",
+          "en": "Sale",
+          "ar": "تخفيض"
+        },
+        "search": true,
+        "sort": true,
+        "searchLabel": {
+          "tr": "Urun ara",
+          "en": "Search products",
+          "ar": "ابحث عن منتج"
+        },
+        "searchPlaceholder": {
+          "tr": "Urun adi veya kategori…",
+          "en": "Product name or category…",
+          "ar": "اسم المنتج أو الفئة…"
+        },
+        "sortLabel": {
+          "tr": "Sirala",
+          "en": "Sort by",
+          "ar": "ترتيب حسب"
+        },
+        "sortDefault": {
+          "tr": "Onerilen siralama",
+          "en": "Recommended",
+          "ar": "الترتيب الموصى به"
+        },
+        "sortPriceAsc": {
+          "tr": "Fiyat: dusukten yuksege",
+          "en": "Price: low to high",
+          "ar": "السعر: من الأقل إلى الأعلى"
+        },
+        "sortPriceDesc": {
+          "tr": "Fiyat: yuksekten dusuge",
+          "en": "Price: high to low",
+          "ar": "السعر: من الأعلى إلى الأقل"
+        },
+        "sortNew": {
+          "tr": "En yeniler",
+          "en": "Newest first",
+          "ar": "الأحدث أولًا"
+        },
+        "noResult": {
+          "tr": "Aramaniza uygun urun bulunamadi.",
+          "en": "No products match your search.",
+          "ar": "لم يتم العثور على منتجات مطابقة لبحثك."
+        },
+        "clearSearch": {
+          "tr": "Filtreleri temizle",
+          "en": "Clear filters",
+          "ar": "مسح عوامل التصفية"
+        },
+        "urlState": true
+      },
+      "data": [],
+      "id": "n19unk",
+      "path": "eticaret-urun-vitrin",
+      "local": "body",
+      "index": 24
+    },
+    {
+      "name": "Tanıtım Modülü",
+      "local": "body",
+      "desing": {
+        "name": {
+          "tr": "Garanti, teslimat ve iade",
+          "en": "Warranty, delivery and returns",
+          "ar": "الضمان والتسليم والاسترجاع"
+        },
+        "description": {
+          "tr": "Siparişler 1–3 iş günü içinde kargoya verilir; 500 ₺ üzeri kargo ücretsizdir. Ürünü teslim aldıktan sonra 14 gün içinde iade edebilirsiniz; ürün eksiksiz ve kullanılmamış olmalıdır. Ambalajı açılmış yazılım ve dijital içerik ürünlerinde cayma hakkı kullanılamaz (md. 15/ı). Tüm ürünlerde 2 yıl garanti vardır; garanti belgesi pakettedir.",
+          "en": "Orders ship within 1–3 business days; shipping is free over 500 ₺. You can return a product within 14 days of delivery; it must be complete and unused. The right of withdrawal cannot be used for software and digital-content products once opened (Distance Contracts Regulation art. 15). All products carry a 2-year warranty; the warranty certificate is in the box.",
+          "ar": "تُشحن الطلبات خلال 1–3 أيام عمل، والشحن مجاني فوق 500 ليرة. يمكنك إرجاع المنتج خلال 14 يومًا من التسليم بشرط أن يكون كاملًا وغير مستعمل. ولا يمكن ممارسة حق العدول في منتجات البرمجيات والمحتوى الرقمي بعد فتحها (المادة 15). وتتمتع جميع المنتجات بضمان سنتين وشهادة الضمان داخل العبوة."
+        },
+        "name2": {
+          "tr": "Yetkili servis",
+          "en": "Authorised service",
+          "ar": "خدمة معتمدة"
+        },
+        "spot2": {
+          "tr": "Arıza durumunda servis bilgisi garanti belgesindedir.",
+          "en": "Service details for faults are on the warranty certificate.",
+          "ar": "بيانات الخدمة عند العطل مذكورة في شهادة الضمان."
+        },
+        "icon2": "build",
+        "name3": {
+          "tr": "Enerji ve güvenlik",
+          "en": "Energy and safety",
+          "ar": "الطاقة والسلامة"
+        },
+        "spot3": {
+          "tr": "Pil ve şarj bilgileri ürün sayfasında yazılıdır.",
+          "en": "Battery and charging details are on the product page.",
+          "ar": "بيانات البطارية والشحن مذكورة في صفحة المنتج."
+        },
+        "icon3": "battery_charging_full",
+        "img": "elektronik-paket.webp",
+        "bgcolor": "#1e3046",
+        "fontcolor": "#fff",
+        "margintop": "20",
+        "marginbotton": "20",
+        "title": {
+          "tr": "Garanti, teslimat ve iade",
+          "en": "Warranty, delivery and returns",
+          "ar": "الضمان والتسليم والاسترجاع"
+        }
+      },
+      "category": "module",
+      "description": "Kurumsal tanıtım ve hakkımızda modülü. Firma tanıtımı, vizyon, misyon metinlerini görsel ile birlikte sunar. Ana sayfa şeridi ve temalar için varsayılan cok dilli metinler. İki kolonlu responsive tasarım, W2 animasyon ve icon desteği içerir.",
+      "version": "1.1.0",
+      "icon": "business",
+      "id": "98ij4u",
+      "path": "module-1",
+      "data": [],
+      "index": 25
+    },
+    {
+      "name": "Maps",
+      "desing": {
+        "height": "200px",
+        "opacity": "0.5",
+        "backgroundcolor": "#ffffff",
+        "color": "#1e3046",
+        "img": "map.png",
+        "externalUrl": "",
+        "margin": "0px"
+      },
+      "category": "map",
+      "description": "Firmanın konumunu harita üzerinde görselleştiren modül. Ziyaretçilerin işletmeyi kolayca bulmasını sağlar. 1 farklı sektörde aktif kullanımda.",
+      "id": "ezytun",
+      "path": "map-2",
+      "local": "body",
+      "data": [],
+      "index": 26
+    },
+    {
+      "name": "Urun Detay",
+      "description": "E-ticaret urun detay sayfasi modulu. Gorsel galerisi, urun bilgisi, sepete ekle, sekmeli icerik ve iliskili urunler icerir.",
+      "version": "1.0.0",
+      "icon": "inventory_2",
+      "category": "e-commerce",
+      "desing": {
+        "color": "#333333",
+        "bgcolor": "#ffffff",
+        "pricecolor": "#e53935",
+        "oldpricecolor": "#999999",
+        "primarycolor": "#2196f3",
+        "bordercolor": "#e0e0e0",
+        "starcolor": "#ffc107",
+        "badgebg-sale": "#ff9800",
+        "title": {
+          "tr": "Ürün Detayı",
+          "en": "Product Detail",
+          "ar": "تفاصيل المنتج"
+        },
+        "addToCart": {
+          "tr": "Sepete Ekle",
+          "en": "Add to Cart",
+          "ar": "أضف إلى السلة"
+        },
+        "description": {
+          "tr": "Açıklama",
+          "en": "Description",
+          "ar": "الوصف"
+        },
+        "specifications": {
+          "tr": "Özellikler",
+          "en": "Specifications",
+          "ar": "المواصفات"
+        },
+        "reviews": {
+          "tr": "Değerlendirmeler",
+          "en": "Reviews",
+          "ar": "التقييمات"
+        },
+        "relatedProducts": {
+          "tr": "İlişkili Ürünler",
+          "en": "Related Products",
+          "ar": "منتجات ذات صلة"
+        },
+        "quantity": {
+          "tr": "Adet",
+          "en": "Quantity",
+          "ar": "الكمية"
+        },
+        "inStock": {
+          "tr": "Stokta Var",
+          "en": "In Stock",
+          "ar": "متوفر"
+        },
+        "outOfStock": {
+          "tr": "Stokta Yok",
+          "en": "Out of Stock",
+          "ar": "غير متوفر"
+        },
+        "discount": {
+          "tr": "İndirim",
+          "en": "Discount",
+          "ar": "خصم"
+        },
+        "breadcrumbHome": {
+          "tr": "Anasayfa",
+          "en": "Home",
+          "ar": "الرئيسية"
+        },
+        "currency": "₺",
+        "relatedCount": 4,
+        "noSpecs": {
+          "tr": "Bu ürün için özellik bilgisi eklenmemiş.",
+          "en": "No specifications added for this product.",
+          "ar": "لم تتم إضافة مواصفات لهذا المنتج."
+        },
+        "noReviews": {
+          "tr": "Henüz değerlendirme yapılmamış.",
+          "en": "No reviews yet.",
+          "ar": "لا توجد تقييمات بعد."
+        },
+        "noRelated": {
+          "tr": "İlişkili ürün bulunamadı.",
+          "en": "No related products found.",
+          "ar": "لا توجد منتجات ذات صلة."
+        },
+        "noDescription": {
+          "tr": "Bu ürün için açıklama eklenmemiş.",
+          "en": "No description added for this product.",
+          "ar": "لم تتم إضافة وصف لهذا المنتج."
+        }
+      },
+      "data": [],
+      "id": "hm6p2i",
+      "path": "eticaret-urun-detay",
+      "local": "body",
+      "index": 27
+    }
+  ]
+}

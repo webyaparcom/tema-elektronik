@@ -1,0 +1,81 @@
+<div class="modulex-quickroot">{{html}}</div>
+<style>
+  .modulex-quickroot {
+    width: 100%;
+    background: --bgcolor--;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .modulex-quickwrap {
+    max-width: --max--;
+    margin: 0 auto;
+    padding: 12px 16px;
+  }
+
+  .modulex-quickinner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modulex-quickpill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: --border_radius--;
+    background: #fff;
+    color: --color--;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .modulex-quickpill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.25);
+    color: --pillhover--;
+  }
+
+  .modulex-quickicon {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .modulex-quickinner {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 4px;
+    }
+
+    .modulex-quickpill {
+      flex: 0 0 auto;
+    }
+  }
+
+  /* W2: mobil tasma kontrolu */
+  @media (max-width: 768px) {
+    [class*="modulex"] {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* W2: erisilebilirlik — animasyon kapatma */
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"],
+    [class*="modulex"] * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>

@@ -1,0 +1,37 @@
+{
+  "id": "9tcwrrpzgq",
+  "name": {
+    "tr": "Giyilebilir",
+    "en": "Wearables",
+    "ar": "القابلة للارتداء"
+  },
+  "description": {
+    "tr": "Giyilebilir",
+    "en": "Wearables",
+    "ar": "القابلة للارتداء"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "giyilebilir",
+  "icon": "watch",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 1,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Giyilebilir",
+    "en": "Wearables",
+    "ar": "القابلة للارتداء"
+  },
+  "date": "2026-10-30T22:21:59.761Z",
+  "update": "2026-10-30T22:29:44.573Z"
+}

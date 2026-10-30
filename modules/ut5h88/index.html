@@ -1,0 +1,790 @@
+<section class="modulex-uyesip" id="uyesip-{{id}}">
+  <div class="modulex-uyesip-kap">
+    <div class="modulex-uyesip-bas">
+      <h1 class="modulex-uyesip-baslik">
+        <span class="material-symbols-outlined" aria-hidden="true">receipt_long</span>
+        <span>{{baslik}}</span>
+      </h1>
+      <p class="modulex-uyesip-alt">{{altBaslik}}</p>
+    </div>
+
+    <div class="modulex-uyesip-durum" id="uyesip-durum-{{id}}" role="status" aria-live="polite"></div>
+
+    <div class="modulex-uyesip-yuk" id="uyesip-yuk-{{id}}" aria-hidden="true">
+      <span class="mx-skeleton modulex-uyesip-yukleme"></span>
+      <span class="mx-skeleton modulex-uyesip-yukleme"></span>
+      <span class="mx-skeleton modulex-uyesip-yukleme"></span>
+    </div>
+
+    <div class="modulex-uyesip-uye" id="uyesip-uye-{{id}}" hidden>
+      <div class="modulex-uyesip-liste" id="uyesip-liste-{{id}}"></div>
+      <nav class="modulex-uyesip-sayfalama" id="uyesip-sayfalama-{{id}}" aria-label="{{sayfalamaLabel}}" hidden>
+        <button type="button" class="mx-btn mx-btn--outline mx-btn--sm" id="uyesip-onceki-{{id}}">
+          <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span><span>{{oncekiButon}}</span>
+        </button>
+        <span class="modulex-uyesip-sayfa" id="uyesip-sayfa-{{id}}"></span>
+        <button type="button" class="mx-btn mx-btn--outline mx-btn--sm" id="uyesip-sonraki-{{id}}">
+          <span>{{sonrakiButon}}</span><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="modulex-uyesip-misafir" id="uyesip-misafir-{{id}}" hidden>
+      <div class="mx-alert mx-alert--info" id="uyesip-girisoner-{{id}}">
+        <span class="material-symbols-outlined" aria-hidden="true">person</span>
+        <div>
+          <strong class="mx-alert__title">{{misafirBaslik}}</strong>
+          <p class="modulex-uyesip-p">{{misafirMetin}}</p>
+          <a class="mx-btn mx-btn--primary mx-btn--sm" href="/{{lang}}/{{girisUrl}}/">{{girisYapButon}}</a>
+        </div>
+      </div>
+      <div class="mx-alert mx-alert--info" id="uyesip-yok-{{id}}" hidden>
+        <span class="material-symbols-outlined" aria-hidden="true">info</span>
+        <div>
+          <strong class="mx-alert__title">{{yokBaslik}}</strong>
+          <p class="modulex-uyesip-p">{{yokMetin}}</p>
+        </div>
+      </div>
+
+      <form class="mx-card modulex-uyesip-sorgu" id="uyesip-sorgu-{{id}}" onsubmit="return false;" hidden>
+        <h2 class="modulex-uyesip-h2">{{sorguBaslik}}</h2>
+        <div class="modulex-uyesip-sorgu-alanlar">
+          <div class="mx-field">
+            <label class="mx-label" for="uyesip-no-{{id}}">{{siparisNoLabel}}</label>
+            <input class="mx-input" type="text" id="uyesip-no-{{id}}" name="no" maxlength="20" autocomplete="off" placeholder="{{siparisNoPlaceholder}}" required />
+          </div>
+          <div class="mx-field">
+            <label class="mx-label" for="uyesip-email-{{id}}">{{emailLabel}}</label>
+            <input class="mx-input" type="email" id="uyesip-email-{{id}}" name="email" autocomplete="email" required />
+          </div>
+          <button type="submit" class="mx-btn mx-btn--primary modulex-uyesip-sorgu-btn">{{sorgulaButon}}</button>
+        </div>
+        <div class="modulex-uyesip-sorgu-sonuc" id="uyesip-sorgu-sonuc-{{id}}" aria-live="polite"></div>
+      </form>
+
+      <h2 class="modulex-uyesip-h2" id="uyesip-yerel-baslik-{{id}}" hidden>{{yerelBaslik}}</h2>
+      <div class="modulex-uyesip-liste" id="uyesip-yerel-{{id}}"></div>
+    </div>
+
+    <div class="mx-empty" id="uyesip-bos-{{id}}" hidden>
+      <span class="material-symbols-outlined mx-empty__icon" aria-hidden="true">shopping_bag</span>
+      <p class="mx-empty__title">{{bosBaslik}}</p>
+      <p class="mx-empty__text">{{bosMetin}}</p>
+      <a class="mx-btn mx-btn--primary" href="/{{lang}}/{{urunlerUrl}}/">{{alisveriseBasla}}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .modulex-uyesip {
+    width: 100%;
+    padding: var(--mx-space-7, 32px) var(--mx-space-4, 16px);
+    box-sizing: border-box;
+  }
+
+  .modulex-uyesip [hidden] {
+    display: none !important;
+  }
+
+  .modulex-uyesip-kap {
+    max-width: --maxWidth--;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-5, 20px);
+  }
+
+  .modulex-uyesip-baslik {
+    display: flex;
+    align-items: center;
+    gap: var(--mx-space-2, 8px);
+    margin: 0;
+    font-size: var(--mx-fs-2xl, 26px);
+    color: var(--mx-color-text);
+  }
+
+  .modulex-uyesip-alt {
+    margin: var(--mx-space-1, 4px) 0 0;
+    color: var(--mx-color-text-muted);
+  }
+
+  .modulex-uyesip-p {
+    margin: 0 0 var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyesip-h2 {
+    margin: 0 0 var(--mx-space-3, 12px);
+    font-size: var(--mx-fs-lg, 18px);
+    color: var(--mx-color-text);
+  }
+
+  .modulex-uyesip-durum:empty {
+    display: none;
+  }
+
+  .modulex-uyesip-yuk {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyesip-yukleme {
+    height: 76px;
+    border-radius: var(--mx-radius-lg, 12px);
+  }
+
+  .modulex-uyesip-misafir {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-4, 16px);
+  }
+
+  .modulex-uyesip-liste {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyesip-kart {
+    border: 1px solid var(--mx-color-border);
+    border-radius: var(--mx-radius-lg, 12px);
+    background: var(--mx-color-surface);
+    overflow: hidden;
+    animation: uyesipGiris 0.35s var(--mx-ease, ease) both;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .modulex-uyesip-kart:hover {
+    box-shadow: var(--mx-shadow-sm);
+  }
+
+  .modulex-uyesip-kart.is-open {
+    border-color: var(--mx-color-primary);
+  }
+
+  @keyframes uyesipGiris {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modulex-uyesip-satir {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr auto 44px;
+    align-items: center;
+    gap: var(--mx-space-3, 12px);
+    width: 100%;
+    min-height: 64px;
+    padding: var(--mx-space-3, 12px) var(--mx-space-4, 16px);
+    border: 0;
+    background: transparent;
+    color: var(--mx-color-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .modulex-uyesip-satir small {
+    display: block;
+    color: var(--mx-color-text-muted);
+    font-size: var(--mx-fs-xs, 12px);
+  }
+
+  .modulex-uyesip-ok {
+    justify-self: end;
+    transition: transform 0.25s var(--mx-ease, ease);
+  }
+
+  .modulex-uyesip-kart.is-open .modulex-uyesip-ok {
+    transform: rotate(180deg);
+  }
+
+  .modulex-uyesip-detay {
+    padding: var(--mx-space-4, 16px);
+    border-top: 1px solid var(--mx-color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-4, 16px);
+    animation: uyesipGiris 0.3s var(--mx-ease, ease) both;
+  }
+
+  .modulex-uyesip-kalem {
+    display: flex;
+    align-items: center;
+    gap: var(--mx-space-3, 12px);
+    padding: var(--mx-space-2, 8px) 0;
+    border-bottom: 1px solid var(--mx-color-border);
+  }
+
+  .modulex-uyesip-kalem:last-child {
+    border-bottom: 0;
+  }
+
+  .modulex-uyesip-kalem img,
+  .modulex-uyesip-kalem-bosgorsel {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    object-fit: cover;
+    border-radius: var(--mx-radius-md, 8px);
+    background: var(--mx-color-surface-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mx-color-text-muted);
+  }
+
+  .modulex-uyesip-kalem-ad {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .modulex-uyesip-kalem-ad small {
+    display: block;
+    color: var(--mx-color-text-muted);
+  }
+
+  .modulex-uyesip-ozet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--mx-space-4, 16px);
+  }
+
+  .modulex-uyesip-ozet dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: var(--mx-space-1, 4px) var(--mx-space-4, 16px);
+  }
+
+  .modulex-uyesip-ozet dt {
+    color: var(--mx-color-text-muted);
+  }
+
+  .modulex-uyesip-ozet dd {
+    margin: 0;
+    text-align: end;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .modulex-uyesip-ozet .modulex-uyesip-toplam {
+    font-weight: 700;
+    color: var(--mx-color-text);
+  }
+
+  .modulex-uyesip-adres p {
+    margin: 0;
+    color: var(--mx-color-text-muted);
+    line-height: 1.5;
+  }
+
+  .modulex-uyesip-sayfalama {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyesip-sayfa {
+    color: var(--mx-color-text-muted);
+    font-size: var(--mx-fs-sm, 14px);
+  }
+
+  .modulex-uyesip-sorgu {
+    padding: var(--mx-space-5, 20px);
+  }
+
+  .modulex-uyesip-sorgu-alanlar {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: var(--mx-space-3, 12px);
+    align-items: end;
+  }
+
+  .modulex-uyesip-sorgu-sonuc:empty {
+    display: none;
+  }
+
+  .modulex-uyesip-sorgu-sonuc {
+    margin-top: var(--mx-space-4, 16px);
+  }
+
+  @media (max-width: 768px) {
+    .modulex-uyesip {
+      padding: var(--mx-space-4, 16px) var(--mx-space-3, 12px);
+    }
+
+    .modulex-uyesip-satir {
+      grid-template-columns: 1fr auto;
+      grid-auto-rows: auto;
+    }
+
+    .modulex-uyesip-satir-tarih {
+      grid-column: 1;
+    }
+
+    .modulex-uyesip-ok {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .modulex-uyesip-ozet,
+    .modulex-uyesip-sorgu-alanlar {
+      grid-template-columns: 1fr;
+    }
+
+    .modulex-uyesip-sorgu-btn {
+      width: 100%;
+    }
+
+    .modulex-uyesip-detay .mx-stepper__step {
+      font-size: 10px;
+    }
+  }
+
+  /* O4: klavye odagi — mx-btn/mx-input kendi halkasini tasir; modul ozel ogeler burada */
+  .modulex-uyesip a:not(.mx-btn):focus-visible,
+  .modulex-uyesip button:not(.mx-btn):focus-visible,
+  .modulex-uyesip summary:focus-visible {
+    outline: 2px solid var(--mx-color-primary, #2563eb);
+    outline-offset: 2px;
+    border-radius: var(--mx-radius-sm, 4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-uyesip,
+    .modulex-uyesip * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  /* uye-siparislerim — MxStore.siparis.listem/detay (GET /api/public/siparis[/:no]); misafirde mxOrdersV1 + no/e-posta sorgusu. */
+  (function () {
+    var T = {
+      errGeneric: "{{errGeneric}}",
+      errTimeout: "{{errTimeout}}",
+      errNetwork: "{{errNetwork}}",
+      yokMetin: "{{yokMetin}}",
+      tekrarDene: "{{tekrarDeneButon}}",
+      detayButon: "{{detayButon}}",
+      sayfaMetin: "{{sayfaMetin}}",
+      kalemler: "{{kalemlerBaslik}}",
+      araToplam: "{{araToplamLabel}}",
+      kargo: "{{kargoLabel}}",
+      ucretsiz: "{{ucretsizMetin}}",
+      toplam: "{{toplamLabel}}",
+      teslimat: "{{teslimatBaslik}}",
+      odeme: "{{odemeLabel}}",
+      odemeKapida: "{{odeme_kapida}}",
+      odemeHavale: "{{odeme_havale}}",
+      iptalMetin: "{{iptalMetin}}",
+      adet: "{{adetKisa}}",
+      yerelNot: "{{yerelNotMetin}}",
+      bulunamadi: "{{bulunamadiMetin}}",
+      currency: "{{currency}}",
+      d_beklemede: "{{durum_beklemede}}",
+      d_onaylandi: "{{durum_onaylandi}}",
+      d_hazirlaniyor: "{{durum_hazirlaniyor}}",
+      d_kargoda: "{{durum_kargoda}}",
+      d_teslim: "{{durum_teslim}}",
+      d_iptal: "{{durum_iptal}}",
+      "d_whatsapp-bekliyor": "{{durum_whatsapp_bekliyor}}"
+    };
+    var ADIMLAR = ["beklemede", "onaylandi", "hazirlaniyor", "kargoda", "teslim"];
+    var ROZET = { beklemede: "warning", onaylandi: "primary", hazirlaniyor: "primary", kargoda: "accent", teslim: "success", iptal: "danger", "whatsapp-bekliyor": "warning" };
+    var kok = document.getElementById("uyesip-{{id}}");
+    if (!kok) {
+      return;
+    }
+    var S = null;
+    var sayfa = 1;
+    var toplamSayfa = 1;
+    var yerelListe = [];
+
+    function el(ad) {
+      return document.getElementById("uyesip-" + ad + "-{{id}}");
+    }
+
+    function esc(s) {
+      return S ? S.esc(s) : String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    }
+
+    function goster(e, acik) {
+      if (!e) {
+        return;
+      }
+      if (acik) {
+        e.removeAttribute("hidden");
+      } else {
+        e.setAttribute("hidden", "");
+      }
+    }
+
+    function para(n) {
+      return S ? S.para(n, T.currency) : String(n) + " " + T.currency;
+    }
+
+    function tarih(v) {
+      if (!v) {
+        return "";
+      }
+      if (typeof window.mxDate === "function") {
+        return window.mxDate(v, "DD.MM.YYYY HH:mm");
+      }
+      return String(v).slice(0, 16).replace("T", " ");
+    }
+
+    function hataYazi(err) {
+      if (!err) {
+        return T.errGeneric;
+      }
+      if (err.kod === "zaman-asimi") {
+        return T.errTimeout;
+      }
+      if (err.kod === "ag") {
+        return T.errNetwork;
+      }
+      if (err.kod === "api-yok" || err.kod === "uye-kullanilamiyor") {
+        return T.yokMetin;
+      }
+      return S ? S.hataMetni(err, T.errGeneric) : T.errGeneric;
+    }
+
+    function hataKutu(kap, err, yeniden) {
+      kap.innerHTML = '<div class="mx-alert mx-alert--danger"><div><p class="modulex-uyesip-p">' + esc(hataYazi(err)) + '</p><button type="button" class="mx-btn mx-btn--outline mx-btn--sm" data-yeniden="1">' + esc(T.tekrarDene) + "</button></div></div>";
+      var b = kap.querySelector("[data-yeniden]");
+      if (b) {
+        b.addEventListener("click", yeniden);
+      }
+    }
+
+    function rozet(d) {
+      return '<span class="mx-badge mx-badge--' + (ROZET[d] || "outline") + '">' + esc(T["d_" + d] || d || "") + "</span>";
+    }
+
+    function stepper(durum) {
+      if (durum === "iptal") {
+        return '<div class="mx-alert mx-alert--danger"><span class="material-symbols-outlined" aria-hidden="true">cancel</span><div>' + esc(T.iptalMetin) + "</div></div>";
+      }
+      var idx = ADIMLAR.indexOf(durum);
+      var h = '<ol class="mx-stepper">';
+      for (var i = 0; i < ADIMLAR.length; i++) {
+        var cls = "mx-stepper__step";
+        if (i < idx || (idx === ADIMLAR.length - 1 && i === idx)) {
+          cls += " is-done";
+        } else if (i === idx) {
+          cls += " is-active";
+        }
+        h += '<li class="' + cls + '"' + (i === idx ? ' aria-current="step"' : "") + ">" + esc(T["d_" + ADIMLAR[i]]) + "</li>";
+      }
+      return h + "</ol>";
+    }
+
+    function odemeAdi(o) {
+      if (o === "kapida") {
+        return T.odemeKapida;
+      }
+      if (o === "havale") {
+        return T.odemeHavale;
+      }
+      return o || "";
+    }
+
+    function detayHtml(d) {
+      var h = stepper(d.durum);
+      var kalemler = Array.isArray(d.kalemler) ? d.kalemler : [];
+      h += '<div><h3 class="modulex-uyesip-h2">' + esc(T.kalemler) + "</h3>";
+      for (var i = 0; i < kalemler.length; i++) {
+        var k = kalemler[i];
+        h += '<div class="modulex-uyesip-kalem">';
+        if (k.gorsel) {
+          h += '<img src="' + esc(k.gorsel) + '" alt="" loading="lazy" />';
+        } else {
+          h += '<span class="modulex-uyesip-kalem-bosgorsel"><span class="material-symbols-outlined" aria-hidden="true">image</span></span>';
+        }
+        h += '<div class="modulex-uyesip-kalem-ad"><strong>' + esc(k.ad || k.urun_id || "") + "</strong>";
+        h += "<small>" + esc(String(k.adet || 1)) + " " + esc(T.adet) + " × " + esc(para(k.birim_fiyat)) + (k.varyant ? " · " + esc(k.varyant) : "") + "</small></div>";
+        h += "<span>" + esc(para(k.satir_toplam != null ? k.satir_toplam : (Number(k.birim_fiyat) || 0) * (k.adet || 1))) + "</span>";
+        h += "</div>";
+      }
+      h += "</div>";
+      h += '<div class="modulex-uyesip-ozet">';
+      var a = d.adres || {};
+      var satir2 = [a.ilce, a.il, a.posta_kodu].filter(function (x) { return !!x; }).join(" / ");
+      h += '<div class="modulex-uyesip-adres"><h3 class="modulex-uyesip-h2">' + esc(T.teslimat) + "</h3>";
+      h += "<p><strong>" + esc(a.ad_soyad || d.ad_soyad || "") + "</strong></p>";
+      if (a.adres) {
+        h += "<p>" + esc(a.adres) + "</p>";
+      }
+      if (satir2) {
+        h += "<p>" + esc(satir2) + "</p>";
+      }
+      if (a.telefon || d.telefon) {
+        h += "<p>" + esc(a.telefon || d.telefon) + "</p>";
+      }
+      h += "</div><dl>";
+      if (d.odeme_yontemi) {
+        h += "<dt>" + esc(T.odeme) + "</dt><dd>" + esc(odemeAdi(d.odeme_yontemi)) + "</dd>";
+      }
+      if (d.ara_toplam != null) {
+        h += "<dt>" + esc(T.araToplam) + "</dt><dd>" + esc(para(d.ara_toplam)) + "</dd>";
+      }
+      if (d.kargo != null) {
+        h += "<dt>" + esc(T.kargo) + "</dt><dd>" + esc(Number(d.kargo) > 0 ? para(d.kargo) : T.ucretsiz) + "</dd>";
+      }
+      h += '<dt class="modulex-uyesip-toplam">' + esc(T.toplam) + '</dt><dd class="modulex-uyesip-toplam">' + esc(para(d.toplam)) + "</dd>";
+      h += "</dl></div>";
+      return h;
+    }
+
+    /* Yerel (WhatsApp/eski) kayit → detay benzeri gorunum */
+    function yerelDetay(o) {
+      var kalemler = [];
+      var items = Array.isArray(o.items) ? o.items : [];
+      for (var i = 0; i < items.length; i++) {
+        kalemler.push({ ad: items[i].name || items[i].id, adet: items[i].qty || 1, birim_fiyat: Number(items[i].price) || 0, gorsel: items[i].img || "" });
+      }
+      return {
+        durum: o.durum || "beklemede",
+        kalemler: kalemler,
+        adres: { ad_soyad: o.name || "", adres: o.address || "", telefon: o.phone || "" },
+        toplam: Number(o.total) || 0
+      };
+    }
+
+    function kartHtml(s, i) {
+      var h = '<article class="modulex-uyesip-kart" data-sira="' + i + '">';
+      h += '<button type="button" class="modulex-uyesip-satir" aria-expanded="false" aria-controls="uyesip-d-' + i + '-{{id}}">';
+      h += "<span><strong>" + esc(s.no) + "</strong><small>" + esc(T.detayButon) + "</small></span>";
+      h += '<span class="modulex-uyesip-satir-tarih">' + esc(tarih(s.tarih)) + "</span>";
+      h += "<span><strong>" + esc(para(s.toplam)) + "</strong></span>";
+      h += "<span>" + rozet(s.durum) + "</span>";
+      h += '<span class="material-symbols-outlined modulex-uyesip-ok" aria-hidden="true">expand_more</span>';
+      h += "</button>";
+      h += '<div class="modulex-uyesip-detay" id="uyesip-d-' + i + '-{{id}}" hidden></div>';
+      h += "</article>";
+      return h;
+    }
+
+    function listeBagla(kap, kaynak) {
+      kap.onclick = function (ev) {
+        var btn = ev.target && ev.target.closest ? ev.target.closest(".modulex-uyesip-satir") : null;
+        if (!btn) {
+          return;
+        }
+        var kart = btn.parentNode;
+        var i = parseInt(kart.getAttribute("data-sira"), 10);
+        var panel = kart.querySelector(".modulex-uyesip-detay");
+        var acik = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", acik ? "false" : "true");
+        if (acik) {
+          kart.classList.remove("is-open");
+          goster(panel, false);
+          return;
+        }
+        kart.classList.add("is-open");
+        goster(panel, true);
+        if (panel.getAttribute("data-yuklendi") === "1") {
+          return;
+        }
+        var s = kaynak[i];
+        if (!s) {
+          return;
+        }
+        if (s.yerel && !s.sorgulanabilir) {
+          panel.innerHTML = detayHtml(yerelDetay(s.yerel)) + '<p class="mx-help">' + esc(T.yerelNot) + "</p>";
+          panel.setAttribute("data-yuklendi", "1");
+          return;
+        }
+        panel.innerHTML = '<span class="mx-skeleton" style="height:120px;border-radius:8px"></span>';
+        S.siparis.detay(s.no, s.email || "").then(function (d) {
+          panel.innerHTML = detayHtml(d || {});
+          panel.setAttribute("data-yuklendi", "1");
+        }, function (err) {
+          if (s.yerel) {
+            panel.innerHTML = detayHtml(yerelDetay(s.yerel)) + '<p class="mx-help">' + esc(T.yerelNot) + "</p>";
+            panel.setAttribute("data-yuklendi", "1");
+            return;
+          }
+          hataKutu(panel, err, function () {
+            btn.setAttribute("aria-expanded", "false");
+            btn.click();
+          });
+        });
+      };
+    }
+
+    /* ---------- uye listesi ---------- */
+    function uyeListele() {
+      var kap = el("liste");
+      kap.innerHTML = '<span class="mx-skeleton" style="height:76px;border-radius:12px"></span><span class="mx-skeleton" style="height:76px;border-radius:12px"></span>';
+      S.siparis.listem(sayfa).then(function (d) {
+        var l = d && Array.isArray(d.siparisler) ? d.siparisler : [];
+        var boyut = d && d.sayfaBoyut ? d.sayfaBoyut : 20;
+        toplamSayfa = Math.max(1, Math.ceil((d && d.toplam ? d.toplam : l.length) / boyut));
+        if (!l.length && sayfa === 1) {
+          kap.innerHTML = "";
+          goster(el("bos"), true);
+          goster(el("sayfalama"), false);
+          return;
+        }
+        goster(el("bos"), false);
+        var kaynak = [];
+        var h = "";
+        for (var i = 0; i < l.length; i++) {
+          kaynak.push({ no: l[i].no, tarih: l[i].created_at, toplam: l[i].toplam, durum: l[i].durum, email: "" });
+          h += kartHtml(kaynak[i], i);
+        }
+        kap.innerHTML = h;
+        listeBagla(kap, kaynak);
+        sayfalamaCiz();
+      }, function (err) {
+        if (err && err.status === 401) {
+          misafirGoster();
+          return;
+        }
+        hataKutu(kap, err, uyeListele);
+      });
+    }
+
+    function sayfalamaCiz() {
+      var nav = el("sayfalama");
+      goster(nav, toplamSayfa > 1);
+      var bilgi = el("sayfa");
+      if (bilgi) {
+        bilgi.textContent = T.sayfaMetin + " " + sayfa + " / " + toplamSayfa;
+      }
+      el("onceki").disabled = sayfa <= 1;
+      el("sonraki").disabled = sayfa >= toplamSayfa;
+    }
+
+    /* ---------- misafir / kullanilamiyor ---------- */
+    function yerelOku() {
+      try {
+        var l = JSON.parse(window.localStorage.getItem("mxOrdersV1") || "[]");
+        return Array.isArray(l) ? l : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function misafirGoster() {
+      goster(el("uye"), false);
+      goster(el("misafir"), true);
+      var durum = S.uye.durum();
+      var apiYok = S.apiBilgi().yok;
+      goster(el("girisoner"), durum !== "kullanilamiyor");
+      goster(el("yok"), durum === "kullanilamiyor");
+      goster(el("sorgu"), !apiYok);
+      var l = yerelOku();
+      yerelListe = [];
+      var h = "";
+      for (var i = 0; i < l.length; i++) {
+        var o = l[i] || {};
+        var s = {
+          no: o.orderNo || "",
+          tarih: o.date,
+          toplam: Number(o.total) || 0,
+          durum: o.durum || "beklemede",
+          email: o.email || "",
+          yerel: o,
+          sorgulanabilir: o.kaynak === "d1" && !!o.email && !apiYok
+        };
+        yerelListe.push(s);
+        h += kartHtml(s, i);
+      }
+      var kap = el("yerel");
+      kap.innerHTML = h;
+      goster(el("yerel-baslik"), l.length > 0);
+      listeBagla(kap, yerelListe);
+      goster(el("bos"), l.length === 0);
+    }
+
+    function sorguKur() {
+      var form = el("sorgu");
+      if (!form) {
+        return;
+      }
+      function calistir() {
+        var no = String(form.no.value || "").trim().toUpperCase();
+        var email = String(form.email.value || "").trim();
+        var sonuc = el("sorgu-sonuc");
+        if (!no || !email) {
+          return;
+        }
+        var b = form.querySelector('button[type="submit"]');
+        b.disabled = true;
+        b.classList.add("is-loading");
+        b.setAttribute("aria-busy", "true");
+        S.siparis.detay(no, email).then(function (d) {
+          b.disabled = false;
+          b.classList.remove("is-loading");
+          b.removeAttribute("aria-busy");
+          sonuc.innerHTML = '<div class="modulex-uyesip-kart is-open"><div class="modulex-uyesip-satir"><span><strong>' + esc(d.no || no) + "</strong></span><span>" + esc(tarih(d.created_at)) + "</span><span><strong>" + esc(para(d.toplam)) + "</strong></span><span>" + rozet(d.durum) + '</span><span></span></div><div class="modulex-uyesip-detay">' + detayHtml(d || {}) + "</div></div>";
+        }, function (err) {
+          b.disabled = false;
+          b.classList.remove("is-loading");
+          b.removeAttribute("aria-busy");
+          var m = err && err.status === 404 ? T.bulunamadi : hataYazi(err);
+          sonuc.innerHTML = '<div class="mx-alert mx-alert--danger">' + esc(m) + "</div>";
+        });
+      }
+      if (typeof window.mxValidateForm === "function") {
+        form.setAttribute("data-mx-jv", "1");
+        window.mxValidateForm(form, [
+          { selector: '[name="no"]', rules: [{ rule: "required", errorMessage: T.bulunamadi }] },
+          { selector: '[name="email"]', rules: [{ rule: "required", errorMessage: T.bulunamadi }, { rule: "email", errorMessage: T.bulunamadi }] }
+        ], calistir);
+      }
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (form.getAttribute("data-mx-jv") === "1") {
+          return;
+        }
+        if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+          if (typeof form.reportValidity === "function") {
+            form.reportValidity();
+          }
+          return;
+        }
+        calistir();
+      });
+    }
+
+    (window.mxStoreQ = window.mxStoreQ || []).push(function (store) {
+      S = store;
+      el("onceki").addEventListener("click", function () {
+        if (sayfa > 1) {
+          sayfa--;
+          uyeListele();
+        }
+      });
+      el("sonraki").addEventListener("click", function () {
+        if (sayfa < toplamSayfa) {
+          sayfa++;
+          uyeListele();
+        }
+      });
+      sorguKur();
+      S.uye.ben().then(function (u) {
+        goster(el("yuk"), false);
+        if (u && S.uye.durum() === "giris") {
+          goster(el("uye"), true);
+          uyeListele();
+        } else {
+          misafirGoster();
+        }
+      });
+    });
+
+    window.addEventListener("load", function () {
+      if (!window.MxStore) {
+        var s = document.createElement("script");
+        s.src = "/src/mx-store.js";
+        document.head.appendChild(s);
+      }
+    });
+  })();
+</script>

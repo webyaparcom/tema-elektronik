@@ -1,0 +1,594 @@
+<section class="modulex-uyekayit" id="uyekayit-{{id}}">
+  <div class="modulex-uyekayit-kart mx-card">
+    <div class="mx-tabs__list modulex-uyekayit-sekmeler" role="tablist" aria-label="{{tabsLabel}}">
+      <a class="mx-tabs__tab" role="tab" aria-selected="false" href="/{{lang}}/{{girisUrl}}/">{{tabGiris}}</a>
+      <a class="mx-tabs__tab is-active" role="tab" aria-selected="true" href="/{{lang}}/{{kayitUrl}}/">{{tabKayit}}</a>
+    </div>
+
+    <div class="modulex-uyekayit-bas">
+      <span class="material-symbols-outlined modulex-uyekayit-ikon" aria-hidden="true">person_add</span>
+      <h1 class="modulex-uyekayit-baslik">{{baslik}}</h1>
+      <p class="modulex-uyekayit-alt">{{altBaslik}}</p>
+    </div>
+
+    <div class="modulex-uyekayit-durum" id="uyekayit-durum-{{id}}" role="status" aria-live="polite"></div>
+
+    <div class="modulex-uyekayit-yuk" id="uyekayit-yuk-{{id}}" aria-hidden="true">
+      <span class="mx-skeleton modulex-uyekayit-yukleme"></span>
+      <span class="mx-skeleton modulex-uyekayit-yukleme"></span>
+      <span class="mx-skeleton modulex-uyekayit-yukleme"></span>
+    </div>
+
+    <div class="mx-alert mx-alert--info" id="uyekayit-yok-{{id}}" hidden>
+      <span class="material-symbols-outlined" aria-hidden="true">info</span>
+      <div>
+        <strong class="mx-alert__title">{{yokBaslik}}</strong>
+        <p class="modulex-uyekayit-p">{{yokMetin}}</p>
+        <a class="mx-btn mx-btn--outline mx-btn--sm" href="/{{lang}}/{{urunlerUrl}}/">{{alisveriseDevam}}</a>
+      </div>
+    </div>
+
+    <div class="modulex-uyekayit-girisli" id="uyekayit-girisli-{{id}}" hidden>
+      <span class="material-symbols-outlined modulex-uyekayit-ok" aria-hidden="true">verified_user</span>
+      <p class="modulex-uyekayit-p">{{girisliMetin}} <strong data-mx-uye-ad></strong></p>
+      <a class="mx-btn mx-btn--primary mx-btn--block" href="/{{lang}}/{{hesabimUrl}}/">{{hesabimaGit}}</a>
+    </div>
+
+    <form class="modulex-uyekayit-form" id="uyekayit-form-{{id}}" onsubmit="return false;" hidden>
+      <div class="modulex-uyekayit-ikili">
+        <div class="mx-field">
+          <label class="mx-label" for="uyekayit-ad-{{id}}">{{adLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+          <input class="mx-input" type="text" id="uyekayit-ad-{{id}}" name="ad" autocomplete="given-name" maxlength="80" required />
+          <span class="mx-error" id="uyekayit-ad-hata-{{id}}" data-alan-hata="ad"></span>
+        </div>
+        <div class="mx-field">
+          <label class="mx-label" for="uyekayit-soyad-{{id}}">{{soyadLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+          <input class="mx-input" type="text" id="uyekayit-soyad-{{id}}" name="soyad" autocomplete="family-name" maxlength="80" required />
+          <span class="mx-error" id="uyekayit-soyad-hata-{{id}}" data-alan-hata="soyad"></span>
+        </div>
+      </div>
+      <div class="mx-field">
+        <label class="mx-label" for="uyekayit-email-{{id}}">{{emailLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+        <input class="mx-input" type="email" id="uyekayit-email-{{id}}" name="email" autocomplete="email" inputmode="email" placeholder="{{emailPlaceholder}}" required />
+        <span class="mx-error" id="uyekayit-email-hata-{{id}}" data-alan-hata="email"></span>
+      </div>
+      <div class="mx-field">
+        <label class="mx-label" for="uyekayit-telefon-{{id}}">{{telefonLabel}}</label>
+        <input class="mx-input" type="tel" id="uyekayit-telefon-{{id}}" name="telefon" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="{{telefonPlaceholder}}" />
+        <span class="mx-help">{{telefonYardim}}</span>
+        <span class="mx-error" id="uyekayit-telefon-hata-{{id}}" data-alan-hata="telefon"></span>
+      </div>
+      <div class="mx-field">
+        <label class="mx-label" for="uyekayit-sifre-{{id}}">{{sifreLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+        <div class="modulex-uyekayit-sifrekutu">
+          <input class="mx-input" type="password" id="uyekayit-sifre-{{id}}" name="sifre" autocomplete="new-password" minlength="8" required aria-describedby="uyekayit-guc-metin-{{id}}" />
+          <button type="button" class="modulex-uyekayit-goster" id="uyekayit-goster-{{id}}" aria-label="{{sifreGoster}}" aria-pressed="false">
+            <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+          </button>
+        </div>
+        <div class="modulex-uyekayit-guc" id="uyekayit-guc-{{id}}" data-seviye="0" aria-hidden="true">
+          <span class="modulex-uyekayit-guc-bar"></span>
+        </div>
+        <span class="mx-help" id="uyekayit-guc-metin-{{id}}" aria-live="polite">{{sifreKural}}</span>
+        <span class="mx-error" id="uyekayit-sifre-hata-{{id}}" data-alan-hata="sifre"></span>
+      </div>
+      <div class="mx-field">
+        <label class="mx-label" for="uyekayit-sifre2-{{id}}">{{sifre2Label}} <span class="mx-required" aria-hidden="true">*</span></label>
+        <input class="mx-input" type="password" id="uyekayit-sifre2-{{id}}" name="sifre2" autocomplete="new-password" required />
+        <span class="mx-error" id="uyekayit-sifre2-hata-{{id}}" data-alan-hata="sifre2"></span>
+      </div>
+      <div class="mx-field">
+        <label class="mx-checkbox" for="uyekayit-kvkk-{{id}}">
+          <input type="checkbox" id="uyekayit-kvkk-{{id}}" name="kvkk" required />
+          <span><a href="/{{lang}}/{{kvkkUrl}}/" target="_blank" rel="noopener">{{kvkkLink}}</a>{{kvkkMetin}}<a href="/{{lang}}/{{sozlesmeUrl}}/" target="_blank" rel="noopener">{{sozlesmeLink}}</a>{{sozlesmeMetin}}</span>
+        </label>
+        <span class="mx-error" id="uyekayit-kvkk-hata-{{id}}" data-alan-hata="kvkk"></span>
+      </div>
+      <button type="submit" class="mx-btn mx-btn--primary mx-btn--lg mx-btn--block" id="uyekayit-gonder-{{id}}">{{kayitButon}}</button>
+      <p class="modulex-uyekayit-girislink">{{hesapVar}} <a href="/{{lang}}/{{girisUrl}}/">{{girisLink}}</a></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .modulex-uyekayit {
+    width: 100%;
+    padding: var(--mx-space-8, 48px) var(--mx-space-4, 16px);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .modulex-uyekayit [hidden] {
+    display: none !important;
+  }
+
+  .modulex-uyekayit-kart {
+    width: 100%;
+    max-width: --maxWidth--;
+    padding: var(--mx-space-7, 32px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-5, 20px);
+    animation: uyekayitGiris 0.4s var(--mx-ease, ease) both;
+  }
+
+  @keyframes uyekayitGiris {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modulex-uyekayit-sekmeler .mx-tabs__tab {
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  .modulex-uyekayit-bas {
+    text-align: center;
+  }
+
+  .modulex-uyekayit-ikon {
+    font-size: 40px;
+    color: var(--mx-color-primary);
+  }
+
+  .modulex-uyekayit-baslik {
+    margin: var(--mx-space-2, 8px) 0 var(--mx-space-1, 4px);
+    font-size: var(--mx-fs-2xl, 26px);
+    color: var(--mx-color-text);
+  }
+
+  .modulex-uyekayit-alt,
+  .modulex-uyekayit-girislink {
+    margin: 0;
+    color: var(--mx-color-text-muted);
+    font-size: var(--mx-fs-sm, 14px);
+    text-align: center;
+  }
+
+  .modulex-uyekayit-p {
+    margin: 0 0 var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyekayit-yuk {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-uyekayit-yukleme {
+    height: 44px;
+    border-radius: var(--mx-radius-md, 8px);
+  }
+
+  .modulex-uyekayit-girisli {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--mx-space-3, 12px);
+    text-align: center;
+  }
+
+  .modulex-uyekayit-ok {
+    font-size: 52px;
+    color: var(--mx-color-success);
+  }
+
+  .modulex-uyekayit-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-4, 16px);
+  }
+
+  .modulex-uyekayit-ikili {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--mx-space-4, 16px);
+  }
+
+  .modulex-uyekayit-sifrekutu {
+    position: relative;
+  }
+
+  .modulex-uyekayit-sifrekutu .mx-input {
+    padding-right: 52px;
+  }
+
+  .modulex-uyekayit-goster {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: var(--mx-color-text-muted);
+    cursor: pointer;
+    border-radius: var(--mx-radius-md, 8px);
+    transition: color 0.2s ease;
+  }
+
+  .modulex-uyekayit-goster:hover {
+    color: var(--mx-color-primary);
+  }
+
+  .modulex-uyekayit-guc {
+    height: 6px;
+    border-radius: 999px;
+    background: var(--mx-color-surface-2);
+    overflow: hidden;
+  }
+
+  .modulex-uyekayit-guc-bar {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+    background: var(--mx-color-danger);
+    /* AN1: doluluk width yerine transform ile; tasan kisim .modulex-uyekayit-guc overflow:hidden ile kirpilir */
+    transform: translateX(-100%);
+    transition: transform 0.3s var(--mx-ease, ease), background-color 0.3s var(--mx-ease, ease);
+  }
+
+  .modulex-uyekayit-guc[data-seviye="1"] .modulex-uyekayit-guc-bar {
+    transform: translateX(-67%);
+    background: var(--mx-color-danger);
+  }
+
+  .modulex-uyekayit-guc[data-seviye="2"] .modulex-uyekayit-guc-bar {
+    transform: translateX(-34%);
+    background: var(--mx-color-warning);
+  }
+
+  .modulex-uyekayit-guc[data-seviye="3"] .modulex-uyekayit-guc-bar {
+    transform: translateX(0);
+    background: var(--mx-color-success);
+  }
+
+  .modulex-uyekayit-form .mx-checkbox a,
+  .modulex-uyekayit-girislink a {
+    color: var(--mx-color-primary) !important;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .modulex-uyekayit-form .mx-checkbox a:hover,
+  .modulex-uyekayit-girislink a:hover {
+    opacity: 0.8;
+  }
+
+  .modulex-uyekayit-durum:empty {
+    display: none;
+  }
+
+  .modulex-uyekayit-durum .mx-alert {
+    animation: uyekayitGiris 0.3s var(--mx-ease, ease) both;
+  }
+
+  @media (max-width: 768px) {
+    .modulex-uyekayit {
+      padding: var(--mx-space-5, 20px) var(--mx-space-3, 12px);
+    }
+
+    .modulex-uyekayit-kart {
+      padding: var(--mx-space-5, 20px);
+    }
+
+    .modulex-uyekayit-ikili {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* O4: klavye odagi — mx-btn/mx-input kendi halkasini tasir; modul ozel ogeler burada */
+  .modulex-uyekayit a:not(.mx-btn):focus-visible,
+  .modulex-uyekayit button:not(.mx-btn):focus-visible,
+  .modulex-uyekayit summary:focus-visible {
+    outline: 2px solid var(--mx-color-primary, #2563eb);
+    outline-offset: 2px;
+    border-radius: var(--mx-radius-sm, 4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-uyekayit,
+    .modulex-uyekayit * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  /* uye-kayit — MxStore.uye.kayit (POST /api/public/uye/kayit, 201 + mx_uye). Metinler desing. */
+  (function () {
+    var T = {
+      errGeneric: "{{errGeneric}}",
+      errTimeout: "{{errTimeout}}",
+      errNetwork: "{{errNetwork}}",
+      yokMetin: "{{yokMetin}}",
+      basari: "{{basariMetin}}",
+      zorunlu: "{{zorunluMesaj}}",
+      emailGecersiz: "{{emailGecersiz}}",
+      sifreKisa: "{{sifreKisa}}",
+      sifreKural: "{{sifreKural}}",
+      sifreUyusmuyor: "{{sifreUyusmuyor}}",
+      kvkkZorunlu: "{{kvkkZorunlu}}",
+      gucZayif: "{{gucZayif}}",
+      gucOrta: "{{gucOrta}}",
+      gucGuclu: "{{gucGuclu}}",
+      sifreGoster: "{{sifreGoster}}",
+      sifreGizle: "{{sifreGizle}}",
+      hesabimYol: "/{{lang}}/{{hesabimUrl}}/"
+    };
+    var kok = document.getElementById("uyekayit-{{id}}");
+    if (!kok) {
+      return;
+    }
+    function el(ad) {
+      return document.getElementById("uyekayit-" + ad + "-{{id}}");
+    }
+    var form = el("form");
+    var btn = el("gonder");
+    var durumEl = el("durum");
+
+    function goster(ad, acik) {
+      var e = el(ad);
+      if (e) {
+        if (acik) {
+          e.removeAttribute("hidden");
+        } else {
+          e.setAttribute("hidden", "");
+        }
+      }
+    }
+
+    function durumYaz(tur, metin) {
+      if (!durumEl) {
+        return;
+      }
+      if (!metin) {
+        durumEl.innerHTML = "";
+        return;
+      }
+      var s = window.MxStore ? window.MxStore.esc(metin) : String(metin == null ? "" : metin).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+      durumEl.innerHTML = '<div class="mx-alert mx-alert--' + tur + '">' + s + "</div>";
+    }
+
+    function hataYazi(err) {
+      if (!err) {
+        return T.errGeneric;
+      }
+      if (err.kod === "zaman-asimi") {
+        return T.errTimeout;
+      }
+      if (err.kod === "ag") {
+        return T.errNetwork;
+      }
+      if (err.kod === "api-yok" || err.kod === "uye-kullanilamiyor") {
+        return T.yokMetin;
+      }
+      return window.MxStore ? window.MxStore.hataMetni(err, T.errGeneric) : T.errGeneric;
+    }
+
+    function alanHatasiTemizle() {
+      var hatalar = form ? form.querySelectorAll("[data-alan-hata]") : [];
+      for (var i = 0; i < hatalar.length; i++) {
+        hatalar[i].textContent = "";
+      }
+      var girdiler = form ? form.querySelectorAll("input") : [];
+      for (var j = 0; j < girdiler.length; j++) {
+        girdiler[j].removeAttribute("aria-invalid");
+      }
+    }
+
+    function alanHatasi(alan, metin) {
+      var h = form ? form.querySelector('[data-alan-hata="' + alan + '"]') : null;
+      var g = form ? form.querySelector('[name="' + alan + '"]') : null;
+      if (h) {
+        h.textContent = metin;
+      }
+      if (g) {
+        g.setAttribute("aria-invalid", "true");
+        if (typeof g.focus === "function") {
+          g.focus();
+        }
+      }
+    }
+
+    function yukleniyor(acik) {
+      if (!btn) {
+        return;
+      }
+      btn.disabled = !!acik;
+      if (acik) {
+        btn.classList.add("is-loading");
+        btn.setAttribute("aria-busy", "true");
+      } else {
+        btn.classList.remove("is-loading");
+        btn.removeAttribute("aria-busy");
+      }
+    }
+
+    /* Guc: 0 bos · 1 zayif · 2 orta (>=8 + harf + rakam = sunucu sarti) · 3 guclu (+ buyuk harf ve/veya sembol, >=10) */
+    function gucHesapla(s) {
+      if (!s) {
+        return 0;
+      }
+      var harf = /[A-Za-zÇĞİÖŞÜçğıöşü]/.test(s);
+      var rakam = /[0-9]/.test(s);
+      if (s.length < 8 || !harf || !rakam) {
+        return 1;
+      }
+      var bonus = 0;
+      if (/[A-ZÇĞİÖŞÜ]/.test(s) && /[a-zçğıöşü]/.test(s)) {
+        bonus++;
+      }
+      if (/[^A-Za-z0-9ÇĞİÖŞÜçğıöşü]/.test(s)) {
+        bonus++;
+      }
+      if (s.length >= 10) {
+        bonus++;
+      }
+      return bonus >= 2 ? 3 : 2;
+    }
+
+    function sifreKuraliTamam(s) {
+      return gucHesapla(s) >= 2;
+    }
+
+    var sifreInp = el("sifre");
+    if (sifreInp) {
+      sifreInp.addEventListener("input", function () {
+        var sev = gucHesapla(sifreInp.value);
+        var kutu = el("guc");
+        var metin = el("guc-metin");
+        if (kutu) {
+          kutu.setAttribute("data-seviye", String(sev));
+        }
+        if (metin) {
+          metin.textContent = sev === 0 ? T.sifreKural : (sev === 1 ? T.gucZayif : (sev === 2 ? T.gucOrta : T.gucGuclu));
+        }
+      });
+    }
+
+    var gosterBtn = el("goster");
+    if (gosterBtn) {
+      gosterBtn.addEventListener("click", function () {
+        var acik = sifreInp && sifreInp.type === "password";
+        if (sifreInp) {
+          sifreInp.type = acik ? "text" : "password";
+        }
+        var s2 = el("sifre2");
+        if (s2) {
+          s2.type = acik ? "text" : "password";
+        }
+        gosterBtn.setAttribute("aria-pressed", acik ? "true" : "false");
+        gosterBtn.setAttribute("aria-label", acik ? T.sifreGizle : T.sifreGoster);
+        var ikon = gosterBtn.querySelector(".material-symbols-outlined");
+        if (ikon) {
+          ikon.textContent = acik ? "visibility_off" : "visibility";
+        }
+      });
+    }
+
+    function deger(ad) {
+      var e = el(ad);
+      return e ? String(e.value || "").trim() : "";
+    }
+
+    function gonder(S) {
+      alanHatasiTemizle();
+      durumYaz("", "");
+      var veri = {
+        ad: deger("ad"),
+        soyad: deger("soyad"),
+        email: deger("email"),
+        telefon: deger("telefon"),
+        sifre: el("sifre") ? String(el("sifre").value || "") : "",
+        kvkk: !!(el("kvkk") && el("kvkk").checked)
+      };
+      var sifre2 = el("sifre2") ? String(el("sifre2").value || "") : "";
+      if (!veri.ad) {
+        alanHatasi("ad", T.zorunlu);
+        return;
+      }
+      if (!veri.soyad) {
+        alanHatasi("soyad", T.zorunlu);
+        return;
+      }
+      if (!veri.email) {
+        alanHatasi("email", T.zorunlu);
+        return;
+      }
+      if (!sifreKuraliTamam(veri.sifre)) {
+        alanHatasi("sifre", T.sifreKural);
+        return;
+      }
+      if (veri.sifre !== sifre2) {
+        alanHatasi("sifre2", T.sifreUyusmuyor);
+        return;
+      }
+      if (!veri.kvkk) {
+        alanHatasi("kvkk", T.kvkkZorunlu);
+        return;
+      }
+      yukleniyor(true);
+      S.uye.kayit(veri).then(function () {
+        durumYaz("success", T.basari);
+        window.location.href = S.uye.donusYolu(T.hesabimYol);
+      }, function (err) {
+        yukleniyor(false);
+        if (err && (err.kod === "api-yok" || err.kod === "uye-kullanilamiyor")) {
+          goster("form", false);
+          goster("yok", true);
+          return;
+        }
+        var metin = hataYazi(err);
+        if (err && err.alan && form && form.querySelector('[data-alan-hata="' + err.alan + '"]')) {
+          alanHatasi(err.alan, metin);
+        }
+        durumYaz("danger", metin);
+      });
+    }
+
+    function dogrulamaKur(S) {
+      if (!form) {
+        return;
+      }
+      if (typeof window.mxValidateForm === "function") {
+        form.setAttribute("data-mx-jv", "1");
+        window.mxValidateForm(form, [
+          { selector: '[name="ad"]', rules: [{ rule: "required", errorMessage: T.zorunlu }] },
+          { selector: '[name="soyad"]', rules: [{ rule: "required", errorMessage: T.zorunlu }] },
+          { selector: '[name="email"]', rules: [{ rule: "required", errorMessage: T.zorunlu }, { rule: "email", errorMessage: T.emailGecersiz }] },
+          { selector: '[name="sifre"]', rules: [{ rule: "required", errorMessage: T.zorunlu }, { rule: "minLength", value: 8, errorMessage: T.sifreKisa }] },
+          { selector: '[name="sifre2"]', rules: [{ rule: "required", errorMessage: T.zorunlu }] },
+          { selector: '[name="kvkk"]', rules: [{ rule: "required", errorMessage: T.kvkkZorunlu }] }
+        ], function () {
+          gonder(S);
+        });
+      }
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (form.getAttribute("data-mx-jv") === "1") {
+          return;
+        }
+        if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+          if (typeof form.reportValidity === "function") {
+            form.reportValidity();
+          }
+          return;
+        }
+        gonder(S);
+      });
+    }
+
+    (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
+      dogrulamaKur(S);
+      S.uye.ben().then(function (u) {
+        goster("yuk", false);
+        var durum = S.uye.durum();
+        if (u && durum === "giris") {
+          goster("girisli", true);
+          S.bagla(kok);
+        } else if (durum === "kullanilamiyor") {
+          goster("yok", true);
+        } else {
+          goster("form", true);
+        }
+      });
+    });
+
+    window.addEventListener("load", function () {
+      if (!window.MxStore) {
+        var s = document.createElement("script");
+        s.src = "/src/mx-store.js";
+        document.head.appendChild(s);
+      }
+    });
+  })();
+</script>

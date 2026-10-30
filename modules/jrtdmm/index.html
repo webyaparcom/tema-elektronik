@@ -1,0 +1,700 @@
+<section class="modulex-st" id="st-{{id}}" data-st-root
+  data-lang="{{lang}}"
+  data-currency="{{currency}}"
+  data-t-copy="{{copyText}}"
+  data-t-copied="{{copiedText}}"
+  data-t-free="{{freeText}}"
+  data-t-d-beklemede="{{durumBeklemede}}"
+  data-t-d-onaylandi="{{durumOnaylandi}}"
+  data-t-d-hazirlaniyor="{{durumHazirlaniyor}}"
+  data-t-d-kargoda="{{durumKargoda}}"
+  data-t-d-teslim="{{durumTeslim}}"
+  data-t-d-iptal="{{durumIptal}}"
+  data-t-d-whatsapp-bekliyor="{{durumWaBekliyor}}"
+  data-t-wa-title="{{waTitle}}"
+  data-t-o-kapida="{{odemeKapida}}"
+  data-t-o-havale="{{odemeHavale}}"
+  data-t-o-kart="{{odemeKart}}">
+  <div class="modulex-st-wrap">
+    <div class="mx-card modulex-st-loading" data-st-loading role="status" aria-label="{{loadingText}}">
+      <span class="mx-skeleton mx-skeleton--circle modulex-st-skcircle"></span>
+      <span class="mx-skeleton mx-skeleton--title"></span>
+      <span class="mx-skeleton mx-skeleton--text"></span>
+      <span class="mx-skeleton mx-skeleton--text"></span>
+    </div>
+
+    <div class="mx-empty modulex-st-empty" data-st-empty hidden>
+      <span class="material-symbols-outlined mx-empty__icon" aria-hidden="true">receipt_long</span>
+      <p class="mx-empty__title">{{notFoundTitle}}</p>
+      <p class="mx-empty__text">{{notFoundText}}</p>
+      <div class="modulex-st-actions">
+        <a class="mx-btn mx-btn--primary" href="/{{lang}}/{{urunlerUrl}}/">{{shopText}}</a>
+        <a class="mx-btn mx-btn--outline" href="/{{lang}}/{{siparislerimUrl}}/">{{ordersText}}</a>
+      </div>
+    </div>
+
+    <div class="mx-card modulex-st-card" data-st-done hidden>
+      <div class="modulex-st-check" aria-hidden="true">
+        <span class="material-symbols-outlined">check</span>
+      </div>
+      <h1 class="modulex-st-title" tabindex="-1" data-st-title>{{title}}</h1>
+      <p class="modulex-st-text" data-st-text>{{text}}</p>
+
+      <div class="modulex-st-no">
+        <span class="modulex-st-nolabel">{{orderNoLabel}}</span>
+        <strong class="modulex-st-noval" data-st-no></strong>
+        <button type="button" class="mx-btn mx-btn--ghost mx-btn--sm" data-st-copy aria-label="{{copyAria}}" hidden>
+          <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+          <span data-st-copylbl>{{copyText}}</span>
+        </button>
+      </div>
+      <p class="mx-visually-hidden" aria-live="polite" data-st-live></p>
+
+      <p class="mx-help modulex-st-email" data-st-emailbox hidden>{{emailNote}} <strong data-st-email></strong></p>
+      <div class="mx-alert mx-alert--warning" data-st-local hidden>{{waNote}}</div>
+      <div class="mx-alert mx-alert--info" data-st-demo hidden>{{demoNote}}</div>
+
+      <dl class="modulex-st-meta" data-st-meta hidden>
+        <div data-st-mdurum hidden><dt>{{statusLabel}}</dt><dd><span class="mx-badge" data-st-durum></span></dd></div>
+        <div data-st-modeme hidden><dt>{{paymentLabel}}</dt><dd data-st-odeme></dd></div>
+        <div data-st-mtarih hidden><dt>{{dateLabel}}</dt><dd data-st-tarih></dd></div>
+      </dl>
+
+      <div class="modulex-st-summary" data-st-summary hidden>
+        <h2 class="modulex-st-sumtitle">{{itemsTitle}}</h2>
+        <div class="modulex-st-items" data-st-items></div>
+        <dl class="modulex-st-totals">
+          <div class="modulex-st-line" data-st-lsub hidden><dt>{{subtotalText}}</dt><dd data-st-sub></dd></div>
+          <div class="modulex-st-line" data-st-lkargo hidden><dt>{{shippingText}}</dt><dd data-st-kargo></dd></div>
+          <div class="modulex-st-line" data-st-lindirim hidden><dt>{{discountText}}</dt><dd data-st-indirim></dd></div>
+          <div class="modulex-st-line modulex-st-grand" data-st-ltotal hidden><dt>{{totalText}}</dt><dd data-st-total></dd></div>
+        </dl>
+      </div>
+
+      <div class="modulex-st-actions">
+        <a class="mx-btn mx-btn--primary mx-btn--lg" href="/{{lang}}/{{siparislerimUrl}}/">
+          <span class="material-symbols-outlined" aria-hidden="true">receipt_long</span>
+          {{ordersText}}
+        </a>
+        <a class="mx-btn mx-btn--outline mx-btn--lg" href="/{{lang}}/{{urunlerUrl}}/">{{shopText}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .modulex-st {
+    width: 100%;
+    padding: var(--mx-space-9, 48px) var(--mx-space-5, 20px);
+    background: --bgcolor--;
+    box-sizing: border-box;
+    font-family: var(--mx-font-sans, inherit);
+    color: var(--mx-color-text, #0f172a);
+  }
+
+  .modulex-st [hidden] {
+    display: none !important;
+  }
+
+  .modulex-st-wrap {
+    max-width: --max--;
+    margin: 0 auto;
+  }
+
+  .modulex-st-card,
+  .modulex-st-loading {
+    align-items: center;
+    text-align: center;
+    gap: var(--mx-space-4, 16px);
+    padding: var(--mx-space-8, 40px) var(--mx-space-6, 24px);
+  }
+
+  .modulex-st-card {
+    animation: stCardIn 0.4s ease both;
+  }
+
+  @keyframes stCardIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .modulex-st-skcircle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .modulex-st-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: var(--mx-radius-full, 999px);
+    background: var(--mx-color-success, #16a34a);
+    color: #ffffff;
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--mx-color-success, #16a34a) 15%, transparent);
+    animation: stPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .modulex-st-check.is-pending {
+    background: var(--mx-color-warning, #d97706);
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--mx-color-warning, #d97706) 15%, transparent);
+  }
+
+  .modulex-st-check .material-symbols-outlined {
+    font-size: 48px;
+    animation: stTick 0.4s ease 0.3s both;
+  }
+
+  @keyframes stPop {
+    0% { transform: scale(0.3); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes stTick {
+    from { transform: scale(0) rotate(-30deg); opacity: 0; }
+    to { transform: none; opacity: 1; }
+  }
+
+  .modulex-st-title {
+    margin: 0;
+    font-size: var(--mx-fs-3xl, 28px);
+    font-weight: 800;
+    line-height: 1.2;
+    outline: none;
+  }
+
+  .modulex-st-text {
+    margin: 0;
+    max-width: 52ch;
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-st-no {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mx-space-2, 8px) var(--mx-space-3, 12px);
+    padding: var(--mx-space-3, 12px) var(--mx-space-5, 20px);
+    border: 1px dashed var(--mx-color-border, #e2e8f0);
+    border-radius: var(--mx-radius-lg, 14px);
+    background: var(--mx-color-surface-2, #f1f5f9);
+  }
+
+  .modulex-st-nolabel {
+    font-size: var(--mx-fs-sm, 14px);
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-st-noval {
+    font-size: var(--mx-fs-xl, 20px);
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--mx-color-primary, #2563eb);
+  }
+
+  .modulex-st-email {
+    margin: 0;
+  }
+
+  .modulex-st-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mx-space-5, 20px);
+    margin: 0;
+    font-size: var(--mx-fs-sm, 14px);
+  }
+
+  .modulex-st-meta dt {
+    color: var(--mx-color-text-muted, #64748b);
+    margin-bottom: var(--mx-space-1, 4px);
+  }
+
+  .modulex-st-meta dd {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .modulex-st-summary {
+    width: 100%;
+    text-align: start;
+    padding-top: var(--mx-space-4, 16px);
+    border-top: 1px solid var(--mx-color-border, #e2e8f0);
+  }
+
+  .modulex-st-sumtitle {
+    margin: 0 0 var(--mx-space-3, 12px);
+    font-size: var(--mx-fs-lg, 18px);
+    font-weight: 700;
+  }
+
+  .modulex-st-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-st-item {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--mx-space-3, 12px);
+    font-size: var(--mx-fs-sm, 14px);
+    animation: stItemIn 0.3s ease both;
+  }
+
+  @keyframes stItemIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .modulex-st-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--mx-radius-md, 10px);
+    background: var(--mx-color-surface-2, #f1f5f9);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-st-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .modulex-st-iname {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+
+  .modulex-st-iname small {
+    font-weight: 400;
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-st-iprice {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .modulex-st-totals {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-2, 8px);
+    margin: var(--mx-space-4, 16px) 0 0;
+  }
+
+  .modulex-st-line {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--mx-space-3, 12px);
+    font-size: var(--mx-fs-sm, 14px);
+  }
+
+  .modulex-st-line dt {
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-st-line dd {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .modulex-st-grand {
+    padding-top: var(--mx-space-3, 12px);
+    border-top: 1px solid var(--mx-color-border, #e2e8f0);
+    font-size: var(--mx-fs-lg, 18px);
+  }
+
+  .modulex-st-grand dt {
+    color: var(--mx-color-text, #0f172a);
+    font-weight: 700;
+  }
+
+  .modulex-st-grand dd {
+    font-weight: 800;
+    color: var(--mx-color-primary, #2563eb);
+  }
+
+  .modulex-st-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mx-space-3, 12px);
+    margin-top: var(--mx-space-2, 8px);
+  }
+
+  @media (max-width: 768px) {
+    .modulex-st {
+      padding: var(--mx-space-6, 24px) var(--mx-space-3, 12px);
+    }
+
+    .modulex-st-card {
+      padding: var(--mx-space-6, 24px) var(--mx-space-4, 16px);
+    }
+
+    .modulex-st-title {
+      font-size: var(--mx-fs-2xl, 24px);
+    }
+
+    .modulex-st-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .modulex-st-actions .mx-btn {
+      width: 100%;
+    }
+
+    [class*="modulex"] {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* O4: klavye odagi — mx-btn/mx-input kendi halkasini tasir; modul ozel ogeler burada */
+  .modulex-st a:not(.mx-btn):focus-visible,
+  .modulex-st button:not(.mx-btn):focus-visible,
+  .modulex-st summary:focus-visible {
+    outline: 2px solid var(--mx-color-primary, #2563eb);
+    outline-offset: 2px;
+    border-radius: var(--mx-radius-sm, 4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-st,
+    .modulex-st * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  /* siparis-tamam — ?no= (+ ?email=) ve MxStore.siparis.son(); uye/e-posta varsa sunucudan tazeler. */
+  (function () {
+    var root = document.getElementById("st-{{id}}");
+    if (!root) {
+      return;
+    }
+
+    var LANG = root.getAttribute("data-lang") || "tr";
+    var CUR = root.getAttribute("data-currency") || "";
+    var store = null;
+    var ROZET = {
+      beklemede: "mx-badge--warning",
+      onaylandi: "mx-badge--primary",
+      hazirlaniyor: "mx-badge--primary",
+      kargoda: "mx-badge--accent",
+      teslim: "mx-badge--success",
+      iptal: "mx-badge--danger",
+      "whatsapp-bekliyor": "mx-badge--warning"
+    };
+    var BASLIK = "";
+    var METIN = "";
+
+    function t(k) {
+      return root.getAttribute("data-t-" + k) || "";
+    }
+
+    function q(sel) {
+      return root.querySelector(sel);
+    }
+
+    function esc(s) {
+      return store ? store.esc(s) : String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    }
+
+    function para(n) {
+      return store ? store.para(n, CUR, LANG) : String(n);
+    }
+
+    function param(ad) {
+      try {
+        return new window.URL(window.location.href).searchParams.get(ad) || "";
+      } catch (e) {
+        return "";
+      }
+    }
+
+    function sayiMi(v) {
+      return v !== null && v !== undefined && v !== "" && isFinite(Number(v));
+    }
+
+    function gorsel(k) {
+      var g = String(k.gorsel || k.img || "");
+      if (!g || g.indexOf("<") !== -1 || g.indexOf('"') !== -1) {
+        return "";
+      }
+      if (/^(https?:)?\/\//i.test(g) || g.charAt(0) === "/") {
+        return g;
+      }
+      return k.urun_id ? "/page/" + k.urun_id + "/" + g : "";
+    }
+
+    function tarih(v) {
+      if (!v) {
+        return "";
+      }
+      var d = new Date(v);
+      if (isNaN(d.getTime())) {
+        return "";
+      }
+      try {
+        return d.toLocaleString(LANG === "tr" ? "tr-TR" : LANG, { dateStyle: "medium", timeStyle: "short" });
+      } catch (e) {
+        return d.toISOString().slice(0, 10);
+      }
+    }
+
+    function satir(sec, deger, goster) {
+      var kutu = q(sec);
+      if (kutu) {
+        kutu.hidden = !goster;
+      }
+      return deger;
+    }
+
+    function ciz(no, d, email, yerel, demo) {
+      q("[data-st-loading]").hidden = true;
+      q("[data-st-empty]").hidden = true;
+      q("[data-st-done]").hidden = false;
+      q("[data-st-no]").textContent = no;
+      q("[data-st-copy]").hidden = !(window.navigator && window.navigator.clipboard && window.navigator.clipboard.writeText);
+
+      var mail = email || (d && d.email) || "";
+      q("[data-st-emailbox]").hidden = !mail || yerel;
+      q("[data-st-email]").textContent = mail;
+      q("[data-st-local]").hidden = !yerel;
+      /* DEMO siparisi (statik tema sitesi): "gercek siparis degil" notu, e-posta gonderilecek yazisi gizli */
+      q("[data-st-demo]").hidden = !demo;
+      if (demo) {
+        q("[data-st-emailbox]").hidden = true;
+      }
+      q("[data-st-title]").textContent = yerel ? t("wa-title") : BASLIK;
+      q("[data-st-text]").hidden = !!yerel;
+      q(".modulex-st-check").classList.toggle("is-pending", !!yerel);
+
+      var veri = d || {};
+      var durum = String(veri.durum || "");
+      var durumEl = q("[data-st-durum]");
+      durumEl.className = "mx-badge " + (ROZET[durum] || "");
+      durumEl.textContent = t("d-" + durum);
+      satir("[data-st-mdurum]", null, !!(durum && t("d-" + durum)));
+      var odeme = String(veri.odeme_yontemi || "");
+      q("[data-st-odeme]").textContent = t("o-" + odeme);
+      satir("[data-st-modeme]", null, !!(odeme && t("o-" + odeme)));
+      var tt = tarih(veri.created_at);
+      q("[data-st-tarih]").textContent = tt;
+      satir("[data-st-mtarih]", null, !!tt);
+      q("[data-st-meta]").hidden = !(durum || odeme || tt);
+
+      var kalemler = Array.isArray(veri.kalemler) ? veri.kalemler : [];
+      var h = "";
+      for (var i = 0; i < kalemler.length; i++) {
+        var k = kalemler[i] || {};
+        var img = gorsel(k);
+        var adet = parseInt(k.adet, 10) || 1;
+        var tutar = sayiMi(k.satir_toplam) ? Number(k.satir_toplam) : (Number(k.birim_fiyat) || 0) * adet;
+        h += '<div class="modulex-st-item"><span class="modulex-st-thumb">';
+        h += img ? '<img src="' + esc(img) + '" alt="" loading="lazy" />' : '<span class="material-symbols-outlined" aria-hidden="true">inventory_2</span>';
+        h += '</span><span class="modulex-st-iname">' + esc(k.ad || k.urun_id || "");
+        h += "<small>" + (k.varyant ? esc(k.varyant) + " · " : "") + "&times; " + adet + "</small></span>";
+        h += '<span class="modulex-st-iprice">' + esc(para(tutar)) + "</span></div>";
+      }
+      q("[data-st-items]").innerHTML = h;
+
+      var toplam = sayiMi(veri.toplam) ? veri.toplam : null;
+      var sub = sayiMi(veri.ara_toplam) ? veri.ara_toplam : null;
+      q("[data-st-sub]").textContent = sub !== null ? para(sub) : "";
+      satir("[data-st-lsub]", null, sub !== null);
+      var kargo = sayiMi(veri.kargo) ? Number(veri.kargo) : null;
+      q("[data-st-kargo]").textContent = kargo === null ? "" : (kargo > 0 ? para(kargo) : t("free"));
+      satir("[data-st-lkargo]", null, kargo !== null && !yerel);
+      var ind = sayiMi(veri.indirim) ? Number(veri.indirim) : 0;
+      q("[data-st-indirim]").textContent = ind > 0 ? "-" + para(ind) : "";
+      satir("[data-st-lindirim]", null, ind > 0);
+      q("[data-st-total]").textContent = toplam !== null ? para(toplam) : "";
+      satir("[data-st-ltotal]", null, toplam !== null);
+      q("[data-st-summary]").hidden = !(kalemler.length || toplam !== null);
+    }
+
+    function bos() {
+      q("[data-st-loading]").hidden = true;
+      q("[data-st-done]").hidden = true;
+      q("[data-st-empty]").hidden = false;
+    }
+
+    function kopyaBagla(no) {
+      var b = q("[data-st-copy]");
+      b.addEventListener("click", function () {
+        if (!window.navigator.clipboard) {
+          return;
+        }
+        window.navigator.clipboard.writeText(no).then(function () {
+          q("[data-st-copylbl]").textContent = t("copied");
+          q("[data-st-live]").textContent = t("copied");
+          setTimeout(function () {
+            q("[data-st-copylbl]").textContent = t("copy");
+          }, 2000);
+        }, function () {});
+      });
+    }
+
+    /** Bu tarayicidaki WhatsApp (yerel) kaydi: oturum son siparisi ya da mxOrdersV1 satiri (kaynak yerel) */
+    function yerelKayitBul(no, son) {
+      if (son && String(son.no) === no && son.data && son.data.yerel) {
+        return son;
+      }
+      var gecmis = [];
+      try {
+        gecmis = JSON.parse(window.localStorage.getItem("mxOrdersV1") || "[]");
+      } catch (e) {
+        gecmis = [];
+      }
+      if (!Array.isArray(gecmis)) {
+        return null;
+      }
+      for (var i = 0; i < gecmis.length; i++) {
+        var g = gecmis[i];
+        if (g && String(g.orderNo) === no && g.kaynak === "yerel") {
+          var kalemler = [];
+          var items = Array.isArray(g.items) ? g.items : [];
+          for (var j = 0; j < items.length; j++) {
+            var it = items[j] || {};
+            kalemler.push({ urun_id: it.id, ad: it.name || it.id, adet: it.qty || 1, birim_fiyat: Number(it.price) || 0, gorsel: it.img || "" });
+          }
+          return { no: no, email: "", toplam: g.total, durum: g.durum || "whatsapp-bekliyor", data: { yerel: true, kalemler: kalemler, toplam: g.total, durum: g.durum || "whatsapp-bekliyor", created_at: g.date } };
+        }
+      }
+      return null;
+    }
+
+    /** Statik demo siparisi: oturum son siparisi (data.demo) ya da mxOrdersV1 satiri (kaynak demo). */
+    function demoKayitBul(no, son) {
+      if (son && String(son.no) === no && son.data && son.data.demo) {
+        return son;
+      }
+      var gecmis = [];
+      try {
+        gecmis = JSON.parse(window.localStorage.getItem("mxOrdersV1") || "[]");
+      } catch (e) {
+        gecmis = [];
+      }
+      if (!Array.isArray(gecmis)) {
+        return null;
+      }
+      for (var i = 0; i < gecmis.length; i++) {
+        var g = gecmis[i];
+        if (g && String(g.orderNo) === no && g.kaynak === "demo") {
+          var kalemler = [];
+          var items = Array.isArray(g.items) ? g.items : [];
+          for (var j = 0; j < items.length; j++) {
+            var it = items[j] || {};
+            kalemler.push({ urun_id: it.id, ad: it.name || it.id, adet: it.qty || 1, birim_fiyat: Number(it.price) || 0, gorsel: it.img || "" });
+          }
+          return { no: no, email: g.email || "", toplam: g.total, durum: g.durum || "onaylandi", data: { demo: true, kalemler: kalemler, toplam: g.total, durum: g.durum || "onaylandi", created_at: g.date } };
+        }
+      }
+      return null;
+    }
+
+    function baslat(S) {
+      store = S;
+      BASLIK = q("[data-st-title]").textContent;
+      var no = param("no");
+      var email = param("email");
+      var son = S.siparis.son();
+      if (!no && son && son.no) {
+        no = String(son.no);
+      }
+      if (!no) {
+        bos();
+        return;
+      }
+      var demoKayit = demoKayitBul(no, son);
+      if (demoKayit) {
+        var dv = demoKayit.data || {};
+        if (!sayiMi(dv.toplam) && sayiMi(demoKayit.toplam)) {
+          dv.toplam = demoKayit.toplam;
+        }
+        ciz(no, dv, demoKayit.email || "", false, true);
+        kopyaBagla(no);
+        try {
+          q("[data-st-title]").focus({ preventScroll: true });
+        } catch (e) {}
+        return;
+      }
+      var yerelKayit = yerelKayitBul(no, son);
+      /* sunucu kaydi bu oturumda olustu (siparis.olustur 201) → hemen gosterilir, sonra tazelenir */
+      var oturumKaydi = !yerelKayit && son && String(son.no) === no ? son : null;
+      var mail = email || (oturumKaydi && oturumKaydi.email) || "";
+      function goster(kayit, yerel) {
+        var ilk = kayit.data || {};
+        if (!sayiMi(ilk.toplam) && sayiMi(kayit.toplam)) {
+          ilk.toplam = kayit.toplam;
+        }
+        if (!ilk.durum && kayit.durum) {
+          ilk.durum = kayit.durum;
+        }
+        ciz(no, ilk, mail, yerel);
+        kopyaBagla(no);
+        try {
+          q("[data-st-title]").focus({ preventScroll: true });
+        } catch (e) {}
+      }
+      if (yerelKayit) {
+        goster(yerelKayit, true);
+        return;
+      }
+      /* yerel kaydi olmayan MX- numarasi ya da dogrulanamayan ?no= → "Siparis bulunamadi" (sabit basari metni yok) */
+      if (/^MX-/i.test(no) || S.apiBilgi().yok) {
+        bos();
+        return;
+      }
+      if (oturumKaydi) {
+        goster(oturumKaydi, false);
+      }
+      S.uye.ben().then(function (u) {
+        if (u || mail) {
+          return S.siparis.detay(no, u ? "" : mail);
+        }
+        return null;
+      }).then(function (d) {
+        if (d && d.no) {
+          if (!oturumKaydi) {
+            kopyaBagla(no);
+          }
+          ciz(no, d, mail, false);
+        } else if (!oturumKaydi) {
+          bos();
+        }
+      }, function () {
+        if (!oturumKaydi) {
+          bos();
+        }
+      });
+    }
+
+    (window.mxStoreQ = window.mxStoreQ || []).push(baslat);
+
+    window.addEventListener("load", function () {
+      if (!window.MxStore) {
+        var s = document.createElement("script");
+        s.src = "/src/mx-store.js";
+        document.head.appendChild(s);
+      }
+    });
+  })();
+</script>

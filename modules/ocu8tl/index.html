@@ -1,0 +1,1690 @@
+<section class="modulex-od" id="od-{{id}}" aria-labelledby="od-h-{{id}}" data-od-root>
+  <div class="modulex-od-wrap">
+    <div class="modulex-od-banner" role="note">
+      <span class="modulex-od-badge">{{badgeText}}</span>
+      <p class="modulex-od-bannertext">{{banner}}</p>
+    </div>
+
+    <h1 class="modulex-od-title" id="od-h-{{id}}">
+      <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+      <span>{{title}}</span>
+    </h1>
+
+    <p class="mx-visually-hidden" aria-live="polite" data-od-live></p>
+
+    <div class="modulex-od-loading" data-od-loading role="status">
+      <span class="modulex-od-spin" aria-hidden="true"></span>
+      <span>{{loadingText}}</span>
+    </div>
+
+    <div class="mx-alert mx-alert--danger modulex-od-storeerr" data-od-storeerr role="alert" hidden>
+      <span class="material-symbols-outlined" aria-hidden="true">error</span>
+      <span>{{storeError}}</span>
+    </div>
+
+    <div class="mx-empty modulex-od-empty" data-od-empty hidden>
+      <span class="material-symbols-outlined mx-empty__icon" aria-hidden="true">remove_shopping_cart</span>
+      <p class="mx-empty__title">{{emptyTitle}}</p>
+      <p class="mx-empty__text">{{emptyText}}</p>
+      <a class="mx-btn mx-btn--primary modulex-od-btn" href="{{odShopHref}}">{{shopText}}</a>
+    </div>
+
+    <div class="modulex-od-app" data-od-app hidden>
+      <ol class="mx-stepper modulex-od-stepper" aria-label="{{stepsLabel}}" data-od-stepper>
+        <li class="mx-stepper__step is-active" aria-current="step" data-od-stepi="1">{{step1}}</li>
+        <li class="mx-stepper__step" data-od-stepi="2">{{step2}}</li>
+        <li class="mx-stepper__step" data-od-stepi="3">{{step3}}</li>
+      </ol>
+
+      <div class="modulex-od-grid">
+        <div class="modulex-od-main">
+          <!-- Adim 1: iletisim + adres -->
+          <form class="modulex-od-card" data-od-panel="1" novalidate>
+            <h2 class="modulex-od-ptitle" tabindex="-1">{{step1Title}}</h2>
+            <div class="mx-alert mx-alert--danger modulex-od-formerr" data-od-formerr="1" role="alert" hidden></div>
+            <div class="modulex-od-fields">
+              <div class="mx-field modulex-od-span2">
+                <label class="mx-label" for="od-ad-{{id}}">{{nameLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+                <input class="mx-input" id="od-ad-{{id}}" name="ad_soyad" type="text" autocomplete="name" placeholder="{{namePh}}" required aria-describedby="od-ad-e-{{id}}" />
+                <span class="mx-error" id="od-ad-e-{{id}}" data-od-err="ad"></span>
+              </div>
+              <div class="mx-field">
+                <label class="mx-label" for="od-em-{{id}}">{{emailLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+                <input class="mx-input modulex-od-ltr" id="od-em-{{id}}" name="email" type="email" autocomplete="email" inputmode="email" placeholder="{{emailPh}}" required aria-describedby="od-em-e-{{id}}" dir="ltr" />
+                <span class="mx-error" id="od-em-e-{{id}}" data-od-err="email"></span>
+              </div>
+              <div class="mx-field">
+                <label class="mx-label" for="od-tl-{{id}}">{{phoneLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+                <input class="mx-input modulex-od-ltr" id="od-tl-{{id}}" name="telefon" type="tel" autocomplete="tel" inputmode="tel" placeholder="{{phonePh}}" required aria-describedby="od-tl-e-{{id}}" dir="ltr" />
+                <span class="mx-error" id="od-tl-e-{{id}}" data-od-err="telefon"></span>
+              </div>
+              <div class="mx-field modulex-od-span2">
+                <label class="mx-label" for="od-sh-{{id}}">{{cityLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+                <input class="mx-input" id="od-sh-{{id}}" name="sehir" type="text" autocomplete="address-level1" placeholder="{{cityPh}}" required aria-describedby="od-sh-e-{{id}}" />
+                <span class="mx-error" id="od-sh-e-{{id}}" data-od-err="sehir"></span>
+              </div>
+              <div class="mx-field modulex-od-span2">
+                <label class="mx-label" for="od-ar-{{id}}">{{addressLabel}} <span class="mx-required" aria-hidden="true">*</span></label>
+                <textarea class="mx-textarea" id="od-ar-{{id}}" name="adres" rows="3" autocomplete="street-address" placeholder="{{addressPh}}" required aria-describedby="od-ar-e-{{id}}"></textarea>
+                <span class="mx-error" id="od-ar-e-{{id}}" data-od-err="adres"></span>
+              </div>
+            </div>
+            <div class="modulex-od-actions">
+              <a class="modulex-od-link" href="{{odCartHref}}" data-od-cartlink>{{editCartText}}</a>
+              <button type="submit" class="mx-btn mx-btn--primary modulex-od-btn">
+                <span>{{continueText}}</span>
+                <span class="material-symbols-outlined mx-flip" aria-hidden="true">arrow_forward</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Adim 2: odeme yontemi + kart -->
+          <form class="modulex-od-card" data-od-panel="2" novalidate hidden>
+            <h2 class="modulex-od-ptitle" tabindex="-1">{{step2Title}}</h2>
+            <div class="mx-alert mx-alert--warning modulex-od-formerr" data-od-formerr="2" role="alert" hidden></div>
+            <fieldset class="modulex-od-methods" data-od-methods>
+              <legend class="mx-label">{{methodLabel}}</legend>
+              <!--od:kart-->
+              <label class="modulex-od-method" data-od-method="kart">
+                <input type="radio" name="od-yontem-{{id}}" value="kart" />
+                <span class="material-symbols-outlined" aria-hidden="true">credit_card</span>
+                <span class="modulex-od-mtext"><strong>{{methodKart}}</strong><small>{{methodKartDesc}}</small></span>
+              </label>
+              <!--/od:kart-->
+              <!--od:havale-->
+              <label class="modulex-od-method" data-od-method="havale">
+                <input type="radio" name="od-yontem-{{id}}" value="havale" />
+                <span class="material-symbols-outlined" aria-hidden="true">account_balance</span>
+                <span class="modulex-od-mtext"><strong>{{methodHavale}}</strong><small>{{methodHavaleDesc}}</small></span>
+              </label>
+              <!--/od:havale-->
+              <!--od:kapida-->
+              <label class="modulex-od-method" data-od-method="kapida">
+                <input type="radio" name="od-yontem-{{id}}" value="kapida" />
+                <span class="material-symbols-outlined" aria-hidden="true">local_shipping</span>
+                <span class="modulex-od-mtext"><strong>{{methodKapida}}</strong><small>{{methodKapidaDesc}}</small></span>
+              </label>
+              <!--/od:kapida-->
+            </fieldset>
+
+            <!--od:kart-->
+            <div class="modulex-od-detail" data-od-detail="kart" hidden>
+              <h3 class="modulex-od-subtitle">{{cardTitle}}</h3>
+              <p class="modulex-od-hint" data-od-cardhint></p>
+              <button type="button" class="mx-btn mx-btn--outline mx-btn--sm modulex-od-fill" data-od-fill>
+                <span class="material-symbols-outlined" aria-hidden="true">auto_fix_high</span>
+                <span>{{fillCardText}}</span>
+              </button>
+              <div class="modulex-od-fields">
+                <div class="mx-field modulex-od-span2">
+                  <label class="mx-label" for="od-kn-{{id}}">{{cardNumLabel}}</label>
+                  <div class="modulex-od-cardwrap" dir="ltr">
+                    <input class="mx-input modulex-od-ltr" id="od-kn-{{id}}" name="od-kn" type="text" inputmode="numeric" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="23" placeholder="0000 0000 0000 0000" aria-describedby="od-kn-e-{{id}}" dir="ltr" />
+                    <span class="modulex-od-brand" data-od-brand aria-hidden="true"></span>
+                  </div>
+                  <span class="mx-error" id="od-kn-e-{{id}}" data-od-err="kn"></span>
+                </div>
+                <div class="mx-field modulex-od-span2">
+                  <label class="mx-label" for="od-ka-{{id}}">{{cardNameLabel}}</label>
+                  <input class="mx-input" id="od-ka-{{id}}" name="od-ka" type="text" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" placeholder="{{cardNamePh}}" aria-describedby="od-ka-e-{{id}}" />
+                  <span class="mx-error" id="od-ka-e-{{id}}" data-od-err="ka"></span>
+                </div>
+                <div class="mx-field">
+                  <label class="mx-label" for="od-sk-{{id}}">{{expLabel}}</label>
+                  <input class="mx-input modulex-od-ltr" id="od-sk-{{id}}" name="od-sk" type="text" inputmode="numeric" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="5" placeholder="{{expPh}}" aria-describedby="od-sk-e-{{id}}" dir="ltr" />
+                  <span class="mx-error" id="od-sk-e-{{id}}" data-od-err="sk"></span>
+                </div>
+                <div class="mx-field">
+                  <label class="mx-label" for="od-cv-{{id}}">{{cvcLabel}}</label>
+                  <input class="mx-input modulex-od-ltr" id="od-cv-{{id}}" name="od-cv" type="password" inputmode="numeric" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="4" placeholder="•••" aria-describedby="od-cv-e-{{id}}" dir="ltr" />
+                  <span class="mx-error" id="od-cv-e-{{id}}" data-od-err="cv"></span>
+                </div>
+              </div>
+            </div>
+            <!--/od:kart-->
+
+            <!--od:havale-->
+            <div class="modulex-od-detail" data-od-detail="havale" hidden>
+              <p class="modulex-od-info">{{havaleInfo}}</p>
+              <p class="modulex-od-iban"><bdi dir="ltr">{{odIban}}</bdi></p>
+            </div>
+            <!--/od:havale-->
+
+            <!--od:kapida-->
+            <div class="modulex-od-detail" data-od-detail="kapida" hidden>
+              <p class="modulex-od-info">{{kapidaInfo}}</p>
+            </div>
+            <!--/od:kapida-->
+
+            <div class="modulex-od-actions">
+              <button type="button" class="mx-btn mx-btn--outline modulex-od-btn" data-od-back="1">
+                <span class="material-symbols-outlined mx-flip" aria-hidden="true">arrow_back</span>
+                <span>{{backText}}</span>
+              </button>
+              <button type="submit" class="mx-btn mx-btn--primary modulex-od-btn">
+                <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+                <span>{{payText}}</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Adim 3: 3D Secure simulasyonu -->
+          <form class="modulex-od-card modulex-od-three" data-od-panel="3" novalidate hidden>
+            <div class="modulex-od-bankbar">
+              <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
+              <span>{{threeBank}}</span>
+            </div>
+            <h2 class="modulex-od-ptitle" tabindex="-1">{{threeTitle}}</h2>
+            <dl class="modulex-od-threemeta">
+              <div><dt>{{threeAmount}}</dt><dd data-od-three-amount></dd></div>
+              <div><dt>{{threeCard}}</dt><dd><bdi dir="ltr" data-od-three-card></bdi></dd></div>
+            </dl>
+            <p class="modulex-od-info" data-od-three-info></p>
+            <div class="mx-field">
+              <label class="mx-label" for="od-sms-{{id}}">{{codeLabel}}</label>
+              <input class="mx-input modulex-od-code" id="od-sms-{{id}}" name="od-sms" type="text" inputmode="numeric" autocomplete="one-time-code" autocorrect="off" spellcheck="false" maxlength="6" placeholder="••••••" aria-describedby="od-sms-e-{{id}}" dir="ltr" />
+              <span class="mx-error" id="od-sms-e-{{id}}" data-od-err="sms"></span>
+            </div>
+            <div class="modulex-od-actions modulex-od-actions3">
+              <button type="button" class="mx-btn mx-btn--outline modulex-od-btn" data-od-cancel>
+                <span>{{cancelText}}</span>
+              </button>
+              <button type="button" class="mx-btn mx-btn--ghost modulex-od-btn" data-od-fail>
+                <span class="material-symbols-outlined" aria-hidden="true">gpp_bad</span>
+                <span>{{failBtnText}}</span>
+              </button>
+              <button type="submit" class="mx-btn mx-btn--primary modulex-od-btn">
+                <span class="material-symbols-outlined" aria-hidden="true">check</span>
+                <span>{{verifyText}}</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Sonuc: isleniyor / basari / basarisiz -->
+          <div class="modulex-od-card modulex-od-result" data-od-panel="sonuc" hidden>
+            <div class="modulex-od-resicon" data-od-resicon aria-hidden="true">
+              <span class="material-symbols-outlined">hourglass_top</span>
+            </div>
+            <h2 class="modulex-od-ptitle" tabindex="-1" data-od-restitle>{{processingText}}</h2>
+            <p class="modulex-od-info" data-od-restext></p>
+            <div class="modulex-od-actions modulex-od-actions1">
+              <button type="button" class="mx-btn mx-btn--primary modulex-od-btn" data-od-retry hidden>
+                <span class="material-symbols-outlined" aria-hidden="true">refresh</span>
+                <span>{{retryText}}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="modulex-od-side" aria-labelledby="od-sum-{{id}}">
+          <div class="modulex-od-card modulex-od-summary">
+            <h2 class="modulex-od-ptitle modulex-od-sumtitle" id="od-sum-{{id}}">{{summaryTitle}}</h2>
+            <p class="modulex-od-count" data-od-count></p>
+            <ul class="modulex-od-items" data-od-items></ul>
+            <dl class="modulex-od-rows">
+              <div><dt>{{subtotalText}}</dt><dd data-od-sub></dd></div>
+              <div><dt>{{shippingText}}</dt><dd data-od-ship></dd></div>
+              <div class="modulex-od-total"><dt>{{totalText}}</dt><dd data-od-total></dd></div>
+            </dl>
+            <p class="modulex-od-freenote" data-od-freenote hidden></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/json" id="od-{{id}}-veri">{{odVeri}}</script>
+</section>
+
+<style>
+  .modulex-od {
+    --od-bg: --bgcolor--;
+    --od-text: --textcolor--;
+    --od-surface: --surface--;
+    --od-surface2: --surface2--;
+    --od-accent: --accent--;
+    --od-accent-text: --accentText--;
+    --od-border: --bordercolor--;
+    --od-muted: --mutedcolor--;
+    --od-danger: color-mix(in srgb, #b91c1c 65%, var(--od-text));
+    --od-success: color-mix(in srgb, #15803d 65%, var(--od-text));
+    --od-warning: color-mix(in srgb, #b45309 65%, var(--od-text));
+    box-sizing: border-box;
+    color: var(--od-text);
+    background: var(--od-bg);
+    padding-block: 32px;
+    padding-inline: 16px;
+    font-family: var(--mx-font-sans, system-ui, -apple-system, "Segoe UI", sans-serif);
+    line-height: 1.55;
+  }
+  .modulex-od *,
+  .modulex-od *::before,
+  .modulex-od *::after {
+    box-sizing: border-box;
+  }
+  .modulex-od [hidden] {
+    display: none !important;
+  }
+  .modulex-od-wrap {
+    max-width: --max--;
+    margin-inline: auto;
+  }
+  .modulex-od-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-block-end: 20px;
+    border: 1px dashed var(--od-accent);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--od-accent) 9%, var(--od-bg));
+    font-size: 0.9rem;
+  }
+  .modulex-od-badge {
+    flex: 0 0 auto;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--od-accent);
+    color: var(--od-accent-text);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+  }
+  .modulex-od-bannertext {
+    margin: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .modulex-od-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 20px;
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+    line-height: 1.2;
+  }
+  /* css.css `*{font-size:14px}` her ogeye acik boyut verir → ic span'lar boyutu acikca miras alir */
+  .modulex-od-title > span {
+    font-size: inherit;
+  }
+  .modulex-od-loading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    color: var(--od-muted);
+  }
+  .modulex-od-spin {
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--od-border);
+    border-top-color: var(--od-accent);
+    border-radius: 50%;
+    animation: mxOdSpin 0.8s linear infinite;
+  }
+  @keyframes mxOdSpin {
+    to { transform: rotate(360deg); }
+  }
+  .modulex-od-storeerr {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border: 1px solid var(--od-danger);
+    border-radius: 12px;
+    color: var(--od-danger);
+    font-weight: 600;
+  }
+  .modulex-od-empty {
+    background: var(--od-surface);
+    color: var(--od-text);
+  }
+  .modulex-od-empty .mx-empty__title {
+    color: var(--od-text);
+    font-weight: 700;
+  }
+  .modulex-od-empty .mx-empty__text {
+    color: var(--od-muted);
+  }
+  .modulex-od-stepper {
+    margin-block-end: 24px;
+    --mx-color-primary: var(--od-accent);
+    --mx-color-primary-contrast: var(--od-accent-text);
+    --mx-color-text: var(--od-text);
+    --mx-color-text-muted: var(--od-muted);
+    --mx-color-border: var(--od-border);
+    --mx-color-surface: var(--od-surface);
+    --mx-color-surface-2: var(--od-surface2);
+  }
+  /* mx-stepper baglanti cizgisi fiziksel left:50% kullanir → RTL'de ters yone gider; mantiksal ozellikle ezilir */
+  .modulex-od .modulex-od-stepper .mx-stepper__step:not(:last-child)::after {
+    inset-inline-start: 50%;
+    inset-inline-end: auto;
+  }
+  .modulex-od .modulex-od-stepper .mx-stepper__step {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .modulex-od-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+    gap: 24px;
+    align-items: start;
+  }
+  .modulex-od-card {
+    margin: 0;
+    padding: 24px;
+    border: 1px solid var(--od-border);
+    border-radius: 16px;
+    background: var(--od-surface);
+    animation: mxOdIn 0.3s ease-out both;
+  }
+  @keyframes mxOdIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modulex-od-ptitle {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  .modulex-od-ptitle:focus {
+    outline: none;
+  }
+  .modulex-od-ptitle:focus-visible {
+    outline: 2px solid var(--od-accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  .modulex-od-subtitle {
+    margin: 16px 0 8px;
+    font-size: 1.05rem;
+  }
+  .modulex-od-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .modulex-od-span2 {
+    grid-column: 1 / -1;
+  }
+  .modulex-od .mx-label {
+    color: var(--od-text);
+  }
+  .modulex-od .mx-input,
+  .modulex-od .mx-textarea {
+    background: var(--od-bg);
+    color: var(--od-text);
+    border-color: color-mix(in srgb, var(--od-text) 30%, transparent);
+  }
+  .modulex-od .mx-input::placeholder,
+  .modulex-od .mx-textarea::placeholder {
+    color: color-mix(in srgb, var(--od-text) 52%, var(--od-bg));
+  }
+  .modulex-od .mx-input[aria-invalid="true"],
+  .modulex-od .mx-textarea[aria-invalid="true"] {
+    border-color: var(--od-danger);
+    box-shadow: 0 0 0 1px var(--od-danger);
+  }
+  .modulex-od .mx-input:focus-visible,
+  .modulex-od .mx-textarea:focus-visible {
+    outline: 2px solid var(--od-accent);
+    outline-offset: 1px;
+  }
+  .modulex-od .mx-error {
+    min-height: 0;
+    color: var(--od-danger);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .modulex-od .mx-error:empty {
+    display: none;
+  }
+  .modulex-od-ltr {
+    text-align: start;
+  }
+  .modulex-od-cardwrap {
+    position: relative;
+  }
+  .modulex-od-cardwrap .mx-input {
+    padding-inline-end: 96px;
+    letter-spacing: 0.04em;
+  }
+  .modulex-od-brand {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 12px;
+    display: flex;
+    align-items: center;
+    color: var(--od-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    pointer-events: none;
+  }
+  .modulex-od-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-block-start: 24px;
+  }
+  .modulex-od-actions1 {
+    justify-content: center;
+  }
+  .modulex-od-actions3 {
+    justify-content: flex-end;
+  }
+  .modulex-od-actions3 [data-od-cancel] {
+    margin-inline-end: auto;
+  }
+  .modulex-od .modulex-od-btn,
+  .modulex-od .modulex-od-fill {
+    min-width: 132px;
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
+    cursor: pointer;
+    --mx-color-primary: var(--od-accent);
+    --mx-color-primary-contrast: var(--od-accent-text);
+  }
+  .modulex-od .mx-btn--primary {
+    background: var(--od-accent);
+    color: var(--od-accent-text) !important;
+  }
+  .modulex-od .mx-btn--outline,
+  .modulex-od .mx-btn--ghost {
+    color: var(--od-text) !important;
+    border-color: color-mix(in srgb, var(--od-text) 35%, transparent);
+  }
+  .modulex-od .mx-btn--ghost {
+    border-color: transparent;
+  }
+  .modulex-od .mx-btn[disabled] {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .modulex-od-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--od-text) !important;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .modulex-od-methods {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 8px;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+  .modulex-od-methods legend {
+    padding: 0;
+    margin-block-end: 8px;
+  }
+  .modulex-od-method {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 64px;
+    padding: 12px 16px;
+    border: 1.5px solid color-mix(in srgb, var(--od-text) 25%, transparent);
+    border-radius: 12px;
+    background: var(--od-bg);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .modulex-od-method:hover {
+    border-color: var(--od-accent);
+  }
+  .modulex-od-method input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .modulex-od-method.is-selected {
+    border-color: var(--od-accent);
+    background: color-mix(in srgb, var(--od-accent) 9%, var(--od-bg));
+    box-shadow: 0 0 0 1px var(--od-accent);
+  }
+  .modulex-od-method:focus-within {
+    outline: 2px solid var(--od-accent);
+    outline-offset: 2px;
+  }
+  .modulex-od-method .material-symbols-outlined {
+    flex: 0 0 auto;
+    font-size: 28px;
+    color: var(--od-accent);
+  }
+  .modulex-od-mtext {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .modulex-od-mtext small {
+    color: var(--od-muted);
+    font-size: 0.82rem;
+  }
+  .modulex-od-detail {
+    margin-block-start: 8px;
+    padding-block-start: 8px;
+    border-block-start: 1px solid var(--od-border);
+  }
+  .modulex-od-hint,
+  .modulex-od-info {
+    margin: 0 0 12px;
+    color: var(--od-muted);
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+  .modulex-od-fill {
+    margin-block-end: 16px;
+  }
+  .modulex-od-iban {
+    margin: 0;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: var(--od-bg);
+    border: 1px dashed var(--od-border);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+  .modulex-od-bankbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: -24px -24px 20px;
+    padding: 14px 24px;
+    border-radius: 15px 15px 0 0;
+    background: var(--od-accent);
+    color: var(--od-accent-text);
+    font-weight: 700;
+  }
+  .modulex-od-threemeta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 0 16px;
+  }
+  .modulex-od-threemeta dt {
+    color: var(--od-muted);
+    font-size: 0.8rem;
+  }
+  .modulex-od-threemeta dd {
+    margin: 0;
+    font-weight: 700;
+  }
+  .modulex-od .modulex-od-code {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+  }
+  .modulex-od-result {
+    text-align: center;
+  }
+  .modulex-od-resicon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-block-end: 12px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--od-accent) 14%, var(--od-bg));
+    color: var(--od-accent);
+  }
+  .modulex-od-resicon .material-symbols-outlined {
+    font-size: 36px;
+  }
+  .modulex-od-result[data-od-sonuc="ok"] .modulex-od-resicon {
+    background: color-mix(in srgb, var(--od-success) 16%, var(--od-bg));
+    color: var(--od-success);
+    animation: mxOdPop 0.45s ease-out both;
+  }
+  .modulex-od-result[data-od-sonuc="hata"] .modulex-od-resicon {
+    background: color-mix(in srgb, var(--od-danger) 14%, var(--od-bg));
+    color: var(--od-danger);
+  }
+  .modulex-od-result[data-od-sonuc="bekle"] .modulex-od-resicon .material-symbols-outlined {
+    animation: mxOdSpin 1.4s linear infinite;
+  }
+  @keyframes mxOdPop {
+    0% { transform: scale(0.6); }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .modulex-od-side {
+    position: sticky;
+    inset-block-start: calc(var(--mx-demo-bandi-h, 0px) + 16px);
+  }
+  .modulex-od-sumtitle {
+    font-size: 1.1rem;
+  }
+  .modulex-od-count {
+    margin: -8px 0 12px;
+    color: var(--od-muted);
+    font-size: 0.88rem;
+  }
+  .modulex-od-items {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+  }
+  .modulex-od-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  .modulex-od-thumb {
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--od-surface2);
+    color: var(--od-muted);
+  }
+  .modulex-od-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .modulex-od-iname {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+  .modulex-od-iname small {
+    display: block;
+    color: var(--od-muted);
+    font-weight: 400;
+  }
+  .modulex-od-iprice {
+    flex: 0 0 auto;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+  .modulex-od-rows {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding-block-start: 14px;
+    border-block-start: 1px solid var(--od-border);
+  }
+  .modulex-od-rows > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .modulex-od-rows dt {
+    color: var(--od-muted);
+  }
+  .modulex-od-rows dd {
+    margin: 0;
+    font-weight: 600;
+  }
+  .modulex-od-total {
+    padding-block-start: 10px;
+    border-block-start: 1px solid var(--od-border);
+    font-size: 1.1rem;
+  }
+  .modulex-od-total dt {
+    color: var(--od-text);
+    font-weight: 700;
+  }
+  .modulex-od-total dd {
+    font-weight: 800;
+  }
+  .modulex-od-freenote {
+    margin: 12px 0 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--od-accent) 9%, var(--od-bg));
+    font-size: 0.85rem;
+  }
+  .modulex-od .modulex-od-formerr {
+    margin-block-end: 16px;
+    padding: 10px 14px;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .modulex-od .modulex-od-formerr.mx-alert--danger {
+    color: var(--od-danger);
+    background: color-mix(in srgb, var(--od-danger) 8%, var(--od-bg));
+  }
+  .modulex-od .modulex-od-formerr.mx-alert--warning {
+    color: var(--od-warning);
+    background: color-mix(in srgb, var(--od-warning) 8%, var(--od-bg));
+  }
+  @media (max-width: 1024px) {
+    .modulex-od-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .modulex-od-side {
+      position: static;
+      order: -1;
+    }
+  }
+  @media (max-width: 768px) {
+    .modulex-od {
+      padding-block: 20px;
+      padding-inline: 12px;
+    }
+    .modulex-od-card {
+      padding: 18px;
+    }
+    .modulex-od-bankbar {
+      margin: -18px -18px 16px;
+      padding: 12px 18px;
+    }
+    .modulex-od-fields,
+    .modulex-od-threemeta {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .modulex-od-actions {
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+    .modulex-od-actions .modulex-od-btn {
+      width: 100%;
+    }
+    .modulex-od-actions3 [data-od-cancel] {
+      margin-inline-end: 0;
+    }
+    .modulex-od .modulex-od-stepper .mx-stepper__step {
+      font-size: 0.7rem;
+    }
+    .modulex-od-link {
+      justify-content: center;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-od-card,
+    .modulex-od-resicon,
+    .modulex-od-spin,
+    .modulex-od-resicon .material-symbols-outlined {
+      animation: none !important;
+    }
+    .modulex-od-method {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  /* odeme-demo — SAHTE odeme: sepet → bilgiler → yontem/kart → 3D Secure simulasyonu → MxStore demo siparisi → yonlendirme.
+     KURAL: kart verisi (numara/SKT/CVC/ad) yalniz bu betigin bellegindeki dogrulamada kullanilir; depoya yazilmaz, aga gonderilmez,
+     konsola yazilmaz. Kartli adim bitince (3D Secure'a gecis) alanlar bosaltilir; yalniz maskeli son 4 hane ekranda kalir. */
+  (function () {
+    "use strict";
+
+    /* ================= SAF YARDIMCILAR (vm ile test edilir; DOM'a dokunmaz) ================= */
+    function rakamlar(s) {
+      return String(s == null ? "" : s).replace(/\D+/g, "");
+    }
+
+    function kartTuru(d) {
+      if (/^4/.test(d)) {
+        return "visa";
+      }
+      if (/^(5[1-5]\d{2}|222[1-9]|22[3-9]\d|2[3-6]\d\d|27[01]\d|2720)/.test(d)) {
+        return "mastercard";
+      }
+      if (/^3[47]/.test(d)) {
+        return "amex";
+      }
+      if (/^9792/.test(d)) {
+        return "troy";
+      }
+      return "";
+    }
+
+    /* Luhn (mod 10): sagdan sola her ikinci hane iki katina, >9 ise 9 cikarilir */
+    function luhn(girdi) {
+      var d = rakamlar(girdi);
+      if (d.length < 12) {
+        return false;
+      }
+      var toplam = 0;
+      var cift = false;
+      for (var i = d.length - 1; i >= 0; i--) {
+        var n = d.charCodeAt(i) - 48;
+        if (cift) {
+          n = n * 2;
+          if (n > 9) {
+            n = n - 9;
+          }
+        }
+        toplam += n;
+        cift = !cift;
+      }
+      return toplam % 10 === 0;
+    }
+
+    function kartBicim(girdi) {
+      var d = rakamlar(girdi);
+      var tur = kartTuru(d);
+      d = d.slice(0, tur === "amex" ? 15 : 19);
+      if (tur === "amex") {
+        var a = [d.slice(0, 4), d.slice(4, 10), d.slice(10)];
+        return a.filter(function (p) { return p; }).join(" ");
+      }
+      return d.replace(/(\d{4})(?=\d)/g, "$1 ");
+    }
+
+    function kartUzunlukTamam(girdi) {
+      var d = rakamlar(girdi);
+      var tur = kartTuru(d);
+      return tur === "amex" ? d.length === 15 : d.length >= 16 && d.length <= 19;
+    }
+
+    /* "1230" / "12/30" / "12/2030" → {ay, yil}; gecersiz biciminde null */
+    function sktCoz(girdi) {
+      var d = rakamlar(girdi);
+      if (d.length !== 4 && d.length !== 6) {
+        return null;
+      }
+      var ay = parseInt(d.slice(0, 2), 10);
+      var yil = parseInt(d.slice(2), 10);
+      if (d.length === 4) {
+        yil += 2000;
+      }
+      if (!(ay >= 1 && ay <= 12)) {
+        return null;
+      }
+      return { ay: ay, yil: yil };
+    }
+
+    /* "ok" | "bicim" | "gecmis" — kart, son kullanma AYININ sonuna kadar gecerli; en fazla 20 yil ileri */
+    function sktDurum(girdi, simdi) {
+      var c = sktCoz(girdi);
+      if (!c) {
+        return "bicim";
+      }
+      var t = simdi || new Date();
+      var su = t.getFullYear() * 12 + (t.getMonth() + 1);
+      var kart = c.yil * 12 + c.ay;
+      if (kart < su) {
+        return "gecmis";
+      }
+      if (kart > su + 240) {
+        return "bicim";
+      }
+      return "ok";
+    }
+
+    /* yazarken "12" → "12", "123" → "12/3"; ilk hane 2-9 ise basa 0 eklenir */
+    function sktBicim(girdi) {
+      var d = rakamlar(girdi).slice(0, 4);
+      if (d.length === 1 && d > "1") {
+        d = "0" + d;
+      }
+      return d.length > 2 ? d.slice(0, 2) + "/" + d.slice(2) : d;
+    }
+
+    function cvcTamam(girdi, tur) {
+      var d = rakamlar(girdi);
+      return tur === "amex" ? d.length === 4 : d.length === 3;
+    }
+
+    function emailTamam(s) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(s || "").trim());
+    }
+
+    function telefonTamam(s) {
+      var n = rakamlar(s).length;
+      return n >= 10 && n <= 15;
+    }
+
+    function sayi(v) {
+      var n = Number(v);
+      return isFinite(n) ? n : 0;
+    }
+
+    /* kargo: ara toplam >= free_over ise ucretsiz (free_over 0 = hic ucretsiz degil), bos sepette 0 */
+    function kargoHesapla(ara, ship) {
+      var fee = sayi(ship && ship.fee);
+      var free = sayi(ship && ship.free_over);
+      if (ara <= 0) {
+        return 0;
+      }
+      if (free > 0 && ara >= free) {
+        return 0;
+      }
+      return fee > 0 ? fee : 0;
+    }
+
+    function ucretsizKalan(ara, ship) {
+      var free = sayi(ship && ship.free_over);
+      return free > 0 && ara > 0 && ara < free ? Math.round((free - ara) * 100) / 100 : 0;
+    }
+
+    function toplamHesapla(sepet, ship) {
+      var ara = 0;
+      var adet = 0;
+      for (var i = 0; i < sepet.length; i++) {
+        var q = sayi(sepet[i].qty) > 0 ? sayi(sepet[i].qty) : 1;
+        ara += sayi(sepet[i].price) * q;
+        adet += q;
+      }
+      ara = Math.round(ara * 100) / 100;
+      var kargo = kargoHesapla(ara, ship);
+      return { ara: ara, kargo: kargo, toplam: Math.round((ara + kargo) * 100) / 100, adet: adet };
+    }
+
+    /* Intl.PluralRules ile cogul secimi (ar: zero/one/two/few/many/other); eksik form → other; {n} yerine sayi */
+    function cogulSec(n, tablo, dil) {
+      var f = tablo || {};
+      var kat = "other";
+      try {
+        kat = new Intl.PluralRules(dil || "en").select(Number(n));
+      } catch (e) {
+        kat = Number(n) === 1 ? "one" : "other";
+      }
+      if (Number(n) === 0 && f.zero !== undefined) {
+        kat = "zero";
+      }
+      var m = f[kat] !== undefined ? f[kat] : f.other;
+      return String(m === undefined ? "" : m).replace(/\{n\}/g, String(n));
+    }
+
+    /* 3D Secure sonucu: girdi { kod, beklenen, zorla: ""|"basarisiz"|"iptal", rastgele (0..1), failRate, deneme, azamiDeneme }
+       → "iptal" | "basarisiz" | "kod-hatali" | "kod-asildi" | "basarili" */
+    function sonucKarar(g) {
+      var zorla = g.zorla || "";
+      if (zorla === "iptal") {
+        return "iptal";
+      }
+      if (zorla === "basarisiz") {
+        return "basarisiz";
+      }
+      if (String(g.kod || "") !== String(g.beklenen || "")) {
+        return sayi(g.deneme) >= (sayi(g.azamiDeneme) || 3) ? "kod-asildi" : "kod-hatali";
+      }
+      if (sayi(g.failRate) > 0 && sayi(g.rastgele) < sayi(g.failRate)) {
+        return "basarisiz";
+      }
+      return "basarili";
+    }
+
+    /* "{n}" / "{amount}" gibi yer tutuculari haritadan doldurur; harita degeri string ya da DOM dugumu olabilir (parca listesi doner) */
+    function sablonParcala(sablon, harita) {
+      var out = [];
+      var parcalar = String(sablon == null ? "" : sablon).split(/(\{\w+\})/);
+      for (var i = 0; i < parcalar.length; i++) {
+        var m = /^\{(\w+)\}$/.exec(parcalar[i]);
+        if (m && Object.prototype.hasOwnProperty.call(harita || {}, m[1])) {
+          out.push({ anahtar: m[1], deger: harita[m[1]] });
+        } else if (parcalar[i]) {
+          out.push({ metin: parcalar[i] });
+        }
+      }
+      return out;
+    }
+
+    var kutuphane = {
+      rakamlar: rakamlar,
+      kartTuru: kartTuru,
+      luhn: luhn,
+      kartBicim: kartBicim,
+      kartUzunlukTamam: kartUzunlukTamam,
+      sktCoz: sktCoz,
+      sktDurum: sktDurum,
+      sktBicim: sktBicim,
+      cvcTamam: cvcTamam,
+      emailTamam: emailTamam,
+      telefonTamam: telefonTamam,
+      kargoHesapla: kargoHesapla,
+      ucretsizKalan: ucretsizKalan,
+      toplamHesapla: toplamHesapla,
+      cogulSec: cogulSec,
+      sonucKarar: sonucKarar,
+      sablonParcala: sablonParcala
+    };
+    window.mxOdemeDemoLib = window.mxOdemeDemoLib || kutuphane;
+
+    /* ================= ARAYUZ ================= */
+    var kok = document.getElementById("od-{{id}}");
+    if (!kok) {
+      return;
+    }
+    var veriEl = document.getElementById("od-{{id}}-veri");
+    var cfg = {};
+    try {
+      cfg = JSON.parse(veriEl ? veriEl.textContent : "{}");
+    } catch (e) {
+      cfg = {};
+    }
+    var T = cfg.t || {};
+    var AZAMI_DENEME = 3;
+    var store = null;
+    var durum = { adim: 1, yontem: "", sepet: [], hesap: null, son4: "", tur: "", deneme: 0, bitti: false, mesgul: false, bilgi: null };
+
+    function q(sel) {
+      return kok.querySelector(sel);
+    }
+
+    function qa(sel) {
+      return kok.querySelectorAll(sel);
+    }
+
+    function canliYaz(metin) {
+      var el = q("[data-od-live]");
+      if (el) {
+        el.textContent = "";
+        el.textContent = metin || "";
+      }
+    }
+
+    function paraDugumu(n) {
+      var b = document.createElement("bdi");
+      b.setAttribute("dir", "ltr");
+      b.textContent = store ? store.para(n, cfg.cur, cfg.lang) : String(n);
+      return b;
+    }
+
+    /* sablonu {anahtar} yer tutucularindan doldurur; DOM dugumleri (para) guvenli eklenir */
+    function sablonYaz(el, sablon, harita) {
+      while (el.firstChild) {
+        el.removeChild(el.firstChild);
+      }
+      var parcalar = sablonParcala(sablon, harita);
+      for (var i = 0; i < parcalar.length; i++) {
+        var p = parcalar[i];
+        if (p.metin !== undefined) {
+          el.appendChild(document.createTextNode(p.metin));
+        } else if (p.deger && p.deger.nodeType) {
+          el.appendChild(p.deger);
+        } else {
+          el.appendChild(document.createTextNode(String(p.deger)));
+        }
+      }
+    }
+
+    function gorselGuvenli(g) {
+      var s = String(g || "");
+      if (!s || s.indexOf("<") !== -1 || s.indexOf('"') !== -1 || /^\s*javascript:/i.test(s)) {
+        return "";
+      }
+      return /^(https?:)?\/\//i.test(s) || s.charAt(0) === "/" ? s : "";
+    }
+
+    /* ---- ozet ---- */
+    function ozetCiz() {
+      var sepet = store.sepet.oku();
+      durum.sepet = sepet;
+      var h = toplamHesapla(sepet, cfg.ship);
+      durum.hesap = h;
+      q("[data-od-count]").textContent = cogulSec(h.adet, cfg.plural, cfg.lang);
+      var liste = q("[data-od-items]");
+      while (liste.firstChild) {
+        liste.removeChild(liste.firstChild);
+      }
+      for (var i = 0; i < sepet.length; i++) {
+        var s = sepet[i];
+        var adet = sayi(s.qty) > 0 ? sayi(s.qty) : 1;
+        var li = document.createElement("li");
+        li.className = "modulex-od-item";
+        var th = document.createElement("span");
+        th.className = "modulex-od-thumb";
+        var g = gorselGuvenli(s.img);
+        if (g) {
+          var im = document.createElement("img");
+          im.src = g;
+          im.alt = "";
+          im.loading = "lazy";
+          th.appendChild(im);
+        } else {
+          var ik = document.createElement("span");
+          ik.className = "material-symbols-outlined";
+          ik.setAttribute("aria-hidden", "true");
+          ik.textContent = "inventory_2";
+          th.appendChild(ik);
+        }
+        var ad = document.createElement("span");
+        ad.className = "modulex-od-iname";
+        ad.appendChild(document.createTextNode(s.name || s.id));
+        var alt = document.createElement("small");
+        alt.appendChild(document.createTextNode((T.qtyLabel || "") + ": " + adet));
+        ad.appendChild(alt);
+        var fy = document.createElement("span");
+        fy.className = "modulex-od-iprice";
+        fy.appendChild(paraDugumu(sayi(s.price) * adet));
+        li.appendChild(th);
+        li.appendChild(ad);
+        li.appendChild(fy);
+        liste.appendChild(li);
+      }
+      var sub = q("[data-od-sub]");
+      sub.textContent = "";
+      sub.appendChild(paraDugumu(h.ara));
+      var ship = q("[data-od-ship]");
+      ship.textContent = "";
+      if (h.kargo > 0) {
+        ship.appendChild(paraDugumu(h.kargo));
+      } else {
+        ship.textContent = T.freeText || "";
+      }
+      var top = q("[data-od-total]");
+      top.textContent = "";
+      top.appendChild(paraDugumu(h.toplam));
+      var kalan = ucretsizKalan(h.ara, cfg.ship);
+      var not = q("[data-od-freenote]");
+      if (kalan > 0 && cfg.ship && cfg.ship.fee > 0) {
+        sablonYaz(not, T.freeShipNote, { amount: paraDugumu(kalan) });
+        not.hidden = false;
+      } else {
+        not.hidden = true;
+      }
+    }
+
+    /* ---- adim yonetimi ---- */
+    function adimGit(n, odak) {
+      durum.adim = n;
+      var panel = String(n);
+      var paneller = qa("[data-od-panel]");
+      for (var i = 0; i < paneller.length; i++) {
+        paneller[i].hidden = paneller[i].getAttribute("data-od-panel") !== panel;
+      }
+      var adimlar = qa("[data-od-stepi]");
+      for (var j = 0; j < adimlar.length; j++) {
+        var no = parseInt(adimlar[j].getAttribute("data-od-stepi"), 10);
+        adimlar[j].classList.toggle("is-done", no < n || n === "sonuc");
+        adimlar[j].classList.toggle("is-active", no === n);
+        if (no === n) {
+          adimlar[j].setAttribute("aria-current", "step");
+        } else {
+          adimlar[j].removeAttribute("aria-current");
+        }
+      }
+      var p = q('[data-od-panel="' + panel + '"]');
+      var bas = p ? p.querySelector(".modulex-od-ptitle") : null;
+      if (bas) {
+        canliYaz(bas.textContent);
+        if (odak !== false) {
+          bas.focus({ preventScroll: false });
+        }
+      }
+    }
+
+    function sonucGoster(tip, baslik, metin) {
+      var panel = q('[data-od-panel="sonuc"]');
+      var paneller = qa("[data-od-panel]");
+      for (var i = 0; i < paneller.length; i++) {
+        paneller[i].hidden = paneller[i] !== panel;
+      }
+      panel.setAttribute("data-od-sonuc", tip);
+      var ikon = panel.querySelector(".material-symbols-outlined");
+      ikon.textContent = tip === "ok" ? "check_circle" : tip === "hata" ? "error" : "hourglass_top";
+      var bas = q("[data-od-restitle]");
+      bas.textContent = baslik;
+      q("[data-od-restext]").textContent = metin || "";
+      q("[data-od-retry]").hidden = tip !== "hata";
+      panel.setAttribute("aria-busy", tip === "bekle" ? "true" : "false");
+      canliYaz(baslik + (metin ? ". " + metin : ""));
+      if (tip !== "bekle") {
+        bas.focus({ preventScroll: false });
+      }
+    }
+
+    /* ---- dogrulama ---- */
+    function alanEl(ad) {
+      var map = { ad: "ad_soyad", email: "email", telefon: "telefon", sehir: "sehir", adres: "adres", kn: "od-kn", ka: "od-ka", sk: "od-sk", cv: "od-cv", sms: "od-sms" };
+      return q('[name="' + map[ad] + '"]');
+    }
+
+    function hataYaz(ad, mesaj) {
+      var el = alanEl(ad);
+      var e = q('[data-od-err="' + ad + '"]');
+      if (e) {
+        e.textContent = mesaj || "";
+      }
+      if (el) {
+        if (mesaj) {
+          el.setAttribute("aria-invalid", "true");
+        } else {
+          el.removeAttribute("aria-invalid");
+        }
+      }
+    }
+
+    function hatalariTemizle(alanlar) {
+      for (var i = 0; i < alanlar.length; i++) {
+        hataYaz(alanlar[i], "");
+      }
+    }
+
+    function ilkHataOdak(hatalar, kutuNo, ozetMetin) {
+      var kutu = q('[data-od-formerr="' + kutuNo + '"]');
+      if (!hatalar.length) {
+        if (kutu) {
+          kutu.hidden = true;
+          kutu.textContent = "";
+        }
+        return true;
+      }
+      if (kutu) {
+        kutu.textContent = ozetMetin;
+        kutu.hidden = false;
+      }
+      var el = alanEl(hatalar[0]);
+      if (el) {
+        el.focus();
+      }
+      canliYaz(ozetMetin);
+      return false;
+    }
+
+    function adimBirDogrula() {
+      var f = {
+        ad: String(alanEl("ad").value || "").trim(),
+        email: String(alanEl("email").value || "").trim(),
+        telefon: String(alanEl("telefon").value || "").trim(),
+        sehir: String(alanEl("sehir").value || "").trim(),
+        adres: String(alanEl("adres").value || "").trim()
+      };
+      var hatalar = [];
+      hatalariTemizle(["ad", "email", "telefon", "sehir", "adres"]);
+      if (!f.ad) {
+        hataYaz("ad", T.errRequired);
+        hatalar.push("ad");
+      } else if (f.ad.length < 3 || f.ad.indexOf(" ") === -1) {
+        hataYaz("ad", T.errName);
+        hatalar.push("ad");
+      }
+      if (!emailTamam(f.email)) {
+        hataYaz("email", f.email ? T.errEmail : T.errRequired);
+        hatalar.push("email");
+      }
+      if (!telefonTamam(f.telefon)) {
+        hataYaz("telefon", f.telefon ? T.errPhone : T.errRequired);
+        hatalar.push("telefon");
+      }
+      if (!f.sehir) {
+        hataYaz("sehir", T.errRequired);
+        hatalar.push("sehir");
+      }
+      if (f.adres.length < 10) {
+        hataYaz("adres", f.adres ? T.errAddress : T.errRequired);
+        hatalar.push("adres");
+      }
+      if (!ilkHataOdak(hatalar, "1", T.errSummary)) {
+        return null;
+      }
+      return f;
+    }
+
+    /* kart alanlari: yalniz bellekte dogrulanir; sonuc sadece {tur, son4} */
+    function kartDogrula() {
+      var no = rakamlar(alanEl("kn").value);
+      var tur = kartTuru(no);
+      var hatalar = [];
+      hatalariTemizle(["kn", "ka", "sk", "cv"]);
+      if (!kartUzunlukTamam(no)) {
+        hataYaz("kn", T.errCardNum);
+        hatalar.push("kn");
+      } else if (!luhn(no)) {
+        hataYaz("kn", T.errCardLuhn);
+        hatalar.push("kn");
+      }
+      if (String(alanEl("ka").value || "").trim().length < 3) {
+        hataYaz("ka", T.errCardName);
+        hatalar.push("ka");
+      }
+      var skt = sktDurum(alanEl("sk").value);
+      if (skt === "bicim") {
+        hataYaz("sk", T.errExp);
+        hatalar.push("sk");
+      } else if (skt === "gecmis") {
+        hataYaz("sk", T.errExpPast);
+        hatalar.push("sk");
+      }
+      if (!cvcTamam(alanEl("cv").value, tur)) {
+        hataYaz("cv", T.errCvc);
+        hatalar.push("cv");
+      }
+      /* sira: ekrandaki alan sirasi (kn, ka, sk, cv) */
+      if (!ilkHataOdak(hatalar, "2", T.errSummary)) {
+        return null;
+      }
+      return { tur: tur, son4: no.slice(-4) };
+    }
+
+    function kartAlanlariniTemizle() {
+      var adlar = ["kn", "ka", "sk", "cv"];
+      for (var i = 0; i < adlar.length; i++) {
+        var el = alanEl(adlar[i]);
+        if (el) {
+          el.value = "";
+        }
+      }
+      var marka = q("[data-od-brand]");
+      if (marka) {
+        marka.textContent = "";
+      }
+    }
+
+    var MARKA = { visa: "Visa", mastercard: "Mastercard", amex: "Amex", troy: "Troy" };
+
+    /* ---- siparis ---- */
+    function adresMetni() {
+      var b = durum.bilgi || {};
+      return String(b.adres || "") + (b.sehir ? " / " + b.sehir : "");
+    }
+
+    function siparisYaz(basarisiz) {
+      var b = durum.bilgi || {};
+      return store.siparis.olustur({
+        demo: true,
+        odeme: durum.yontem,
+        kargo: durum.hesap ? durum.hesap.kargo : 0,
+        ad_soyad: b.ad,
+        email: b.email,
+        telefon: b.telefon,
+        adres: adresMetni(),
+        basarisiz: !!basarisiz
+      });
+    }
+
+    function yonlendir(no) {
+      var hedef = cfg.success;
+      if (!hedef) {
+        return;
+      }
+      var ek = (hedef.indexOf("?") === -1 ? "?" : "&") + "no=" + encodeURIComponent(no);
+      window.location.assign(hedef + ek);
+    }
+
+    function bitir(basarisizSecildi, neden) {
+      if (durum.mesgul) {
+        return;
+      }
+      durum.mesgul = true;
+      sonucGoster("bekle", T.processingText, "");
+      var gecikme = 700;
+      setTimeout(function () {
+        siparisYaz(basarisizSecildi).then(function (kayit) {
+          durum.bitti = true;
+          durum.mesgul = false;
+          var no = kayit && kayit.no ? kayit.no : "";
+          var adimlar = qa("[data-od-stepi]");
+          for (var i = 0; i < adimlar.length; i++) {
+            adimlar[i].classList.add("is-done");
+            adimlar[i].classList.remove("is-active");
+          }
+          sonucGoster("ok", T.successTitle, T.successText);
+          setTimeout(function () {
+            yonlendir(no);
+          }, cfg.wait);
+        }, function () {
+          durum.mesgul = false;
+          sonucGoster("hata", T.failTitle, neden === "kod-asildi" ? T.tooManyText : T.failMessage);
+        });
+      }, gecikme);
+    }
+
+    /* ---- 3D Secure ---- */
+    function uceGec(kart) {
+      durum.son4 = kart.son4;
+      durum.tur = kart.tur;
+      durum.deneme = 0;
+      kartAlanlariniTemizle();
+      var tutar = q("[data-od-three-amount]");
+      tutar.textContent = "";
+      tutar.appendChild(paraDugumu(durum.hesap.toplam));
+      q("[data-od-three-card]").textContent = "•••• " + durum.son4;
+      sablonYaz(q("[data-od-three-info]"), T.threeInfo, { code: cfg.sms });
+      var kod = alanEl("sms");
+      kod.value = "";
+      hataYaz("sms", "");
+      adimGit(3);
+      kod.focus();
+    }
+
+    function ucKarar(zorla) {
+      var kod = rakamlar(alanEl("sms").value);
+      if (!zorla && kod.length !== 6) {
+        hataYaz("sms", T.errCodeFormat);
+        alanEl("sms").focus();
+        canliYaz(T.errCodeFormat);
+        return;
+      }
+      var karar = sonucKarar({
+        kod: kod,
+        beklenen: cfg.sms,
+        zorla: zorla || "",
+        rastgele: Math.random(),
+        failRate: cfg.failRate,
+        deneme: durum.deneme + 1,
+        azamiDeneme: AZAMI_DENEME
+      });
+      if (karar === "kod-hatali") {
+        durum.deneme += 1;
+        var kalan = AZAMI_DENEME - durum.deneme;
+        var m = T.errCode.replace(/\{n\}/g, String(kalan)).replace(/\{code\}/g, cfg.sms);
+        hataYaz("sms", m);
+        canliYaz(m);
+        alanEl("sms").value = "";
+        alanEl("sms").focus();
+        return;
+      }
+      hataYaz("sms", "");
+      if (karar === "iptal") {
+        adimGit(2, false);
+        var kutu = q('[data-od-formerr="2"]');
+        kutu.textContent = T.cancelledMessage;
+        kutu.hidden = false;
+        canliYaz(T.cancelledMessage);
+        var ilkRadyo = q('input[name^="od-yontem-"]:checked') || q('input[name^="od-yontem-"]');
+        if (ilkRadyo) {
+          ilkRadyo.focus();
+        }
+        return;
+      }
+      if (karar === "basarili") {
+        bitir(false, "");
+      } else {
+        bitir(true, karar);
+      }
+    }
+
+    /* ---- yontem secimi ---- */
+    function yontemUygula(y) {
+      durum.yontem = y;
+      var etiketler = qa("[data-od-method]");
+      for (var i = 0; i < etiketler.length; i++) {
+        var secili = etiketler[i].getAttribute("data-od-method") === y;
+        etiketler[i].classList.toggle("is-selected", secili);
+        var r = etiketler[i].querySelector("input");
+        r.checked = secili;
+      }
+      var detaylar = qa("[data-od-detail]");
+      for (var j = 0; j < detaylar.length; j++) {
+        detaylar[j].hidden = detaylar[j].getAttribute("data-od-detail") !== y;
+      }
+      var kutu = q('[data-od-formerr="2"]');
+      kutu.hidden = true;
+    }
+
+    function olaylariBagla() {
+      var f1 = q('[data-od-panel="1"]');
+      f1.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var v = adimBirDogrula();
+        if (v) {
+          durum.bilgi = v;
+          adimGit(2);
+        }
+      });
+
+      var f2 = q('[data-od-panel="2"]');
+      f2.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (durum.yontem === "kart") {
+          var kart = kartDogrula();
+          if (kart) {
+            uceGec(kart);
+          }
+        } else {
+          ilkHataOdak([], "2", "");
+          bitir(false, "");
+        }
+      });
+      var geri = q("[data-od-back]");
+      if (geri) {
+        geri.addEventListener("click", function () {
+          adimGit(1);
+        });
+      }
+      var radyolar = qa('input[name^="od-yontem-"]');
+      for (var i = 0; i < radyolar.length; i++) {
+        radyolar[i].addEventListener("change", function (ev) {
+          yontemUygula(ev.target.value);
+        });
+      }
+
+      var kn = alanEl("kn");
+      if (kn) {
+        kn.addEventListener("input", function () {
+          var d = rakamlar(kn.value);
+          kn.value = kartBicim(d);
+          var tur = kartTuru(d);
+          var marka = q("[data-od-brand]");
+          marka.textContent = MARKA[tur] || "";
+        });
+        alanEl("sk").addEventListener("input", function (ev) {
+          /* silerken (deleteContent...) "/" geri eklenip imleci kilitlemesin: yalniz ileri yazimda bicimle */
+          var t = ev.inputType || "";
+          var sk = alanEl("sk");
+          sk.value = t.indexOf("delete") === 0 ? sk.value.replace(/[^\d/]/g, "") : sktBicim(sk.value);
+        });
+        alanEl("cv").addEventListener("input", function () {
+          var cv = alanEl("cv");
+          cv.value = rakamlar(cv.value).slice(0, 4);
+        });
+        q("[data-od-fill]").addEventListener("click", function () {
+          /* demo test karti: degerler yalniz bu alanlara yazilir, baska yere kopyalanmaz */
+          kn.value = kartBicim(cfg.card);
+          alanEl("ka").value = alanEl("ad").value ? String(alanEl("ad").value).toUpperCase() : "DEMO";
+          alanEl("sk").value = "12/35";
+          alanEl("cv").value = "123";
+          q("[data-od-brand]").textContent = MARKA[kartTuru(rakamlar(kn.value))] || "";
+          hatalariTemizle(["kn", "ka", "sk", "cv"]);
+          kn.focus();
+        });
+      }
+
+      var f3 = q('[data-od-panel="3"]');
+      f3.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        ucKarar("");
+      });
+      alanEl("sms").addEventListener("input", function () {
+        var s = alanEl("sms");
+        s.value = rakamlar(s.value).slice(0, 6);
+      });
+      q("[data-od-cancel]").addEventListener("click", function () {
+        ucKarar("iptal");
+      });
+      var basarisizBtn = q("[data-od-fail]");
+      if (cfg.showFail) {
+        basarisizBtn.addEventListener("click", function () {
+          ucKarar("basarisiz");
+        });
+      } else {
+        basarisizBtn.hidden = true;
+      }
+      q("[data-od-retry]").addEventListener("click", function () {
+        durum.mesgul = false;
+        adimGit(2);
+      });
+    }
+
+    /* ---- acilis ---- */
+    function goster(durumAdi) {
+      q("[data-od-loading]").hidden = durumAdi !== "yukleniyor";
+      q("[data-od-storeerr]").hidden = durumAdi !== "hata";
+      q("[data-od-empty]").hidden = durumAdi !== "bos";
+      q("[data-od-app]").hidden = durumAdi !== "uygulama";
+    }
+
+    function baslat(S) {
+      store = S;
+      var sepet = S.sepet.oku();
+      if (!sepet.length) {
+        goster("bos");
+        canliYaz(T.emptyTitle);
+        return;
+      }
+      olaylariBagla();
+      var ilk = cfg.methods && cfg.methods.length ? cfg.methods[0] : "kart";
+      yontemUygula(ilk);
+      var ipucu = q("[data-od-cardhint]");
+      if (ipucu) {
+        sablonYaz(ipucu, T.demoCardHint, { card: (function () {
+          var b = document.createElement("bdi");
+          b.setAttribute("dir", "ltr");
+          b.textContent = cfg.card;
+          return b;
+        })() });
+      }
+      ozetCiz();
+      goster("uygulama");
+      S.sepet.abone(function () {
+        if (durum.bitti || durum.mesgul) {
+          return;
+        }
+        if (!S.sepet.oku().length) {
+          goster("bos");
+          return;
+        }
+        ozetCiz();
+      });
+    }
+
+    (window.mxStoreQ = window.mxStoreQ || []).push(baslat);
+
+    /* MxStore hic yuklenmezse (betik 404 / engel): sessiz kalma — hata durumu goster */
+    function yedekKontrol() {
+      if (!window.MxStore) {
+        var s = document.createElement("script");
+        s.src = "/src/mx-store.js";
+        document.head.appendChild(s);
+        setTimeout(function () {
+          if (!store) {
+            goster("hata");
+            canliYaz(T.storeError);
+          }
+        }, 2500);
+      }
+    }
+    if (document.readyState === "complete") {
+      setTimeout(yedekKontrol, 50);
+    } else {
+      window.addEventListener("load", yedekKontrol);
+    }
+  })();
+</script>

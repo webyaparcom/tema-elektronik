@@ -1,0 +1,1099 @@
+<div class="modulex-cartw">
+  <button type="button" class="modulex-cartw-fab" onclick="mxCartDrawerToggle()" aria-label="{{cartTitle}}">
+    <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+    <span class="modulex-cartw-badge" data-mx-cart-badge>0</span>
+  </button>
+
+  <div class="modulex-cartw-overlay" data-mx-cart-overlay onclick="mxCartDrawerClose()"></div>
+
+  <aside class="modulex-cartw-drawer" data-mx-cart-drawer aria-label="{{cartTitle}}">
+    <div class="modulex-cartw-head">
+      <div class="modulex-cartw-title">
+        <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+        {{cartTitle}}
+      </div>
+      <button type="button" class="modulex-cartw-close" onclick="mxCartDrawerClose()" aria-label="{{closeText}}">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="modulex-cartw-list" data-mx-cart-list></div>
+    <div class="modulex-cartw-empty" data-mx-cart-empty>
+      <span class="material-symbols-outlined" aria-hidden="true">production_quantity_limits</span>
+      <p>{{emptyText}}</p>
+    </div>
+    <div class="modulex-cartw-foot" data-mx-cart-foot>
+      <div class="modulex-cartw-total">
+        <span>{{totalText}}</span>
+        <strong data-mx-cart-total>0,00 {{currency}}</strong>
+      </div>
+      <a class="modulex-cartw-go" href="/{{lang}}/{{cartUrl}}/">{{goCartText}}</a>
+    </div>
+  </aside>
+
+  <div class="modulex-cartw-toast" data-mx-cart-toast>{{addedText}}</div>
+
+  <div class="modulex-qvmodal" data-mx-qv-modal aria-hidden="true">
+    <div class="modulex-qvmodal-overlay" data-mx-qv-close></div>
+    <div class="modulex-qvmodal-panel" role="dialog" aria-modal="true" aria-label="{{quickViewTitle}}">
+      <button type="button" class="modulex-qvmodal-close" data-mx-qv-close aria-label="{{closeText}}">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+      <div class="modulex-qvmodal-img" data-mx-qv-img></div>
+      <div class="modulex-qvmodal-body">
+        <h3 class="modulex-qvmodal-name" data-mx-qv-name></h3>
+        <p class="modulex-qvmodal-price" data-mx-qv-price></p>
+        <div class="modulex-qvmodal-actions">
+          <a class="modulex-qvmodal-detail" data-mx-qv-url href="#">{{quickViewDetailText}}</a>
+          <button type="button" class="modulex-qvmodal-add" data-mx-qv-add>{{quickViewAddText}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* tema3 scroll-top referansi: right/bottom 16px (1:1 oran) */
+  .modulex-cartw-fab {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: --fabbg--;
+    color: --fabcolor--;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 9000;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
+  }
+
+  .modulex-cartw-fab:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  }
+
+  .modulex-cartw-fab .material-symbols-outlined {
+    font-size: 26px;
+  }
+
+  .modulex-cartw-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    border-radius: 11px;
+    background: --badgebg--;
+    color: --badgecolor--;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .modulex-cartw-badge.modulex-cartw-pulse {
+    animation: mxCartPulse 0.4s ease;
+  }
+
+  @keyframes mxCartPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+  }
+
+  .modulex-cartw-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9001;
+  }
+
+  .modulex-cartw.modulex-cartw-open .modulex-cartw-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modulex-cartw-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px;
+    max-width: 92vw;
+    height: 100vh;
+    background: --drawerbg--;
+    color: --drawercolor--;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(105%);
+    transition: transform 0.35s ease;
+    z-index: 9002;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+  }
+
+  .modulex-cartw.modulex-cartw-open .modulex-cartw-drawer {
+    transform: translateX(0);
+  }
+
+  .modulex-cartw-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-bottom: 1px solid --bordercolor--;
+  }
+
+  .modulex-cartw-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .modulex-cartw-close {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    color: --drawercolor--;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modulex-cartw-close:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .modulex-cartw-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modulex-cartw-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid --bordercolor--;
+    border-radius: 10px;
+    padding: 10px;
+    animation: mxCartItemIn 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  @keyframes mxCartItemIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modulex-cartw-item-img {
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: --bordercolor--;
+    flex-shrink: 0;
+  }
+
+  .modulex-cartw-item-noimg {
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    background: --bordercolor--;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .modulex-cartw-item-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .modulex-cartw-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .modulex-cartw-item-price {
+    font-size: 13px;
+    color: --pricecolor--;
+    font-weight: 700;
+  }
+
+  .modulex-cartw-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .modulex-cartw-item-qty button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid --bordercolor--;
+    background: transparent;
+    color: --drawercolor--;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+  }
+
+  .modulex-cartw-item-qty button:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .modulex-cartw-item-qty span {
+    min-width: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .modulex-cartw-item-remove {
+    border: none;
+    background: transparent;
+    color: --removecolor--;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modulex-cartw-item-remove:hover {
+    background: rgba(229, 57, 53, 0.1);
+  }
+
+  .modulex-cartw-empty {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px 18px;
+    color: --drawercolor--;
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  .modulex-cartw-empty .material-symbols-outlined {
+    font-size: 44px;
+  }
+
+  .modulex-cartw.modulex-cartw-isempty .modulex-cartw-empty {
+    display: flex;
+  }
+
+  .modulex-cartw.modulex-cartw-isempty .modulex-cartw-foot {
+    display: none;
+  }
+
+  .modulex-cartw-foot {
+    padding: 16px 18px;
+    border-top: 1px solid --bordercolor--;
+  }
+
+  .modulex-cartw-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .modulex-cartw-total strong {
+    font-size: 18px;
+    color: --pricecolor--;
+  }
+
+  .modulex-cartw-go {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border-radius: 10px;
+    background: --fabbg--;
+    color: --fabcolor--;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: filter 0.25s ease;
+    box-sizing: border-box;
+  }
+
+  .modulex-cartw-go:hover {
+    filter: brightness(1.08);
+  }
+
+  .modulex-cartw-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%) translateY(20px);
+    background: --toastbg--;
+    color: --toastcolor--;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9005;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .modulex-cartw-toast.modulex-cartw-toast-show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Hizli gorunum modali — vitrin hover aksiyonlari (Paket 625) */
+  .modulex-qvmodal {
+    position: fixed;
+    inset: 0;
+    z-index: 9100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .modulex-qvmodal.modulex-qvmodal-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modulex-qvmodal[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modulex-qvmodal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .modulex-qvmodal-panel {
+    position: relative;
+    z-index: 1;
+    width: min(420px, 96vw);
+    background: --drawerbg--;
+    color: --drawercolor--;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+    transform: translateY(12px);
+    transition: transform 0.25s ease;
+  }
+
+  .modulex-qvmodal.modulex-qvmodal-open .modulex-qvmodal-panel {
+    transform: translateY(0);
+  }
+
+  .modulex-qvmodal[aria-hidden="false"] .modulex-qvmodal-panel {
+    transform: translateY(0);
+  }
+
+  .modulex-qvmodal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: #111111;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .modulex-qvmodal-img {
+    aspect-ratio: 1 / 1;
+    background: --bordercolor--;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .modulex-qvmodal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modulex-qvmodal-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modulex-qvmodal-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .modulex-qvmodal-price {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: --pricecolor--;
+  }
+
+  .modulex-qvmodal-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .modulex-qvmodal-detail {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 10px 14px;
+    border: 1px solid --bordercolor--;
+    border-radius: 4px;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .modulex-qvmodal-detail:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .modulex-qvmodal-add {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 4px;
+    background: --fabbg--;
+    color: --fabcolor--;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+  }
+
+  .modulex-qvmodal-add:hover {
+    filter: brightness(1.06);
+  }
+
+  [data-mx-action="favorite"].mx-fav-on .material-symbols-outlined {
+    font-variation-settings: "FILL" 1;
+    color: #e53935;
+  }
+
+  @media (max-width: 768px) {
+    .modulex-cartw-fab {
+      margin-right: 16px;
+      margin-bottom: 16px;
+      width: 52px;
+      height: 52px;
+    }
+
+    .modulex-cartw-drawer {
+      width: 100vw;
+      max-width: 100vw;
+    }
+
+    [class*="modulex"] {
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"],
+    [class*="modulex"] * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  /* mx sepet cekirdegi — localStorage mxCartV1.
+     Capraz-modul API adlari bilerek "mx" onekli: motor "modulex" literalini
+     bolum+sira suffix'ine cevirdigi icin paylasilan adlar modulex iceremez. */
+  (function () {
+    var MX_CART_KEY = "mxCartV1";
+    var CURRENCY = "{{currency}}";
+
+    function mxCartRead() {
+      try {
+        var raw = localStorage.getItem(MX_CART_KEY);
+        var list = raw ? JSON.parse(raw) : [];
+        return Array.isArray(list) ? list : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function mxCartWrite(list) {
+      try {
+        localStorage.setItem(MX_CART_KEY, JSON.stringify(list));
+      } catch (e) {}
+      mxCartRender();
+    }
+
+    function mxCartMoney(value) {
+      var n = Number(value) || 0;
+      return n.toFixed(2).replace(".", ",") + " " + CURRENCY;
+    }
+
+    window.mxCartList = function () {
+      return mxCartRead();
+    };
+
+    window.mxCartCount = function () {
+      var list = mxCartRead();
+      var total = 0;
+      for (var i = 0; i < list.length; i++) {
+        total += list[i].qty || 1;
+      }
+      return total;
+    };
+
+    window.mxCartTotal = function () {
+      var list = mxCartRead();
+      var total = 0;
+      for (var i = 0; i < list.length; i++) {
+        total += (Number(list[i].price) || 0) * (list[i].qty || 1);
+      }
+      return total;
+    };
+
+    window.mxCartAdd = function (item) {
+      if (!item || !item.id) {
+        return;
+      }
+      var list = mxCartRead();
+      var qty = Number(item.qty) || 1;
+      var found = false;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id === item.id) {
+          list[i].qty = (list[i].qty || 1) + qty;
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        list.push({
+          id: String(item.id),
+          name: item.name != null ? String(item.name) : "",
+          price: Number(item.price) || 0,
+          img: item.img != null ? String(item.img) : "",
+          url: item.url != null ? String(item.url) : "",
+          qty: qty
+        });
+      }
+      mxCartWrite(list);
+      mxCartToastShow();
+      mxCartBadgePulse();
+    };
+
+    window.mxCartSetQty = function (id, qty) {
+      var list = mxCartRead();
+      var next = [];
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id === id) {
+          var q = Number(qty) || 0;
+          if (q > 0) {
+            list[i].qty = q;
+            next.push(list[i]);
+          }
+        } else {
+          next.push(list[i]);
+        }
+      }
+      mxCartWrite(next);
+    };
+
+    window.mxCartRemove = function (id) {
+      var list = mxCartRead();
+      var next = [];
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id !== id) {
+          next.push(list[i]);
+        }
+      }
+      mxCartWrite(next);
+    };
+
+    window.mxCartClear = function () {
+      mxCartWrite([]);
+    };
+
+    /* data-mx-* tasiyan bir elemandan sepete ekle */
+    window.mxCartAddFromEl = function (el) {
+      if (!el || !el.getAttribute) {
+        return;
+      }
+      var id = el.getAttribute("data-mx-id");
+      if (!id) {
+        return;
+      }
+      var qty = 1;
+      var qtyEl = document.querySelector('[data-mx-qty-for="' + id + '"]');
+      if (qtyEl && qtyEl.value) {
+        qty = parseInt(qtyEl.value, 10) || 1;
+      }
+      window.mxCartAdd({
+        id: id,
+        name: el.getAttribute("data-mx-name") || "",
+        price: parseFloat(el.getAttribute("data-mx-price")) || 0,
+        img: el.getAttribute("data-mx-img") || "",
+        url: el.getAttribute("data-mx-url") || "",
+        qty: qty
+      });
+    };
+
+    /* Eski modullerle uyum koprusu: addToCart('id') cagrilari data-mx-id
+       tasiyan elemani bulup bilgileri DOM'dan okur. */
+    if (typeof window.addToCart !== "function" || window.addToCart.mxBridge !== true) {
+      var mxBridge = function (id, qty) {
+        var el = document.querySelector('[data-mx-id="' + id + '"]');
+        if (el) {
+          if (qty) {
+            window.mxCartAdd({
+              id: id,
+              name: el.getAttribute("data-mx-name") || "",
+              price: parseFloat(el.getAttribute("data-mx-price")) || 0,
+              img: el.getAttribute("data-mx-img") || "",
+              url: el.getAttribute("data-mx-url") || "",
+              qty: qty
+            });
+          } else {
+            window.mxCartAddFromEl(el);
+          }
+        }
+      };
+      mxBridge.mxBridge = true;
+      window.addToCart = mxBridge;
+    }
+
+    /* ---- Widget UI ---- */
+    var mxRoot = document.querySelector(".modulex-cartw");
+
+    window.mxCartDrawerToggle = function () {
+      if (mxRoot) {
+        mxRoot.classList.toggle("modulex-cartw-open");
+        mxCartRender();
+      }
+    };
+
+    window.mxCartDrawerClose = function () {
+      if (mxRoot) {
+        mxRoot.classList.remove("modulex-cartw-open");
+      }
+    };
+
+    var mxToastTimer = null;
+    function mxCartToastShow() {
+      /* mx-ui runtime varsa modern bildirim (Toastify); yoksa modulun kendi toast'i */
+      if (typeof window.mxToast === "function") {
+        window.mxToast("{{addedText}}", false);
+        return;
+      }
+      var toast = document.querySelector("[data-mx-cart-toast]");
+      if (!toast) {
+        return;
+      }
+      toast.classList.add("modulex-cartw-toast-show");
+      if (mxToastTimer) {
+        clearTimeout(mxToastTimer);
+      }
+      mxToastTimer = setTimeout(function () {
+        toast.classList.remove("modulex-cartw-toast-show");
+      }, 1800);
+    }
+
+    function mxCartBadgePulse() {
+      var badge = document.querySelector("[data-mx-cart-badge]");
+      if (!badge) {
+        return;
+      }
+      badge.classList.remove("modulex-cartw-pulse");
+      setTimeout(function () {
+        badge.classList.add("modulex-cartw-pulse");
+      }, 10);
+    }
+
+    function mxCartRender() {
+      var badge = document.querySelector("[data-mx-cart-badge]");
+      if (badge) {
+        badge.textContent = String(window.mxCartCount());
+      }
+      var totalEl = document.querySelector("[data-mx-cart-total]");
+      if (totalEl) {
+        totalEl.textContent = mxCartMoney(window.mxCartTotal());
+      }
+      var listEl = document.querySelector("[data-mx-cart-list]");
+      if (!listEl || !mxRoot) {
+        return;
+      }
+      var list = mxCartRead();
+      if (list.length === 0) {
+        mxRoot.classList.add("modulex-cartw-isempty");
+      } else {
+        mxRoot.classList.remove("modulex-cartw-isempty");
+      }
+      var out = "";
+      for (var i = 0; i < list.length; i++) {
+        var it = list[i];
+        var safeName = String(it.name || "").replace(/</g, "&lt;");
+        out += '<div class="modulex-cartw-item">';
+        if (it.img) {
+          out += '<img class="modulex-cartw-item-img" src="' + it.img + '" alt="' + safeName + '" loading="lazy" />';
+        } else {
+          out += '<div class="modulex-cartw-item-noimg"><span class="material-symbols-outlined" aria-hidden="true">image</span></div>';
+        }
+        out += '<div class="modulex-cartw-item-info">';
+        out += '<p class="modulex-cartw-item-name">' + safeName + "</p>";
+        out += '<div class="modulex-cartw-item-price">' + mxCartMoney((Number(it.price) || 0) * (it.qty || 1)) + "</div>";
+        out += "</div>";
+        out += '<div class="modulex-cartw-item-qty">';
+        out += "<button type=\"button\" onclick=\"mxCartSetQty('" + it.id + "', " + ((it.qty || 1) - 1) + ')">&minus;</button>';
+        out += "<span>" + (it.qty || 1) + "</span>";
+        out += "<button type=\"button\" onclick=\"mxCartSetQty('" + it.id + "', " + ((it.qty || 1) + 1) + ')">+</button>';
+        out += "</div>";
+        out += "<button type=\"button\" class=\"modulex-cartw-item-remove\" onclick=\"mxCartRemove('" + it.id + "')\" aria-label=\"{{removeText}}\">";
+        out += '<span class="material-symbols-outlined" aria-hidden="true">delete</span>';
+        out += "</button>";
+        out += "</div>";
+      }
+      listEl.innerHTML = out;
+    }
+
+    /* Diger sekmelerden gelen degisiklikler */
+    window.addEventListener("storage", function (ev) {
+      if (ev.key === MX_CART_KEY) {
+        mxCartRender();
+      }
+    });
+
+    /* Sepet degisince diger modullerin dinleyebilecegi olay */
+    window.mxCartRefresh = mxCartRender;
+
+    /* ---- Urun aksiyonlari: favori, karsilastir, hizli gorunum (Paket 625) ---- */
+    var MX_FAV_KEY = "mxFavV1";
+    var MX_COMPARE_KEY = "mxCompareV1";
+    var MX_COMPARE_MAX = 4;
+    var mxQvCurrentId = "";
+
+    function mxProductRead(key) {
+      try {
+        var raw = localStorage.getItem(key);
+        if (!raw) {
+          return [];
+        }
+        var parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function mxProductWrite(key, list) {
+      try {
+        localStorage.setItem(key, JSON.stringify(list));
+      } catch (e) {}
+    }
+
+    function mxProductNotify(msg) {
+      if (typeof window.mxToast === "function") {
+        window.mxToast(msg, false);
+        return;
+      }
+      var toast = document.querySelector("[data-mx-cart-toast]");
+      if (!toast) {
+        return;
+      }
+      toast.textContent = msg;
+      toast.classList.add("modulex-cartw-toast-show");
+      if (mxToastTimer) {
+        clearTimeout(mxToastTimer);
+      }
+      mxToastTimer = setTimeout(function () {
+        toast.classList.remove("modulex-cartw-toast-show");
+        toast.textContent = "{{addedText}}";
+      }, 1800);
+    }
+
+    function mxProductItemFromEl(el) {
+      if (!el || !el.getAttribute) {
+        return null;
+      }
+      var id = el.getAttribute("data-mx-id");
+      if (!id) {
+        return null;
+      }
+      return {
+        id: String(id),
+        name: el.getAttribute("data-mx-name") || "",
+        price: parseFloat(el.getAttribute("data-mx-price")) || 0,
+        img: el.getAttribute("data-mx-img") || "",
+        url: el.getAttribute("data-mx-url") || ""
+      };
+    }
+
+    window.mxFavIs = function (id) {
+      var list = mxProductRead(MX_FAV_KEY);
+      var i;
+      for (i = 0; i < list.length; i++) {
+        if (list[i].id === id) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    window.mxCompareIs = function (id) {
+      var list = mxProductRead(MX_COMPARE_KEY);
+      var ci;
+      for (ci = 0; ci < list.length; ci++) {
+        if (list[ci].id === id) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    window.mxFavToggle = function (item) {
+      if (!item || !item.id) {
+        return false;
+      }
+      var list = mxProductRead(MX_FAV_KEY);
+      var next = [];
+      var found = false;
+      var i;
+      for (i = 0; i < list.length; i++) {
+        if (list[i].id === item.id) {
+          found = true;
+        } else {
+          next.push(list[i]);
+        }
+      }
+      if (!found) {
+        next.push({
+          id: item.id,
+          name: item.name || "",
+          price: item.price || 0,
+          img: item.img || "",
+          url: item.url || ""
+        });
+      }
+      mxProductWrite(MX_FAV_KEY, next);
+      mxProductNotify(found ? "{{favRemovedText}}" : "{{favAddedText}}");
+      return !found;
+    };
+
+    window.mxCompareToggle = function (item) {
+      if (!item || !item.id) {
+        return false;
+      }
+      var list = mxProductRead(MX_COMPARE_KEY);
+      var next = [];
+      var found = false;
+      var i;
+      for (i = 0; i < list.length; i++) {
+        if (list[i].id === item.id) {
+          found = true;
+        } else {
+          next.push(list[i]);
+        }
+      }
+      if (!found) {
+        if (list.length >= MX_COMPARE_MAX) {
+          mxProductNotify("{{compareMaxText}}");
+          return false;
+        }
+        next.push({
+          id: item.id,
+          name: item.name || "",
+          price: item.price || 0,
+          img: item.img || "",
+          url: item.url || ""
+        });
+      }
+      mxProductWrite(MX_COMPARE_KEY, next);
+      mxProductNotify(found ? "{{compareRemovedText}}" : "{{compareAddedText}}");
+      return !found;
+    };
+
+    window.mxQuickViewClose = function () {
+      var modal = document.querySelector("[data-mx-qv-modal]");
+      if (modal) {
+        modal.classList.remove("modulex-qvmodal-open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+      mxQvCurrentId = "";
+    };
+
+    window.mxQuickViewOpen = function (item) {
+      if (!item || !item.id) {
+        if (item && item.url) {
+          window.location.href = item.url;
+        }
+        return;
+      }
+      var modal = document.querySelector("[data-mx-qv-modal]");
+      if (!modal) {
+        if (item.url) {
+          window.location.href = item.url;
+        }
+        return;
+      }
+      mxQvCurrentId = item.id;
+      var imgWrap = modal.querySelector("[data-mx-qv-img]");
+      var nameEl = modal.querySelector("[data-mx-qv-name]");
+      var priceEl = modal.querySelector("[data-mx-qv-price]");
+      var urlEl = modal.querySelector("[data-mx-qv-url]");
+      var addBtn = modal.querySelector("[data-mx-qv-add]");
+      if (nameEl) {
+        nameEl.textContent = item.name || "";
+      }
+      if (priceEl) {
+        priceEl.textContent = mxCartMoney(item.price || 0);
+      }
+      if (urlEl) {
+        urlEl.href = item.url || "#";
+      }
+      if (imgWrap) {
+        if (item.img) {
+          imgWrap.innerHTML = '<img src="' + item.img + '" alt="' + String(item.name || "").replace(/"/g, "&quot;") + '" loading="lazy" />';
+        } else {
+          imgWrap.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true" style="font-size:48px;opacity:0.4">image</span>';
+        }
+      }
+      if (addBtn) {
+        addBtn.onclick = function () {
+          if (typeof window.addToCart === "function") {
+            window.addToCart(item.id);
+          }
+        };
+      }
+      modal.classList.add("modulex-qvmodal-open");
+      modal.setAttribute("aria-hidden", "false");
+    };
+
+    window.mxProductSyncFavButtons = function () {
+      var btns = document.querySelectorAll('[data-mx-action="favorite"]');
+      var bi;
+      for (bi = 0; bi < btns.length; bi++) {
+        var card = btns[bi].closest("[data-mx-id]");
+        if (card && window.mxFavIs(card.getAttribute("data-mx-id"))) {
+          btns[bi].classList.add("mx-fav-on");
+        } else {
+          btns[bi].classList.remove("mx-fav-on");
+        }
+      }
+    };
+
+    window.mxProductAction = function (cardEl, action) {
+      var item = mxProductItemFromEl(cardEl);
+      if (!item) {
+        return;
+      }
+      if (action === "quickview") {
+        window.mxQuickViewOpen(item);
+        return;
+      }
+      if (action === "compare") {
+        window.mxCompareToggle(item);
+        return;
+      }
+      if (action === "favorite") {
+        var on = window.mxFavToggle(item);
+        var favBtn = cardEl.querySelector('[data-mx-action="favorite"]');
+        if (favBtn) {
+          if (on) {
+            favBtn.classList.add("mx-fav-on");
+          } else {
+            favBtn.classList.remove("mx-fav-on");
+          }
+        }
+      }
+    };
+
+    document.addEventListener("click", function (ev) {
+      var qvClose = ev.target.closest("[data-mx-qv-close]");
+      if (qvClose) {
+        ev.preventDefault();
+        window.mxQuickViewClose();
+        return;
+      }
+      var btn = ev.target.closest("[data-mx-action]");
+      if (!btn) {
+        return;
+      }
+      var card = btn.closest("[data-mx-id]");
+      if (!card) {
+        return;
+      }
+      ev.preventDefault();
+      ev.stopPropagation();
+      window.mxProductAction(card, btn.getAttribute("data-mx-action"));
+    });
+
+    window.addEventListener("storage", function (ev) {
+      if (ev.key === MX_FAV_KEY) {
+        window.mxProductSyncFavButtons();
+      }
+    });
+
+    setTimeout(window.mxProductSyncFavButtons, 120);
+
+    setTimeout(mxCartRender, 50);
+  })();
+</script>

@@ -1,0 +1,74 @@
+{
+  "name": "Menü E-Ticaret",
+  "desing": {
+    "logo": "logo.png",
+    "color": "#1e3046",
+    "colorhover": "#123763",
+    "height": "50px",
+    "urlsepet": "sepet",
+    "bgcolor": "#1e3046",
+    "bgcolorhover": "#123763",
+    "searchPlaceholder": {
+      "tr": "Ürün ara...",
+      "en": "Search products..."
+    },
+    "searchAria": {
+      "tr": "Ürün ara",
+      "en": "Search products"
+    },
+    "searchBtn": {
+      "tr": "Ara",
+      "en": "Search"
+    },
+    "supportText": {
+      "tr": "7/24 Destek",
+      "en": "24/7 Support"
+    },
+    "supportPhone": "0850 888 88 88",
+    "categoryText": {
+      "tr": "Kategoriler",
+      "en": "Categories"
+    },
+    "ariaToggle": {
+      "tr": "Menüyü aç/kapat",
+      "en": "Toggle menu", "ar": "تبديل القائمة"
+    },
+    "ariaClose": {
+      "tr": "Menüyü kapat",
+      "en": "Close menu"
+    },
+    "menuAria": {
+      "tr": "Ana menü",
+      "en": "Main menu"
+    },
+    "menuDrawerTitle": {
+      "tr": "Menü",
+      "en": "Menu"
+    },
+    "girisUrl": "login",
+    "hesabimUrl": "hesabim",
+    "hesabimText": {
+      "tr": "Hesabım",
+      "en": "My Account"
+    },
+    "cikisText": {
+      "tr": "Çıkış yap",
+      "en": "Log out"
+    },
+    "sepetSayiAria": {
+      "tr": "Sepetteki ürün adedi",
+      "en": "Items in cart"
+    },
+    "loginText": {
+      "tr": "Üye Girişi",
+      "en": "Member Login"
+    },
+    "cartText": {
+      "tr": "Sepetim",
+      "en": "My Cart"
+    }
+  },
+  "category": "menu",
+  "description": "Responsive web sitesi navigasyon menüsü. Logo, sayfa linkleri ve mobil uyumlu hamburger menü içerir.  web sitelerinde 0 projede kullanılır. PLAN-PRO F3: giriş linki data-mx-uye-goster=\"misafir\", Hesabım + Çıkış data-mx-uye-goster=\"giris\" (MxStore.uye), sepet ikonunda data-mx-sepet-sayi rozeti (MxStore.sepet; 0 iken gizli).",
+  "version": "1.1.0"
+}

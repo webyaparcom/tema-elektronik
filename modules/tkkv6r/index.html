@@ -1,0 +1,655 @@
+<section class="modulex-sp" id="sp-{{id}}" data-sp-root
+  data-lang="{{lang}}"
+  data-currency="{{currency}}"
+  data-kargo="{{kargoUcret}}"
+  data-limit="{{ucretsizKargoLimit}}"
+  data-t-unit="{{unitLabel}}"
+  data-t-qty="{{qtyLabel}}"
+  data-t-dec="{{decText}}"
+  data-t-inc="{{incText}}"
+  data-t-remove="{{removeText}}"
+  data-t-removed="{{removedText}}"
+  data-t-updated="{{updatedText}}"
+  data-t-items="{{itemsText}}"
+  data-t-free="{{freeText}}"
+  data-t-later="{{shipLaterText}}"
+  data-t-remain="{{shipRemainText}}"
+  data-t-reached="{{shipReachedText}}">
+  <div class="modulex-sp-wrap">
+    <header class="modulex-sp-head">
+      <h1 class="modulex-sp-title">
+        <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+        {{title}}
+      </h1>
+      <span class="mx-badge mx-badge--primary modulex-sp-count" data-sp-count hidden></span>
+    </header>
+
+    <p class="mx-visually-hidden" aria-live="polite" data-sp-live></p>
+
+    <div class="modulex-sp-loading" data-sp-loading role="status" aria-label="{{loadingText}}">
+      <div class="modulex-sp-skrow"><span class="mx-skeleton modulex-sp-skimg"></span><span class="modulex-sp-sklines"><span class="mx-skeleton mx-skeleton--title"></span><span class="mx-skeleton mx-skeleton--text"></span></span></div>
+      <div class="modulex-sp-skrow"><span class="mx-skeleton modulex-sp-skimg"></span><span class="modulex-sp-sklines"><span class="mx-skeleton mx-skeleton--title"></span><span class="mx-skeleton mx-skeleton--text"></span></span></div>
+      <div class="modulex-sp-skrow"><span class="mx-skeleton modulex-sp-skimg"></span><span class="modulex-sp-sklines"><span class="mx-skeleton mx-skeleton--title"></span><span class="mx-skeleton mx-skeleton--text"></span></span></div>
+    </div>
+
+    <div class="mx-empty modulex-sp-empty" data-sp-empty hidden>
+      <span class="material-symbols-outlined mx-empty__icon" aria-hidden="true">remove_shopping_cart</span>
+      <p class="mx-empty__title">{{emptyTitle}}</p>
+      <p class="mx-empty__text">{{emptyText}}</p>
+      <a class="mx-btn mx-btn--primary" href="/{{lang}}/{{urunlerUrl}}/">{{shopText}}</a>
+    </div>
+
+    <div class="modulex-sp-body" data-sp-body hidden>
+      <div class="modulex-sp-list" role="list" aria-label="{{listLabel}}" data-sp-list></div>
+
+      <aside class="mx-card modulex-sp-summary" aria-labelledby="sp-sum-{{id}}">
+        <h2 class="modulex-sp-sumtitle" id="sp-sum-{{id}}">{{summaryTitle}}</h2>
+
+        <div class="modulex-sp-ship" data-sp-ship hidden>
+          <p class="modulex-sp-shiptext" data-sp-shiptext></p>
+          <div class="modulex-sp-bar" aria-hidden="true"><span class="modulex-sp-barfill" data-sp-bar></span></div>
+        </div>
+
+        <dl class="modulex-sp-totals">
+          <div class="modulex-sp-line"><dt>{{subtotalText}}</dt><dd data-sp-sub></dd></div>
+          <div class="modulex-sp-line"><dt>{{shippingText}}</dt><dd data-sp-kargo></dd></div>
+          <div class="modulex-sp-line modulex-sp-grand"><dt>{{totalText}}</dt><dd data-sp-total></dd></div>
+        </dl>
+        <p class="mx-help modulex-sp-note">{{serverNote}}</p>
+
+        <a class="mx-btn mx-btn--primary mx-btn--lg mx-btn--block" href="/{{lang}}/{{odemeUrl}}/" data-sp-checkout>
+          <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+          {{checkoutText}}
+        </a>
+        <a class="mx-btn mx-btn--ghost mx-btn--block" href="/{{lang}}/{{urunlerUrl}}/">{{continueText}}</a>
+        <p class="modulex-sp-secure"><span class="material-symbols-outlined" aria-hidden="true">verified_user</span>{{secureText}}</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .modulex-sp {
+    width: 100%;
+    padding: var(--mx-space-8, 40px) var(--mx-space-5, 20px);
+    background: --bgcolor--;
+    box-sizing: border-box;
+    font-family: var(--mx-font-sans, inherit);
+    color: var(--mx-color-text, #0f172a);
+  }
+
+  .modulex-sp [hidden] {
+    display: none !important;
+  }
+
+  .modulex-sp-wrap {
+    max-width: --max--;
+    margin: 0 auto;
+  }
+
+  .modulex-sp-head {
+    display: flex;
+    align-items: center;
+    gap: var(--mx-space-3, 12px);
+    margin-bottom: var(--mx-space-6, 24px);
+  }
+
+  .modulex-sp-title {
+    display: flex;
+    align-items: center;
+    gap: var(--mx-space-3, 12px);
+    margin: 0;
+    font-size: var(--mx-fs-3xl, 28px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--mx-color-text, #0f172a);
+  }
+
+  .modulex-sp-title .material-symbols-outlined {
+    font-size: 1.1em;
+    color: var(--mx-color-primary, #2563eb);
+  }
+
+  .modulex-sp-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--mx-space-6, 24px);
+    align-items: start;
+    animation: spFade 0.35s ease both;
+  }
+
+  @keyframes spFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .modulex-sp-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-sp-row {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr) auto auto 44px;
+    align-items: center;
+    gap: var(--mx-space-4, 16px);
+    padding: var(--mx-space-4, 16px);
+    background: var(--mx-color-surface, #fff);
+    border: 1px solid var(--mx-color-border, #e2e8f0);
+    border-radius: var(--mx-radius-lg, 14px);
+    box-shadow: var(--mx-shadow-sm, none);
+    box-sizing: border-box;
+    transition: opacity 0.26s ease, transform 0.26s ease, box-shadow 0.25s ease;
+    animation: spRowIn 0.3s ease both;
+  }
+
+  .modulex-sp-row:hover {
+    box-shadow: var(--mx-shadow-md, 0 4px 16px rgba(15, 23, 42, 0.08));
+  }
+
+  @keyframes spRowIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .modulex-sp-row.modulex-sp-out {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  .modulex-sp-thumb {
+    display: block;
+    width: 88px;
+    height: 88px;
+    border-radius: var(--mx-radius-md, 10px);
+    overflow: hidden;
+    background: var(--mx-color-surface-2, #f1f5f9);
+  }
+
+  .modulex-sp-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .modulex-sp-noimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-sp-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-1, 4px);
+    min-width: 0;
+  }
+
+  .modulex-sp-name {
+    font-size: var(--mx-fs-base, 16px);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--mx-color-text, #0f172a) !important;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+  }
+
+  a.modulex-sp-name:hover {
+    color: var(--mx-color-primary, #2563eb) !important;
+  }
+
+  .modulex-sp-meta {
+    font-size: var(--mx-fs-xs, 12px);
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-sp-linetotal {
+    min-width: 110px;
+    justify-content: flex-end;
+  }
+
+  .modulex-sp-linetotal .mx-price__current {
+    font-size: var(--mx-fs-lg, 18px);
+  }
+
+  .modulex-sp-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--mx-radius-full, 999px);
+    background: transparent;
+    color: var(--mx-color-text-muted, #64748b);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .modulex-sp-remove:hover,
+  .modulex-sp-remove:focus-visible {
+    background: color-mix(in srgb, var(--mx-color-danger, #dc2626) 10%, transparent);
+    color: var(--mx-color-danger, #dc2626);
+  }
+
+  .modulex-sp-summary {
+    position: sticky;
+    top: var(--mx-space-5, 20px);
+    gap: var(--mx-space-4, 16px);
+  }
+
+  .modulex-sp-sumtitle {
+    margin: 0;
+    font-size: var(--mx-fs-lg, 18px);
+    font-weight: 700;
+  }
+
+  .modulex-sp-ship {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-2, 8px);
+    padding: var(--mx-space-3, 12px);
+    background: var(--mx-color-surface-2, #f1f5f9);
+    border-radius: var(--mx-radius-md, 10px);
+  }
+
+  .modulex-sp-shiptext {
+    margin: 0;
+    font-size: var(--mx-fs-sm, 14px);
+    font-weight: 500;
+  }
+
+  .modulex-sp-bar {
+    height: 8px;
+    border-radius: var(--mx-radius-full, 999px);
+    background: var(--mx-color-border, #e2e8f0);
+    overflow: hidden;
+  }
+
+  .modulex-sp-barfill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--mx-color-success, #16a34a);
+    /* AN1: doluluk width yerine transform ile; tasan kisim .modulex-sp-bar overflow:hidden ile kirpilir */
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .modulex-sp-totals {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-2, 8px);
+    margin: 0;
+  }
+
+  .modulex-sp-line {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--mx-space-3, 12px);
+    font-size: var(--mx-fs-sm, 14px);
+  }
+
+  .modulex-sp-line dt {
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-sp-line dd {
+    margin: 0;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: end;
+  }
+
+  .modulex-sp-grand {
+    padding-top: var(--mx-space-3, 12px);
+    border-top: 1px solid var(--mx-color-border, #e2e8f0);
+    font-size: var(--mx-fs-lg, 18px);
+  }
+
+  .modulex-sp-grand dt {
+    color: var(--mx-color-text, #0f172a);
+    font-weight: 700;
+  }
+
+  .modulex-sp-grand dd {
+    font-weight: 800;
+    color: var(--mx-color-primary, #2563eb);
+  }
+
+  .modulex-sp-note {
+    margin: 0;
+  }
+
+  .modulex-sp-secure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mx-space-2, 8px);
+    margin: 0;
+    font-size: var(--mx-fs-xs, 12px);
+    color: var(--mx-color-text-muted, #64748b);
+  }
+
+  .modulex-sp-secure .material-symbols-outlined {
+    font-size: 18px;
+    color: var(--mx-color-success, #16a34a);
+  }
+
+  .modulex-sp-loading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mx-space-3, 12px);
+  }
+
+  .modulex-sp-skrow {
+    display: flex;
+    align-items: center;
+    gap: var(--mx-space-4, 16px);
+    padding: var(--mx-space-4, 16px);
+    border: 1px solid var(--mx-color-border, #e2e8f0);
+    border-radius: var(--mx-radius-lg, 14px);
+  }
+
+  .modulex-sp-skimg {
+    width: 88px;
+    height: 88px;
+    flex: 0 0 auto;
+    border-radius: var(--mx-radius-md, 10px);
+  }
+
+  .modulex-sp-sklines {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--mx-space-2, 8px);
+  }
+
+  @media (max-width: 1024px) {
+    .modulex-sp-body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .modulex-sp-summary {
+      position: static;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .modulex-sp {
+      padding: var(--mx-space-6, 24px) var(--mx-space-3, 12px);
+    }
+
+    .modulex-sp-title {
+      font-size: var(--mx-fs-2xl, 24px);
+    }
+
+    .modulex-sp-row {
+      grid-template-columns: 72px minmax(0, 1fr) 44px;
+      grid-template-areas:
+        "img info del"
+        "img qty total";
+      gap: var(--mx-space-2, 8px) var(--mx-space-3, 12px);
+      padding: var(--mx-space-3, 12px);
+    }
+
+    .modulex-sp-thumb {
+      grid-area: img;
+      width: 72px;
+      height: 72px;
+    }
+
+    .modulex-sp-info { grid-area: info; }
+    .modulex-sp-row .mx-qty { grid-area: qty; justify-self: start; }
+    .modulex-sp-linetotal { grid-area: total; min-width: 0; }
+    .modulex-sp-remove { grid-area: del; }
+
+    [class*="modulex"] {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* O4: klavye odagi — mx-btn/mx-input kendi halkasini tasir; modul ozel ogeler burada */
+  .modulex-sp a:not(.mx-btn):focus-visible,
+  .modulex-sp button:not(.mx-btn):focus-visible,
+  .modulex-sp summary:focus-visible {
+    outline: 2px solid var(--mx-color-primary, #2563eb);
+    outline-offset: 2px;
+    border-radius: var(--mx-radius-sm, 4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-sp,
+    .modulex-sp * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  /* sepet-pro — MxStore sepeti (mxCartV1). Metinler kok data-t-* (desing). */
+  (function () {
+    var root = document.getElementById("sp-{{id}}");
+    if (!root) {
+      return;
+    }
+
+    function t(k) {
+      return root.getAttribute("data-t-" + k) || "";
+    }
+
+    function q(sel) {
+      return root.querySelector(sel);
+    }
+
+    function sayi(v) {
+      var n = parseFloat(String(v == null ? "" : v).replace(",", "."));
+      return isFinite(n) ? n : 0;
+    }
+
+    var LANG = root.getAttribute("data-lang") || "tr";
+    var CUR = root.getAttribute("data-currency") || "";
+    var KARGO = sayi(root.getAttribute("data-kargo"));
+    var LIMIT = sayi(root.getAttribute("data-limit"));
+    var store = null;
+    var busyIds = {};
+
+    function para(n) {
+      return store ? store.para(n, CUR, LANG) : String(n);
+    }
+
+    function esc(s) {
+      return store ? store.esc(s) : String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    }
+
+    function guvenliUrl(u) {
+      var s = String(u || "");
+      if (/^(https?:)?\/\//i.test(s) || s.charAt(0) === "/") {
+        return s;
+      }
+      return "";
+    }
+
+    function duyur(msg) {
+      var live = q("[data-sp-live]");
+      if (live) {
+        live.textContent = "";
+        setTimeout(function () {
+          live.textContent = msg;
+        }, 30);
+      }
+    }
+
+    function satirHtml(it) {
+      var id = esc(it.id);
+      var ad = esc(it.name || it.id);
+      var url = guvenliUrl(it.url);
+      var img = guvenliUrl(it.img) || (it.img && it.img.indexOf("<") === -1 && it.img.indexOf('"') === -1 ? it.img : "");
+      var qty = it.qty || 1;
+      var h = '<div class="modulex-sp-row" role="listitem" data-sp-row="' + id + '">';
+      h += url ? '<a class="modulex-sp-thumb" href="' + esc(url) + '" tabindex="-1" aria-hidden="true">' : '<span class="modulex-sp-thumb" aria-hidden="true">';
+      if (img) {
+        h += '<img src="' + esc(img) + '" alt="" loading="lazy" />';
+      } else {
+        h += '<span class="modulex-sp-noimg"><span class="material-symbols-outlined">image</span></span>';
+      }
+      h += url ? "</a>" : "</span>";
+      h += '<div class="modulex-sp-info">';
+      h += url ? '<a class="modulex-sp-name" href="' + esc(url) + '">' + ad + "</a>" : '<span class="modulex-sp-name">' + ad + "</span>";
+      if (it.varyant) {
+        h += '<span class="modulex-sp-meta">' + esc(it.varyant) + "</span>";
+      }
+      h += '<span class="modulex-sp-meta">' + esc(t("unit")) + ": " + esc(para(it.price)) + "</span>";
+      h += "</div>";
+      h += '<div class="mx-qty" role="group" aria-label="' + esc(t("qty")) + '">';
+      h += '<button type="button" class="mx-qty__btn" data-sp-act="dec" aria-label="' + esc(t("dec")) + '"' + (qty <= 1 ? " disabled" : "") + ">&minus;</button>";
+      h += '<input class="mx-qty__input" type="number" inputmode="numeric" min="1" max="99" value="' + qty + '" aria-label="' + esc(t("qty")) + '" data-sp-qty />';
+      h += '<button type="button" class="mx-qty__btn" data-sp-act="inc" aria-label="' + esc(t("inc")) + '"' + (qty >= 99 ? " disabled" : "") + ">+</button>";
+      h += "</div>";
+      h += '<span class="mx-price modulex-sp-linetotal"><span class="mx-price__current">' + esc(para((Number(it.price) || 0) * qty)) + "</span></span>";
+      h += '<button type="button" class="modulex-sp-remove" data-sp-act="remove" aria-label="' + esc(t("remove")) + '"><span class="material-symbols-outlined" aria-hidden="true">delete</span></button>';
+      h += "</div>";
+      return h;
+    }
+
+    function ozet(liste) {
+      var sub = store.sepet.toplam();
+      var adet = store.sepet.sayi();
+      var kargoEl = q("[data-sp-kargo]");
+      var kargo = 0;
+      if (KARGO > 0) {
+        kargo = LIMIT > 0 && sub >= LIMIT ? 0 : KARGO;
+        kargoEl.textContent = kargo > 0 ? para(kargo) : t("free");
+      } else {
+        kargoEl.textContent = t("later");
+      }
+      q("[data-sp-sub]").textContent = para(sub);
+      q("[data-sp-total]").textContent = para(sub + kargo);
+
+      var count = q("[data-sp-count]");
+      count.textContent = adet + " " + t("items");
+      count.hidden = adet === 0;
+
+      var ship = q("[data-sp-ship]");
+      if (LIMIT > 0 && liste.length) {
+        var kalan = Math.max(0, LIMIT - sub);
+        var oran = Math.min(100, Math.round((sub / LIMIT) * 100));
+        q("[data-sp-shiptext]").textContent = kalan > 0 ? t("remain").replace("%s", para(kalan)) : t("reached");
+        q("[data-sp-bar]").style.transform = "translateX(" + (oran - 100) + "%)";
+        ship.hidden = false;
+      } else {
+        ship.hidden = true;
+      }
+    }
+
+    function ciz() {
+      if (!store) {
+        return;
+      }
+      var liste = store.sepet.oku();
+      q("[data-sp-loading]").hidden = true;
+      q("[data-sp-empty]").hidden = liste.length > 0;
+      q("[data-sp-body]").hidden = liste.length === 0;
+      var out = "";
+      for (var i = 0; i < liste.length; i++) {
+        out += satirHtml(liste[i]);
+      }
+      q("[data-sp-list]").innerHTML = out;
+      busyIds = {};
+      ozet(liste);
+    }
+
+    function satirAdet(id) {
+      var l = store.sepet.oku();
+      for (var i = 0; i < l.length; i++) {
+        if (String(l[i].id) === id) {
+          return l[i].qty || 1;
+        }
+      }
+      return 0;
+    }
+
+    function kaldir(row, id) {
+      if (busyIds[id]) {
+        return;
+      }
+      busyIds[id] = true;
+      row.classList.add("modulex-sp-out");
+      var bekle = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 260;
+      setTimeout(function () {
+        store.sepet.sil(id);
+        duyur(t("removed"));
+      }, bekle);
+    }
+
+    function bagla() {
+      var list = q("[data-sp-list]");
+      list.addEventListener("click", function (ev) {
+        var btn = ev.target && ev.target.closest ? ev.target.closest("[data-sp-act]") : null;
+        if (!btn || !store) {
+          return;
+        }
+        var row = btn.closest("[data-sp-row]");
+        if (!row) {
+          return;
+        }
+        var id = row.getAttribute("data-sp-row");
+        var act = btn.getAttribute("data-sp-act");
+        var mevcut = satirAdet(id);
+        if (act === "remove") {
+          kaldir(row, id);
+        } else if (act === "dec" && mevcut > 1) {
+          store.sepet.adet(id, mevcut - 1);
+          duyur(t("updated"));
+        } else if (act === "inc" && mevcut < 99) {
+          store.sepet.adet(id, mevcut + 1);
+          duyur(t("updated"));
+        }
+      });
+      list.addEventListener("change", function (ev) {
+        var inp = ev.target;
+        if (!inp || !inp.hasAttribute || !inp.hasAttribute("data-sp-qty") || !store) {
+          return;
+        }
+        var row = inp.closest("[data-sp-row]");
+        var id = row ? row.getAttribute("data-sp-row") : "";
+        var n = parseInt(inp.value, 10);
+        if (!isFinite(n) || n < 1) {
+          n = 1;
+        }
+        if (n > 99) {
+          n = 99;
+        }
+        store.sepet.adet(id, n);
+        duyur(t("updated"));
+      });
+    }
+
+    (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
+      store = S;
+      bagla();
+      ciz();
+      S.sepet.abone(function () {
+        ciz();
+      });
+    });
+
+    window.addEventListener("load", function () {
+      if (!window.MxStore) {
+        var s = document.createElement("script");
+        s.src = "/src/mx-store.js";
+        document.head.appendChild(s);
+      }
+    });
+  })();
+</script>

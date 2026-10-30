@@ -1,0 +1,323 @@
+{
+  "name": "E-ticaret Alt",
+  "desing": {
+    "color": "#111111",
+    "accent": "#c9a962",
+    "bgcolor": "#f5f5f5",
+    "footer_bg": "#111111",
+    "footer_text": "#ffffff",
+    "footer_main_bg": "#f0f0f0",
+    "footer_link": "#555555",
+    "trust_bg": "#fafafa",
+    "trust_border": "#e5e5e5",
+    "trust_hover_bg": "#f3f3f3",
+    "trust_muted": "#777777",
+    "features_bg": "#ffffff",
+    "footer_aria": {
+      "tr": "Site alt bilgisi",
+      "en": "Site footer"
+    },
+    "payments_aria": {
+      "tr": "Kabul edilen ödeme yöntemleri",
+      "en": "Accepted payment methods"
+    },
+    "newsletter_title": {
+      "tr": "Bülten Aboneliği",
+      "en": "Newsletter"
+    },
+    "newsletter_desc": {
+      "tr": "Mail listemize kayıt olup en yeni ürün ve kampanyalardan ilk siz haberdar olabilirsiniz.",
+      "en": "Subscribe to our mailing list and be the first to know about new products and campaigns."
+    },
+    "newsletter_placeholder": {
+      "tr": "Mail Adresiniz",
+      "en": "Your email address"
+    },
+    "newsletter_btn": {
+      "tr": "Gönder",
+      "en": "Send"
+    },
+    "newsletter_consent_prefix": {
+      "tr": "",
+      "en": ""
+    },
+    "newsletter_consent_link": {
+      "tr": "İptal & İade Şartları",
+      "en": "Cancellation & Return Terms"
+    },
+    "newsletter_consent_suffix": {
+      "tr": "'ni okudum ve kabul ediyorum.",
+      "en": " — I have read and accept."
+    },
+    "newsletter_consent_url": "/iade-ve-teslimat",
+    "newsletter_consent_error": {
+      "tr": "Devam etmek için şartları kabul etmelisiniz.",
+      "en": "You must accept the terms to continue."
+    },
+    "newsletter_success": {
+      "tr": "Bülten kaydınız alındı. Teşekkürler!",
+      "en": "Newsletter subscription received. Thank you!"
+    },
+    "copyright": {
+      "tr": "Moda Ev Mobilya ©2020-2026 Tüm Hakkı Saklıdır.",
+      "en": "Moda Ev Mobilya ©2020-2026 All rights reserved."
+    }
+  },
+  "data": {
+    "trust": [
+      {
+        "id": "trust_secure",
+        "icon": "verified_user",
+        "title": {
+          "tr": "Güvenli Alışveriş",
+          "en": "Secure Shopping"
+        },
+        "desc": {
+          "tr": "256 Bit SSL ile tamamen güvenli e-ticaret sitesi",
+          "en": "Fully secure e-commerce with 256-bit SSL"
+        }
+      },
+      {
+        "id": "trust_installment",
+        "icon": "credit_card",
+        "title": {
+          "tr": "Taksit İmkanı",
+          "en": "Installment Options"
+        },
+        "desc": {
+          "tr": "Tüm kredi ve banka kartlarına taksit imkanı",
+          "en": "Installments on all credit and debit cards"
+        }
+      },
+      {
+        "id": "trust_cod",
+        "icon": "local_shipping",
+        "title": {
+          "tr": "Kapıda Ödeme",
+          "en": "Cash on Delivery"
+        },
+        "desc": {
+          "tr": "Kapıda nakit veya kredi kartı ile ödeme imkanı",
+          "en": "Pay cash or card on delivery"
+        }
+      },
+      {
+        "id": "trust_exchange",
+        "icon": "sync_alt",
+        "title": {
+          "tr": "Değişim İmkanı",
+          "en": "Easy Exchange"
+        },
+        "desc": {
+          "tr": "14 gün içerisinde istediğiniz ürünle değişim imkanı",
+          "en": "Exchange within 14 days"
+        }
+      }
+    ],
+    "features": [
+      {
+        "id": "feat_original",
+        "icon": "workspace_premium",
+        "label": {
+          "tr": "%100 Orjinal Ürün Garantisi",
+          "en": "100% Original Product Guarantee"
+        }
+      },
+      {
+        "id": "feat_return",
+        "icon": "replay",
+        "label": {
+          "tr": "30 Gün İçinde İade",
+          "en": "30-Day Return"
+        }
+      },
+      {
+        "id": "feat_shipping",
+        "icon": "local_shipping",
+        "label": {
+          "tr": "1000TL+ Alışverişlerde Ücretsiz Kargo",
+          "en": "Free shipping on orders over 1000 TL"
+        }
+      },
+      {
+        "id": "feat_installment",
+        "icon": "payments",
+        "label": {
+          "tr": "Tüm Kartlar için Taksitli Ödeme",
+          "en": "Installments for all cards"
+        }
+      },
+      {
+        "id": "feat_store",
+        "icon": "store",
+        "label": {
+          "tr": "Mağazada Değişim & İade Özgürlüğü",
+          "en": "In-store exchange & return"
+        }
+      },
+      {
+        "id": "feat_click",
+        "icon": "shopping_bag",
+        "label": {
+          "tr": "Online Öde, Mağazadan Teslim Al",
+          "en": "Buy online, pick up in store"
+        }
+      }
+    ],
+    "columns": [
+      {
+        "id": "col_corp",
+        "title": {
+          "tr": "Kurumsal",
+          "en": "Corporate"
+        },
+        "links": [
+          {
+            "name": { "tr": "Hakkımızda", "en": "About Us" },
+            "url": "/hakkimizda"
+          },
+          {
+            "name": { "tr": "Gizlilik Politikası", "en": "Privacy Policy" },
+            "url": "/gizlilik-politikasi"
+          },
+          {
+            "name": { "tr": "Çerez Ayarları", "en": "Cookie Settings" },
+            "url": "/cerez-politikasi"
+          },
+          {
+            "name": { "tr": "Kullanım Şartları", "en": "Terms of Use" },
+            "url": "/kullanicahaklari"
+          },
+          {
+            "name": { "tr": "Mesafeli Satış Sözleşmesi", "en": "Distance Sales Agreement" },
+            "url": "/mesafelisatis"
+          },
+          {
+            "name": { "tr": "İletişim", "en": "Contact" },
+            "url": "/iletisim"
+          }
+        ]
+      },
+      {
+        "id": "col_service",
+        "title": {
+          "tr": "Müşteri Hizmetleri",
+          "en": "Customer Service"
+        },
+        "links": [
+          {
+            "name": { "tr": "Bize Ulaşın", "en": "Contact Us" },
+            "url": "/iletisim"
+          },
+          {
+            "name": { "tr": "Hesabım", "en": "My Account" },
+            "url": "/hesabim"
+          },
+          {
+            "name": { "tr": "İade & Değişim", "en": "Returns & Exchange" },
+            "url": "/iade-ve-teslimat"
+          },
+          {
+            "name": { "tr": "Kargo Takibi", "en": "Track Shipment" },
+            "url": "/kargo-takip"
+          },
+          {
+            "name": { "tr": "Siparişlerim", "en": "My Orders" },
+            "url": "/siparislerim"
+          }
+        ]
+      },
+      {
+        "id": "col_categories",
+        "title": {
+          "tr": "Kategoriler",
+          "en": "Categories"
+        },
+        "links": [
+          {
+            "name": { "tr": "Koltuk Takımları", "en": "Sofa Sets" },
+            "url": "/urunler"
+          },
+          {
+            "name": { "tr": "Yatak Odası", "en": "Bedroom" },
+            "url": "/urunler"
+          },
+          {
+            "name": { "tr": "Yemek Odası", "en": "Dining Room" },
+            "url": "/urunler"
+          },
+          {
+            "name": { "tr": "Mutfak", "en": "Kitchen" },
+            "url": "/urunler"
+          },
+          {
+            "name": { "tr": "Tüm Ürünler", "en": "All Products" },
+            "url": "/urunler"
+          }
+        ]
+      },
+      {
+        "id": "col_brands",
+        "title": {
+          "tr": "Markalar",
+          "en": "Brands"
+        },
+        "links": [
+          {
+            "name": { "tr": "Livora", "en": "Livora" },
+            "url": "/livora-koltuk-takimi"
+          },
+          {
+            "name": { "tr": "Cloud", "en": "Cloud" },
+            "url": "/cloud-uclu-kanepe"
+          },
+          {
+            "name": { "tr": "Anton", "en": "Anton" },
+            "url": "/anton-yatak-odasi-takimi"
+          },
+          {
+            "name": { "tr": "Chefline", "en": "Chefline" },
+            "url": "/chefline-mutfak-dolabi"
+          }
+        ]
+      }
+    ],
+    "social": [
+      {
+        "icon": "facebook",
+        "name": { "tr": "Facebook", "en": "Facebook" },
+        "url": "https://facebook.com"
+      },
+      {
+        "icon": "instagram",
+        "name": { "tr": "Instagram", "en": "Instagram" },
+        "url": "https://instagram.com"
+      },
+      {
+        "icon": "twitter",
+        "name": { "tr": "X", "en": "X" },
+        "url": "https://x.com"
+      },
+      {
+        "icon": "youtube",
+        "name": { "tr": "YouTube", "en": "YouTube" },
+        "url": "https://youtube.com"
+      },
+      {
+        "icon": "pinterest",
+        "name": { "tr": "Pinterest", "en": "Pinterest" },
+        "url": "https://pinterest.com"
+      },
+      {
+        "icon": "linkedin",
+        "name": { "tr": "LinkedIn", "en": "LinkedIn" },
+        "url": "https://linkedin.com"
+      }
+    ],
+    "payments": ["visa", "mastercard", "discover", "stripe", "amex"]
+  },
+  "category": "footer",
+  "description": "Tema3 ilhamlı e-ticaret footer: güven bandı, özellik şeridi, çok sütun linkler, bülten, sosyal medya ve ödeme ikonları. Mobil accordion destekli.",
+  "version": "2.0.0",
+  "icon": "web_asset"
+}

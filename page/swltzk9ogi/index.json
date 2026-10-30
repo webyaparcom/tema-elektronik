@@ -1,0 +1,60 @@
+{
+  "id": "swltzk9ogi",
+  "name": {
+    "tr": "İnce dizüstü bilgisayar 14\"",
+    "en": "Slim laptop 14\"",
+    "ar": "حاسوب محمول نحيف 14 بوصة"
+  },
+  "description": {
+    "tr": "14 inç IPS ekran, 16 GB bellek, 512 GB SSD; günlük iş ve eğitim için.",
+    "en": "14-inch IPS display, 16 GB memory, 512 GB SSD; for everyday work and study.",
+    "ar": "شاشة IPS 14 بوصة وذاكرة 16 جيجابايت وSSD 512 جيجابايت؛ للعمل والدراسة اليومية."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "ince-dizustu-bilgisayar",
+  "icon": "inventory_2",
+  "category": "81vj6ab339",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {
+    "tr": "<p>14 inç IPS ekran, 16 GB bellek, 512 GB SSD; günlük iş ve eğitim için.</p>",
+    "en": "<p>14-inch IPS display, 16 GB memory, 512 GB SSD; for everyday work and study.</p>",
+    "ar": "<p>شاشة IPS 14 بوصة وذاكرة 16 جيجابايت وSSD 512 جيجابايت؛ للعمل والدراسة اليومية.</p>"
+  },
+  "title": {
+    "tr": "İnce dizüstü bilgisayar 14\"",
+    "en": "Slim laptop 14\"",
+    "ar": "حاسوب محمول نحيف 14 بوصة"
+  },
+  "date": "2026-10-30T22:21:59.782Z",
+  "update": "2026-10-30T22:29:44.611Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "Wi-Fi 6, USB-C",
+    "guc": {
+      "tr": "Yaklaşık 12 saat",
+      "en": "About 12 hours",
+      "ar": "نحو 12 ساعة"
+    }
+  },
+  "price": 28900,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-urun-dizustu.webp",
+  "badges": [],
+  "sku": "ince-dizustu-bilgisayar"
+}

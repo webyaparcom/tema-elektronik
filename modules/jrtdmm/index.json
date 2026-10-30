@@ -1,0 +1,185 @@
+{
+  "name": "Sipariş Tamamlandı",
+  "desing": {
+    "max": "860px",
+    "bgcolor": "transparent",
+    "currency": "₺",
+    "urunlerUrl": "urunler",
+    "siparislerimUrl": "siparislerim",
+    "title": {
+      "tr": "Siparişiniz alındı!",
+      "en": "Your order has been received!",
+      "ar": "تم استلام طلبك!"
+    },
+    "text": {
+      "tr": "Teşekkür ederiz. Siparişinizin durumunu Siparişlerim sayfasından takip edebilirsiniz.",
+      "en": "Thank you. You can track your order status on the My Orders page.",
+      "ar": "شكرًا لك. يمكنك متابعة حالة طلبك من صفحة طلباتي."
+    },
+    "loadingText": {
+      "tr": "Sipariş bilgileri yükleniyor",
+      "en": "Loading order details",
+      "ar": "جارٍ تحميل تفاصيل الطلب"
+    },
+    "notFoundTitle": {
+      "tr": "Sipariş bulunamadı",
+      "en": "Order not found",
+      "ar": "لم يتم العثور على الطلب"
+    },
+    "notFoundText": {
+      "tr": "Görüntülenecek bir sipariş bilgisi yok. Siparişlerinizi hesabınızdan görebilirsiniz.",
+      "en": "There is no order to display. You can see your orders in your account.",
+      "ar": "لا توجد معلومات طلب لعرضها. يمكنك الاطلاع على طلباتك من حسابك."
+    },
+    "shopText": {
+      "tr": "Alışverişe devam et",
+      "en": "Continue shopping",
+      "ar": "متابعة التسوق"
+    },
+    "ordersText": {
+      "tr": "Siparişlerim",
+      "en": "My orders",
+      "ar": "طلباتي"
+    },
+    "orderNoLabel": {
+      "tr": "Sipariş numarası",
+      "en": "Order number",
+      "ar": "رقم الطلب"
+    },
+    "copyText": {
+      "tr": "Kopyala",
+      "en": "Copy",
+      "ar": "نسخ"
+    },
+    "copyAria": {
+      "tr": "Sipariş numarasını kopyala",
+      "en": "Copy order number",
+      "ar": "نسخ رقم الطلب"
+    },
+    "copiedText": {
+      "tr": "Kopyalandı",
+      "en": "Copied",
+      "ar": "تم النسخ"
+    },
+    "emailNote": {
+      "tr": "Sipariş bilgileri şu adrese gönderilecek:",
+      "en": "Order details will be sent to:",
+      "ar": "سيتم إرسال تفاصيل الطلب إلى:"
+    },
+    "statusLabel": {
+      "tr": "Durum",
+      "en": "Status",
+      "ar": "الحالة"
+    },
+    "paymentLabel": {
+      "tr": "Ödeme",
+      "en": "Payment",
+      "ar": "الدفع"
+    },
+    "dateLabel": {
+      "tr": "Tarih",
+      "en": "Date",
+      "ar": "التاريخ"
+    },
+    "itemsTitle": {
+      "tr": "Sipariş özeti",
+      "en": "Order summary",
+      "ar": "ملخص الطلب"
+    },
+    "subtotalText": {
+      "tr": "Ara toplam",
+      "en": "Subtotal",
+      "ar": "المجموع الفرعي"
+    },
+    "shippingText": {
+      "tr": "Kargo",
+      "en": "Shipping",
+      "ar": "الشحن"
+    },
+    "discountText": {
+      "tr": "İndirim",
+      "en": "Discount",
+      "ar": "الخصم"
+    },
+    "totalText": {
+      "tr": "Toplam",
+      "en": "Total",
+      "ar": "الإجمالي"
+    },
+    "freeText": {
+      "tr": "Ücretsiz",
+      "en": "Free",
+      "ar": "مجاني"
+    },
+    "waTitle": {
+      "tr": "WhatsApp sipariş talebi",
+      "en": "WhatsApp order request",
+      "ar": "طلب عبر واتساب"
+    },
+    "waNote": {
+      "tr": "Sipariş talebiniz WhatsApp'a yönlendirildi; onay mağaza tarafından verilecek.",
+      "en": "Your order request was forwarded to WhatsApp; the store will confirm it.",
+      "ar": "تمت إحالة طلبك إلى واتساب؛ سيؤكده المتجر."
+    },
+    "durumBeklemede": {
+      "tr": "Beklemede",
+      "en": "Pending",
+      "ar": "قيد الانتظار"
+    },
+    "durumOnaylandi": {
+      "tr": "Onaylandı",
+      "en": "Confirmed",
+      "ar": "تم التأكيد"
+    },
+    "durumHazirlaniyor": {
+      "tr": "Hazırlanıyor",
+      "en": "Preparing",
+      "ar": "قيد التجهيز"
+    },
+    "durumKargoda": {
+      "tr": "Kargoda",
+      "en": "Shipped",
+      "ar": "تم الشحن"
+    },
+    "durumTeslim": {
+      "tr": "Teslim edildi",
+      "en": "Delivered",
+      "ar": "تم التسليم"
+    },
+    "durumIptal": {
+      "tr": "İptal edildi",
+      "en": "Cancelled",
+      "ar": "أُلغي"
+    },
+    "durumWaBekliyor": {
+      "tr": "Mağaza onayı bekleniyor",
+      "en": "Awaiting store confirmation",
+      "ar": "بانتظار تأكيد المتجر"
+    },
+    "odemeKapida": {
+      "tr": "Kapıda ödeme",
+      "en": "Cash on delivery",
+      "ar": "الدفع عند الاستلام"
+    },
+    "odemeHavale": {
+      "tr": "Havale / EFT",
+      "en": "Bank transfer",
+      "ar": "حوالة بنكية / EFT"
+    },
+    "odemeKart": {
+      "tr": "Kredi / banka kartı (demo)",
+      "en": "Credit / debit card (demo)",
+      "ar": "بطاقة ائتمان / خصم (تجريبي)"
+    },
+    "demoNote": {
+      "tr": "Bu bir DEMO siparişidir: gerçek ödeme alınmadı, sipariş hiçbir yere gönderilmedi.",
+      "en": "This is a DEMO order: no real payment was taken and nothing was sent anywhere.",
+      "ar": "هذا طلب تجريبي: لم يتم تحصيل أي دفعة حقيقية ولم يُرسل الطلب إلى أي جهة."
+    }
+  },
+  "data": [],
+  "category": "e-commerce",
+  "description": "Sipariş tamamlandı sayfası (PLAN-PRO F3). URL ?no= (+ ?email=) ve MxStore.siparis.son() ile sipariş numarası, kalemler, ara toplam/kargo/toplam, ödeme yöntemi ve durum rozetini gösterir; üye ya da e-posta varsa GET /api/public/siparis/:no ile sunucudan tazeler. Başarı animasyonu, sipariş no kopyalama, Siparişlerim ve alışverişe devam bağlantıları; numara yoksa boş durum.",
+  "version": "1.0.0",
+  "icon": "task_alt"
+}

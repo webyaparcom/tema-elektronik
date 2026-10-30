@@ -1,0 +1,60 @@
+{
+  "id": "n3k6qillmf",
+  "name": {
+    "tr": "Taşınabilir hoparlör",
+    "en": "Portable speaker",
+    "ar": "مكبر صوت محمول"
+  },
+  "description": {
+    "tr": "Suya dayanıklı gövde, 360° ses, USB-C şarj.",
+    "en": "Water-resistant body, 360° sound, USB-C charging.",
+    "ar": "هيكل مقاوم للماء وصوت 360° وشحن USB-C."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "tasinabilir-hoparlor",
+  "icon": "inventory_2",
+  "category": "rud8tpzjuq",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 4,
+  "url": "",
+  "text": {
+    "tr": "<p>Suya dayanıklı gövde, 360° ses, USB-C şarj.</p>",
+    "en": "<p>Water-resistant body, 360° sound, USB-C charging.</p>",
+    "ar": "<p>هيكل مقاوم للماء وصوت 360° وشحن USB-C.</p>"
+  },
+  "title": {
+    "tr": "Taşınabilir hoparlör",
+    "en": "Portable speaker",
+    "ar": "مكبر صوت محمول"
+  },
+  "date": "2026-10-30T22:21:59.772Z",
+  "update": "2026-10-30T22:29:44.587Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "Bluetooth 5.3",
+    "guc": {
+      "tr": "Yaklaşık 12 saat",
+      "en": "About 12 hours",
+      "ar": "نحو 12 ساعة"
+    }
+  },
+  "price": 1990,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-urun-hoparlor.webp",
+  "badges": [],
+  "sku": "tasinabilir-hoparlor"
+}

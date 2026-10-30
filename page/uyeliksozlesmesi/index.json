@@ -1,0 +1,41 @@
+{
+  "id": "uyeliksozlesmesi",
+  "name": {
+    "tr": "Üyelik Sözleşmesi",
+    "en": "Membership Agreement",
+    "ar": "اتفاقية العضوية"
+  },
+  "description": {
+    "tr": "Üyelik Sözleşmesi",
+    "en": "Membership Agreement",
+    "ar": "اتفاقية العضوية"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "uyelik-sozlesmesi",
+  "icon": "gavel",
+  "category": "",
+  "status": "pause",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 13,
+  "url": "",
+  "text": {
+    "tr": "<h2>Üyelik Sözleşmesi</h2>\n<p>Bu demo sitede üyelik sistemi yoktur.</p>\n<p><em>Bu metin demo amaçlı örnektir; hukuki danışmanlık yerine geçmez.</em></p>",
+    "en": "<h2>Membership Agreement</h2>\n<p>This demo site has no membership system.</p>\n<p><em>This text is a sample for demonstration purposes and is not legal advice.</em></p>",
+    "ar": "<h2>اتفاقية العضوية</h2>\n<p>لا يوجد نظام عضوية في هذا الموقع التجريبي.</p>\n<p><em>هذا النص مثال لأغراض العرض التجريبي ولا يُعدّ استشارة قانونية.</em></p>"
+  },
+  "title": {
+    "tr": "Üyelik Sözleşmesi",
+    "en": "Membership Agreement",
+    "ar": "اتفاقية العضوية"
+  },
+  "date": "2026-10-30T22:21:59.640Z",
+  "update": "2026-10-30T22:29:44.791Z"
+}

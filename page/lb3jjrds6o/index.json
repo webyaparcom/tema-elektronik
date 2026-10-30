@@ -1,0 +1,56 @@
+{
+  "id": "lb3jjrds6o",
+  "name": {
+    "tr": "Powerbank 20.000 mAh",
+    "en": "Power bank 20,000 mAh",
+    "ar": "شاحن متنقل 20,000 مللي أمبير"
+  },
+  "description": {
+    "tr": "65 W hızlı şarj, iki USB-C çıkışı, dizüstüyü de şarj eder.",
+    "en": "65 W fast charging, two USB-C ports, also charges laptops.",
+    "ar": "شحن سريع 65 واط ومنفذان USB-C ويشحن الحواسيب المحمولة أيضًا."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "powerbank-20000",
+  "icon": "inventory_2",
+  "category": "81vj6ab339",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 1,
+  "url": "",
+  "text": {
+    "tr": "<p>65 W hızlı şarj, iki USB-C çıkışı, dizüstüyü de şarj eder.</p>",
+    "en": "<p>65 W fast charging, two USB-C ports, also charges laptops.</p>",
+    "ar": "<p>شحن سريع 65 واط ومنفذان USB-C ويشحن الحواسيب المحمولة أيضًا.</p>"
+  },
+  "title": {
+    "tr": "Powerbank 20.000 mAh",
+    "en": "Power bank 20,000 mAh",
+    "ar": "شاحن متنقل 20,000 مللي أمبير"
+  },
+  "date": "2026-10-30T22:21:59.787Z",
+  "update": "2026-10-30T22:29:44.616Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "USB-C PD",
+    "guc": "20.000 mAh"
+  },
+  "price": 1490,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-urun-powerbank.webp",
+  "badges": [],
+  "sku": "powerbank-20000"
+}

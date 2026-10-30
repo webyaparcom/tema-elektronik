@@ -1,0 +1,396 @@
+<div class="modulex">
+  <div class="modulex-body">
+    <div class="mx-alert mx-alert--info modulex-uyeyok" role="status" data-mx-login-uyeyok>{{uyeKullanilamiyor}}</div>
+    <div class="modulex-login-menu">
+      <div id="modulex-login-menu-left">{{loginTitle}}</div>
+      <div id="modulex-login-menu-right">{{registerTitle}}</div>
+    </div>
+    <div class="modulex-body-form" id="modulex-login">
+      <div class="input-container">
+        <input type="text" id="login-user" class="inputmatrix1" placeholder="{{userPlaceholder}}" autocomplete="username" />
+        <label for="input" class="placeholder">{{userPlaceholder}}</label>
+      </div>
+      <div class="input-container">
+        <input type="password" id="login-password" class="inputmatrix1" placeholder="{{passwordPlaceholder}}" />
+        <label for="input" class="placeholder">{{passwordPlaceholder}}</label>
+      </div>
+      <div class="modulex-button" onclick="loginUser()">{{loginButton}}</div>
+    </div>
+    <div class="modulex-body-form" id="modulex-memberol">
+      <div class="input-container">
+        <input type="text" id="register-name" class="inputmatrix1" placeholder="{{namePlaceholder}}" />
+        <label for="input" class="placeholder">{{namePlaceholder}}</label>
+      </div>
+      <div class="input-container">
+        <input type="text" id="register-user" class="inputmatrix1" placeholder="{{userPlaceholder}}" />
+        <label for="input" class="placeholder">{{userPlaceholder}}</label>
+      </div>
+      <div class="input-container">
+        <input type="email" id="register-email" class="inputmatrix1" placeholder="{{emailPlaceholder}}" />
+        <label for="input" class="placeholder">{{emailPlaceholder}}</label>
+      </div>
+      <div class="input-container">
+        <input type="password" id="register-password" class="inputmatrix1" placeholder="{{passwordPlaceholder}}" />
+        <label for="input" class="placeholder">{{passwordPlaceholder}}</label>
+      </div>
+      <div class="input-container">
+        <input type="password" id="register-password-confirm" class="inputmatrix1" placeholder="{{passwordConfirmPlaceholder}}" />
+        <label for="input" class="placeholder">{{passwordConfirmPlaceholder}}</label>
+      </div>
+      <label class="modulex-kvkk" for="register-kvkk-{{id}}">
+        <input type="checkbox" id="register-kvkk-{{id}}" data-mx-login-kvkk />
+        <span>{{kvkkText}} <a href="/{{lang}}/{{kvkkUrl}}/" target="_blank" rel="noopener">{{kvkkLinkText}}</a></span>
+      </label>
+      <div class="modulex-button" onclick="registerUser()">{{registerButton}}</div>
+      <div class="modulex-null" onclick="switchToLogin()">{{alreadyMember}}</div>
+    </div>
+  </div>
+</div>
+<style>
+  .modulex { width: 95%; height: 500px; flex: 1; display: flex; align-items: center; justify-content: center; margin-top: 20px; }
+  .modulex-null { color: #fff; cursor: pointer; text-align: right; padding: 15px 0 0 0; font-size: 14px; }
+  .modulex-null:hover { color: #999; }
+  .modulex-body { background-color: #101010; width: 500px; border-radius: 20px; display: flex; flex-direction: column; }
+  .modulex-body-form { padding: 20px; display: flex; flex-direction: column; }
+  .modulex-button { padding: 10px; background-color: --color--; margin-top: 20px; font-size: 16px; color: #fff !important; border-radius: 5px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .modulex-login-menu { display: flex; gap: 2px; }
+  #modulex-login-menu-left { border-radius: 20px 0 0 0; background-color: #101010; }
+  #modulex-login-menu-right { border-radius: 0 20px 0 0; }
+  #modulex-memberol { display: none; flex-direction: column; }
+  .modulex-login-menu > div { background-color: --color--; width: 100%; display: flex; align-items: center; justify-content: center; padding: 10px; font-size: 18px; font-weight: 400; color: #fff; cursor: pointer; }
+  #content { justify-content: start; }
+  .modulex-kvkk { display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; font-size: 13px; line-height: 1.45; color: #ddd; cursor: pointer; min-height: 44px; }
+  .modulex-kvkk input { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; accent-color: --color--; cursor: pointer; }
+  .modulex-kvkk a { color: --color-- !important; text-decoration: underline; }
+  .modulex-uyeyok { display: none; margin: 0 0 12px; }
+  .modulex-uyeyok.modulex-uyeyok-acik { display: block; animation: modulexW2Enter 0.3s ease; }
+  .modulex-button.modulex-busy { opacity: 0.6; pointer-events: none; }
+
+  /* W2 — animasyon, mobil, erisilebilirlik */
+  @keyframes modulexW2Enter {
+    from { opacity: 0.98; }
+    to { opacity: 1; }
+  }
+
+  [class*="modulex"] {
+    box-sizing: border-box;
+    animation: modulexW2Enter 0.3s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    [class*="modulex"] {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"] {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+<script>
+  /* login — PLAN-PRO F3: varsayilan MxStore (/api/public/uye/*, mx_uye cerezi).
+     MxStore yuklenmemisse eski apiurl (/user, /newuser) yolu yedek olarak kalir. */
+  var apiurl = "https://{{domain}}/api";
+  window._useLoginApi = !!(apiurl && apiurl.indexOf("http") === 0 && apiurl.indexOf("{{") === -1);
+
+  /* Bildirim metinleri desing'den (W1) — eski window.loginMessages varsa o oncelikli */
+  var loginMsgs = {
+    nameRequired: "{{nameRequired}}",
+    userRequired: "{{userRequired}}",
+    validEmailRequired: "{{validEmailRequired}}",
+    passwordMinLength: "{{passwordMinLength}}",
+    passwordsNotMatch: "{{passwordsNotMatch}}",
+    userAlreadyExists: "{{userAlreadyExists}}",
+    registrationSuccess: "{{registrationSuccess}}",
+    registrationError: "{{registrationError}}",
+    passwordRequired: "{{passwordRequired}}",
+    invalidCredentials: "{{invalidCredentials}}",
+    loginSuccess: "{{loginSuccess}}",
+    loginError: "{{loginError}}",
+    alreadyLoggedIn: "{{alreadyLoggedIn}}",
+    sessionExpired: "{{sessionExpired}}",
+    kvkkRequired: "{{kvkkRequired}}",
+    uyeKullanilamiyor: "{{uyeKullanilamiyor}}"
+  };
+
+  function msg(key) {
+    return (window.loginMessages && window.loginMessages[key]) || loginMsgs[key] || key;
+  }
+
+  function loginStore() {
+    return window.MxStore && window.MxStore.__mxStore === true ? window.MxStore : null;
+  }
+
+  /** Clear localStorage when token is invalid or removed by server */
+  function clearLoginStorage() {
+    localStorage.removeItem("loginToken");
+    localStorage.removeItem("user");
+    window.user = null;
+  }
+
+  function loginSetWindowUser(u, method) {
+    window.user = window.user || {};
+    window.user.id = u.id;
+    window.user.name = ((u.ad || u.name || "") + (u.soyad ? " " + u.soyad : "")).trim();
+    window.user.user = u.user || u.email || "";
+    window.user.email = (u.email != null ? u.email : u.mail) || "";
+    window.user.isLoggedIn = true;
+    window.user.loginMethod = method;
+  }
+
+  function doRedirect() {
+    var url = "/{{lang}}/{{nextUrl}}/";
+    if (url.indexOf("{{") !== -1) url = "/tr/sepetim/";
+    var S = loginStore();
+    if (S) url = S.uye.donusYolu(url);
+    try { window.location.assign(url); } catch (e) { window.location.href = url; }
+  }
+
+  function switchToLogin() {
+    document.getElementById("modulex-login-menu-left").style.backgroundColor = "#101010";
+    document.getElementById("modulex-login-menu-right").style.backgroundColor = "--color--";
+    document.getElementById("modulex-login").style.display = "flex";
+    document.getElementById("modulex-memberol").style.display = "none";
+  }
+
+  function switchToRegister() {
+    document.getElementById("modulex-login-menu-right").style.backgroundColor = "#101010";
+    document.getElementById("modulex-login-menu-left").style.backgroundColor = "--color--";
+    document.getElementById("modulex-login").style.display = "none";
+    document.getElementById("modulex-memberol").style.display = "flex";
+  }
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validatePassword(password) {
+    return password && password.length >= 6;
+  }
+
+  function showNotification(message, type) {
+    type = type || "info";
+    if (typeof window.mxToast === "function") {
+      window.mxToast(message, type === "error");
+      return;
+    }
+    var existing = document.querySelector(".login-notification");
+    if (existing) existing.remove();
+    var el = document.createElement("div");
+    el.className = "login-notification " + type;
+    el.setAttribute("role", type === "error" ? "alert" : "status");
+    el.style.cssText = "position:fixed;top:20px;right:20px;padding:12px 16px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:1000;color:#fff;font-weight:500;";
+    el.style.background = type === "success" ? "#22c55e" : type === "error" ? "#ef4444" : "#3b82f6";
+    el.textContent = message;
+    document.body.appendChild(el);
+    setTimeout(function () { if (el.parentNode) el.remove(); }, 3000);
+  }
+
+  function loginBusy(on) {
+    var btns = document.querySelectorAll(".modulex-button");
+    for (var i = 0; i < btns.length; i++) {
+      if (on) btns[i].classList.add("modulex-busy"); else btns[i].classList.remove("modulex-busy");
+    }
+  }
+
+  function loginUyeYok() {
+    var el = document.querySelector("[data-mx-login-uyeyok]");
+    if (el) el.classList.add("modulex-uyeyok-acik");
+    showNotification(msg("uyeKullanilamiyor"), "info");
+  }
+
+  /* MxStore — kayit: Ad Soyad tek alan → ad + soyad (son kelime soyad) */
+  function loginMxRegister(S, name, email, password) {
+    var parts = name.split(/\s+/);
+    var soyad = parts.length > 1 ? parts.pop() : "";
+    var ad = parts.join(" ");
+    var kvkkEl = document.querySelector("[data-mx-login-kvkk]");
+    if (!soyad) { showNotification(msg("nameRequired"), "error"); return; }
+    if (!kvkkEl || !kvkkEl.checked) { showNotification(msg("kvkkRequired"), "error"); return; }
+    if (S.uye.durum() === "kullanilamiyor") { loginUyeYok(); return; }
+    loginBusy(true);
+    S.uye.kayit({ ad: ad, soyad: soyad, email: email, sifre: password, kvkk: true }).then(function (u) {
+      loginBusy(false);
+      if (u) loginSetWindowUser(u, "mxstore");
+      showNotification(msg("registrationSuccess"), "success");
+      setTimeout(doRedirect, 800);
+    }, function (err) {
+      loginBusy(false);
+      if (err && err.kod === "uye-kullanilamiyor") { loginUyeYok(); return; }
+      showNotification(S.hataMetni(err, msg("registrationError")), "error");
+    });
+  }
+
+  function loginMxLogin(S, email, password) {
+    if (S.uye.durum() === "kullanilamiyor") { loginUyeYok(); return; }
+    loginBusy(true);
+    S.uye.giris(email, password).then(function (u) {
+      loginBusy(false);
+      if (u) loginSetWindowUser(u, "mxstore");
+      showNotification(msg("loginSuccess"), "success");
+      setTimeout(doRedirect, 800);
+    }, function (err) {
+      loginBusy(false);
+      if (err && err.kod === "uye-kullanilamiyor") { loginUyeYok(); return; }
+      showNotification(S.hataMetni(err, msg("invalidCredentials")), "error");
+    });
+  }
+
+  async function registerUser() {
+    var name = document.getElementById("register-name").value.trim();
+    var user = document.getElementById("register-user").value.trim();
+    var email = document.getElementById("register-email").value.trim();
+    var password = document.getElementById("register-password").value;
+    var passwordConfirm = document.getElementById("register-password-confirm").value;
+    var S = loginStore();
+
+    if (!name) { showNotification(msg("nameRequired"), "error"); return; }
+    if (!S && !user) { showNotification(msg("userRequired"), "error"); return; }
+    if (!validateEmail(email)) { showNotification(msg("validEmailRequired"), "error"); return; }
+    if (!validatePassword(password)) { showNotification(msg("passwordMinLength"), "error"); return; }
+    if (password !== passwordConfirm) { showNotification(msg("passwordsNotMatch"), "error"); return; }
+    if (S) { loginMxRegister(S, name, email, password); return; }
+    if (!window._useLoginApi) { showNotification(msg("registrationError"), "error"); return; }
+
+    try {
+      var res = await fetch(apiurl + "/newuser", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name, user: user, email: email, password: password })
+      });
+      var data;
+      try { data = await res.json(); } catch (_) { data = { ok: false }; }
+      if (!data || !data.ok) {
+        var err = (data && data.error) || "";
+        showNotification(err.indexOf("zaten") !== -1 ? msg("userAlreadyExists") : (err || msg("registrationError")), "error");
+        return;
+      }
+      showNotification(msg("registrationSuccess"), "success");
+      setTimeout(switchToLogin, 1500);
+    } catch (err) {
+      showNotification(msg("registrationError"), "error");
+    }
+  }
+
+  async function loginUser() {
+    var userOrEmail = (document.getElementById("login-user") && document.getElementById("login-user").value) ? document.getElementById("login-user").value.trim() : "";
+    var password = document.getElementById("login-password") ? document.getElementById("login-password").value : "";
+    var S = loginStore();
+
+    if (!userOrEmail) { showNotification(msg(S ? "validEmailRequired" : "userRequired"), "error"); return; }
+    if (!password) { showNotification(msg("passwordRequired"), "error"); return; }
+    if (S) {
+      if (!validateEmail(userOrEmail)) { showNotification(msg("validEmailRequired"), "error"); return; }
+      loginMxLogin(S, userOrEmail, password);
+      return;
+    }
+    if (!window._useLoginApi) { showNotification(msg("loginError"), "error"); return; }
+
+    try {
+      var res = await fetch(apiurl + "/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user: userOrEmail, password: password })
+      });
+      var data;
+      try { data = await res.json(); } catch (_) { data = {}; }
+      if (!data || !data.ok) {
+        showNotification((data && data.error) || msg("invalidCredentials"), "error");
+        return;
+      }
+      var token = data.token;
+      if (!token) { showNotification(msg("loginError"), "error"); return; }
+
+      localStorage.setItem("loginToken", token);
+      var userRes = await fetch(apiurl + "/user?token=" + encodeURIComponent(token), { headers: { "Authorization": "Bearer " + token } });
+      var userData;
+      try { userData = await userRes.json(); } catch (_) { userData = {}; }
+
+      if (userData && userData.ok && userData.user) {
+        loginSetWindowUser(userData.user, "api");
+        localStorage.setItem("user", JSON.stringify(window.user));
+        showNotification(msg("loginSuccess"), "success");
+        setTimeout(doRedirect, 800);
+      } else {
+        clearLoginStorage();
+        showNotification((userData && userData.error) || msg("loginError"), "error");
+      }
+    } catch (err) {
+      clearLoginStorage();
+      showNotification(msg("loginError"), "error");
+    }
+  }
+
+  /** Eski API: yuklemede token dogrula (yalniz MxStore yoksa) */
+  function loginLegacyTokenCheck() {
+    if (!window._useLoginApi) return;
+    var token = localStorage.getItem("loginToken");
+    if (!token) return;
+    fetch(apiurl + "/user?token=" + encodeURIComponent(token), { headers: { "Authorization": "Bearer " + token } })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data && data.ok && data.user) {
+          loginSetWindowUser(data.user, "api");
+          localStorage.setItem("user", JSON.stringify(window.user));
+          showNotification(msg("alreadyLoggedIn"), "info");
+          setTimeout(doRedirect, 1000);
+        } else {
+          clearLoginStorage();
+          showNotification(msg("sessionExpired"), "info");
+        }
+      })
+      .catch(function () {
+        clearLoginStorage();
+      });
+  }
+
+  /* MxStore hazir: oturum varsa yonlendir; uyelik kullanilamiyorsa bilgi kutusu; kayit alanlarini uyarla */
+  (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
+    var userInput = document.getElementById("login-user");
+    if (userInput) {
+      userInput.setAttribute("type", "email");
+      userInput.setAttribute("autocomplete", "email");
+      userInput.setAttribute("placeholder", "{{emailPlaceholder}}");
+      var lbl = userInput.parentNode ? userInput.parentNode.querySelector(".placeholder") : null;
+      if (lbl) lbl.textContent = "{{emailPlaceholder}}";
+    }
+    var regUser = document.getElementById("register-user");
+    if (regUser && regUser.parentNode) regUser.parentNode.style.display = "none";
+    S.uye.ben().then(function (u) {
+      if (u) {
+        loginSetWindowUser(u, "mxstore");
+        showNotification(msg("alreadyLoggedIn"), "info");
+        setTimeout(doRedirect, 1000);
+      } else if (S.uye.durum() === "kullanilamiyor") {
+        var el = document.querySelector("[data-mx-login-uyeyok]");
+        if (el) el.classList.add("modulex-uyeyok-acik");
+      }
+    });
+  });
+  window.addEventListener("load", function () {
+    if (!window.MxStore) {
+      var s = document.createElement("script");
+      s.src = "/src/mx-store.js";
+      s.onerror = loginLegacyTokenCheck;
+      document.head.appendChild(s);
+    }
+  });
+
+  setTimeout(function () {
+    var left = document.getElementById("modulex-login-menu-left");
+    var right = document.getElementById("modulex-login-menu-right");
+    if (left) left.addEventListener("click", switchToLogin);
+    if (right) right.addEventListener("click", switchToRegister);
+    /* /kayit sayfasinda kayit sekmesi acik gelsin */
+    if (/\/(kayit|register|uye-ol)\/?$/.test(window.location.pathname || "")) switchToRegister();
+  }, 100);
+</script>

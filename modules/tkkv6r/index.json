@@ -1,0 +1,121 @@
+{
+  "name": "Sepet Pro",
+  "desing": {
+    "max": "1200px",
+    "bgcolor": "transparent",
+    "currency": "₺",
+    "kargoUcret": "0",
+    "ucretsizKargoLimit": "0",
+    "urunlerUrl": "urunler",
+    "odemeUrl": "odeme",
+    "title": {
+      "tr": "Sepetim",
+      "en": "My Cart"
+    },
+    "loadingText": {
+      "tr": "Sepet yükleniyor",
+      "en": "Loading cart"
+    },
+    "emptyTitle": {
+      "tr": "Sepetiniz boş",
+      "en": "Your cart is empty"
+    },
+    "emptyText": {
+      "tr": "Beğendiğiniz ürünleri sepete ekleyin, siparişinizi birkaç adımda tamamlayın.",
+      "en": "Add the products you like to your cart and complete your order in a few steps."
+    },
+    "shopText": {
+      "tr": "Alışverişe başla",
+      "en": "Start shopping"
+    },
+    "listLabel": {
+      "tr": "Sepetteki ürünler",
+      "en": "Products in cart"
+    },
+    "unitLabel": {
+      "tr": "Birim fiyat",
+      "en": "Unit price"
+    },
+    "qtyLabel": {
+      "tr": "Adet",
+      "en": "Quantity"
+    },
+    "decText": {
+      "tr": "Adedi azalt",
+      "en": "Decrease quantity"
+    },
+    "incText": {
+      "tr": "Adedi artır",
+      "en": "Increase quantity"
+    },
+    "removeText": {
+      "tr": "Ürünü sepetten çıkar",
+      "en": "Remove product from cart"
+    },
+    "removedText": {
+      "tr": "Ürün sepetten çıkarıldı",
+      "en": "Product removed from cart"
+    },
+    "updatedText": {
+      "tr": "Sepet güncellendi",
+      "en": "Cart updated"
+    },
+    "itemsText": {
+      "tr": "ürün",
+      "en": "items"
+    },
+    "summaryTitle": {
+      "tr": "Sipariş Özeti",
+      "en": "Order Summary"
+    },
+    "subtotalText": {
+      "tr": "Ara toplam",
+      "en": "Subtotal"
+    },
+    "shippingText": {
+      "tr": "Kargo",
+      "en": "Shipping"
+    },
+    "freeText": {
+      "tr": "Ücretsiz",
+      "en": "Free"
+    },
+    "shipLaterText": {
+      "tr": "Ödeme adımında hesaplanır",
+      "en": "Calculated at checkout"
+    },
+    "shipRemainText": {
+      "tr": "Ücretsiz kargo için %s daha ekleyin",
+      "en": "Add %s more for free shipping"
+    },
+    "shipReachedText": {
+      "tr": "Tebrikler, kargonuz ücretsiz!",
+      "en": "Congratulations, your shipping is free!"
+    },
+    "totalText": {
+      "tr": "Toplam",
+      "en": "Total"
+    },
+    "serverNote": {
+      "tr": "Kesin tutar ve kargo ücreti ödeme adımında sunucuda hesaplanır.",
+      "en": "The final amount and shipping fee are calculated on the server at checkout."
+    },
+    "checkoutText": {
+      "tr": "Ödemeye geç",
+      "en": "Proceed to checkout"
+    },
+    "continueText": {
+      "tr": "Alışverişe devam et",
+      "en": "Continue shopping"
+    },
+    "secureText": {
+      "tr": "Güvenli alışveriş",
+      "en": "Secure shopping"
+    }
+  },
+  "data": [],
+  "category": "e-commerce",
+  "description": "Profesyonel sepet sayfası (PLAN-PRO F3). MxStore (mxCartV1) ile satır listesi, adet −/+ ve giriş alanı, satır silme (çıkış animasyonu), ara toplam / kargo / toplam özeti, ücretsiz kargo ilerleme çubuğu (desing.ucretsizKargoLimit), boş sepet durumu ve iskelet yükleme. Sepet değişince (mx:sepet, diğer sekmeler) yeniden çizer; footer/sepet-widget ile aynı veriyi paylaşır.",
+  "version": "1.0.0",
+  "icon": "shopping_cart"
+}

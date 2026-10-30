@@ -1,0 +1,483 @@
+{
+  "name": "Ödeme (Demo)",
+  "description": "Statik e-ticaret demosu için SAHTE ödeme adımı: sepet özeti → iletişim/adres formu → ödeme yöntemi (kart / havale / kapıda) → kart formu (Luhn, SKT, CVC; hiçbir kart verisi saklanmaz, gönderilmez, günlüğe yazılmaz) → «3D Secure» SMS simülasyonu (doğru / yanlış / iptal / başarısız dene, failRate) → MxStore.siparis.olustur ile DEMO- numaralı kayıt → sipariş-tamam sayfasına yönlendirme. Üstte kalıcı DEMO uyarısı; TR/EN/AR, Arapçada RTL. API gerekmez.",
+  "version": "1.0.0",
+  "icon": "credit_score",
+  "category": "e-commerce",
+  "tags": [
+    "odeme",
+    "demo",
+    "checkout",
+    "3d-secure",
+    "luhn",
+    "rtl"
+  ],
+  "desing": {
+    "max": "1120px",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "textcolor": "var(--mx-site-text, #1b1b1b)",
+    "surface": "var(--mx-site-surface, #f6f6f4)",
+    "surface2": "var(--mx-site-surface-2, #ececea)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+    "mutedcolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #fff))",
+    "currency": "₺",
+    "methods": [
+      "kart",
+      "havale",
+      "kapida"
+    ],
+    "shipping": {
+      "free_over": 500,
+      "fee": 49.9
+    },
+    "failRate": 0,
+    "showFailButton": true,
+    "smsCode": "123456",
+    "testCard": "4242 4242 4242 4242",
+    "demoIban": "TR00 0000 0000 0000 0000 0000 00",
+    "redirectMs": 1400,
+    "successHref": "siparis-onay",
+    "cartHref": "sepetim",
+    "shopHref": "urunler",
+    "badgeText": {
+      "tr": "DEMO",
+      "en": "DEMO",
+      "ar": "تجريبي"
+    },
+    "banner": {
+      "tr": "Gerçek ödeme alınmaz. Bu sayfa yalnızca ödeme akışını denemek içindir; kart bilgileri saklanmaz ve hiçbir yere gönderilmez.",
+      "en": "No real payment is taken. This page only lets you try the checkout flow; card details are never stored or sent anywhere.",
+      "ar": "لا يتم تحصيل أي مدفوعات حقيقية. هذه الصفحة مخصصة لتجربة مسار الدفع فقط؛ لا يتم حفظ بيانات البطاقة ولا إرسالها إلى أي جهة."
+    },
+    "title": {
+      "tr": "Ödeme",
+      "en": "Checkout",
+      "ar": "إتمام الدفع"
+    },
+    "stepsLabel": {
+      "tr": "Ödeme adımları",
+      "en": "Checkout steps",
+      "ar": "خطوات الدفع"
+    },
+    "step1": {
+      "tr": "Bilgiler",
+      "en": "Details",
+      "ar": "البيانات"
+    },
+    "step2": {
+      "tr": "Ödeme",
+      "en": "Payment",
+      "ar": "الدفع"
+    },
+    "step3": {
+      "tr": "3D Secure",
+      "en": "3D Secure",
+      "ar": "3D Secure"
+    },
+    "loadingText": {
+      "tr": "Ödeme sayfası yükleniyor",
+      "en": "Loading checkout",
+      "ar": "جارٍ تحميل صفحة الدفع"
+    },
+    "storeError": {
+      "tr": "Mağaza bileşeni yüklenemedi. Sayfayı yenileyip tekrar deneyin.",
+      "en": "The store component could not be loaded. Refresh the page and try again.",
+      "ar": "تعذر تحميل مكوّن المتجر. أعد تحميل الصفحة وحاول مرة أخرى."
+    },
+    "emptyTitle": {
+      "tr": "Sepetiniz boş",
+      "en": "Your cart is empty",
+      "ar": "سلتك فارغة"
+    },
+    "emptyText": {
+      "tr": "Ödemeyi denemek için önce sepete ürün ekleyin.",
+      "en": "Add products to your cart first to try the checkout.",
+      "ar": "أضف منتجات إلى السلة أولًا لتجربة الدفع."
+    },
+    "shopText": {
+      "tr": "Alışverişe dön",
+      "en": "Back to shopping",
+      "ar": "العودة إلى التسوق"
+    },
+    "cartCount": {
+      "tr": {
+        "one": "Sepetinizde {n} ürün var",
+        "other": "Sepetinizde {n} ürün var"
+      },
+      "en": {
+        "one": "{n} item in your cart",
+        "other": "{n} items in your cart"
+      },
+      "ar": {
+        "zero": "سلتك فارغة",
+        "one": "سلتك تحتوي على منتج واحد",
+        "two": "سلتك تحتوي على منتجين",
+        "few": "سلتك تحتوي على {n} منتجات",
+        "many": "سلتك تحتوي على {n} منتجًا",
+        "other": "سلتك تحتوي على {n} منتج"
+      }
+    },
+    "step1Title": {
+      "tr": "İletişim ve teslimat bilgileri",
+      "en": "Contact and delivery details",
+      "ar": "بيانات التواصل والتوصيل"
+    },
+    "nameLabel": {
+      "tr": "Ad soyad",
+      "en": "Full name",
+      "ar": "الاسم الكامل"
+    },
+    "emailLabel": {
+      "tr": "E-posta",
+      "en": "Email",
+      "ar": "البريد الإلكتروني"
+    },
+    "phoneLabel": {
+      "tr": "Telefon",
+      "en": "Phone",
+      "ar": "رقم الهاتف"
+    },
+    "cityLabel": {
+      "tr": "Şehir",
+      "en": "City",
+      "ar": "المدينة"
+    },
+    "addressLabel": {
+      "tr": "Açık adres",
+      "en": "Full address",
+      "ar": "العنوان التفصيلي"
+    },
+    "namePh": {
+      "tr": "Adınız ve soyadınız",
+      "en": "Your full name",
+      "ar": "اسمك الكامل"
+    },
+    "emailPh": {
+      "tr": "ornek@eposta.com",
+      "en": "name@example.com",
+      "ar": "name@example.com"
+    },
+    "phonePh": {
+      "tr": "05XX XXX XX XX",
+      "en": "+90 5XX XXX XX XX",
+      "ar": "+90 5XX XXX XX XX"
+    },
+    "cityPh": {
+      "tr": "Şehir",
+      "en": "City",
+      "ar": "المدينة"
+    },
+    "addressPh": {
+      "tr": "Mahalle, sokak, bina ve daire no",
+      "en": "Neighborhood, street, building and flat no.",
+      "ar": "الحي، الشارع، رقم المبنى والشقة"
+    },
+    "continueText": {
+      "tr": "Ödemeye geç",
+      "en": "Continue to payment",
+      "ar": "المتابعة إلى الدفع"
+    },
+    "errRequired": {
+      "tr": "Bu alan zorunludur.",
+      "en": "This field is required.",
+      "ar": "هذا الحقل مطلوب."
+    },
+    "errName": {
+      "tr": "Ad ve soyadınızı girin.",
+      "en": "Enter your first and last name.",
+      "ar": "أدخل الاسم الأول واسم العائلة."
+    },
+    "errEmail": {
+      "tr": "Geçerli bir e-posta adresi girin.",
+      "en": "Enter a valid email address.",
+      "ar": "أدخل عنوان بريد إلكتروني صالحًا."
+    },
+    "errPhone": {
+      "tr": "Geçerli bir telefon numarası girin (en az 10 hane).",
+      "en": "Enter a valid phone number (at least 10 digits).",
+      "ar": "أدخل رقم هاتف صالحًا (10 أرقام على الأقل)."
+    },
+    "errAddress": {
+      "tr": "Adres en az 10 karakter olmalı.",
+      "en": "The address must be at least 10 characters.",
+      "ar": "يجب ألا يقل العنوان عن 10 أحرف."
+    },
+    "errSummary": {
+      "tr": "Lütfen işaretli alanları düzeltin.",
+      "en": "Please fix the highlighted fields.",
+      "ar": "يرجى تصحيح الحقول المحددة."
+    },
+    "editCartText": {
+      "tr": "Sepeti düzenle",
+      "en": "Edit cart",
+      "ar": "تعديل السلة"
+    },
+    "step2Title": {
+      "tr": "Ödeme yöntemi",
+      "en": "Payment method",
+      "ar": "طريقة الدفع"
+    },
+    "methodLabel": {
+      "tr": "Ödeme yöntemini seçin",
+      "en": "Choose a payment method",
+      "ar": "اختر طريقة الدفع"
+    },
+    "methodKart": {
+      "tr": "Kredi / banka kartı",
+      "en": "Credit / debit card",
+      "ar": "بطاقة ائتمان / خصم"
+    },
+    "methodKartDesc": {
+      "tr": "Demo — gerçek çekim yapılmaz",
+      "en": "Demo — nothing is charged",
+      "ar": "تجريبي — لا يتم أي خصم فعلي"
+    },
+    "methodHavale": {
+      "tr": "Havale / EFT",
+      "en": "Bank transfer",
+      "ar": "تحويل بنكي"
+    },
+    "methodHavaleDesc": {
+      "tr": "Demo hesap bilgisi gösterilir",
+      "en": "A demo account is shown",
+      "ar": "يُعرض حساب تجريبي"
+    },
+    "methodKapida": {
+      "tr": "Kapıda ödeme",
+      "en": "Cash on delivery",
+      "ar": "الدفع عند الاستلام"
+    },
+    "methodKapidaDesc": {
+      "tr": "Teslimatta ödenir (demo)",
+      "en": "Pay on delivery (demo)",
+      "ar": "الدفع عند التسليم (تجريبي)"
+    },
+    "havaleInfo": {
+      "tr": "Demo hesap numarası aşağıdadır; gerçek bir hesap değildir. Havale beklenmez, sipariş demo olarak onaylanır.",
+      "en": "The demo account number is shown below; it is not a real account. No transfer is awaited and the order is confirmed as a demo.",
+      "ar": "رقم الحساب التجريبي مذكور أدناه وليس حسابًا حقيقيًا. لا يُنتظر أي تحويل ويتم تأكيد الطلب كطلب تجريبي."
+    },
+    "kapidaInfo": {
+      "tr": "Tutarı teslimat sırasında ödersiniz. Bu bir demodur; hiçbir ödeme alınmaz.",
+      "en": "You pay on delivery. This is a demo; no payment is taken.",
+      "ar": "تدفع المبلغ عند التسليم. هذا عرض تجريبي ولا يتم تحصيل أي مدفوعات."
+    },
+    "cardTitle": {
+      "tr": "Kart bilgileri",
+      "en": "Card details",
+      "ar": "بيانات البطاقة"
+    },
+    "cardNumLabel": {
+      "tr": "Kart numarası",
+      "en": "Card number",
+      "ar": "رقم البطاقة"
+    },
+    "cardNameLabel": {
+      "tr": "Karttaki ad",
+      "en": "Name on card",
+      "ar": "الاسم على البطاقة"
+    },
+    "cardNamePh": {
+      "tr": "Kart üzerindeki ad",
+      "en": "Name as printed on the card",
+      "ar": "الاسم كما هو مطبوع على البطاقة"
+    },
+    "expLabel": {
+      "tr": "Son kullanma tarihi",
+      "en": "Expiry date",
+      "ar": "تاريخ الانتهاء"
+    },
+    "expPh": {
+      "tr": "AA/YY",
+      "en": "MM/YY",
+      "ar": "MM/YY"
+    },
+    "cvcLabel": {
+      "tr": "Güvenlik kodu (CVC)",
+      "en": "Security code (CVC)",
+      "ar": "رمز الأمان (CVC)"
+    },
+    "demoCardHint": {
+      "tr": "Demo test kartı: {card} · Son kullanma: ileri bir tarih (ör. 12/35) · CVC: 123. Girdiğiniz kart bilgisi saklanmaz, kaydedilmez ve gönderilmez.",
+      "en": "Demo test card: {card} · Expiry: any future date (e.g. 12/35) · CVC: 123. The card details you enter are never stored, saved or sent.",
+      "ar": "بطاقة الاختبار التجريبية: {card} · تاريخ الانتهاء: أي تاريخ مستقبلي (مثل 12/35) · CVC: 123. لا يتم حفظ بيانات البطاقة التي تدخلها ولا تسجيلها ولا إرسالها."
+    },
+    "fillCardText": {
+      "tr": "Test kartını doldur",
+      "en": "Fill test card",
+      "ar": "تعبئة بطاقة الاختبار"
+    },
+    "errCardNum": {
+      "tr": "Kart numarası eksik veya hatalı.",
+      "en": "The card number is incomplete or invalid.",
+      "ar": "رقم البطاقة غير مكتمل أو غير صحيح."
+    },
+    "errCardLuhn": {
+      "tr": "Kart numarası doğrulanamadı. Demo test kartını deneyin.",
+      "en": "The card number could not be verified. Try the demo test card.",
+      "ar": "تعذر التحقق من رقم البطاقة. جرّب بطاقة الاختبار التجريبية."
+    },
+    "errCardName": {
+      "tr": "Karttaki adı girin.",
+      "en": "Enter the name on the card.",
+      "ar": "أدخل الاسم على البطاقة."
+    },
+    "errExp": {
+      "tr": "Tarihi AA/YY biçiminde girin.",
+      "en": "Enter the date as MM/YY.",
+      "ar": "أدخل التاريخ بصيغة MM/YY."
+    },
+    "errExpPast": {
+      "tr": "Kartın son kullanma tarihi geçmiş.",
+      "en": "The card has expired.",
+      "ar": "انتهت صلاحية البطاقة."
+    },
+    "errCvc": {
+      "tr": "Güvenlik kodu 3 haneli olmalı (American Express için 4).",
+      "en": "The security code must be 3 digits (4 for American Express).",
+      "ar": "يجب أن يتكون رمز الأمان من 3 أرقام (4 لبطاقة American Express)."
+    },
+    "backText": {
+      "tr": "Geri",
+      "en": "Back",
+      "ar": "رجوع"
+    },
+    "payText": {
+      "tr": "Ödemeyi tamamla",
+      "en": "Complete payment",
+      "ar": "إتمام الدفع"
+    },
+    "threeTitle": {
+      "tr": "3D Secure doğrulama",
+      "en": "3D Secure verification",
+      "ar": "التحقق عبر 3D Secure"
+    },
+    "threeBank": {
+      "tr": "Demo Banka · Güvenli Ödeme",
+      "en": "Demo Bank · Secure Payment",
+      "ar": "البنك التجريبي · دفع آمن"
+    },
+    "threeInfo": {
+      "tr": "Telefonunuza gönderilen 6 haneli SMS kodunu girin. Demo ipucu: kod {code}.",
+      "en": "Enter the 6-digit SMS code sent to your phone. Demo hint: the code is {code}.",
+      "ar": "أدخل رمز الرسالة المكوّن من 6 أرقام المُرسل إلى هاتفك. تلميح تجريبي: الرمز هو {code}."
+    },
+    "threeAmount": {
+      "tr": "Tutar",
+      "en": "Amount",
+      "ar": "المبلغ"
+    },
+    "threeCard": {
+      "tr": "Kart",
+      "en": "Card",
+      "ar": "البطاقة"
+    },
+    "codeLabel": {
+      "tr": "SMS doğrulama kodu",
+      "en": "SMS verification code",
+      "ar": "رمز التحقق عبر الرسالة"
+    },
+    "verifyText": {
+      "tr": "Doğrula",
+      "en": "Verify",
+      "ar": "تحقق"
+    },
+    "cancelText": {
+      "tr": "İptal et",
+      "en": "Cancel",
+      "ar": "إلغاء"
+    },
+    "failBtnText": {
+      "tr": "Başarısız dene",
+      "en": "Simulate failure",
+      "ar": "جرّب الفشل"
+    },
+    "errCodeFormat": {
+      "tr": "6 haneli kodu girin.",
+      "en": "Enter the 6-digit code.",
+      "ar": "أدخل الرمز المكوّن من 6 أرقام."
+    },
+    "errCode": {
+      "tr": "Kod hatalı. Kalan hak: {n}. Demo ipucu: {code}.",
+      "en": "Incorrect code. Attempts left: {n}. Demo hint: {code}.",
+      "ar": "الرمز غير صحيح. المحاولات المتبقية: {n}. تلميح تجريبي: {code}."
+    },
+    "processingText": {
+      "tr": "Ödeme işleniyor…",
+      "en": "Processing payment…",
+      "ar": "جارٍ معالجة الدفع…"
+    },
+    "successText": {
+      "tr": "Ödeme onaylandı (demo). Siparişiniz oluşturuldu; yönlendiriliyorsunuz…",
+      "en": "Payment approved (demo). Your order has been created; redirecting you…",
+      "ar": "تمت الموافقة على الدفع (تجريبي). تم إنشاء طلبك؛ جارٍ تحويلك…"
+    },
+    "successTitle": {
+      "tr": "Ödeme başarılı",
+      "en": "Payment successful",
+      "ar": "تم الدفع بنجاح"
+    },
+    "failTitle": {
+      "tr": "Ödeme başarısız",
+      "en": "Payment failed",
+      "ar": "فشل الدفع"
+    },
+    "failMessage": {
+      "tr": "Demo ödeme reddedildi. Sepetiniz korundu; yeniden deneyebilir ya da başka bir yöntem seçebilirsiniz.",
+      "en": "The demo payment was declined. Your cart is kept; you can try again or choose another method.",
+      "ar": "تم رفض الدفع التجريبي. تم الاحتفاظ بسلتك؛ يمكنك المحاولة مرة أخرى أو اختيار طريقة أخرى."
+    },
+    "tooManyText": {
+      "tr": "Çok fazla hatalı kod girildi; ödeme reddedildi.",
+      "en": "Too many incorrect codes were entered; the payment was declined.",
+      "ar": "تم إدخال عدد كبير من الرموز الخاطئة؛ تم رفض الدفع."
+    },
+    "cancelledMessage": {
+      "tr": "3D Secure doğrulaması iptal edildi; ödeme tamamlanmadı.",
+      "en": "3D Secure verification was cancelled; the payment was not completed.",
+      "ar": "تم إلغاء التحقق عبر 3D Secure؛ لم يكتمل الدفع."
+    },
+    "retryText": {
+      "tr": "Yeniden dene",
+      "en": "Try again",
+      "ar": "حاول مرة أخرى"
+    },
+    "summaryTitle": {
+      "tr": "Sipariş özeti",
+      "en": "Order summary",
+      "ar": "ملخص الطلب"
+    },
+    "subtotalText": {
+      "tr": "Ara toplam",
+      "en": "Subtotal",
+      "ar": "المجموع الفرعي"
+    },
+    "shippingText": {
+      "tr": "Kargo",
+      "en": "Shipping",
+      "ar": "الشحن"
+    },
+    "freeText": {
+      "tr": "Ücretsiz",
+      "en": "Free",
+      "ar": "مجاني"
+    },
+    "totalText": {
+      "tr": "Toplam",
+      "en": "Total",
+      "ar": "الإجمالي"
+    },
+    "freeShipNote": {
+      "tr": "{amount} daha ekleyin, kargo ücretsiz olsun.",
+      "en": "Add {amount} more to get free shipping.",
+      "ar": "أضف {amount} أخرى لتحصل على شحن مجاني."
+    },
+    "qtyLabel": {
+      "tr": "Adet",
+      "en": "Qty",
+      "ar": "الكمية"
+    }
+  }
+}

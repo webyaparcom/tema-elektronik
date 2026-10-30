@@ -1,0 +1,109 @@
+<section class="kvSection">
+  <div class="kvContainer">
+    <div class="kvHead">
+      <h2 class="kvTitle">{{title}}</h2>
+      <span class="kvRule" aria-hidden="true"></span>
+      <p class="kvSubtitle">{{subtitle}}</p>
+    </div>
+    <div class="kvGrid">{{html}}</div>
+  </div>
+</section>
+
+<style>
+  .kvSection {
+    width: 100%;
+    padding: 56px 20px;
+    background: --bgcolor--;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
+  .kvContainer { max-width: --max--; margin: 0 auto; }
+
+  .kvHead { text-align: center; margin-bottom: 32px; }
+  .kvTitle {
+    font-size: 30px; font-weight: 800; color: --color--;
+    margin: 0 0 12px; letter-spacing: 0.01em;
+  }
+  .kvRule {
+    display: block; width: 56px; height: 3px; margin: 0 auto 14px;
+    background: --accent--; border-radius: 2px;
+  }
+  .kvSubtitle { font-size: 16px; color: --color--; opacity: 0.75; margin: 0; }
+
+  .kvGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .kvCard {
+    display: flex; flex-direction: column;
+    text-decoration: none; cursor: pointer;
+    background: --cardbg--;
+    border: 1px solid --bordercolor--;
+    border-radius: 14px; overflow: hidden;
+    box-sizing: border-box; min-width: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: kvIn 0.45s ease both;
+  }
+  .kvCard:hover, .kvCard:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(14, 35, 71, 0.12);
+  }
+  .kvCard:focus-visible { outline: 2px solid --color--; outline-offset: 2px; }
+
+  @keyframes kvIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .kvImg {
+    display: block; position: relative; aspect-ratio: 1 / 1; overflow: hidden;
+    background: --bordercolor--;
+  }
+  .kvImg img {
+    display: block; width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+  .kvCard:hover .kvImg img { transform: scale(1.07); }
+
+  .kvHolder {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%; background: --bgcolor--;
+  }
+  .kvHolder img { width: 40%; height: auto; object-fit: contain; opacity: 0.9; }
+  .kvCard:hover .kvHolder img { transform: none; }
+
+  .kvName {
+    position: relative; display: block;
+    padding: 14px 12px 16px; text-align: center;
+    font-size: 15px; font-weight: 700; line-height: 1.3; color: --color--;
+    overflow-wrap: anywhere;
+  }
+  .kvName::after {
+    content: ""; position: absolute; left: 50%; bottom: 8px;
+    width: 0; height: 2px; background: --accent--;
+    transform: translateX(-50%); transition: width 0.3s ease;
+  }
+  .kvCard:hover .kvName::after, .kvCard:focus-visible .kvName::after { width: 44px; }
+
+  @media (max-width: 1024px) {
+    .kvGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  }
+
+  @media (max-width: 768px) {
+    .kvSection { padding: 36px 12px; }
+    .kvTitle { font-size: 24px; }
+    .kvSubtitle { font-size: 14px; }
+    .kvGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .kvName { font-size: 13px; padding: 10px 8px 14px; }
+    [class*="kv"] { max-width: 100%; box-sizing: border-box; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [class*="kv"], [class*="kv"] * {
+      animation: none !important; transition: none !important;
+    }
+  }
+</style>

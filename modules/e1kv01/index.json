@@ -1,0 +1,21 @@
+{
+  "name": "Kategori Vitrin (Görselli Ürün Grupları)",
+  "desing": {
+    "max": "1200px",
+    "bgcolor": "#FBF8F1",
+    "cardbg": "#FFFFFF",
+    "color": "#0E2347",
+    "accent": "#B5831B",
+    "bordercolor": "#E6DCC3",
+    "title": { "tr": "Ürün Gruplarımız", "en": "Our Product Groups" },
+    "subtitle": { "tr": "Doğal ve organik ürün gruplarımızı keşfedin", "en": "Explore our natural and organic product groups" }
+  },
+  "data": [
+    { "img": "", "name": { "tr": "Ürün Grubu 1", "en": "Product Group 1" }, "url": "urunler" },
+    { "img": "", "name": { "tr": "Ürün Grubu 2", "en": "Product Group 2" }, "url": "urunler" }
+  ],
+  "category": "page-category",
+  "description": "Açık temalı görselli kategori vitrini: kare görsel kart + altında kategori adı, hover'da hafif yakınlaşma ve alt çizgi vurgusu. Masaüstü 4, tablet 3, mobil 2 sütun; yatay taşma yok. data[] boşsa site kategori listesinden (category.json) otomatik dolar; görsel yoksa logo ikonlu yer tutucu kart çizer.",
+  "version": "1.0.0",
+  "icon": "grid_view"
+}

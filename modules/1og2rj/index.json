@@ -1,0 +1,122 @@
+{
+  "name": "Favorilerim",
+  "description": "Beğenilen ürünleri kaydetme ve wishlist yönetim modülü. Kullanıcıların ilgilendiği ürünleri favorilere ekler, sepete hızlı ekleme yapar. 3 farklı e-ticaret projesinde müşterilerin istek listesini saklar. Favori ürün bildirim sistemi ve fiyat düşüşü takibi özellikleri vardır.",
+  "version": "1.0.0",
+  "icon": "favorite",
+  "category": "e-commerce",
+  "desing": {
+    "color": "#333333",
+    "bgcolor": "#ffffff",
+    "bordercolor": "#e0e0e0",
+    "favoritecolor": "#dc3545",
+    "primarycolor": "#007bff",
+    "moduleTitle": {
+      "tr": "Favorilerim",
+      "en": "My Favorites"
+    },
+    "addToCart": {
+      "tr": "Sepete Ekle",
+      "en": "Add to Cart"
+    },
+    "removeFromFavorites": {
+      "tr": "Favorilerden Çıkar",
+      "en": "Remove from Favorites"
+    },
+    "noFavorites": {
+      "tr": "Henüz favori ürününüz bulunmuyor",
+      "en": "No favorite products yet"
+    },
+    "favoriUrunleriniziGormekIcin": {
+      "tr": "Favori ürünlerinizi görmek için giriş yapmanız gerekiyor.",
+      "en": "Favori urunlerinizi gormek icin giris yapmaniz gerekiyor."
+    },
+    "henuzFavoriUrununuzBulunmuyor": {
+      "tr": "Henüz favori ürününüz bulunmuyor.",
+      "en": "Henuz favori urununuz bulunmuyor."
+    },
+    "favorilerYuklenirkenBirHata": {
+      "tr": "Favoriler yüklenirken bir hata oluştu.",
+      "en": "Favoriler yuklenirken bir hata olustu."
+    },
+    "favoriUrunleriniziGormekIcin2": {
+      "tr": "Favori ürünlerinizi görmek için giriş yapmanız gerekiyor.",
+      "en": "Favori urunlerinizi gormek icin giris yapmaniz gerekiyor."
+    },
+    "favorilerYuklenirkenHata": {
+      "tr": "Favoriler yüklenirken hata:",
+      "en": "Favoriler yuklenirken hata:"
+    },
+    "buUrunuFavorilerdenCikarmak": {
+      "tr": "Bu ürünü favorilerden çıkarmak istediğinizden emin misiniz?",
+      "en": "Bu urunu favorilerden cikarmak istediginizden emin misiniz?"
+    },
+    "urunFavorilerdenCikarildi": {
+      "tr": "Ürün favorilerden çıkarıldı!",
+      "en": "urun favorilerden cikarildi!"
+    },
+    "favoriCikarilirkenHata": {
+      "tr": "Favori çıkarılırken hata:",
+      "en": "Favori cikarilirken hata:"
+    },
+    "islemSirasindaHataOlustu": {
+      "tr": "İşlem sırasında hata oluştu!",
+      "en": "islem sirasinda hata olustu!"
+    },
+    "urunBulunamadi": {
+      "tr": "Ürün bulunamadı!",
+      "en": "urun bulunamadi!"
+    },
+    "urunSepeteEklendi": {
+      "tr": "Ürün sepete eklendi!",
+      "en": "Product sepete eklendi!"
+    },
+    "sepeteEklenirkenHata": {
+      "tr": "Sepete eklenirken hata:",
+      "en": "Sepete eklenirken hata:"
+    },
+    "sepeteEklemeSirasindaHata": {
+      "tr": "Sepete ekleme sırasında hata oluştu!",
+      "en": "Sepete ekleme sirasinda hata olustu!"
+    },
+    "demoUrunEklemekIcin": {
+      "tr": "Demo ürün eklemek için giriş yapmanız gerekiyor.",
+      "en": "Demo urun eklemek icin giris yapmaniz gerekiyor."
+    },
+    "demoUrunFavorilereEklendi": {
+      "tr": "Demo ürün favorilere eklendi!",
+      "en": "Demo product favorilere eklendi!"
+    },
+    "demoUrunEklenirkenHata": {
+      "tr": "Demo ürün eklenirken hata:",
+      "en": "Demo product eklenirken hata:"
+    },
+    "demoUrunEklenirkenHata2": {
+      "tr": "Demo ürün eklenirken hata oluştu!",
+      "en": "Demo urun eklenirken hata olustu!"
+    },
+    "nikeAirMax270": {
+      "tr": "Nike Air Max 270",
+      "en": "Nike Air Max 270"
+    },
+    "sporAyakkabi": {
+      "tr": "Spor Ayakkabı",
+      "en": "Spor Ayakkabi"
+    },
+    "favoriteid": {
+      "tr": "${favoriteId}",
+      "en": "${favoriteId}"
+    },
+    "favoriteid2": {
+      "tr": "${favoriteId}",
+      "en": "${favoriteId}"
+    },
+    "favoriteproductid": {
+      "tr": "${favorite.productId}",
+      "en": "${favorite.productId}"
+    },
+    "keyframesSlideinFromTransform": {
+      "tr": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      ",
+      "en": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      "
+    }
+  }
+}

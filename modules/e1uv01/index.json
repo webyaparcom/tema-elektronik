@@ -1,0 +1,81 @@
+{
+  "name": "Urun Vitrin",
+  "description": "Musteri tarafinda modern urun vitrini. Kategori cipleriyle filtre (urunlerin category alanindan + Tumu), tam karti tiklanabilir kart (urun detay sayfasina gider), gorsel, rozetler, ad, aciklama parcasi, fiyat (yoksa gizlenir) ve sepet-widget uyumlu data-mx-* sepete ekle butonu (kart linkini tetiklemez). Canli products.json kataloğunu okur, fiyat/gorseli page/<id>/index.json detayindan zenginlestirir.",
+  "version": "2.0.0",
+  "icon": "storefront",
+  "category": "e-commerce",
+  "desing": {
+    "color": "#333333",
+    "bgcolor": "#ffffff",
+    "pricecolor": "#e53935",
+    "oldpricecolor": "#999999",
+    "badgecolor": "#ffffff",
+    "badgebg-new": "#4caf50",
+    "badgebg-sale": "#ff9800",
+    "badgebg-soldout": "#9e9e9e",
+    "buttonbg": "#2196f3",
+    "buttoncolor": "#ffffff",
+    "bordercolor": "#e0e0e0",
+    "currency": "₺",
+    "showFilter": true,
+    "descLength": 120,
+    "title": { "tr": "Urunler", "en": "Products" },
+    "allText": { "tr": "Tümü", "en": "All" },
+    "resultCount": { "tr": "ürün", "en": "products" },
+    "addToCart": { "tr": "Sepete Ekle", "en": "Add to Cart" },
+    "soldOutText": { "tr": "Tukendi", "en": "Sold Out" },
+    "newText": { "tr": "Yeni", "en": "New" },
+    "saleText": { "tr": "Indirim", "en": "Sale" },
+    "search": false,
+    "sort": false,
+    "searchLabel": { "tr": "Urun ara", "en": "Search products", "ar": "ابحث عن منتج" },
+    "searchPlaceholder": { "tr": "Urun adi veya kategori…", "en": "Product name or category…", "ar": "اسم المنتج أو الفئة…" },
+    "sortLabel": { "tr": "Sirala", "en": "Sort by", "ar": "ترتيب حسب" },
+    "sortDefault": { "tr": "Onerilen siralama", "en": "Recommended", "ar": "الترتيب الموصى به" },
+    "sortPriceAsc": { "tr": "Fiyat: dusukten yuksege", "en": "Price: low to high", "ar": "السعر: من الأقل إلى الأعلى" },
+    "sortPriceDesc": { "tr": "Fiyat: yuksekten dusuge", "en": "Price: high to low", "ar": "السعر: من الأعلى إلى الأقل" },
+    "sortNew": { "tr": "En yeniler", "en": "Newest first", "ar": "الأحدث أولًا" },
+    "noResult": { "tr": "Aramaniza uygun urun bulunamadi.", "en": "No products match your search.", "ar": "لم يتم العثور على منتجات مطابقة لبحثك." },
+    "clearSearch": { "tr": "Filtreleri temizle", "en": "Clear filters", "ar": "مسح عوامل التصفية" }
+  },
+  "data": {
+    "products": [
+      {
+        "id": "urun-001",
+        "name": { "tr": "Antep Fistigi 500g", "en": "Pistachio 500g" },
+        "description": { "tr": "Gaziantep'in boz ic fistigi, taze kavrulmus.", "en": "Fresh roasted Gaziantep pistachio." },
+        "price": 249.90,
+        "oldPrice": 329.90,
+        "image": "/img/products/urun-001.jpg",
+        "category": "kuruyemis",
+        "stock_status": "in_stock",
+        "badges": ["sale"],
+        "url": "/tr/urun/antep-fistigi-500g/"
+      },
+      {
+        "id": "urun-002",
+        "name": { "tr": "Organik Zeytinyagi 1L", "en": "Organic Olive Oil 1L" },
+        "description": { "tr": "Soguk sikim, erken hasat.", "en": "Cold pressed, early harvest." },
+        "price": 189.90,
+        "oldPrice": null,
+        "image": "/img/products/urun-002.jpg",
+        "category": "gida",
+        "stock_status": "in_stock",
+        "badges": ["new"],
+        "url": "/tr/urun/organik-zeytinyagi-1l/"
+      },
+      {
+        "id": "urun-003",
+        "name": { "tr": "El Yapimi Sabun Seti", "en": "Handmade Soap Set" },
+        "description": { "tr": "Zeytinyagli, 3'lu set.", "en": "Olive oil soap, set of 3." },
+        "price": 79.90,
+        "oldPrice": 119.90,
+        "image": "/img/products/urun-003.jpg",
+        "category": "kozmetik",
+        "stock_status": "out_of_stock",
+        "badges": ["sale"],
+        "url": "/tr/urun/el-yapimi-sabun-seti/"
+      }
+    ]
+  }
+}
