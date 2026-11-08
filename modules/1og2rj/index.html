@@ -177,6 +177,9 @@
 </style>
 
 <script>
+  function modulexEsc(v) {
+    return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
   //
   async function loadFavorites() {
     try {
@@ -207,11 +210,11 @@
               <span class="material-symbols-outlined">favorite</span>
             </div>
             <div class="modulexGridItemImg">
-              <img src="${favorite.image || 'https://via.placeholder.com/200x200'}" alt="${favorite.name}" />
+              <img src="${modulexEsc(favorite.image || 'https://via.placeholder.com/200x200')}" alt="${modulexEsc(favorite.name)}" />
             </div>
             <div class="modulexGridItemBody">
-              <div class="modulexGridItemTitle">${favorite.name}</div>
-              <div class="modulexGridItemSpot">${favorite.category || 'Genel'}</div>
+              <div class="modulexGridItemTitle">${modulexEsc(favorite.name)}</div>
+              <div class="modulexGridItemSpot">${modulexEsc(favorite.category || 'Genel')}</div>
               <div class="modulexGridItemPrice">
                 <div class="price">${formatPrice(favorite.price)} ₺</div>
                 <button class="add-to-cart" onclick="addToCart('{{favoriteid2}}', '{{favoriteproductid}}')">

@@ -6,8 +6,14 @@
     "backgroundcolor": "#ffffff",
     "color": "#1e3046",
     "img": "map.png",
-    "externalUrl": ""
+    "externalUrl": "",
+    "margin": "0px 0px 0px 0px"
   },
   "category": "map",
-  "description": "Firmanın konumunu harita üzerinde görselleştiren modül. Ziyaretçilerin işletmeyi kolayca bulmasını sağlar. 1 farklı sektörde aktif kullanımda."
+  "description": "Firmanın konumunu harita üzerinde görselleştiren modül. Ziyaretçilerin işletmeyi kolayca bulmasını sağlar. 1 farklı sektörde aktif kullanımda.",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
 }

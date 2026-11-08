@@ -17,14 +17,16 @@
   },
   "path": "mekanik-klavye",
   "icon": "inventory_2",
-  "category": "81vj6ab339",
+  "category": "bilgisayar",
   "status": "play",
   "desing": {
     "header": [],
-    "body": [],
+    "body": [
+      "dp7tnt"
+    ],
     "footer": []
   },
-  "index": 0,
+  "index": 3,
   "url": "",
   "text": {
     "tr": "<p>Kompakt 75% düzen, sessiz anahtarlar, kablolu ve kablosuz kullanım.</p>",
@@ -37,7 +39,7 @@
     "ar": "لوحة مفاتيح ميكانيكية"
   },
   "date": "2026-10-30T22:21:59.792Z",
-  "update": "2026-10-30T22:29:44.621Z",
+  "update": "2026-11-05T23:44:15.236Z",
   "desc": {
     "garanti": {
       "tr": "2 yıl garanti",

@@ -76,5 +76,10 @@
       "en": "No description added for this product."
     }
   },
-  "data": {}
+  "data": {},
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
 }

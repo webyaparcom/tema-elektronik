@@ -49,6 +49,11 @@
       "tr": "'ni okudum ve kabul ediyorum.",
       "en": " — I have read and accept."
     },
+    "newsletter_url": "",
+    "newsletter_error": {
+      "tr": "Kayıt yapılamadı, lütfen daha sonra tekrar deneyin.",
+      "en": "Could not subscribe, please try again later."
+    },
     "newsletter_consent_url": "/iade-ve-teslimat",
     "newsletter_consent_error": {
       "tr": "Devam etmek için şartları kabul etmelisiniz.",
@@ -319,5 +324,10 @@
   "category": "footer",
   "description": "Tema3 ilhamlı e-ticaret footer: güven bandı, özellik şeridi, çok sütun linkler, bülten, sosyal medya ve ödeme ikonları. Mobil accordion destekli.",
   "version": "2.0.0",
-  "icon": "web_asset"
+  "icon": "web_asset",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
 }

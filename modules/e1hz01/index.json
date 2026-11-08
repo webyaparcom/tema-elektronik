@@ -48,5 +48,10 @@
         "en": "Support"
       }
     }
-  ]
+  ],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
 }

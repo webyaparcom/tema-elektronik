@@ -53,5 +53,10 @@
   "category": "e-commerce",
   "description": "Müşteri kayıt modülü (PLAN-PRO F3). MxStore.uye.kayit → POST /api/public/uye/kayit {ad, soyad, email, telefon, sifre, kvkk:true} (201 + mx_uye çerezi). Ad/soyad/e-posta/telefon/şifre + tekrar, şifre güç göstergesi (sunucu şartı: ≥8, harf+rakam), KVKK + üyelik sözleşmesi onayı, just-validate doğrulama, sunucu 'alan' hatası ilgili alanın altına; başarıda ?donus= ya da hesabim.",
   "version": "1.0.0",
-  "icon": "person_add"
+  "icon": "person_add",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }

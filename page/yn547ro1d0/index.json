@@ -1,0 +1,62 @@
+{
+  "id": "yn547ro1d0",
+  "name": {
+    "tr": "Akıllı bileklik",
+    "en": "Fitness band",
+    "ar": "سوار لياقة ذكي"
+  },
+  "description": {
+    "tr": "İnce gövde, nabız ve uyku takibi, bildirim titreşimi; suya dayanıklı.",
+    "en": "Slim body, heart-rate and sleep tracking, notification vibration; water resistant.",
+    "ar": "هيكل نحيف وتتبّع النبض والنوم واهتزاز للإشعارات؛ مقاوم للماء."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "akilli-bileklik",
+  "icon": "watch",
+  "category": "giyilebilir",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "kcetx7"
+    ],
+    "footer": []
+  },
+  "index": 1,
+  "url": "",
+  "text": {
+    "tr": "<p>İnce gövde, nabız ve uyku takibi, bildirim titreşimi; suya dayanıklı.</p>",
+    "en": "<p>Slim body, heart-rate and sleep tracking, notification vibration; water resistant.</p>",
+    "ar": "<p>هيكل نحيف وتتبّع النبض والنوم واهتزاز للإشعارات؛ مقاوم للماء.</p>"
+  },
+  "title": {
+    "tr": "Akıllı bileklik",
+    "en": "Fitness band",
+    "ar": "سوار لياقة ذكي"
+  },
+  "date": "2026-11-05T22:24:04.889Z",
+  "update": "2026-11-05T23:44:15.247Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "Bluetooth 5.2",
+    "guc": {
+      "tr": "Yaklaşık 14 gün",
+      "en": "About 14 days",
+      "ar": "نحو 14 يومًا"
+    }
+  },
+  "price": 990,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-kategori-2.webp",
+  "badges": [],
+  "sku": "akilli-bileklik"
+}

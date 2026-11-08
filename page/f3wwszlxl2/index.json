@@ -1,0 +1,62 @@
+{
+  "id": "f3wwszlxl2",
+  "name": {
+    "tr": "Uzatılmış garanti +1 yıl",
+    "en": "Extended warranty +1 year",
+    "ar": "ضمان ممتد +1 سنة"
+  },
+  "description": {
+    "tr": "2 yıllık garantinin bitiminden sonra 1 yıl ek servis güvencesi; dizüstü ve akıllı saat için.",
+    "en": "One extra year of service cover after the 2-year warranty ends; for laptops and smartwatches.",
+    "ar": "سنة إضافية من تغطية الخدمة بعد انتهاء ضمان السنتين؛ للحواسيب المحمولة والساعات الذكية."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "uzatilmis-garanti-1-yil",
+  "icon": "verified",
+  "category": "bilgisayar",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "7rpoof"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {
+    "tr": "<p>2 yıllık garantinin bitiminden sonra 1 yıl ek servis güvencesi; dizüstü ve akıllı saat için.</p>",
+    "en": "<p>One extra year of service cover after the 2-year warranty ends; for laptops and smartwatches.</p>",
+    "ar": "<p>سنة إضافية من تغطية الخدمة بعد انتهاء ضمان السنتين؛ للحواسيب المحمولة والساعات الذكية.</p>"
+  },
+  "title": {
+    "tr": "Uzatılmış garanti +1 yıl",
+    "en": "Extended warranty +1 year",
+    "ar": "ضمان ممتد +1 سنة"
+  },
+  "date": "2026-11-05T22:24:04.896Z",
+  "update": "2026-11-05T23:44:15.255Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 + 1 yıl (düşme ve sıvı hasarı hariç)",
+      "en": "2 + 1 years (excludes drop and liquid damage)",
+      "ar": "2 + 1 سنوات (لا يشمل السقوط وتلف السوائل)"
+    },
+    "baglanti": {
+      "tr": "Yetkili servis",
+      "en": "Authorised service",
+      "ar": "خدمة معتمدة"
+    },
+    "guc": ""
+  },
+  "price": 1290,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-servis.webp",
+  "badges": [],
+  "sku": "uzatilmis-garanti-1-yil"
+}

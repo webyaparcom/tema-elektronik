@@ -165,5 +165,10 @@
   "category": "login",
   "description": "Giriş ve kayıt modülü (PLAN-PRO F3). Varsayılan MxStore: /api/public/uye/giris + /kayit (mx_uye çerezi, KVKK onayı, donus/nextUrl yönlendirmesi); üyelik kullanılamıyorsa bilgi kutusu. MxStore yüklenmezse eski desing apiBase (https://{{domain}}/api /user /newuser) yolu yedek.",
   "version": "1.1.0",
-  "icon": "login"
+  "icon": "login",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }

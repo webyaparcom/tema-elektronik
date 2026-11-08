@@ -211,5 +211,10 @@
       "tr": "Üyelik bu sitede şu an kullanılamıyor.",
       "en": "Membership is currently unavailable on this site."
     }
+  },
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*), dataWeb"
   }
 }

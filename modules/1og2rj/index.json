@@ -118,5 +118,10 @@
       "tr": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      ",
       "en": "\r\n        @keyframes slideIn {\r\n          from { transform: translateX(100%); opacity: 0; }\r\n          to { transform: translateX(0); opacity: 1; }\r\n        }\r\n      "
     }
+  },
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | dataWeb"
   }
 }

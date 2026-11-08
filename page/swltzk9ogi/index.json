@@ -17,14 +17,16 @@
   },
   "path": "ince-dizustu-bilgisayar",
   "icon": "inventory_2",
-  "category": "81vj6ab339",
+  "category": "bilgisayar",
   "status": "play",
   "desing": {
     "header": [],
-    "body": [],
+    "body": [
+      "yk9onn"
+    ],
     "footer": []
   },
-  "index": 2,
+  "index": 5,
   "url": "",
   "text": {
     "tr": "<p>14 inç IPS ekran, 16 GB bellek, 512 GB SSD; günlük iş ve eğitim için.</p>",
@@ -37,7 +39,7 @@
     "ar": "حاسوب محمول نحيف 14 بوصة"
   },
   "date": "2026-10-30T22:21:59.782Z",
-  "update": "2026-10-30T22:29:44.611Z",
+  "update": "2026-11-05T23:44:15.225Z",
   "desc": {
     "garanti": {
       "tr": "2 yıl garanti",

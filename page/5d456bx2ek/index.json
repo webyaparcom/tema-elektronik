@@ -1,0 +1,64 @@
+{
+  "id": "5d456bx2ek",
+  "name": {
+    "tr": "Ses seti: kulaklık + hoparlör",
+    "en": "Audio set: headphones + speaker",
+    "ar": "طقم صوت: سماعات + مكبر صوت"
+  },
+  "description": {
+    "tr": "Kablosuz kulaklık ile taşınabilir hoparlör bir arada; tek kutuda, ayrı alıma göre avantajlı.",
+    "en": "Wireless headphones and a portable speaker together in one box, better value than buying separately.",
+    "ar": "سماعات لاسلكية ومكبر صوت محمول معًا في علبة واحدة، بسعر أفضل من الشراء المنفصل."
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "ses-seti-kulaklik-hoparlor",
+  "icon": "speaker",
+  "category": "ses",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "6mm2rg"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {
+    "tr": "<p>Kablosuz kulaklık ile taşınabilir hoparlör bir arada; tek kutuda, ayrı alıma göre avantajlı.</p>",
+    "en": "<p>Wireless headphones and a portable speaker together in one box, better value than buying separately.</p>",
+    "ar": "<p>سماعات لاسلكية ومكبر صوت محمول معًا في علبة واحدة، بسعر أفضل من الشراء المنفصل.</p>"
+  },
+  "title": {
+    "tr": "Ses seti: kulaklık + hoparlör",
+    "en": "Audio set: headphones + speaker",
+    "ar": "طقم صوت: سماعات + مكبر صوت"
+  },
+  "date": "2026-11-05T22:24:04.883Z",
+  "update": "2026-11-05T23:44:15.242Z",
+  "desc": {
+    "garanti": {
+      "tr": "2 yıl garanti",
+      "en": "2-year warranty",
+      "ar": "ضمان سنتان"
+    },
+    "baglanti": "Bluetooth 5.3",
+    "guc": {
+      "tr": "Kulaklık ~30 sa · hoparlör ~12 sa",
+      "en": "Headphones ~30 h · speaker ~12 h",
+      "ar": "السماعات ~30 ساعة · المكبر ~12 ساعة"
+    }
+  },
+  "price": 4990,
+  "stock": 25,
+  "stock_status": "in_stock",
+  "image": "/img/elektronik-kategori-1.webp",
+  "badges": [
+    "new"
+  ],
+  "sku": "ses-seti-kulaklik-hoparlor"
+}

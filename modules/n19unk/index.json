@@ -77,5 +77,10 @@
         "url": "/tr/urun/el-yapimi-sabun-seti/"
       }
     ]
+  },
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
   }
 }

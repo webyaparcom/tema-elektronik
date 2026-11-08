@@ -350,5 +350,10 @@
   "category": "e-commerce",
   "description": "Profesyonel 3 adımlı ödeme (PLAN-PRO F3): Bilgiler/Adres → Ödeme yöntemi (kapıda / havale) → Onay. Üye ise kayıtlı adres seçimi + yeni adres (isteğe bağlı adres defterine kaydetme), misafir ise misafir formu + giriş bağlantısı. MxStore.siparis.olustur ile POST /api/public/siparis (fiyat sunucuda); başarıda siparis-tamam sayfasına no ile geçer, sepet temizlenir. Sunucu alan hatası ilgili adıma döner. API yoksa (statik yayın) desing.number doluysa WhatsApp + mxOrdersV1 yedeği; o da yoksa kapalı uyarısı.",
   "version": "1.0.0",
-  "icon": "payments"
+  "icon": "payments",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }

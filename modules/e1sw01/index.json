@@ -34,5 +34,10 @@
   "category": "e-commerce",
   "description": "Site geneli localStorage sepet çekirdeği. Yüzen sepet butonu, adet rozeti, çekmece (drawer) sepet listesi ve window.mxCartAdd / window.addToCart global API'sini sağlar. Vitrin, detay ve liste modüllerinin sepete ekle butonları bu modülle çalışır hale gelir. Veri anahtarı: mxCartV1.",
   "version": "1.0.0",
-  "icon": "shopping_cart"
+  "icon": "shopping_cart",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
 }

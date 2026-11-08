@@ -72,5 +72,10 @@
   "category": "e-commerce",
   "description": "Üye hesap paneli (PLAN-PRO F3). Sol menü: Bilgilerim (MxStore.uye.guncelle → PATCH /api/public/uye/ben), Adreslerim (GET|POST /api/public/uye/adres, PATCH|DELETE /api/public/uye/adres/:id; varsayılan rozeti), Siparişlerim özeti (GET /api/public/siparis), Şifre (POST /api/public/uye/sifre), Çıkış (POST /api/public/uye/cikis). Oturum yoksa desing girisUrl sayfasına ?donus= ile yönlendirir; URL hash (#adreslerim…) ile panel açılır; mobilde menü üstte yatay kaydırmalı.",
   "version": "1.0.0",
-  "icon": "account_circle"
+  "icon": "account_circle",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }

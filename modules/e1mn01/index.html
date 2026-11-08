@@ -133,7 +133,7 @@
 
   .modulex-search-box button {
     background: var(--mxe-cd9624, #cd9624);
-    color: white;
+    color: var(--mxe-on, #1b1b1b); /* 8 Kas 2026: temalarda --mxe-on = primary-contrast; sabit beyaz limon/altin/pembe zeminde 1.6-2.4:1 */
     border: none;
     border-radius: 0px 25px 25px 0px;
     padding: 10px 20px;
@@ -159,7 +159,7 @@
 
   .modulex-support-info span {
     font-size: 40px;
-    color: var(--mxe-cd9624, #cd9624);
+    color: color-mix(in srgb, var(--mxe-cd9624, #cd9624) 55%, #1b1b1b); /* 8 Kas 2026: acik palette (limon/altin/pembe) beyaz uzerinde >=3:1 */
   }
 
   .modulex-support-info small {
@@ -295,7 +295,7 @@
   }
 
   .modulex-main-menu a {
-    color: white;
+    color: var(--mxe-on, #1b1b1b); /* 8 Kas 2026: nav primary zeminde; temada --mxe-on = primary-contrast (sabit beyaz limon/pembe/turkuazda 1.6-2.4:1) */
     text-decoration: none;
     font-weight: 500;
     font-size: 15px;
@@ -478,6 +478,22 @@
     [class*="modulex"] {
       animation: none !important;
       transition: none !important;
+    }
+  }
+
+  /* 8 Kas 2026: bu modulun zemini sabit acik (#fff/#d6d6d6); dil cipleri site yazi rengini (koyu modda ACIK) miras aliyordu 1.15:1 */
+  .modulex-header-top .wm-langbar {
+    --wm-lang-color: #1b1b1b;
+  }
+
+  /* 8 Kas 2026: logo gorseli acik zemin icin cizilmis (koyu yazi, saydam); koyu modda koyu header uzerinde kayboluyordu.
+     Koyu modda acik plaka; bilerek acik logolar (logo-acik) haric. */
+  @media (prefers-color-scheme: dark) {
+    .modulex-logo:not([src*="acik"]) {
+      background: #ffffff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      box-sizing: content-box;
     }
   }
 </style>

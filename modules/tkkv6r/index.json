@@ -117,5 +117,10 @@
   "category": "e-commerce",
   "description": "Profesyonel sepet sayfası (PLAN-PRO F3). MxStore (mxCartV1) ile satır listesi, adet −/+ ve giriş alanı, satır silme (çıkış animasyonu), ara toplam / kargo / toplam özeti, ücretsiz kargo ilerleme çubuğu (desing.ucretsizKargoLimit), boş sepet durumu ve iskelet yükleme. Sepet değişince (mx:sepet, diğer sekmeler) yeniden çizer; footer/sepet-widget ile aynı veriyi paylaşır.",
   "version": "1.0.0",
-  "icon": "shopping_cart"
+  "icon": "shopping_cart",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }

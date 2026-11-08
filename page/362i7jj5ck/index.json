@@ -17,14 +17,16 @@
   },
   "path": "kablosuz-kulaklik",
   "icon": "inventory_2",
-  "category": "rud8tpzjuq",
+  "category": "ses",
   "status": "play",
   "desing": {
     "header": [],
-    "body": [],
+    "body": [
+      "h38pae"
+    ],
     "footer": []
   },
-  "index": 5,
+  "index": 8,
   "url": "",
   "text": {
     "tr": "<p>Aktif gürültü engelleme, kulak üstü, katlanabilir tasarım.</p>",
@@ -37,7 +39,7 @@
     "ar": "سماعات لاسلكية"
   },
   "date": "2026-10-30T22:21:59.768Z",
-  "update": "2026-10-30T22:29:44.579Z",
+  "update": "2026-11-05T23:44:15.208Z",
   "desc": {
     "garanti": {
       "tr": "2 yıl garanti",

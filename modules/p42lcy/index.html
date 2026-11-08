@@ -299,6 +299,9 @@
 </style>
 
 <script>
+  function modulexEsc(v) {
+    return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
   //
   async function loadAddresses() {
     if (adrStore()) { return adrMxLoad(adrStore()); }
@@ -330,13 +333,13 @@
           <div class="address-item" data-address-id="${addressId}">
             <div class="address-badge ${address.isDefault ? 'default' : ''}" style="${address.isDefault ? '' : 'display:none'}">{{varsayilan}}</div>
             <div class="address-header">
-              <div class="address-title">${address.title}</div>
-              <div class="address-type">${address.type}</div>
+              <div class="address-title">${modulexEsc(address.title)}</div>
+              <div class="address-type">${modulexEsc(address.type)}</div>
             </div>
             <div class="address-content">
-              <div class="address-name">${address.fullName}</div>
-              <div class="address-text">${address.addressLine}</div>
-              <div class="address-phone">${address.phone}</div>
+              <div class="address-name">${modulexEsc(address.fullName)}</div>
+              <div class="address-text">${modulexEsc(address.addressLine)}</div>
+              <div class="address-phone">${modulexEsc(address.phone)}</div>
             </div>
             <div class="address-actions">
               <button class="address-action" onclick="editAddress('{{addressid}}')">
@@ -461,7 +464,7 @@
       <span class="material-symbols-outlined">
         ${type === 'success' ? 'check_circle' : type === 'error' ? 'error' : 'info'}
       </span>
-      ${message}
+      ${modulexEsc(message)}
     `;
 
     notification.style.cssText = `

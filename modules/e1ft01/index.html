@@ -21,7 +21,7 @@
       <div class="modulex-efoot-col modulex-efoot-newsletter">
         <h3 class="modulex-efoot-col-title">{{newsletter-title}}</h3>
         <p class="modulex-efoot-newsletter-desc">{{newsletter-desc}}</p>
-        <form class="modulex-efoot-newsletter-form" action="#" method="post" onsubmit="return modulexEfootNewsletterSubmit(this);">
+        <form class="modulex-efoot-newsletter-form" action="{{newsletter-url}}" method="post" onsubmit="return modulexEfootNewsletterSubmit(this);">
           <div class="modulex-efoot-newsletter-row">
             <input
               type="email"
@@ -241,6 +241,23 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  .modulex-efoot-newsletter-baglanti {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid currentColor;
+    text-decoration: none;
+  }
+
+  /* css.css a:link{color:#000} tek sınıfı ezer */
+  a.modulex-efoot-newsletter-baglanti:link,
+  a.modulex-efoot-newsletter-baglanti:visited,
+  a.modulex-efoot-newsletter-baglanti:hover,
+  a.modulex-efoot-newsletter-baglanti:active {
+    color: --footer_text--;
   }
 
   .modulex-efoot-newsletter-btn:hover {
@@ -494,10 +511,22 @@ function modulexEfootNewsletterSubmit(form) {
     }
     return false;
   }
-  if (typeof window.mxToast === "function") {
-    window.mxToast("{{newsletter-success}}", false);
-  }
-  form.reset();
+  /* onay yalnız uç kaydı kabul ettikten sonra */
+  fetch(form.action, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: emailEl.value })
+  }).then(function (yanit) {
+    if (!yanit.ok) { throw new Error(String(yanit.status)); }
+    if (typeof window.mxToast === "function") {
+      window.mxToast("{{newsletter-success}}", false);
+    }
+    form.reset();
+  }).catch(function () {
+    if (typeof window.mxToast === "function") {
+      window.mxToast("{{newsletter-error}}", true);
+    }
+  });
   return false;
 }
 </script>

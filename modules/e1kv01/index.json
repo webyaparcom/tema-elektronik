@@ -17,5 +17,10 @@
   "category": "page-category",
   "description": "Açık temalı görselli kategori vitrini: kare görsel kart + altında kategori adı, hover'da hafif yakınlaşma ve alt çizgi vurgusu. Masaüstü 4, tablet 3, mobil 2 sütun; yatay taşma yok. data[] boşsa site kategori listesinden (category.json) otomatik dolar; görsel yoksa logo ikonlu yer tutucu kart çizer.",
   "version": "1.0.0",
-  "icon": "grid_view"
+  "icon": "grid_view",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
 }

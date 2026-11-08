@@ -562,6 +562,9 @@
 </style>
 
 <script>
+  function modulexEsc(v) {
+    return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
   /* mx sepet cekirdegi — localStorage mxCartV1.
      Capraz-modul API adlari bilerek "mx" onekli: motor "modulex" literalini
      bolum+sira suffix'ine cevirdigi icin paylasilan adlar modulex iceremez. */
@@ -794,7 +797,7 @@
         var safeName = String(it.name || "").replace(/</g, "&lt;");
         out += '<div class="modulex-cartw-item">';
         if (it.img) {
-          out += '<img class="modulex-cartw-item-img" src="' + it.img + '" alt="' + safeName + '" loading="lazy" />';
+          out += '<img class="modulex-cartw-item-img" src="' + modulexEsc(it.img) + '" alt="' + safeName + '" loading="lazy" />';
         } else {
           out += '<div class="modulex-cartw-item-noimg"><span class="material-symbols-outlined" aria-hidden="true">image</span></div>';
         }
@@ -1011,7 +1014,7 @@
       }
       if (imgWrap) {
         if (item.img) {
-          imgWrap.innerHTML = '<img src="' + item.img + '" alt="' + String(item.name || "").replace(/"/g, "&quot;") + '" loading="lazy" />';
+          imgWrap.innerHTML = '<img src="' + modulexEsc(item.img) + '" alt="' + modulexEsc(item.name || "") + '" loading="lazy" />';
         } else {
           imgWrap.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true" style="font-size:48px;opacity:0.4">image</span>';
         }

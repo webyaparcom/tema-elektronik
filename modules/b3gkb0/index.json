@@ -38,5 +38,10 @@
   "category": "e-commerce",
   "description": "Müşteri giriş modülü (PLAN-PRO F3). MxStore.uye.giris → POST /api/public/uye/giris (mx_uye çerezi); Giriş | Üye ol sekmeleri, şifre göster/gizle, şifremi unuttum bağlantısı, just-validate doğrulama, sunucu hata mesajları (401/429), zaten girişliyse Hesabım kartı, üyelik kullanılamıyorsa bilgi kutusu. Başarıda ?donus= yoluna ya da hesabim sayfasına yönlendirir.",
   "version": "1.0.0",
-  "icon": "login"
+  "icon": "login",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }

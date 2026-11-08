@@ -2,7 +2,7 @@
   "name": "Menü E-Ticaret",
   "desing": {
     "logo": "logo.png",
-    "color": "#1e3046",
+    "color": "#ffffff",
     "colorhover": "#123763",
     "height": "50px",
     "urlsepet": "sepet",
@@ -31,7 +31,8 @@
     },
     "ariaToggle": {
       "tr": "Menüyü aç/kapat",
-      "en": "Toggle menu", "ar": "تبديل القائمة"
+      "en": "Toggle menu",
+      "ar": "تبديل القائمة"
     },
     "ariaClose": {
       "tr": "Menüyü kapat",
@@ -70,5 +71,10 @@
   },
   "category": "menu",
   "description": "Responsive web sitesi navigasyon menüsü. Logo, sayfa linkleri ve mobil uyumlu hamburger menü içerir.  web sitelerinde 0 projede kullanılır. PLAN-PRO F3: giriş linki data-mx-uye-goster=\"misafir\", Hesabım + Çıkış data-mx-uye-goster=\"giris\" (MxStore.uye), sepet ikonunda data-mx-sepet-sayi rozeti (MxStore.sepet; 0 iken gizli).",
-  "version": "1.1.0"
+  "version": "1.1.0",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }

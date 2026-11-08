@@ -265,6 +265,34 @@ try {
   eaReplaceAll("{{copyright}}", copyright);
   eaReplaceAll("{{footer-aria}}", eaPick(json.desing.footer_aria));
   eaReplaceAll("{{payments-aria}}", eaPick(json.desing.payments_aria));
+  /* Bülten: gerçek uç (desing.newsletter_url) yoksa form basılmaz, sahte «abone olundu» yok (2 Kas 2026). Sıra: uç → firma e-postası → sitenin WhatsApp modülü → gizli. */
+  var eaBultenUc = String(json.desing.newsletter_url || "").trim();
+  var eaBultenBaglanti = "";
+  if (!eaBultenUc) {
+    var eaAyar = webmakerdata.setting || {};
+    var eaEposta = String((eaAyar.firma && eaAyar.firma.eposta) || eaAyar.email || "").trim();
+    var eaKonu = encodeURIComponent(eaPick(json.desing.newsletter_title) || "Bülten");
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(eaEposta) && !/@example\.(com|org|net)$/i.test(eaEposta)) {
+      eaBultenBaglanti = "mailto:" + eaEposta + "?subject=" + eaKonu;
+    } else {
+      var eaWa = ((webmakerdata.modules && webmakerdata.modules.data) || []).filter(function (m) {
+        return m && /^whatsapp/.test(String(m.path || "")) && m.desing && m.desing.number;
+      })[0];
+      var eaNo = eaWa ? String(eaWa.desing.number).replace(/\D/g, "") : "";
+      if (eaNo.length >= 10 && !/^90?5?3?2?0{6,}$/.test(eaNo)) eaBultenBaglanti = "https://wa.me/" + eaNo + "?text=" + eaKonu;
+    }
+  }
+  if (!eaBultenUc) {
+    html = html.replace(/<script>\s*function modulexEfootNewsletterSubmit[\s\S]*?<\/script>/, "");
+    html = html.replace(/<form class="modulex-efoot-newsletter-form"[\s\S]*?<\/form>/, eaBultenBaglanti
+      ? '<a class="modulex-efoot-newsletter-btn modulex-efoot-newsletter-baglanti" href="' + eaBultenBaglanti + '">{{newsletter-btn}}</a>'
+      : "");
+    if (!eaBultenBaglanti) {
+      html = html.replace(/<h3 class="modulex-efoot-col-title">\{\{newsletter-title\}\}<\/h3>\s*<p class="modulex-efoot-newsletter-desc">\{\{newsletter-desc\}\}<\/p>/, "");
+    }
+  }
+  eaReplaceAll("{{newsletter-url}}", eaBultenUc);
+  eaReplaceAll("{{newsletter-error}}", eaPick(json.desing.newsletter_error));
   eaReplaceAll("{{newsletter-title}}", eaPick(json.desing.newsletter_title));
   eaReplaceAll("{{newsletter-desc}}", eaPick(json.desing.newsletter_desc));
   eaReplaceAll("{{newsletter-placeholder}}", eaPick(json.desing.newsletter_placeholder));

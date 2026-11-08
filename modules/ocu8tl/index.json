@@ -479,5 +479,10 @@
       "en": "Qty",
       "ar": "الكمية"
     }
+  },
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
   }
 }

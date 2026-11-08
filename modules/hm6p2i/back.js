@@ -25,7 +25,11 @@ function mxDetMoney(value) {
 }
 
 var mxDetName = mxDetLang(page.name, json.lang);
+/* text yoksa kısa açıklama (2 Kas 2026, antepinici: ürün verisi description taşır, sayfa «açıklama yok» diyordu) */
 var mxDetText = mxDetLang(page.text, json.lang);
+if (!mxDetText && mxDetLang(page.description, json.lang)) {
+  mxDetText = "<p>" + mxDetEsc(mxDetLang(page.description, json.lang)) + "</p>";
+}
 var mxDetPrice = Number(page.price) || 0;
 var mxDetOldPrice = Number(page.oldPrice) || 0;
 var mxDetHasOld = mxDetOldPrice > mxDetPrice && mxDetPrice > 0;
@@ -47,6 +51,15 @@ function mxDetIsPlaceholder(file) {
   );
 }
 
+/* Gorsel yolu (eticaret-urun-vitrin vitrinImage ile ayni): mutlak aynen; "img/x.webp" -> "/img/x.webp"; "x.webp" -> "/page/<id>/x.webp" */
+function mxDetImgYol(pg, file) {
+  var f = String(file).replace(/^\s+|\s+$/g, "");
+  if (/^(https?:)?\/\//i.test(f) || f.charAt(0) === "/") {
+    return f;
+  }
+  return f.indexOf("/") > -1 ? "/" + f : "/page/" + pg.id + "/" + f;
+}
+
 /* Galeri kaynak sirasi: page.imgs (kok) > page.img > page.slider (/slider/) — Paket 372 */
 function mxDetCollectGalleryItems(pg) {
   var items = [];
@@ -64,7 +77,7 @@ function mxDetCollectGalleryItems(pg) {
       return;
     }
     seenRoot[f] = true;
-    items.push({ src: "/page/" + pg.id + "/" + f, file: f });
+    items.push({ src: mxDetImgYol(pg, f), file: f });
   }
 
   function mxDetPushSliderEntry(gItem) {
@@ -119,7 +132,7 @@ if (page.image) {
 } else if (mxDetGalleryItems.length > 0) {
   mxDetImg = mxDetGalleryItems[0].src;
 } else if (page.img) {
-  mxDetImg = "/page/" + page.id + "/" + page.img;
+  mxDetImg = mxDetImgYol(page, page.img);
 }
 
 /* Galeri thumb'lari */
@@ -206,7 +219,7 @@ if (webmakerdata.products && Array.isArray(webmakerdata.products.data)) {
     }
     var rpName = mxDetLang(rp.name, json.lang);
     var rpUrl = rp.url || wxLangInternalHref(rp.pathnext || rp.path || "");
-    var rpImg = rp.image || "";
+    var rpImg = rp.image || (mxDetIsPlaceholder(rp.img) ? "" : mxDetImgYol(rp, rp.img));
     mxDetRelated +=
       '<a class="modulexRelatedCard" href="' + rpUrl + '">' +
       (rpImg ? '<img src="' + rpImg + '" alt="' + rpName + '" loading="lazy" />' : "") +

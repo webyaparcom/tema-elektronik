@@ -54,5 +54,10 @@
   "category": "e-commerce",
   "description": "Sipariş geçmişi (PLAN-PRO F3). Üyede MxStore.siparis.listem → GET /api/public/siparis?sayfa= (sayfalama) ve açılır detay MxStore.siparis.detay → GET /api/public/siparis/:no: kalemler, ara toplam/kargo/toplam, adres, ödeme yöntemi, mx-stepper durum ilerlemesi (beklemede→onaylandı→hazırlanıyor→kargoda→teslim; iptal uyarısı). Misafirde / üyelik kullanılamıyorsa mxOrdersV1 yerel geçmişi + sipariş no + e-posta sorgusu (?email=).",
   "version": "1.0.0",
-  "icon": "receipt_long"
+  "icon": "receipt_long",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
 }
