@@ -17,14 +17,16 @@
   },
   "path": "tasinabilir-hoparlor",
   "icon": "inventory_2",
-  "category": "rud8tpzjuq",
+  "category": "ses",
   "status": "play",
   "desing": {
     "header": [],
-    "body": [],
+    "body": [
+      "w31e5l"
+    ],
     "footer": []
   },
-  "index": 4,
+  "index": 7,
   "url": "",
   "text": {
     "tr": "<p>Suya dayanıklı gövde, 360° ses, USB-C şarj.</p>",
@@ -37,7 +39,7 @@
     "ar": "مكبر صوت محمول"
   },
   "date": "2026-10-30T22:21:59.772Z",
-  "update": "2026-10-30T22:29:44.587Z",
+  "update": "2026-11-05T23:44:15.214Z",
   "desc": {
     "garanti": {
       "tr": "2 yıl garanti",

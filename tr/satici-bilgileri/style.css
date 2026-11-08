@@ -72,6 +72,35 @@
     font-size: 18px;
     line-height: 1;
   }
+  
+  .h0000-db .h0000-db-giris {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 32px;
+    padding: 4px 12px;
+    margin-inline-start: 6px;
+    border: 1px solid color-mix(in srgb, var(--db-fg) 60%, transparent);
+    border-radius: 999px;
+    color: var(--db-fg) !important;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .h0000-db .h0000-db-giris:hover {
+    background-color: color-mix(in srgb, var(--db-fg) 15%, transparent);
+  }
+  .h0000-db .h0000-db-giris:focus-visible {
+    outline: 2px solid var(--db-fg);
+    outline-offset: 2px;
+  }
+  .h0000-db-giris-ikon {
+    font-size: 18px;
+    line-height: 1;
+  }
   @keyframes mxDbGiris {
     from { opacity: 0; transform: translateY(-100%); }
     to { opacity: 1; transform: translateY(0); }
@@ -93,12 +122,28 @@
     .h0000-db .h0000-db-cta {
       max-width: 38%;
     }
+    .h0000-db .h0000-db-giris {
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0;
+      margin-inline-start: 0;
+    }
+    .h0000-db-giris-yazi {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
   }
   @media (prefers-reduced-motion: reduce) {
     .h0000-db {
       animation: none;
     }
-    .h0000-db .h0000-db-cta {
+    .h0000-db .h0000-db-cta,
+    .h0000-db .h0000-db-giris {
       transition: none;
     }
   }
@@ -177,7 +222,7 @@
 
   .h0001-search-box button {
     background: var(--mxe-cd9624, #cd9624);
-    color: white;
+    color: var(--mxe-on, #1b1b1b); 
     border: none;
     border-radius: 0px 25px 25px 0px;
     padding: 10px 20px;
@@ -203,7 +248,7 @@
 
   .h0001-support-info span {
     font-size: 40px;
-    color: var(--mxe-cd9624, #cd9624);
+    color: color-mix(in srgb, var(--mxe-cd9624, #cd9624) 55%, #1b1b1b); 
   }
 
   .h0001-support-info small {
@@ -339,7 +384,7 @@
   }
 
   .h0001-main-menu a {
-    color: white;
+    color: var(--mxe-on, #1b1b1b); 
     text-decoration: none;
     font-weight: 500;
     font-size: 15px;
@@ -522,6 +567,21 @@
     [class*="h0001"] {
       animation: none !important;
       transition: none !important;
+    }
+  }
+
+  
+  .h0001-header-top .wm-langbar {
+    --wm-lang-color: #1b1b1b;
+  }
+
+  
+  @media (prefers-color-scheme: dark) {
+    .h0001-logo:not([src*="acik"]) {
+      background: #ffffff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      box-sizing: content-box;
     }
   }
 
@@ -714,6 +774,23 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  .f0000-efoot-newsletter-baglanti {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid currentColor;
+    text-decoration: none;
+  }
+
+  
+  a.f0000-efoot-newsletter-baglanti:link,
+  a.f0000-efoot-newsletter-baglanti:visited,
+  a.f0000-efoot-newsletter-baglanti:hover,
+  a.f0000-efoot-newsletter-baglanti:active {
+    color: var(--mx-site-bg, #ffffff);
   }
 
   .f0000-efoot-newsletter-btn:hover {

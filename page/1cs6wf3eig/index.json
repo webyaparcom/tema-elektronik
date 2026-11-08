@@ -17,14 +17,16 @@
   },
   "path": "akilli-saat",
   "icon": "inventory_2",
-  "category": "9tcwrrpzgq",
+  "category": "giyilebilir",
   "status": "play",
   "desing": {
     "header": [],
-    "body": [],
+    "body": [
+      "v4rg9g"
+    ],
     "footer": []
   },
-  "index": 3,
+  "index": 6,
   "url": "",
   "text": {
     "tr": "<p>AMOLED ekran, adım ve uyku takibi, 5 ATM suya dayanıklılık.</p>",
@@ -37,7 +39,7 @@
     "ar": "ساعة ذكية"
   },
   "date": "2026-10-30T22:21:59.778Z",
-  "update": "2026-10-30T22:29:44.605Z",
+  "update": "2026-11-05T23:44:15.219Z",
   "desc": {
     "garanti": {
       "tr": "2 yıl garanti",
