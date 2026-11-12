@@ -559,6 +559,34 @@
       transition: none !important;
     }
   }
+
+  /* Mobil uygulama kuralı (12 Kas 2026): sepet çekmecesi mobilde SOLDAN açılır (masaüstü sağda kalır); yüzen düğme/bildirim sabit alt çubuğun
+     (--mx-altbar-h, footer alt bar) üstünde durur */
+  @media (max-width: 768px) {
+    .modulex-cartw-drawer {
+      right: auto;
+      inset-inline-start: 0;
+      transform: translateX(-105%);
+      box-shadow: 8px 0 30px rgba(0, 0, 0, 0.2);
+    }
+
+    [dir="rtl"] .modulex-cartw-drawer {
+      transform: translateX(105%);
+    }
+
+    .modulex-cartw.modulex-cartw-open .modulex-cartw-drawer,
+    [dir="rtl"] .modulex-cartw.modulex-cartw-open .modulex-cartw-drawer {
+      transform: translateX(0);
+    }
+
+    .modulex-cartw-fab {
+      margin-bottom: calc(16px + var(--mx-altbar-h, 0px) + env(safe-area-inset-bottom, 0px));
+    }
+
+    .modulex-cartw-toast {
+      bottom: calc(30px + var(--mx-altbar-h, 0px));
+    }
+  }
 </style>
 
 <script>

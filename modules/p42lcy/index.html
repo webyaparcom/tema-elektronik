@@ -10,7 +10,7 @@
           <span class="material-symbols-outlined">add</span>
           {{addButton}}
         </button>
-        <button class="demo-address-btn" onclick="addDemoAddress()" style="margin-left: 10px; display: none;">
+        <button class="demo-address-btn" data-act="demo" style="margin-left: 10px; display: none;">
           <span class="material-symbols-outlined">science</span>
           {{demoAdresEkle}}
         </button>
@@ -299,58 +299,170 @@
 </style>
 
 <script>
-  function modulexEsc(v) {
-    return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
-  }
-  //
-  async function loadAddresses() {
-    if (adrStore()) { return adrMxLoad(adrStore()); }
+(() => {
+/* eticaret-adresler — PLAN-PRO F3 MxStore katmani: GET|POST /api/public/uye/adres, PATCH|DELETE /api/public/uye/adres/:id.
+   Alanlar: baslik, ad_soyad, telefon, il, ilce, adres, posta_kodu, varsayilan. */
+  const esc = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  const root = document.getElementById("addressesList")?.closest(".modulex") ?? document.body;
+
+  let adrMxBekle = true;
+  let adrMxListe = [];
+
+  const adrStore = () => (window.MxStore && window.MxStore.__mxStore === true ? window.MxStore : null);
+  const adrForm = () => document.querySelector("[data-mx-adr-form]");
+
+  const showNotification = (message, type = "info") => {
+    document.querySelector(".notification")?.remove();
+
+    const notification = document.createElement("div");
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+      <span class="material-symbols-outlined">
+        ${type === "success" ? "check_circle" : type === "error" ? "error" : "info"}
+      </span>
+      ${esc(message)}
+    `;
+
+    notification.style.cssText = `
+      position: fixed; top: 20px; right: 20px;
+      background: ${type === "success" ? "#22c55e" : type === "error" ? "#ef4444" : "#3b82f6"};
+      color: white; padding: 12px 16px; border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;
+      display: flex; align-items: center; gap: 8px; font-weight: 500;
+      animation: slideIn 0.3s ease-out;
+    `;
+
+    if (!document.querySelector("#notification-styles")) {
+      const style = document.createElement("style");
+      style.id = "notification-styles";
+      style.textContent = `{{keyframesSlideinFromTransform}}`;
+      document.head.appendChild(style);
+    }
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 3000);
+  };
+
+  const adrFormAc = (a) => {
+    const f = adrForm();
+    if (!f) return;
+    const v = a || {};
+    for (const alan of ["id", "baslik", "ad_soyad", "telefon", "il", "ilce", "adres", "posta_kodu"]) {
+      if (f.elements[alan]) f.elements[alan].value = v[alan] || "";
+    }
+    f.elements.varsayilan.checked = !!v.varsayilan;
+    f.hidden = false;
+    f.elements.baslik?.focus?.();
+  };
+
+  const adrFormKapat = () => {
+    const f = adrForm();
+    if (f) {
+      f.hidden = true;
+      f.reset?.();
+    }
+  };
+
+  const editAddress = (id) => {
+    const a = adrMxListe.find((x) => String(x.id) === String(id));
+    if (a) adrFormAc(a);
+  };
+
+  const adrMxRender = (S, list) => {
+    const el = document.getElementById("addressesList");
+    if (!el) return;
+    if (!list.length) {
+      el.innerHTML = '<div class="mx-empty"><span class="material-symbols-outlined mx-empty__icon" aria-hidden="true">location_off</span><p class="mx-empty__text">{{henuzAdresinizBulunmuyor}}</p></div>';
+      return;
+    }
+    const e = S.esc;
+    let out = "";
+    for (const a of list) {
+      const id = e(a.id);
+      const yer = [a.ilce, a.il, a.posta_kodu].filter((x) => !!x).join(" / ");
+      out += `<div class="address-item" data-address-id="${id}">`;
+      out += `<div class="address-badge default" style="${a.varsayilan ? "" : "display:none"}">{{varsayilan}}</div>`;
+      out += `<div class="address-header"><div class="address-title">${e(a.baslik || "{{addressType}}")}</div></div>`;
+      out += `<div class="address-content"><div class="address-name">${e(a.ad_soyad)}</div>`;
+      out += `<div class="address-text">${e(a.adres)}${yer ? `<br>${e(yer)}` : ""}</div>`;
+      out += `<div class="address-phone">${e(a.telefon)}</div></div>`;
+      out += '<div class="address-actions">';
+      out += `<button type="button" class="address-action" data-act="edit" data-id="${id}"><span class="material-symbols-outlined" aria-hidden="true">edit</span>{{editButton}}</button>`;
+      out += `<button type="button" class="address-action delete" data-act="delete" data-id="${id}"><span class="material-symbols-outlined" aria-hidden="true">delete</span>{{deleteButton}}</button>`;
+      if (!a.varsayilan) {
+        out += `<button type="button" class="address-action set-default" data-act="varsayilan" data-id="${id}"><span class="material-symbols-outlined" aria-hidden="true">star</span>{{varsayilanYap}}</button>`;
+      }
+      out += "</div></div>";
+    }
+    el.innerHTML = out;
+  };
+
+  const adrMxLoad = (S) => {
+    const el = document.getElementById("addressesList");
+    if (el) el.innerHTML = '<div class="mx-skeleton mx-skeleton--text"></div><div class="mx-skeleton mx-skeleton--text"></div>';
+    return S.uye.oturumGerekli("/{{lang}}/{{girisUrl}}/").then((u) => {
+      if (!u) {
+        if (el) el.innerHTML = `<div class="no-addresses">${S.uye.durum() === "kullanilamiyor" ? "{{uyeKullanilamiyor}}" : "{{adresleriniziGormekIcinGiris}}"}</div>`;
+        return;
+      }
+      return S.uye.adresler().then((list) => {
+        adrMxListe = list;
+        adrMxRender(S, list);
+      }, (err) => {
+        if (el) el.innerHTML = `<div class="mx-alert mx-alert--danger">${S.esc(S.hataMetni(err, "{{adreslerYuklenirkenBirHata}}"))}</div>`;
+      });
+    });
+  };
+
+  const loadAddresses = async () => {
+    if (adrStore()) return adrMxLoad(adrStore());
     try {
-      //
       if (!user.isLoggedIn || !user.id) {
-        var addressesList = document.getElementById('addressesList');
-        addressesList.innerHTML = '<div class="no-addresses">{{adresleriniziGormekIcinGiris}}</div>';
+        document.getElementById("addressesList").innerHTML = '<div class="no-addresses">{{adresleriniziGormekIcinGiris}}</div>';
         return;
       }
 
-      //
-      var addressesSnapshot = await dataListWeb(`users/${user.id}/addresses`);
-      var addressesList = document.getElementById('addressesList');
+      const addressesSnapshot = await dataListWeb(`users/${user.id}/addresses`);
+      const addressesList = document.getElementById("addressesList");
 
-      addressesList.innerHTML = '';
+      addressesList.innerHTML = "";
 
       if (addressesSnapshot.empty) {
         addressesList.innerHTML = '<div style="text-align: center; padding: 50px;">{{henuzAdresinizBulunmuyor}}</div>';
         return;
       }
 
-      //
-      addressesSnapshot.forEach(function(doc) {
-        var address = doc.data();
-        var addressId = doc.id;
+      addressesSnapshot.forEach((doc) => {
+        const address = doc.data();
+        const addressId = doc.id;
 
-        var addressHTML = `
+        const addressHTML = `
           <div class="address-item" data-address-id="${addressId}">
-            <div class="address-badge ${address.isDefault ? 'default' : ''}" style="${address.isDefault ? '' : 'display:none'}">{{varsayilan}}</div>
+            <div class="address-badge ${address.isDefault ? "default" : ""}" style="${address.isDefault ? "" : "display:none"}">{{varsayilan}}</div>
             <div class="address-header">
-              <div class="address-title">${modulexEsc(address.title)}</div>
-              <div class="address-type">${modulexEsc(address.type)}</div>
+              <div class="address-title">${esc(address.title)}</div>
+              <div class="address-type">${esc(address.type)}</div>
             </div>
             <div class="address-content">
-              <div class="address-name">${modulexEsc(address.fullName)}</div>
-              <div class="address-text">${modulexEsc(address.addressLine)}</div>
-              <div class="address-phone">${modulexEsc(address.phone)}</div>
+              <div class="address-name">${esc(address.fullName)}</div>
+              <div class="address-text">${esc(address.addressLine)}</div>
+              <div class="address-phone">${esc(address.phone)}</div>
             </div>
             <div class="address-actions">
-              <button class="address-action" onclick="editAddress('{{addressid}}')">
+              <button class="address-action" data-act="edit" data-id="{{addressid}}">
                 <span class="material-symbols-outlined">edit</span>
                 {{editButton}}
               </button>
-              <button class="{{addressactionDelete}}" onclick="deleteAddress('{{addressid2}}')">
+              <button class="{{addressactionDelete}}" data-act="delete" data-id="{{addressid2}}">
                 <span class="material-symbols-outlined">delete</span>
                 {{deleteButton}}
               </button>
-              <button class="{{addressactionSetdefault}}" onclick="setDefaultAddress('{{addressid3}}')" ${address.isDefault ? '{{styledisplaynone}}' : ''}>
+              <button class="{{addressactionSetdefault}}" data-act="varsayilan" data-id="{{addressid3}}" ${address.isDefault ? '{{styledisplaynone}}' : ''}>
                 <span class="material-symbols-outlined">star</span>
                 {{varsayilanYap}}
               </button>
@@ -360,78 +472,72 @@
 
         addressesList.innerHTML += addressHTML;
       });
-
     } catch (error) {
-      console.error('{{adreslerYuklenirkenHata}}', error);
-      document.getElementById('addressesList').innerHTML =
+      console.error("{{adreslerYuklenirkenHata}}", error);
+      document.getElementById("addressesList").innerHTML =
         '<div style="text-align: center; padding: 50px; color: #dc3545;">{{adreslerYuklenirkenBirHata}}</div>';
     }
-  }
+  };
 
-  // Adres silme
-  async function deleteAddress(addressId) {
-    if (!confirm('{{buAdresiSilmekIstediginizden}}')) return;
-    if (adrStore()) {
-      return adrStore().uye.adresSil(addressId).then(function () {
-        showNotification('{{adresBasariylaSilindi}}', 'success');
+  const deleteAddress = async (addressId) => {
+    if (!confirm("{{buAdresiSilmekIstediginizden}}")) return;
+    const S = adrStore();
+    if (S) {
+      return S.uye.adresSil(addressId).then(() => {
+        showNotification("{{adresBasariylaSilindi}}", "success");
         loadAddresses();
-      }, function (err) {
-        showNotification(adrStore().hataMetni(err, '{{adresSilinirkenBirHata}}'), 'error');
+      }, (err) => {
+        showNotification(S.hataMetni(err, "{{adresSilinirkenBirHata}}"), "error");
       });
     }
 
     try {
       await dataDeleteWeb(`users/${user.id}/addresses/${addressId}`);
-      showNotification('{{adresBasariylaSilindi}}', 'success');
-      loadAddresses(); // Listeyi yenile
+      showNotification("{{adresBasariylaSilindi}}", "success");
+      loadAddresses();
     } catch (error) {
-      console.error('{{adresSilinirkenHata}}', error);
-      showNotification('{{adresSilinirkenBirHata}}', 'error');
+      console.error("{{adresSilinirkenHata}}", error);
+      showNotification("{{adresSilinirkenBirHata}}", "error");
     }
-  }
+  };
 
-  //
-  async function setDefaultAddress(addressId) {
-    if (adrStore()) {
-      return adrStore().uye.adresGuncelle(addressId, { varsayilan: true }).then(function () {
-        showNotification('{{varsayilanAdresGuncellendi}}', 'success');
+  const setDefaultAddress = async (addressId) => {
+    const S = adrStore();
+    if (S) {
+      return S.uye.adresGuncelle(addressId, { varsayilan: true }).then(() => {
+        showNotification("{{varsayilanAdresGuncellendi}}", "success");
         loadAddresses();
-      }, function (err) {
-        showNotification(adrStore().hataMetni(err, '{{islemSirasindaBirHata}}'), 'error');
+      }, (err) => {
+        showNotification(S.hataMetni(err, "{{islemSirasindaBirHata}}"), "error");
       });
     }
     try {
-      //
-      var addressesSnapshot = await dataListWeb(`users/${user.id}/addresses`);
-      var updatePromises = [];
+      const addressesSnapshot = await dataListWeb(`users/${user.id}/addresses`);
+      const updatePromises = [];
 
-      addressesSnapshot.forEach(function(doc) {
-        updatePromises.push(
-          dataUpdateWeb(`users/${user.id}/addresses/${doc.id}`, { isDefault: false })
-        );
+      addressesSnapshot.forEach((doc) => {
+        updatePromises.push(dataUpdateWeb(`users/${user.id}/addresses/${doc.id}`, { isDefault: false }));
       });
 
       await Promise.all(updatePromises);
 
-      //
       await dataUpdateWeb(`users/${user.id}/addresses/${addressId}`, { isDefault: true });
 
-      showNotification('{{varsayilanAdresGuncellendi}}', 'success');
-      loadAddresses(); // Listeyi yenile
+      showNotification("{{varsayilanAdresGuncellendi}}", "success");
+      loadAddresses();
     } catch (error) {
-      console.error('{{varsayilanAdresGuncellenirkenHata}}', error);
-      showNotification('{{islemSirasindaBirHata}}', 'error');
+      console.error("{{varsayilanAdresGuncellenirkenHata}}", error);
+      showNotification("{{islemSirasindaBirHata}}", "error");
     }
-  }
+  };
 
-  // Demo adres ekleme
-  async function addDemoAddress() {
+  const addDemoAddress = async () => {
     if (!user.isLoggedIn || !user.id) {
-      showNotification('{{demoAdresEklemekIcin}}', 'error');
+      showNotification("{{demoAdresEklemekIcin}}", "error");
       return;
     }
 
-    var demoAddress = {
+    const demoAddress = {
       title: "{{demoAdres}}",
       type: "Ev",
       fullName: "{{demoKullanici}}",
@@ -443,185 +549,16 @@
 
     try {
       await dataAddWeb(`users/${user.id}/addresses`, demoAddress);
-      showNotification('{{demoAdresEklendi}}', 'success');
+      showNotification("{{demoAdresEklendi}}", "success");
       loadAddresses();
     } catch (error) {
-      console.error('{{demoAdresEklenirkenHata}}', error);
-      showNotification('{{adresEklenirkenBirHata}}', 'error');
-    }
-  }
-
-  //
-  function showNotification(message, type = 'info') {
-    var existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-      existingNotification.remove();
-    }
-
-    var notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-      <span class="material-symbols-outlined">
-        ${type === 'success' ? 'check_circle' : type === 'error' ? 'error' : 'info'}
-      </span>
-      ${modulexEsc(message)}
-    `;
-
-    notification.style.cssText = `
-      position: fixed; top: 20px; right: 20px;
-      background: ${type === 'success' ? '#22c55e' : type === 'error' ? '#ef4444' : '#3b82f6'};
-      color: white; padding: 12px 16px; border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;
-      display: flex; align-items: center; gap: 8px; font-weight: 500;
-      animation: slideIn 0.3s ease-out;
-    `;
-
-    if (!document.querySelector('#notification-styles')) {
-      var style = document.createElement('style');
-      style.id = 'notification-styles';
-      style.textContent = `{{keyframesSlideinFromTransform}}`;
-      document.head.appendChild(style);
-    }
-
-    document.body.appendChild(notification);
-
-    setTimeout(function() {
-      if (notification.parentNode) {
-        notification.remove();
-      }
-    }, 3000);
-  }
-
-  //
-  authStateListenerWeb(function(authUser) {
-    /* PLAN-PRO F3: MxStore varsa liste oradan (mxStoreQ) */
-    if (window.MxStore || adrMxBekle) { return; }
-    if (authUser) {
-      //
-      setTimeout(function() {
-        loadAddresses();
-
-        //
-        if (user && user.id === 's8RDlo2GsQblcPLWTsMHrudF0sm2') {
-          document.querySelectorAll('.demo-address-btn').forEach(function(btn) {
-            btn.style.display = 'flex';
-          });
-        }
-      }, 500); // Kullanıcı objesi güncellenmesi için biraz bekle
-    } else {
-      //
-      document.getElementById('addressesList').innerHTML =
-        '<div class="no-addresses">{{adresleriniziGormekIcinGiris2}}</div>';
-    }
-  });
-
-  // Yeni adres ekleme butonu
-  document.querySelector('.add-address-btn').addEventListener('click', function() {
-    if (adrStore()) { adrFormAc(null); return; }
-    addDemoAddress(); // Demo için, gerçek uygulamada modal açılır
-  });
-</script>
-<script>
-  /* eticaret-adresler — PLAN-PRO F3 MxStore katmani: GET|POST /api/public/uye/adres, PATCH|DELETE /api/public/uye/adres/:id.
-     Alanlar: baslik, ad_soyad, telefon, il, ilce, adres, posta_kodu, varsayilan. */
-  var adrMxBekle = true;
-  var adrMxListe = [];
-
-  function adrStore() {
-    return window.MxStore && window.MxStore.__mxStore === true ? window.MxStore : null;
-  }
-
-  function adrForm() {
-    return document.querySelector('[data-mx-adr-form]');
-  }
-
-  function adrFormAc(a) {
-    var f = adrForm();
-    if (!f) { return; }
-    var v = a || {};
-    var alanlar = ['id', 'baslik', 'ad_soyad', 'telefon', 'il', 'ilce', 'adres', 'posta_kodu'];
-    for (var i = 0; i < alanlar.length; i++) {
-      if (f.elements[alanlar[i]]) { f.elements[alanlar[i]].value = v[alanlar[i]] || ''; }
-    }
-    f.elements.varsayilan.checked = !!v.varsayilan;
-    f.hidden = false;
-    if (f.elements.baslik && f.elements.baslik.focus) { f.elements.baslik.focus(); }
-  }
-
-  function adrFormKapat() {
-    var f = adrForm();
-    if (f) { f.hidden = true; if (f.reset) { f.reset(); } }
-  }
-
-  window.editAddress = function (id) {
-    for (var i = 0; i < adrMxListe.length; i++) {
-      if (String(adrMxListe[i].id) === String(id)) { adrFormAc(adrMxListe[i]); return; }
+      console.error("{{demoAdresEklenirkenHata}}", error);
+      showNotification("{{adresEklenirkenBirHata}}", "error");
     }
   };
 
-  /* O3: olay yetkilendirmesi — adres id'si onclick metnine gomulmez (data-adr-id) */
-  var ADR_EYLEM = { edit: 'editAddress', 'delete': 'deleteAddress', varsayilan: 'setDefaultAddress' };
-  function adrBagla(el) {
-    if (el.getAttribute('data-adr-bagli')) { return; }
-    el.setAttribute('data-adr-bagli', '1');
-    el.addEventListener('click', function (ev) {
-      var b = ev.target && ev.target.closest ? ev.target.closest('[data-adr-act]') : null;
-      if (!b || !el.contains(b)) { return; }
-      var fn = window[ADR_EYLEM[b.getAttribute('data-adr-act')]];
-      if (typeof fn === 'function') { fn(b.getAttribute('data-adr-id')); }
-    });
-  }
-
-  function adrMxRender(S, list) {
-    var el = document.getElementById('addressesList');
-    if (!el) { return; }
-    if (!list.length) {
-      el.innerHTML = '<div class="mx-empty"><span class="material-symbols-outlined mx-empty__icon" aria-hidden="true">location_off</span><p class="mx-empty__text">{{henuzAdresinizBulunmuyor}}</p></div>';
-      return;
-    }
-    var e = S.esc;
-    var out = '';
-    for (var i = 0; i < list.length; i++) {
-      var a = list[i];
-      var id = e(a.id);
-      var yer = [a.ilce, a.il, a.posta_kodu].filter(function (x) { return !!x; }).join(' / ');
-      out += '<div class="address-item" data-address-id="' + id + '">';
-      out += '<div class="address-badge default" style="' + (a.varsayilan ? '' : 'display:none') + '">{{varsayilan}}</div>';
-      out += '<div class="address-header"><div class="address-title">' + e(a.baslik || '{{addressType}}') + '</div></div>';
-      out += '<div class="address-content"><div class="address-name">' + e(a.ad_soyad) + '</div>';
-      out += '<div class="address-text">' + e(a.adres) + (yer ? '<br>' + e(yer) : '') + '</div>';
-      out += '<div class="address-phone">' + e(a.telefon) + '</div></div>';
-      out += '<div class="address-actions">';
-      out += '<button type="button" class="address-action" data-adr-act="edit" data-adr-id="' + id + '"><span class="material-symbols-outlined" aria-hidden="true">edit</span>{{editButton}}</button>';
-      out += '<button type="button" class="address-action delete" data-adr-act="delete" data-adr-id="' + id + '"><span class="material-symbols-outlined" aria-hidden="true">delete</span>{{deleteButton}}</button>';
-      if (!a.varsayilan) {
-        out += '<button type="button" class="address-action set-default" data-adr-act="varsayilan" data-adr-id="' + id + '"><span class="material-symbols-outlined" aria-hidden="true">star</span>{{varsayilanYap}}</button>';
-      }
-      out += '</div></div>';
-    }
-    el.innerHTML = out;
-    adrBagla(el);
-  }
-
-  function adrMxLoad(S) {
-    var el = document.getElementById('addressesList');
-    if (el) { el.innerHTML = '<div class="mx-skeleton mx-skeleton--text"></div><div class="mx-skeleton mx-skeleton--text"></div>'; }
-    return S.uye.oturumGerekli('/{{lang}}/{{girisUrl}}/').then(function (u) {
-      if (!u) {
-        if (el) { el.innerHTML = '<div class="no-addresses">' + (S.uye.durum() === 'kullanilamiyor' ? '{{uyeKullanilamiyor}}' : '{{adresleriniziGormekIcinGiris}}') + '</div>'; }
-        return;
-      }
-      return S.uye.adresler().then(function (list) {
-        adrMxListe = list;
-        adrMxRender(S, list);
-      }, function (err) {
-        if (el) { el.innerHTML = '<div class="mx-alert mx-alert--danger">' + S.esc(S.hataMetni(err, '{{adreslerYuklenirkenBirHata}}')) + '</div>'; }
-      });
-    });
-  }
-
-  function adrMxSubmit(S, f) {
-    var veri = {
+  const adrMxSubmit = (S, f) => {
+    const veri = {
       baslik: f.elements.baslik.value.trim(),
       ad_soyad: f.elements.ad_soyad.value.trim(),
       telefon: f.elements.telefon.value.trim(),
@@ -632,45 +569,92 @@
       varsayilan: !!f.elements.varsayilan.checked
     };
     if (!veri.adres) {
-      showNotification('{{adresZorunlu}}', 'error');
+      showNotification("{{adresZorunlu}}", "error");
       return;
     }
-    var id = f.elements.id.value;
-    var p = id ? S.uye.adresGuncelle(id, veri) : S.uye.adresEkle(veri);
-    p.then(function () {
-      showNotification('{{adresKaydedildi}}', 'success');
+    const id = f.elements.id.value;
+    const p = id ? S.uye.adresGuncelle(id, veri) : S.uye.adresEkle(veri);
+    p.then(() => {
+      showNotification("{{adresKaydedildi}}", "success");
       adrFormKapat();
       adrMxLoad(S);
-    }, function (err) {
-      showNotification(S.hataMetni(err, '{{adresEklenirkenBirHata}}'), 'error');
+    }, (err) => {
+      showNotification(S.hataMetni(err, "{{adresEklenirkenBirHata}}"), "error");
     });
-  }
+  };
 
-  (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
-    var f = adrForm();
+  /* O3: olay yetkilendirmesi — adres id'si olay metnine gomulmez (data-id); tek dinleyici + delegation */
+  const adrBagla = (el) => {
+    if (el.getAttribute("data-mx-bagli")) return;
+    el.setAttribute("data-mx-bagli", "1");
+    el.addEventListener("click", (ev) => {
+      const t = ev.target?.closest?.("[data-act]");
+      if (!t || !el.contains(t)) return;
+      switch (t.dataset.act) {
+        case "demo": addDemoAddress(); break;
+        case "edit": editAddress(t.dataset.id); break;
+        case "delete": deleteAddress(t.dataset.id); break;
+        case "varsayilan": setDefaultAddress(t.dataset.id); break;
+      }
+    });
+  };
+  adrBagla(root);
+
+  authStateListenerWeb((authUser) => {
+    /* PLAN-PRO F3: MxStore varsa liste oradan (mxStoreQ) */
+    if (window.MxStore || adrMxBekle) return;
+    if (authUser) {
+      // Kullanici objesi guncellenmesi icin biraz bekle
+      setTimeout(() => {
+        loadAddresses();
+
+        if (user && user.id === "s8RDlo2GsQblcPLWTsMHrudF0sm2") {
+          for (const btn of document.querySelectorAll(".demo-address-btn")) {
+            btn.style.display = "flex";
+          }
+        }
+      }, 500);
+    } else {
+      document.getElementById("addressesList").innerHTML =
+        '<div class="no-addresses">{{adresleriniziGormekIcinGiris2}}</div>';
+    }
+  });
+
+  // Yeni adres ekleme butonu
+  document.querySelector(".add-address-btn").addEventListener("click", () => {
+    if (adrStore()) {
+      adrFormAc(null);
+      return;
+    }
+    addDemoAddress(); // Demo icin, gercek uygulamada modal acilir
+  });
+
+  (window.mxStoreQ = window.mxStoreQ || []).push((S) => {
+    const f = adrForm();
     if (f) {
-      f.addEventListener('submit', function (ev) {
+      f.addEventListener("submit", (ev) => {
         ev.preventDefault();
         adrMxSubmit(S, f);
       });
-      var iptal = f.querySelector('[data-mx-adr-iptal]');
-      if (iptal) { iptal.addEventListener('click', adrFormKapat); }
+      f.querySelector("[data-mx-adr-iptal]")?.addEventListener("click", adrFormKapat);
     }
     adrMxLoad(S);
   });
-  window.addEventListener('load', function () {
+
+  window.addEventListener("load", () => {
     if (!window.MxStore) {
-      var s = document.createElement('script');
-      s.src = '/src/mx-store.js';
-      s.onerror = function () { adrMxBekle = false; };
+      const s = document.createElement("script");
+      s.src = "/src/mx-store.js";
+      s.addEventListener("error", () => { adrMxBekle = false; });
       document.head.appendChild(s);
-      setTimeout(function () {
+      setTimeout(() => {
         if (!window.MxStore) {
           adrMxBekle = false;
-          var el = document.getElementById('addressesList');
-          if (el) { el.innerHTML = '<div class="no-addresses">{{adresleriniziGormekIcinGiris2}}</div>'; }
+          const el = document.getElementById("addressesList");
+          if (el) el.innerHTML = '<div class="no-addresses">{{adresleriniziGormekIcinGiris2}}</div>';
         }
       }, 3000);
     }
   });
+})();
 </script>

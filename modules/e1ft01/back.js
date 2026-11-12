@@ -308,3 +308,72 @@ try {
 } catch (error) {
   console.error("eticaret-alt back.js:", error);
 }
+
+/* --- mobil uygulama kuralı (12 Kas 2026): mobilde sabit ALT BAR Ara · E-posta · Dil + dil için alttan açılan sayfa (footer-9 kalıbı).
+   Veri yoksa o düğme yok (uydurma kanal yok): telefon/e-posta desing.phone/email → setting.phone/email; dil düğmesi yalnız >1 dil + showlang açıkken.
+   Hiç düğme yoksa bar basılmaz, sayfa altına boşluk ayrılmaz. Masaüstünde (>768px) görünmez; CF Worker (strict) uyumlu, yalnız var/function. */
+var eabDict = {
+  tr: { ara: "Ara", mail: "E-posta", dil: "Dil", hizli: "Hızlı erişim", kapat: "Kapat" },
+  en: { ara: "Call", mail: "Email", dil: "Language", hizli: "Quick access", kapat: "Close" },
+  de: { ara: "Anrufen", mail: "E-Mail", dil: "Sprache", hizli: "Schnellzugriff", kapat: "Schließen" },
+  es: { ara: "Llamar", mail: "Correo", dil: "Idioma", hizli: "Acceso rápido", kapat: "Cerrar" },
+  fr: { ara: "Appeler", mail: "E-mail", dil: "Langue", hizli: "Accès rapide", kapat: "Fermer" },
+  ru: { ara: "Звонок", mail: "Почта", dil: "Язык", hizli: "Быстрый доступ", kapat: "Закрыть" },
+  ar: { ara: "اتصال", mail: "بريد", dil: "اللغة", hizli: "وصول سريع", kapat: "إغلاق" }
+};
+var eabT = eabDict[json.lang] || eabDict.en;
+function eabEsc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+function eabTx(v) {
+  if (v == null) return "";
+  if (typeof v !== "object") return String(v);
+  return v[json.lang] != null ? String(v[json.lang]) : (v.tr != null ? String(v.tr) : (v.en != null ? String(v.en) : ""));
+}
+var eabAyar = (webmakerdata && webmakerdata.setting) || {};
+var eabTel = (eabTx(json.desing && json.desing.phone).trim()) || (typeof eabAyar.phone === "string" ? eabAyar.phone.trim() : "");
+var eabMail = (eabTx(json.desing && json.desing.email).trim()) || (typeof eabAyar.email === "string" ? eabAyar.email.trim() : "");
+/* örnek/yer tutucu adres (example.*) gerçek kanal değildir: bara girmez */
+if (/@example\./i.test(eabMail)) eabMail = "";
+var eabDilSayi = 0;
+if (!eabTel && eabAyar.firma && typeof eabAyar.firma.telefon === "string") eabTel = eabAyar.firma.telefon.trim();
+if (!eabMail && eabAyar.firma && typeof eabAyar.firma.eposta === "string" && !/@example\./i.test(eabAyar.firma.eposta)) eabMail = eabAyar.firma.eposta.trim();
+if (eabAyar.langs && typeof eabAyar.langs === "object") { for (var eabLk in eabAyar.langs) { if (eabAyar.langs[eabLk]) eabDilSayi++; } }
+var eabLangLi = "";
+if (typeof wmLangHtml === "function") { try { eabLangLi = wmLangHtml({ style: "text" }) || ""; eabDilSayi = eabLangLi ? 2 : 0; } catch (e) { /* sayım yedeği */ } }
+var eabDilAcik = eabDilSayi > 1 && !(json.desing && (json.desing.showlang === false || json.desing.showlang === "false"));
+var eabDugme = "";
+if (eabTel) eabDugme += '<a href="tel:' + eabTel.replace(/[^+\d]/g, "") + '" dir="ltr"><span class="material-symbols-outlined" aria-hidden="true">call</span>' + eabEsc(eabT.ara) + "</a>";
+if (eabMail) eabDugme += '<a href="mailto:' + eabEsc(eabMail) + '"><span class="material-symbols-outlined" aria-hidden="true">mail</span>' + eabEsc(eabT.mail) + "</a>";
+if (eabDilAcik) eabDugme += '<button type="button" class="modulex-efoot__bar-dil" aria-haspopup="dialog" aria-expanded="false"><span class="material-symbols-outlined" aria-hidden="true">language</span>' + eabEsc(eabT.dil) + " · " + eabEsc(String(json.lang || "").toUpperCase()) + "</button>";
+if (eabDugme) {
+  html += '<nav class="modulex-efoot__bar" aria-label="' + eabEsc(eabT.hizli) + '">' + eabDugme + "</nav>" +
+    (eabDilAcik ? '<div class="modulex-efoot__sheet" hidden><div class="modulex-efoot__sheet-ic" role="dialog" aria-modal="true" aria-label="' + eabEsc(eabT.dil) + '"><div class="modulex-efoot__sheet-ust"><strong>' + eabEsc(eabT.dil) + '</strong><button type="button" class="modulex-efoot__sheet-kapat" aria-label="' + eabEsc(eabT.kapat) + '"><span class="material-symbols-outlined" aria-hidden="true">close</span></button></div><div class="modulex-efoot__sheet-liste">' + (eabLangLi ? "<ul>" + eabLangLi + "</ul>" : "") + '</div></div></div>' : "") +
+    '<style>' +
+    '.modulex-efoot__bar,.modulex-efoot__sheet{display:none}' +
+    '@media (max-width:768px){' +
+    ':root{--mx-altbar-h:56px}' +
+    'body{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}' +
+    '.modulex-efoot__bar{display:flex;position:fixed;inset-inline:0;bottom:0;z-index:9990;background:--footer_bg--;border-top:1px solid color-mix(in srgb,--footer_text-- 35%,transparent);box-shadow:0 -6px 20px rgba(0,0,0,.22);padding-bottom:env(safe-area-inset-bottom,0)}' +
+    '.modulex-efoot__bar a,.modulex-efoot__bar-dil{flex:1 1 0;min-width:0;min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:8px;color:--footer_text--;text-decoration:none;font:inherit;font-weight:600;font-size:15px;border:0;background:transparent;cursor:pointer;padding:0 8px}' +
+    '.modulex-efoot__bar>*+*{border-inline-start:1px solid color-mix(in srgb,--footer_text-- 25%,transparent)}' +
+    '.modulex-efoot__bar .material-symbols-outlined,.modulex-efoot__sheet .material-symbols-outlined{font-size:22px;line-height:1}' +
+    '.modulex-efoot__bar a:focus-visible,.modulex-efoot__bar-dil:focus-visible,.modulex-efoot__sheet-kapat:focus-visible,.modulex-efoot__sheet a:focus-visible{outline:2px solid currentColor;outline-offset:-4px}' +
+    '.modulex-efoot__sheet:not([hidden]){display:flex;position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,.55);align-items:flex-end}' +
+    '.modulex-efoot__sheet-ic{width:100%;max-height:70vh;overflow-y:auto;background:--footer_bg--;color:--footer_text--;border-radius:18px 18px 0 0;padding:8px 16px calc(16px + env(safe-area-inset-bottom,0px))}' +
+    '.modulex-efoot__sheet-ust{display:flex;align-items:center;justify-content:space-between;min-height:48px;margin-bottom:8px;font-size:16px}' +
+    '.modulex-efoot__sheet-kapat{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:inherit;cursor:pointer;border-radius:50%}' +
+    '.modulex-efoot__sheet-liste{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.modulex-efoot__sheet-liste ul{display:contents}' +
+    '.modulex-efoot__sheet-liste a{display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:48px;min-height:48px;padding:0 10px;border:1px solid color-mix(in srgb,--footer_text-- 40%,transparent);border-radius:12px;font-weight:600;color:--footer_text--;text-decoration:none;background:transparent}' +
+    '.modulex-efoot__sheet-liste li.wm-lang-active a,.modulex-efoot__sheet-liste a[aria-current]{background:--footer_text--;color:--footer_bg--;border-color:--footer_text--}' +
+    '.modulex-efoot__sheet-liste li{list-style:none;margin:0;padding:0;display:contents}' +
+    '}' +
+    '@media (prefers-reduced-motion:reduce){.modulex-efoot__bar,.modulex-efoot__sheet{transition:none!important;animation:none!important}}' +
+    '</style>' +
+    (eabDilAcik ? '<script>(function(){var b=document.querySelector(".modulex-efoot__bar-dil"),sh=document.querySelector(".modulex-efoot__sheet");if(!b||!sh){return;}' +
+      'function kapa(){sh.hidden=true;b.setAttribute("aria-expanded","false");b.focus();}' +
+      'b.addEventListener("click",function(){var ic=sh.querySelector(".modulex-efoot__sheet-liste");' +
+      'if(ic&&!ic.firstChild){var kaynak=document.querySelector(".wm-langbar ul")||document.querySelector("[class*=langs]");' +
+      'if(kaynak){var kopya=kaynak.cloneNode(true);ic.appendChild(kopya);}else{var linkler=document.querySelectorAll("a[hreflang]");var ul=document.createElement("ul");for(var i=0;i<linkler.length;i++){if(sh.contains(linkler[i])){continue;}var li=document.createElement("li");li.appendChild(linkler[i].cloneNode(true));ul.appendChild(li);}if(ul.firstChild){ic.appendChild(ul);}else{b.hidden=true;return;}}}' +
+      'var ac=sh.hidden;sh.hidden=!ac;b.setAttribute("aria-expanded",ac?"true":"false");if(ac){var k=sh.querySelector(".modulex-efoot__sheet-kapat");if(k){k.focus();}}});' +
+      'sh.addEventListener("click",function(e){if(e.target===sh||(e.target.closest&&e.target.closest(".modulex-efoot__sheet-kapat"))){kapa();}});' +
+      'document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!sh.hidden){kapa();}});})();<\/script>' : "");
+}

@@ -78,4 +78,12 @@
       transition: none !important;
     }
   }
+
+  /* Mobil uygulama kuralı (12 Kas 2026): dokunma hedefi >= 48px (yalnız <=768px) */
+  @media screen and (max-width: 768px) {
+    .modulex-quickpill {
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+  }
 </style>

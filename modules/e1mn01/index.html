@@ -405,17 +405,17 @@
       display: block;
       position: fixed;
       top: 0;
-      right: 0;
+      left: 0;
       width: min(88vw, 320px);
       height: 100%;
       background: var(--mxe-cd9624, #cd9624);
       z-index: 9999;
-      box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.2);
       animation: modulexDrawerIn 0.28s ease;
     }
 
     @keyframes modulexDrawerIn {
-      from { transform: translateX(100%); opacity: 0.9; }
+      from { transform: translateX(-100%); opacity: 0.9; }
       to { transform: translateX(0); opacity: 1; }
     }
 
@@ -494,6 +494,32 @@
       padding: 4px 10px;
       border-radius: 8px;
       box-sizing: content-box;
+    }
+  }
+
+  /* Mobil uygulama kuralı (12 Kas 2026): dokunma hedefleri >= 48px (yalnız <=1024px; referans modülün görünümü/çekmece yönü aynı) */
+  @media (max-width: 1024px) {
+    .modulex-mobile-toggle,
+    .modulex-menu-drawer-close,
+    .modulex-iconlink,
+    .modulex-category-btn,
+    .modulex-search-box button {
+      min-width: 48px;
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+
+    .modulex-search-box input {
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+
+    .wm-langbar li a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      min-height: 48px;
     }
   }
 </style>

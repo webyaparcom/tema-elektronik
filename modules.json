@@ -30,6 +30,12 @@
           "tr": "(yeni sekmede açılır)",
           "en": "(opens in a new tab)",
           "ar": "(يفتح في علامة تبويب جديدة)"
+        },
+        "girisHref": "",
+        "girisText": {
+          "tr": "Üye Girişi",
+          "en": "Login",
+          "ar": "تسجيل الدخول"
         }
       },
       "version": "1.0.0",
@@ -285,9 +291,9 @@
           "ar": "أضف إلى السلة"
         },
         "soldOutText": {
-          "tr": "Tukendi",
+          "tr": "Tükendi",
           "en": "Sold Out",
-          "ar": "نفدت الكمية"
+          "ar": "نفد"
         },
         "newText": {
           "tr": "Yeni",
@@ -295,39 +301,39 @@
           "ar": "جديد"
         },
         "saleText": {
-          "tr": "Indirim",
+          "tr": "İndirim",
           "en": "Sale",
           "ar": "تخفيض"
         },
         "search": true,
         "sort": true,
         "searchLabel": {
-          "tr": "Urun ara",
+          "tr": "Ürün ara",
           "en": "Search products",
           "ar": "ابحث عن منتج"
         },
         "searchPlaceholder": {
-          "tr": "Urun adi veya kategori…",
+          "tr": "Ürün adı veya kategori…",
           "en": "Product name or category…",
           "ar": "اسم المنتج أو الفئة…"
         },
         "sortLabel": {
-          "tr": "Sirala",
+          "tr": "Sırala",
           "en": "Sort by",
           "ar": "ترتيب حسب"
         },
         "sortDefault": {
-          "tr": "Onerilen siralama",
+          "tr": "Önerilen sıralama",
           "en": "Recommended",
           "ar": "الترتيب الموصى به"
         },
         "sortPriceAsc": {
-          "tr": "Fiyat: dusukten yuksege",
+          "tr": "Fiyat: düşükten yükseğe",
           "en": "Price: low to high",
           "ar": "السعر: من الأقل إلى الأعلى"
         },
         "sortPriceDesc": {
-          "tr": "Fiyat: yuksekten dusuge",
+          "tr": "Fiyat: yüksekten düşüğe",
           "en": "Price: high to low",
           "ar": "السعر: من الأعلى إلى الأقل"
         },
@@ -337,7 +343,7 @@
           "ar": "الأحدث أولًا"
         },
         "noResult": {
-          "tr": "Aramaniza uygun urun bulunamadi.",
+          "tr": "Aramanıza uygun ürün bulunamadı.",
           "en": "No products match your search.",
           "ar": "لم يتم العثور على منتجات مطابقة لبحثك."
         },
@@ -3503,7 +3509,7 @@
           "ar": "أضف إلى السلة"
         },
         "soldOutText": {
-          "tr": "Tukendi",
+          "tr": "Tükendi",
           "en": "Sold Out",
           "ar": "نفدت الكمية"
         },
@@ -3513,39 +3519,39 @@
           "ar": "جديد"
         },
         "saleText": {
-          "tr": "Indirim",
+          "tr": "İndirim",
           "en": "Sale",
           "ar": "تخفيض"
         },
         "search": true,
         "sort": true,
         "searchLabel": {
-          "tr": "Urun ara",
+          "tr": "Ürün ara",
           "en": "Search products",
           "ar": "ابحث عن منتج"
         },
         "searchPlaceholder": {
-          "tr": "Urun adi veya kategori…",
+          "tr": "Ürün adı veya kategori…",
           "en": "Product name or category…",
           "ar": "اسم المنتج أو الفئة…"
         },
         "sortLabel": {
-          "tr": "Sirala",
+          "tr": "Sırala",
           "en": "Sort by",
           "ar": "ترتيب حسب"
         },
         "sortDefault": {
-          "tr": "Onerilen siralama",
+          "tr": "Önerilen sıralama",
           "en": "Recommended",
           "ar": "الترتيب الموصى به"
         },
         "sortPriceAsc": {
-          "tr": "Fiyat: dusukten yuksege",
+          "tr": "Fiyat: düşükten yükseğe",
           "en": "Price: low to high",
           "ar": "السعر: من الأقل إلى الأعلى"
         },
         "sortPriceDesc": {
-          "tr": "Fiyat: yuksekten dusuge",
+          "tr": "Fiyat: yüksekten düşüğe",
           "en": "Price: high to low",
           "ar": "السعر: من الأعلى إلى الأقل"
         },
@@ -3555,7 +3561,7 @@
           "ar": "الأحدث أولًا"
         },
         "noResult": {
-          "tr": "Aramaniza uygun urun bulunamadi.",
+          "tr": "Aramanıza uygun ürün bulunamadı.",
           "en": "No products match your search.",
           "ar": "لم يتم العثور على منتجات مطابقة لبحثك."
         },

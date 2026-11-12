@@ -177,151 +177,22 @@
 </style>
 
 <script>
-  function modulexEsc(v) {
-    return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
-  }
-  //
-  async function loadFavorites() {
-    try {
-      if (!user.isLoggedIn || !user.id) {
-        var favoritesGrid = document.getElementById('modulexGrid');
-        favoritesGrid.innerHTML = '<div class="no-favorites">{{favoriUrunleriniziGormekIcin}}</div>';
-        return;
-      }
-
-      var favoritesSnapshot = await dataListWeb(`users/${user.id}/favorites`);
-      var favoritesGrid = document.getElementById('modulexGrid');
-
-      favoritesGrid.innerHTML = '';
-
-      if (favoritesSnapshot.empty) {
-        favoritesGrid.innerHTML = '<div style="text-align: center; padding: 50px;">{{henuzFavoriUrununuzBulunmuyor}}</div>';
-        return;
-      }
-
-      //
-      favoritesSnapshot.forEach(function(doc) {
-        var favorite = doc.data();
-        var favoriteId = doc.id;
-
-        var favoriteHTML = `
-          <div class="modulexGridItem" data-favorite-id="${favoriteId}">
-            <div class="favorite-badge" onclick="removeFromFavorites('{{favoriteid}}')">
-              <span class="material-symbols-outlined">favorite</span>
-            </div>
-            <div class="modulexGridItemImg">
-              <img src="${modulexEsc(favorite.image || 'https://via.placeholder.com/200x200')}" alt="${modulexEsc(favorite.name)}" />
-            </div>
-            <div class="modulexGridItemBody">
-              <div class="modulexGridItemTitle">${modulexEsc(favorite.name)}</div>
-              <div class="modulexGridItemSpot">${modulexEsc(favorite.category || 'Genel')}</div>
-              <div class="modulexGridItemPrice">
-                <div class="price">${formatPrice(favorite.price)} ₺</div>
-                <button class="add-to-cart" onclick="addToCart('{{favoriteid2}}', '{{favoriteproductid}}')">
-                  <span class="material-symbols-outlined">shopping_cart</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        `;
-
-        favoritesGrid.innerHTML += favoriteHTML;
-      });
-
-    } catch (error) {
-      console.error('{{favorilerYuklenirkenHata}}', error);
-      document.getElementById('modulexGrid').innerHTML =
-        '<div style="text-align: center; padding: 50px; color: #dc3545;">{{favorilerYuklenirkenBirHata}}</div>';
-    }
-  }
+(() => {
+  const modulexEsc = (v) =>
+    String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 
   // Fiyat formatla
-  function formatPrice(price) {
-    return new Intl.NumberFormat('tr-TR', {
+  const formatPrice = (price) =>
+    new Intl.NumberFormat('tr-TR', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
     }).format(price || 0);
-  }
 
   //
-  async function removeFromFavorites(favoriteId) {
-    if (!confirm('{{buUrunuFavorilerdenCikarmak}}')) return;
+  const showNotification = (message, type = 'info') => {
+    document.querySelector('.notification')?.remove();
 
-    try {
-      await dataDeleteWeb(`users/${user.id}/favorites/${favoriteId}`);
-      showNotification('{{urunFavorilerdenCikarildi}}', 'success');
-      loadFavorites(); // Listeyi yenile
-    } catch (error) {
-      console.error('{{favoriCikarilirkenHata}}', error);
-      showNotification('{{islemSirasindaHataOlustu}}', 'error');
-    }
-  }
-
-  // Sepete ekle
-  async function addToCart(favoriteId, productId) {
-    try {
-      //
-      var favoriteDoc = await dataGetWeb(`users/${user.id}/favorites/${favoriteId}`);
-      if (!favoriteDoc.exists()) {
-        showNotification('{{urunBulunamadi}}', 'error');
-        return;
-      }
-
-      var favorite = favoriteDoc.data();
-
-      // Sepete ekle
-      var cartItem = {
-        productId: productId || favoriteId,
-        name: favorite.name,
-        price: favorite.price,
-        image: favorite.image,
-        quantity: 1,
-        addedAt: new Date()
-      };
-
-      await dataAddWeb(`users/${user.id}/cart`, cartItem);
-      showNotification('{{urunSepeteEklendi}}', 'success');
-
-    } catch (error) {
-      console.error('{{sepeteEklenirkenHata}}', error);
-      showNotification('{{sepeteEklemeSirasindaHata}}', 'error');
-    }
-  }
-
-  //
-  async function addDemoFavorites() {
-    if (!user.isLoggedIn || !user.id) {
-      showNotification('{{demoUrunEklemekIcin}}', 'error');
-      return;
-    }
-
-    var demoProduct = {
-      productId: "demo_1",
-      name: "{{nikeAirMax270}}",
-      price: 1299,
-      image: "https://cdn.dsmcdn.com/ty967/product/media/images/20230717/17/394487857/972401512/1/1_org_zoom.jpg",
-      category: "{{sporAyakkabi}}",
-      addedAt: new Date()
-    };
-
-    try {
-      await dataAddWeb(`users/${user.id}/favorites`, demoProduct);
-      showNotification('{{demoUrunFavorilereEklendi}}', 'success');
-      loadFavorites();
-    } catch (error) {
-      console.error('{{demoUrunEklenirkenHata}}', error);
-      showNotification('{{demoUrunEklenirkenHata2}}', 'error');
-    }
-  }
-
-  //
-  function showNotification(message, type = 'info') {
-    var existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-      existingNotification.remove();
-    }
-
-    var notification = document.createElement('div');
+    const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.innerHTML = `
       <span class="material-symbols-outlined">
@@ -340,7 +211,7 @@
     `;
 
     if (!document.querySelector('#notification-styles')) {
-      var style = document.createElement('style');
+      const style = document.createElement('style');
       style.id = 'notification-styles';
       style.textContent = `{{keyframesSlideinFromTransform}}`;
       document.head.appendChild(style);
@@ -348,26 +219,165 @@
 
     document.body.appendChild(notification);
 
-    setTimeout(function() {
+    setTimeout(() => {
       if (notification.parentNode) {
         notification.remove();
       }
     }, 3000);
+  };
+
+  //
+  const loadFavorites = async () => {
+    try {
+      if (!user.isLoggedIn || !user.id) {
+        document.getElementById('modulexGrid').innerHTML = '<div class="no-favorites">{{favoriUrunleriniziGormekIcin}}</div>';
+        return;
+      }
+
+      const favoritesSnapshot = await dataListWeb(`users/${user.id}/favorites`);
+      const favoritesGrid = document.getElementById('modulexGrid');
+
+      favoritesGrid.innerHTML = '';
+
+      if (favoritesSnapshot.empty) {
+        favoritesGrid.innerHTML = '<div style="text-align: center; padding: 50px;">{{henuzFavoriUrununuzBulunmuyor}}</div>';
+        return;
+      }
+
+      //
+      favoritesSnapshot.forEach((doc) => {
+        const favorite = doc.data();
+        const favoriteId = doc.id;
+
+        const favoriteHTML = `
+          <div class="modulexGridItem" data-favorite-id="${favoriteId}">
+            <div class="favorite-badge" data-act="remove" data-id="${modulexEsc(favoriteId)}">
+              <span class="material-symbols-outlined">favorite</span>
+            </div>
+            <div class="modulexGridItemImg">
+              <img src="${modulexEsc(favorite.image || 'https://via.placeholder.com/200x200')}" alt="${modulexEsc(favorite.name)}" />
+            </div>
+            <div class="modulexGridItemBody">
+              <div class="modulexGridItemTitle">${modulexEsc(favorite.name)}</div>
+              <div class="modulexGridItemSpot">${modulexEsc(favorite.category || 'Genel')}</div>
+              <div class="modulexGridItemPrice">
+                <div class="price">${formatPrice(favorite.price)} ₺</div>
+                <button class="add-to-cart" data-act="cart" data-id="${modulexEsc(favoriteId)}" data-product-id="${modulexEsc(favorite.productId ?? '')}">
+                  <span class="material-symbols-outlined">shopping_cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        favoritesGrid.innerHTML += favoriteHTML;
+      });
+
+    } catch (error) {
+      console.error('{{favorilerYuklenirkenHata}}', error);
+      document.getElementById('modulexGrid').innerHTML =
+        '<div style="text-align: center; padding: 50px; color: #dc3545;">{{favorilerYuklenirkenBirHata}}</div>';
+    }
+  };
+
+  //
+  const removeFromFavorites = async (favoriteId) => {
+    if (!confirm('{{buUrunuFavorilerdenCikarmak}}')) return;
+
+    try {
+      await dataDeleteWeb(`users/${user.id}/favorites/${favoriteId}`);
+      showNotification('{{urunFavorilerdenCikarildi}}', 'success');
+      loadFavorites(); // Listeyi yenile
+    } catch (error) {
+      console.error('{{favoriCikarilirkenHata}}', error);
+      showNotification('{{islemSirasindaHataOlustu}}', 'error');
+    }
+  };
+
+  // Sepete ekle
+  const addToCart = async (favoriteId, productId) => {
+    try {
+      //
+      const favoriteDoc = await dataGetWeb(`users/${user.id}/favorites/${favoriteId}`);
+      if (!favoriteDoc.exists()) {
+        showNotification('{{urunBulunamadi}}', 'error');
+        return;
+      }
+
+      const favorite = favoriteDoc.data();
+
+      // Sepete ekle
+      const cartItem = {
+        productId: productId || favoriteId,
+        name: favorite.name,
+        price: favorite.price,
+        image: favorite.image,
+        quantity: 1,
+        addedAt: new Date()
+      };
+
+      await dataAddWeb(`users/${user.id}/cart`, cartItem);
+      showNotification('{{urunSepeteEklendi}}', 'success');
+
+    } catch (error) {
+      console.error('{{sepeteEklenirkenHata}}', error);
+      showNotification('{{sepeteEklemeSirasindaHata}}', 'error');
+    }
+  };
+
+  //
+  const addDemoFavorites = async () => {
+    if (!user.isLoggedIn || !user.id) {
+      showNotification('{{demoUrunEklemekIcin}}', 'error');
+      return;
+    }
+
+    const demoProduct = {
+      productId: "demo_1",
+      name: "{{nikeAirMax270}}",
+      price: 1299,
+      image: "https://cdn.dsmcdn.com/ty967/product/media/images/20230717/17/394487857/972401512/1/1_org_zoom.jpg",
+      category: "{{sporAyakkabi}}",
+      addedAt: new Date()
+    };
+
+    try {
+      await dataAddWeb(`users/${user.id}/favorites`, demoProduct);
+      showNotification('{{demoUrunFavorilereEklendi}}', 'success');
+      loadFavorites();
+    } catch (error) {
+      console.error('{{demoUrunEklenirkenHata}}', error);
+      showNotification('{{demoUrunEklenirkenHata2}}', 'error');
+    }
+  };
+
+  // Olay delegasyonu (kok: modulex) — cift baglamayi dataset bayragi engeller
+  const root = document.getElementById('modulexGrid')?.closest('.modulex');
+  if (root && !root.dataset.mxBound) {
+    root.dataset.mxBound = '1';
+    root.addEventListener('click', (e) => {
+      const t = e.target.closest('[data-act]');
+      if (!t || !root.contains(t)) return;
+      switch (t.dataset.act) {
+        case 'remove': removeFromFavorites(t.dataset.id); break;
+        case 'cart': addToCart(t.dataset.id, t.dataset.productId); break;
+      }
+    });
   }
 
   //
-authStateListenerWeb(function(authUser) {
-  if (authUser) {
+  authStateListenerWeb((authUser) => {
+    if (authUser) {
       //
-      setTimeout(function() {
+      setTimeout(() => {
         loadFavorites();
 
         //
         if (user && user.id === 's8RDlo2GsQblcPLWTsMHrudF0sm2') {
           //
-          setTimeout(function() {
+          setTimeout(() => {
             //
-            dataListWeb(`users/${user.id}/favorites`).then(function(snapshot) {
+            dataListWeb(`users/${user.id}/favorites`).then((snapshot) => {
               if (snapshot.empty) {
                 addDemoFavorites();
               }
@@ -381,4 +391,5 @@ authStateListenerWeb(function(authUser) {
         '<div class="no-favorites">{{favoriUrunleriniziGormekIcin2}}</div>';
     }
   });
+})();
 </script>
