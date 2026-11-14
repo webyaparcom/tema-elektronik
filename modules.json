@@ -36,7 +36,8 @@
           "tr": "Üye Girişi",
           "en": "Login",
           "ar": "تسجيل الدخول"
-        }
+        },
+        "hataBildir": "https://webyapar.com/api/portal/tema-hata.js"
       },
       "version": "1.0.0",
       "icon": "info",
