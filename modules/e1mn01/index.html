@@ -33,9 +33,11 @@
   <div class="modulex-header-bottom">
     <div class="modulex-header-bottom-inner">
       <!-- 14 Kas 2026 (hata #ff93d3fa): «Kategoriler» ölü düğmeydi (aria-haspopup, işleyici yok). back.js site kategorilerini
-           (category.json) kategorihtml yuvasına basar; liste boşsa düğme hiç çizilmez. Aç/kapa: eticaret2_kategori() — Esc + dış tık kapatır. -->
+           (category.json) kategorihtml yuvasına basar; liste boşsa düğme hiç çizilmez. Aç/kapa: eticaret2_kategori() — Esc + dış tık kapatır.
+           1.2.1: disclosure deseni (WAI-ARIA APG «Disclosure»): içerik düz bağlantı listesi, role=menu değil → aria-haspopup YOK;
+           aria-expanded + aria-controls kalır; Tab ile odak panel dışına çıkınca kapanır. D16 H3 `button[aria-expanded]`'i de tarar. -->
       <div class="modulex-kat">
-        <button type="button" class="modulex-category-btn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-eticaret-2-kat" onclick="eticaret2_kategori(event)">
+        <button type="button" class="modulex-category-btn" aria-expanded="false" aria-controls="menu-eticaret-2-kat" onclick="eticaret2_kategori(event)">
           <span class="material-symbols-outlined" aria-hidden="true">menu</span> {{categoryText}}
         </button>
         <div class="modulex-kat-panel" id="menu-eticaret-2-kat" hidden>
@@ -688,6 +690,15 @@
       var root = document.getElementById("menu-eticaret-2-root");
       var btn = root && root.querySelector(".modulex-category-btn");
       if (btn) btn.focus();
+    });
+    /* 1.2.1: odak (Tab / Shift+Tab) düğme + panel kabının dışına geçince kapanır; pencere odağını kaybetmek (sekme değişimi)
+       focusin üretmez → panel açık kalır */
+    document.addEventListener("focusin", function (e) {
+      var pan = document.getElementById("menu-eticaret-2-kat");
+      if (!pan || pan.hidden) return;
+      var kap = pan.parentNode;
+      if (kap && kap.contains(e.target)) return;
+      eticaret2_kategori(null, false);
     });
   }
 </script>

@@ -77,7 +77,7 @@
   },
   "category": "menu",
   "description": "Responsive web sitesi navigasyon menüsü. Logo, sayfa linkleri ve mobil uyumlu hamburger menü içerir.  web sitelerinde 0 projede kullanılır. PLAN-PRO F3: giriş linki data-mx-uye-goster=\"misafir\", Hesabım + Çıkış data-mx-uye-goster=\"giris\" (MxStore.uye), sepet ikonunda data-mx-sepet-sayi rozeti (MxStore.sepet; 0 iken gizli). 1.2.0 (14 Kas 2026): «Kategoriler» düğmesi site kategorilerini (category.json) açılır listede gösterir (aria-expanded, Esc/dış tık kapatır, RTL; liste boşsa düğme çizilmez; sonda tumUrunlerUrl sayfası); menü hover yazısı --mxe-menu-hover-text (zeminden ayrı jeton) + kalın alt çizgi (kontrast bar metniyle aynı); Kategoriler ters plaka; arama düğmesi hover jetonlu.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "veri": {
     "statik": true,
     "dinamik": true,
