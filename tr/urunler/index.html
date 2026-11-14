@@ -38,21 +38,21 @@
   <link rel="preload" href="/src/fonts/inter/inter-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/src/fonts/inter/inter-latin-ext-500-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/src/fonts/inter/inter-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/src/fonts/inter.css?v=gmovl" />
-  <link rel="stylesheet" href="/src/fonts/poppins.css?v=gmovl" />
-  <link rel="stylesheet" href="/src/fonts/ibm-plex-sans-arabic.css?v=gmovl" />
-  <link rel="stylesheet" href="/src/fonts/noto-kufi-arabic.css?v=gmovl" />
-  <link rel="stylesheet" href="/src/rubik.css?v=gmovl" />
-  <link rel="stylesheet" href="/src/css.css?v=gmovl" />
-  <link rel="stylesheet" href="/src/mx-ds.css?v=gmovl" />
+  <link rel="stylesheet" href="/src/fonts/inter.css?v=eyegs" />
+  <link rel="stylesheet" href="/src/fonts/poppins.css?v=eyegs" />
+  <link rel="stylesheet" href="/src/fonts/ibm-plex-sans-arabic.css?v=eyegs" />
+  <link rel="stylesheet" href="/src/fonts/noto-kufi-arabic.css?v=eyegs" />
+  <link rel="stylesheet" href="/src/rubik.css?v=eyegs" />
+  <link rel="stylesheet" href="/src/css.css?v=eyegs" />
+  <link rel="stylesheet" href="/src/mx-ds.css?v=eyegs" />
   
-  <link rel="stylesheet" href="/src/mx-ui.css?v=gmovl" />
+  <link rel="stylesheet" href="/src/mx-ui.css?v=eyegs" />
   <link rel="preload" href="/src/material-symbols-outlined.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/src/material-symbols-outlined.css?v=gmovl" />
+  <link rel="stylesheet" href="/src/material-symbols-outlined.css?v=eyegs" />
   
-  <link rel="stylesheet" href="/src/cookie.css?v=gmovl" />
-  <link rel="stylesheet" href="/src/swiper-bundle.min.css?v=gmovl" />
-  <link rel="shortcut icon" href="/img/icon.png?v=gmovl" type="image/png" />
+  <link rel="stylesheet" href="/src/cookie.css?v=eyegs" />
+  <link rel="stylesheet" href="/src/swiper-bundle.min.css?v=eyegs" />
+  <link rel="shortcut icon" href="/img/icon.png?v=eyegs" type="image/png" />
   <link rel="apple-touch-icon" href="/img/icon.png" />
   <script type="application/ld+json">
 {
@@ -98,7 +98,7 @@
         "@type": "ImageObject",
         "url": "https://elektronik.webyapar.com/img/logo.png"
       },
-      "dateModified": "2026-11-14T09:52:28.140Z",
+      "dateModified": "2026-11-14T14:03:44.837Z",
       "breadcrumb": {
         "@id": "https://elektronik.webyapar.com/tr/urunler/#breadcrumb"
       }
@@ -125,7 +125,7 @@
 }
 </script>
   
-<link rel="stylesheet" href="style.css?v=gmovl">
+<link rel="stylesheet" href="style.css?v=eyegs">
 </head>
 
 <body>
@@ -230,7 +230,7 @@
   <div class="h0001-header">
     <div class="h0001-header-top">
       <a href="/tr/" class="h0001-header-left">
-        <img src="/img/logo.png?v=qtuxt" alt="Logo" class="h0001-logo" loading="lazy" />
+        <img src="/img/logo.png?v=xbejj" alt="Logo" class="h0001-logo" loading="lazy" />
       </a>
 
       <div class="h0001-search-box">
@@ -260,9 +260,17 @@
 
   <div class="h0001-header-bottom">
     <div class="h0001-header-bottom-inner">
-      <button type="button" class="h0001-category-btn" aria-haspopup="true">
-        <span class="material-symbols-outlined">menu</span> Kategoriler
-      </button>
+      
+      <div class="h0001-kat">
+        <button type="button" class="h0001-category-btn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-eticaret-2-kat" onclick="eticaret2_kategori(event)">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span> Kategoriler
+        </button>
+        <div class="h0001-kat-panel" id="menu-eticaret-2-kat" hidden>
+          <ul>
+            <li><a href="/tr/bilgisayar/">Bilgisayar ve aksesuar</a></li><li><a href="/tr/giyilebilir/">Giyilebilir</a></li><li><a href="/tr/ses/">Ses</a></li><li class="h0001-kat-tum"><a href="/tr/urunler/">Tüm ürünler</a></li>
+          </ul>
+        </div>
+      </div>
       <button type="button" class="h0001-mobile-toggle" onclick="eticaret2_toggle()" aria-label="Menüyü aç/kapat">
         <span></span><span></span><span></span>
       </button>
@@ -302,6 +310,43 @@
         document.body.style.overflow = "hidden";
       }
     }
+  }
+  
+  if (typeof eticaret2_kategori === "undefined") {
+    function eticaret2_kategori(ev, ac) {
+      var root = document.getElementById("menu-eticaret-2-root");
+      if (!root) return;
+      var btn = root.querySelector(".h0001-category-btn");
+      var pan = document.getElementById("menu-eticaret-2-kat");
+      if (!btn || !pan) return;
+      if (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+      }
+      var acik = typeof ac === "boolean" ? ac : pan.hidden;
+      pan.hidden = !acik;
+      btn.setAttribute("aria-expanded", acik ? "true" : "false");
+      if (acik && ev && ev.detail === 0) {
+        var ilk = pan.querySelector("a");
+        if (ilk) ilk.focus();
+      }
+    }
+    document.addEventListener("click", function (e) {
+      var pan = document.getElementById("menu-eticaret-2-kat");
+      if (!pan || pan.hidden) return;
+      var kap = pan.parentNode;
+      if (kap && kap.contains(e.target)) return;
+      eticaret2_kategori(null, false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var pan = document.getElementById("menu-eticaret-2-kat");
+      if (!pan || pan.hidden) return;
+      eticaret2_kategori(null, false);
+      var root = document.getElementById("menu-eticaret-2-root");
+      var btn = root && root.querySelector(".h0001-category-btn");
+      if (btn) btn.focus();
+    });
   }
 </script>
 <script>
@@ -1134,13 +1179,13 @@ function b0001AddCart(btn, ev) {
 
 <nav class="wm-yasal" aria-label="Kurumsal ve Yasal" style="box-sizing:border-box;width:100%;max-width:100%;padding:12px 16px;background:var(--mx-site-bg, #FFFFFF);color:var(--mx-site-text, #111111);display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;justify-content:center;text-align:center;overflow-wrap:anywhere"><strong style="color:var(--mx-site-text, #111111)">Kurumsal ve Yasal</strong><a href="/tr/misyon/" style="color:var(--mx-site-text, #111111);padding:6px 0;text-decoration:underline;min-width:0">Misyon</a><a href="/tr/vizyon/" style="color:var(--mx-site-text, #111111);padding:6px 0;text-decoration:underline;min-width:0">Vizyon</a><a href="/tr/kalitepolitikamiz/" style="color:var(--mx-site-text, #111111);padding:6px 0;text-decoration:underline;min-width:0">Kalite Politikamız</a><a href="/tr/kisiselveriler/" style="color:var(--mx-site-text, #111111);padding:6px 0;text-decoration:underline;min-width:0">Kişisel Veriler</a><a href="/tr/kullanicahaklari/" style="color:var(--mx-site-text, #111111);padding:6px 0;text-decoration:underline;min-width:0">Kullanıcı Hakları</a><a href="/tr/yasaluyari/" style="color:var(--mx-site-text, #111111);padding:6px 0;text-decoration:underline;min-width:0">Yasal Uyarı</a><a href="/tr/cerez-politikasi/" style="color:var(--mx-site-text, #111111);padding:6px 0;text-decoration:underline;min-width:0">Çerez Politikası</a></nav></div>
 
-  <script id="wy-et2-kat">(function(){var V={"k":[{"p":"ses","n":{"tr":"Ses","en":"Audio","ar":"الصوت"}},{"p":"giyilebilir","n":{"tr":"Giyilebilir","en":"Wearables","ar":"القابلة للارتداء"}},{"p":"bilgisayar","n":{"tr":"Bilgisayar ve aksesuar","en":"Computers and accessories","ar":"الحواسيب والإكسسوارات"}}],"t":{"p":"urunler","n":{"tr":"Tüm ürünler","en":"All products","ar":"كل المنتجات"}}};function kur(){var root=document.getElementById("menu-eticaret-2-root");if(!root)return;var btn=root.querySelector("[class*=\"-category-btn\"]");if(!btn||btn.getAttribute("data-wy-kat")||!V.k.length)return;btn.setAttribute("data-wy-kat","1");var dil=(document.documentElement.lang||"tr").slice(0,2);var ad=function(n){return (n&&(n[dil]||n.tr))||"";};var pan=document.createElement("div");pan.id="wy-kat-panel";pan.className="wy-kat-panel";pan.hidden=true;var ul=document.createElement("ul");var ekle=function(k,cls){var li=document.createElement("li");if(cls)li.className=cls;var a=document.createElement("a");var h="/"+dil+"/"+k.p+"/";a.href=h;a.textContent=ad(k.n);if(location.pathname.indexOf(h)===0)a.setAttribute("aria-current","page");li.appendChild(a);ul.appendChild(li);};V.k.forEach(function(k){ekle(k);});if(V.t)ekle(V.t,"wy-kat-tum");pan.appendChild(ul);btn.insertAdjacentElement("afterend",pan);btn.setAttribute("aria-expanded","false");btn.setAttribute("aria-controls","wy-kat-panel");var konum=function(){if(window.matchMedia("(max-width: 768px)").matches){pan.style.insetInlineStart="";return;}var ic=btn.parentElement.getBoundingClientRect(),r=btn.getBoundingClientRect(),rtl=getComputedStyle(btn).direction==="rtl";pan.style.insetInlineStart=(rtl?ic.right-r.right:r.left-ic.left)+"px";};var ac=function(v){pan.hidden=!v;btn.setAttribute("aria-expanded",v?"true":"false");if(v)konum();};btn.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();ac(pan.hidden);if(!pan.hidden&&e.detail===0){var f=pan.querySelector("a");if(f)f.focus();}});document.addEventListener("click",function(e){if(!pan.hidden&&!pan.contains(e.target)&&!btn.contains(e.target))ac(false);});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!pan.hidden){ac(false);btn.focus();}});window.addEventListener("resize",function(){if(!pan.hidden)konum();});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",kur);else kur();})();</script>
+  
 
   <script defer src="/src/swiper-bundle.min.js"></script>
-  <script defer src="/src/mx-ui.js?v=gmovl"></script>
-  <script defer src="/src/mx-store.js?v=gmovl"></script>
-  <script defer type="text/javascript" src="/src/js.js?v=gmovl"></script>
-  <script defer src="/src/cookie.js?v=gmovl"></script>
+  <script defer src="/src/mx-ui.js?v=eyegs"></script>
+  <script defer src="/src/mx-store.js?v=eyegs"></script>
+  <script defer type="text/javascript" src="/src/js.js?v=eyegs"></script>
+  <script defer src="/src/cookie.js?v=eyegs"></script>
 
 </body>
 
