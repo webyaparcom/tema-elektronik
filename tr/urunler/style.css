@@ -709,99 +709,81 @@
   }
 
 
-  .kvSection {
+  .k3Section {
     width: 100%;
-    padding: 56px 20px;
+    padding: 40px 20px;
     background: var(--mx-site-bg, #ffffff);
     box-sizing: border-box;
-    overflow-x: clip;
   }
 
-  .kvContainer { max-width: 1200px; margin: 0 auto; }
+  .k3Container { max-width: 1200px; margin: 0 auto; }
 
-  .kvHead { text-align: center; margin-bottom: 32px; }
-  .kvTitle {
-    font-size: 30px; font-weight: 800; color: var(--mx-site-text, #1b1b1b);
-    margin: 0 0 12px; letter-spacing: 0.01em;
+  .k3Head { text-align: center; margin-bottom: 28px; }
+  .k3Title {
+    font-size: 22px; font-weight: 700; color: var(--mx-site-text, #1b1b1b);
+    margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.04em;
   }
-  .kvRule {
-    display: block; width: 56px; height: 3px; margin: 0 auto 14px;
-    background: var(--mx-site-primary, #2563eb); border-radius: 2px;
-  }
-  .kvSubtitle { font-size: 16px; color: var(--mx-site-text, #1b1b1b); opacity: 0.75; margin: 0; }
+  .k3Subtitle { font-size: 14px; color: var(--mx-site-text, #1b1b1b); opacity: 0.65; margin: 0; }
 
-  .kvGrid {
+  .k3Grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
   }
 
-  .kvCard {
-    display: flex; flex-direction: column;
+  .k3Card {
     text-decoration: none; cursor: pointer;
-    background: var(--mx-site-surface, #ffffff);
-    border: 1px solid color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent);
-    border-radius: 14px; overflow: hidden;
-    box-sizing: border-box; min-width: 0;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    animation: kvIn 0.45s ease both;
-  }
-  .kvCard:hover, .kvCard:focus-visible {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 26px rgba(14, 35, 71, 0.12);
-  }
-  .kvCard:focus-visible { outline: 2px solid var(--mx-site-text, #1b1b1b); outline-offset: 2px; }
-
-  @keyframes kvIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+    border-radius: 4px; overflow: hidden;
+    transition: transform 0.25s ease;
+    animation: k3In 0.35s ease both;
   }
 
-  .kvImg {
-    display: block; position: relative; aspect-ratio: 1 / 1; overflow: hidden;
+  @keyframes k3In {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .k3Card:hover { transform: translateY(-4px); }
+
+  .k3Img {
+    position: relative; aspect-ratio: 4 / 3; overflow: hidden;
     background: color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent);
   }
-  .kvImg img {
-    display: block; width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.45s ease;
-  }
-  .kvCard:hover .kvImg img { transform: scale(1.07); }
 
-  .kvHolder {
+  .k3Img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .k3Card:hover .k3Img img { transform: scale(1.08); }
+
+  .k3Placeholder {
+    width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
-    width: 100%; height: 100%; background: var(--mx-site-bg, #ffffff);
+    color: var(--mx-site-text, #1b1b1b); opacity: 0.35;
   }
-  .kvHolder img { width: 40%; height: auto; object-fit: contain; opacity: 0.9; }
-  .kvCard:hover .kvHolder img { transform: none; }
+  .k3Placeholder .material-symbols-outlined { font-size: 48px; }
 
-  .kvName {
-    position: relative; display: block;
-    padding: 14px 12px 16px; text-align: center;
-    font-size: 15px; font-weight: 700; line-height: 1.3; color: var(--mx-site-text, #1b1b1b);
-    overflow-wrap: anywhere;
+  .k3Overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding: 16px;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%);
   }
-  .kvName::after {
-    content: ""; position: absolute; left: 50%; bottom: 8px;
-    width: 0; height: 2px; background: var(--mx-site-primary, #2563eb);
-    transform: translateX(-50%); transition: width 0.3s ease;
-  }
-  .kvCard:hover .kvName::after, .kvCard:focus-visible .kvName::after { width: 44px; }
 
-  @media (max-width: 1024px) {
-    .kvGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .k3Label {
+    color: #ffffff; font-size: 14px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    text-align: center;
   }
 
   @media (max-width: 768px) {
-    .kvSection { padding: 36px 12px; }
-    .kvTitle { font-size: 24px; }
-    .kvSubtitle { font-size: 14px; }
-    .kvGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-    .kvName { font-size: 13px; padding: 10px 8px 14px; }
-    [class*="kv"] { max-width: 100%; box-sizing: border-box; }
+    .k3Grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .k3Section { padding: 28px 12px; }
+    [class*="k3"] { box-sizing: border-box; max-width: 100%; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    [class*="kv"], [class*="kv"] * {
+    [class*="k3"], [class*="k3"] * {
       animation: none !important; transition: none !important;
     }
   }

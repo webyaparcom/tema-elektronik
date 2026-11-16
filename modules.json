@@ -143,13 +143,18 @@
       "index": 1
     },
     {
-      "name": "Hero 1",
-      "path": "hero-1",
+      "name": "Açılış Özellik Listesi — onay işaretli maddeler + rozetli görsel",
+      "path": "acilis-ozellik-listesi",
       "local": "body",
       "category": "hero",
       "id": "e1hr01",
       "desing": {
         "max": "1200px",
+        "alt": {
+          "tr": "Dizüstü, kulaklık ve akıllı saatle düzenli bir çalışma masası",
+          "en": "A tidy desk with a laptop, headphones and a smartwatch",
+          "ar": "مكتب مرتب عليه حاسوب محمول وسماعات وساعة ذكية"
+        },
         "gradient": "linear-gradient(135deg, color-mix(in srgb, var(--mx-site-primary, #2563eb) 42%, #000), color-mix(in srgb, var(--mx-site-primary, #2563eb) 24%, #000))",
         "overlay": "linear-gradient(135deg, rgba(0,0,0,.55), rgba(0,0,0,.35))",
         "title_accent": "linear-gradient(135deg, #ffffff, #ffffff)",
@@ -175,11 +180,6 @@
           "ar": "وصل حديثًا"
         },
         "image": "/img/elektronik-hero-masa.webp",
-        "alt": {
-          "tr": "Dizüstü, kulaklık ve akıllı saatle düzenli bir çalışma masası",
-          "en": "A tidy desk with a laptop, headphones and a smartwatch",
-          "ar": "مكتب مرتب عليه حاسوب محمول وسماعات وساعة ذكية"
-        },
         "btn1": {
           "tr": "Ürünleri keşfet",
           "en": "Shop products",
@@ -193,22 +193,62 @@
         },
         "btn2_url": "teslimat",
         "stats": "",
-        "stil": ""
+        "stil": "",
+        "bosluk": "clamp(56px, 8vw, 104px)",
+        "yuvarlak": "18px",
+        "ust": "",
+        "baslik": "",
+        "metin": "",
+        "img": "",
+        "img2": "",
+        "video": "",
+        "poster": "",
+        "cta_ad": "",
+        "cta_url": "",
+        "cta2_ad": "",
+        "cta2_url": "",
+        "rozet_ikon": "",
+        "rozet_deger": "",
+        "rozet_metin": "",
+        "bg": "var(--mx-site-surface, #f6f7f9)",
+        "text": "var(--mx-site-text, #111318)",
+        "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+        "kartBg": "var(--mx-site-bg, #ffffff)",
+        "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+        "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+        "vurguBg": "var(--mx-site-primary, #2563eb)",
+        "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+        "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+        "color": "var(--mx-site-text, #111318)"
       },
       "version": "1.1.0",
-      "icon": "hero",
-      "index": 2
+      "icon": "checklist",
+      "index": 2,
+      "description": "Solda h1 ve metnin altında onay işaretli dikey madde listesi (değer kalın yazılır) ve düğmeler; sağda yuvarlatılmış görsel, üst köşesinde rozet kartı. Maddeler sayı şeridi değil, okunur onay listesidir (avantaj sıralaması); ikna odaklı hizmet sayfaları için. Başlık h1, ilk görsel eager. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Başlık yoksa blok basılmaz.",
+      "veri": {
+        "statik": true,
+        "dinamik": false,
+        "kaynak": "desing/data",
+        "alanlar": {
+          "ikon": "madde ikonu (Material Symbols)",
+          "deger": "sayı/değer (ör. 1.200+, dil sözlüğü olabilir)",
+          "metin": "madde metni (dil sözlüğü)",
+          "img": "madde görseli (mozaik yerleşimlerde)",
+          "url": "madde bağlantısı"
+        }
+      }
     },
     {
-      "name": "Kategori Vitrin (Görselli Ürün Grupları)",
-      "path": "kategori-vitrin",
+      "name": "Kategori Grid (Tema3)",
+      "path": "kategori-grid-tema3",
       "local": "body",
       "category": "page-category",
       "id": "e1kv01",
       "desing": {
         "max": "1200px",
         "bgcolor": "var(--mx-site-bg, #ffffff)",
-        "cardbg": "var(--mx-site-surface, #ffffff)",
         "color": "var(--mx-site-text, #1b1b1b)",
         "accent": "var(--mx-site-primary, #2563eb)",
         "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
@@ -221,7 +261,8 @@
           "tr": "Ses, giyilebilir ve bilgisayar.",
           "en": "Audio, wearables and computing.",
           "ar": "الصوت والقابلة للارتداء والحوسبة."
-        }
+        },
+        "columns": 4
       },
       "version": "1.0.0",
       "icon": "grid_view",
@@ -254,7 +295,13 @@
           "url": "urunler"
         }
       ],
-      "index": 3
+      "index": 3,
+      "description": "Journal 3 tarzı resimli kategori grid: görsel + etiket, hover zoom. 2 satır 4 kolon (768px'de 2, mobil 2).",
+      "veri": {
+        "statik": true,
+        "dinamik": false,
+        "kaynak": "desing/data"
+      }
     },
     {
       "name": "Urun Vitrin",
@@ -367,13 +414,25 @@
       "index": 4
     },
     {
-      "name": "CTA Şerit 1",
-      "path": "cta-1",
+      "name": "Çağrı Yüzen Kart — vurgu bandına binen kutu",
+      "path": "cagri-yuzen-kart",
       "local": "body",
       "category": "cta",
       "id": "e1ca01",
       "desing": {
         "max": "1200px",
+        "btn1Text": {
+          "tr": "Ürünleri gör",
+          "en": "See products",
+          "ar": "شاهد المنتجات"
+        },
+        "btn1Url": "urunler",
+        "btn2Text": {
+          "tr": "Teslimat ve iade",
+          "en": "Delivery and returns",
+          "ar": "التسليم والاسترجاع"
+        },
+        "btn2Url": "teslimat",
         "gradient": "linear-gradient(135deg, color-mix(in srgb, var(--mx-site-primary, #2563eb) 42%, #000), color-mix(in srgb, var(--mx-site-primary, #2563eb) 24%, #000))",
         "btnbg": "var(--mx-site-surface, #ffffff)",
         "btncolor": "var(--mx-site-text, #1b1b1b)",
@@ -387,23 +446,50 @@
           "en": "All products carry a 2-year warranty; authorised-service and spare-part information is on the product page.",
           "ar": "جميع المنتجات بضمان سنتين؛ ومعلومات الخدمة المعتمدة وقطع الغيار في صفحة المنتج."
         },
-        "btn1Text": {
-          "tr": "Ürünleri gör",
-          "en": "See products",
-          "ar": "شاهد المنتجات"
-        },
-        "btn1Url": "urunler",
-        "btn2Text": {
-          "tr": "Teslimat ve iade",
-          "en": "Delivery and returns",
-          "ar": "التسليم والاسترجاع"
-        },
-        "btn2Url": "teslimat",
-        "stil": ""
+        "stil": "",
+        "bosluk": "clamp(56px, 8vw, 104px)",
+        "yuvarlak": "18px",
+        "ust": "",
+        "baslik": "",
+        "metin": "",
+        "img": "",
+        "alt": "",
+        "ikon": "",
+        "not": "",
+        "number": "",
+        "numberText": "",
+        "waLabel": "",
+        "waTitle": "",
+        "waMessage": "",
+        "hours": "",
+        "hoursLabel": "",
+        "bg": "var(--mx-site-bg, #ffffff)",
+        "text": "var(--mx-site-text, #111318)",
+        "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+        "kartBg": "var(--mx-site-bg, #ffffff)",
+        "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+        "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+        "vurguBg": "var(--mx-site-primary, #2563eb)",
+        "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+        "bgcolor": "var(--mx-site-bg, #ffffff)",
+        "color": "var(--mx-site-text, #111318)"
       },
       "version": "1.1.0",
-      "icon": "campaign",
-      "index": 5
+      "icon": "layers",
+      "index": 5,
+      "description": "Bölümün üst yarısı vurgu renginde bant; ortalı beyaz kart bandın üstüne biner (gölgeli), içinde başlık + metin + düğmeler. İki katmanlı derinlik: renk bandı + yüzen kart; düz kutu ya da şerit değil. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Başlık da düğme de yoksa blok basılmaz.",
+      "veri": {
+        "statik": true,
+        "dinamik": false,
+        "kaynak": "desing",
+        "alanlar": {
+          "ikon": "Material Symbols adı (madde)",
+          "baslik": "dil sözlüğü (madde yazısı, zorunlu)",
+          "aciklama": "dil sözlüğü (madde alt yazısı)"
+        }
+      }
     },
     {
       "name": "E-ticaret Alt",
@@ -835,13 +921,13 @@
       "index": 8
     },
     {
-      "name": "İletişim",
-      "path": "contact-3",
+      "name": "İletişim Yan Şerit — marka renkli kanal paneli + form",
+      "path": "iletisim-yan-serit",
       "local": "body",
       "category": "contact",
       "id": "e1ct01",
       "desing": {
-        "color": "var(--mx-site-text, #1b1b1b)",
+        "color": "var(--mx-site-text, #111318)",
         "name": {
           "tr": "Bize ulaşın",
           "en": "Contact us",
@@ -849,10 +935,35 @@
         },
         "margin": "30px 0px 30px 0px",
         "linkcolor": "var(--mx-site-primary, #2563eb)",
-        "stil": ""
+        "stil": "",
+        "max": "1200px",
+        "bosluk": "clamp(56px, 8vw, 104px)",
+        "yuvarlak": "18px",
+        "ust": "",
+        "baslik": "",
+        "metin": "",
+        "adres": "",
+        "telefon": "",
+        "eposta": "",
+        "whatsapp": "",
+        "saat": "",
+        "haritaUrl": "",
+        "haritaGomme": "",
+        "waMesaj": "",
+        "bg": "var(--mx-site-bg, #ffffff)",
+        "text": "var(--mx-site-text, #111318)",
+        "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+        "kartBg": "var(--mx-site-surface, #f6f7f9)",
+        "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+        "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+        "vurguBg": "var(--mx-site-primary, #2563eb)",
+        "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+        "bgcolor": "var(--mx-site-bg, #ffffff)"
       },
       "version": "1.0.0",
-      "icon": "contact_mail",
+      "icon": "view_sidebar",
       "data": [
         {
           "icon": "phone",
@@ -871,7 +982,19 @@
           }
         }
       ],
-      "index": 9
+      "index": 9,
+      "description": "Kenarda marka renginde dikey panel: başlık, metin, kanallar, saat ve sosyal; geniş tarafta açık zeminde form. Kanallar renkli bir yan panelde toplanır, form beyaz alanda nefes alır; tek bakışta «ulaş» ve «yaz» ayrılır. Kanallar desing'den (adres · telefon · WhatsApp · e-posta · saat) + data satırları; etiketler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Kanal yoksa blok basılmaz.",
+      "veri": {
+        "statik": true,
+        "dinamik": false,
+        "kaynak": "desing",
+        "alanlar": {
+          "ikon": "Material Symbols adı (kanal türü ikondan da anlaşılır: mail · call · location_on · schedule)",
+          "deger": "dil sözlüğü (görünen değer, zorunlu; eski `text`)",
+          "url": "bağlantı (boşsa e-posta/telefon/haritadan türetilir)",
+          "baslik": "dil sözlüğü (kanal etiketi)"
+        }
+      }
     },
     {
       "name": "Maps",
@@ -893,12 +1016,14 @@
       "index": 10
     },
     {
-      "name": "Tanıtım Modülü",
-      "path": "module-1",
+      "name": "Tanıtım Dikey Başlık — kenarda döndürülmüş dev başlık",
+      "path": "tanitim-dikey-baslik",
       "local": "body",
       "category": "module",
       "id": "e1in01",
       "desing": {
+        "img": "elektronik-servis.webp",
+        "bgcolor": "var(--mx-site-surface, #f6f7f9)",
         "name": {
           "tr": "Voltaj Elektronik",
           "en": "Voltaj Elektronik",
@@ -931,8 +1056,6 @@
           "ar": "تُباع المنتجات بعلامة مطابقة CE."
         },
         "icon3": "fact_check",
-        "img": "elektronik-servis.webp",
-        "bgcolor": "var(--mx-site-surface, #ffffff)",
         "fontcolor": "var(--mx-site-text, #1b1b1b)",
         "margintop": "20",
         "marginbotton": "20",
@@ -941,11 +1064,45 @@
           "en": "About us",
           "ar": "من نحن"
         },
-        "stil": ""
+        "stil": "",
+        "max": "1200px",
+        "bosluk": "clamp(56px, 8vw, 104px)",
+        "yuvarlak": "18px",
+        "ust": "",
+        "baslik": "",
+        "metin": "",
+        "img2": "",
+        "cta_ad": "",
+        "cta_url": "",
+        "cta2_ad": "",
+        "cta2_url": "",
+        "bg": "var(--mx-site-surface, #f6f7f9)",
+        "text": "var(--mx-site-text, #111318)",
+        "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+        "kartBg": "var(--mx-site-bg, #ffffff)",
+        "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+        "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+        "vurguBg": "var(--mx-site-primary, #2563eb)",
+        "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+        "color": "var(--mx-site-text, #111318)"
       },
       "version": "1.1.0",
-      "icon": "business",
-      "index": 11
+      "icon": "text_rotate_vertical",
+      "index": 11,
+      "description": "Başlık bölümün kenarında dikey (90°) dev yazı olarak durur; yanında metin, maddeler ve görsel yatay akar. Mobilde başlık yataya döner. Dikey tipografi (writing-mode): başlık bir kitap sırtı gibi; alışılmış üstten-alta hiyerarşiyi kırar. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Başlık ve metin yoksa blok basılmaz.",
+      "veri": {
+        "statik": true,
+        "dinamik": false,
+        "kaynak": "desing/data",
+        "alanlar": {
+          "ikon": "madde ikonu (Material Symbols)",
+          "baslik": "madde başlığı (dil sözlüğü, zorunlu)",
+          "metin": "madde metni (dil sözlüğü)",
+          "url": "madde bağlantısı"
+        }
+      }
     },
     {
       "name": "Siparişlerim (Pro)",
@@ -3586,9 +3743,11 @@
       "index": 24
     },
     {
-      "name": "Tanıtım Modülü",
+      "name": "Tanıtım Dikey Başlık — kenarda döndürülmüş dev başlık",
       "local": "body",
       "desing": {
+        "img": "elektronik-paket.webp",
+        "bgcolor": "var(--mx-site-surface, #f6f7f9)",
         "name": {
           "tr": "Garanti, teslimat ve iade",
           "en": "Warranty, delivery and returns",
@@ -3621,8 +3780,6 @@
           "ar": "بيانات البطارية والشحن مذكورة في صفحة المنتج."
         },
         "icon3": "battery_charging_full",
-        "img": "elektronik-paket.webp",
-        "bgcolor": "#1e3046",
         "fontcolor": "#fff",
         "margintop": "20",
         "marginbotton": "20",
@@ -3631,16 +3788,49 @@
           "en": "Warranty, delivery and returns",
           "ar": "الضمان والتسليم والاسترجاع"
         },
-        "stil": ""
+        "stil": "",
+        "max": "1200px",
+        "bosluk": "clamp(56px, 8vw, 104px)",
+        "yuvarlak": "18px",
+        "ust": "",
+        "baslik": "",
+        "metin": "",
+        "img2": "",
+        "cta_ad": "",
+        "cta_url": "",
+        "cta2_ad": "",
+        "cta2_url": "",
+        "bg": "var(--mx-site-surface, #f6f7f9)",
+        "text": "var(--mx-site-text, #111318)",
+        "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+        "kartBg": "var(--mx-site-bg, #ffffff)",
+        "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+        "accent": "var(--mx-site-primary, #2563eb)",
+        "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+        "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+        "vurguBg": "var(--mx-site-primary, #2563eb)",
+        "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+        "color": "var(--mx-site-text, #111318)"
       },
       "category": "module",
       "description": "Kurumsal tanıtım ve hakkımızda modülü. Firma tanıtımı, vizyon, misyon metinlerini görsel ile birlikte sunar. Ana sayfa şeridi ve temalar için varsayılan cok dilli metinler. İki kolonlu responsive tasarım, W2 animasyon ve icon desteği içerir.",
       "version": "1.1.0",
-      "icon": "business",
+      "icon": "text_rotate_vertical",
       "id": "98ij4u",
-      "path": "module-1",
+      "path": "tanitim-dikey-baslik",
       "data": [],
-      "index": 25
+      "index": 25,
+      "veri": {
+        "statik": true,
+        "dinamik": false,
+        "kaynak": "desing/data",
+        "alanlar": {
+          "ikon": "madde ikonu (Material Symbols)",
+          "baslik": "madde başlığı (dil sözlüğü, zorunlu)",
+          "metin": "madde metni (dil sözlüğü)",
+          "url": "madde bağlantısı"
+        }
+      }
     },
     {
       "name": "Maps",
