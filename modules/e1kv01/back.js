@@ -1,60 +1,74 @@
-/* kategori-vitrin — Görselli ürün grubu vitrini.
-   Öncelik: json.data (elle verilmiş kartlar) → webmakerdata.category.data (site kategori listesi).
-   Kart verisi: { img, name{dil}, url } ; img "/" ile başlıyorsa olduğu gibi, değilse "/img/<img>". */
+/* kategori-grid-tema3 — Resimli kategori grid.
+   Oncelik: json.data → webmakerdata.category.data → page.json menu fallback. */
 
-function kvLang(val) {
+function k3Lang(val) {
   if (val == null) return "";
   if (typeof val === "object") {
-    if (val[json.lang]) return val[json.lang];
-    if (val.tr) return val.tr;
+    if (val[json.lang] != null) return val[json.lang];
+    if (val.tr != null) return val.tr;
     var keys = Object.keys(val);
     return keys.length ? (val[keys[0]] || "") : "";
   }
   return String(val);
 }
 
-function kvEsc(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+function k3PickImg(item) {
+  if (!item) return "";
+  if (item.img && String(item.img).indexOf("/") === 0) {
+    return item.img;
+  }
+  if (item.img && item.id) {
+    return "/page/" + item.id + "/" + item.img;
+  }
+  if (item.img) {
+    return item.img.indexOf("/") === 0 ? item.img : "/img/" + item.img;
+  }
+  return "";
 }
 
-function kvImg(item) {
-  var v = item && item.img ? String(item.img) : "";
-  if (!v) return "";
-  return v.charAt(0) === "/" || /^https?:\/\//i.test(v) ? v : "/img/" + v;
-}
-
-var kvItems = [];
-if (json.data && json.data.length > 0 && json.data[0] && json.data[0].name) {
-  kvItems = json.data;
+var items = [];
+if (json.data && json.data.length > 0) {
+  items = json.data;
 } else {
   try {
-    var kvBucket = webmakerdata.category && webmakerdata.category.data;
-    if (kvBucket && kvBucket.length > 0) {
-      var kvi;
-      for (kvi = 0; kvi < kvBucket.length; kvi++) {
-        if (kvBucket[kvi].status && kvBucket[kvi].status !== "play") continue;
-        kvItems.push({ img: kvBucket[kvi].img || "", name: kvBucket[kvi].name, url: kvBucket[kvi].path });
+    var catBucket = webmakerdata.category && webmakerdata.category.data;
+    if (catBucket && catBucket.length > 0) {
+      items = catBucket;
+    } else {
+      var pages = webmakerdata["page"].data || [];
+      var pi;
+      for (pi = 0; pi < pages.length && items.length < 8; pi++) {
+        var pg = pages[pi];
+        if (pg.status === "play" && pg.category && pg.category !== "") {
+          items.push({
+            name: pg.name,
+            url: pg.pathnext || pg.path,
+            img: pg.img || "",
+            id: pg.id
+          });
+        }
       }
     }
   } catch (e) {}
 }
 
-var kvHtml = "";
-var kvk;
-for (kvk = 0; kvk < kvItems.length; kvk++) {
-  var kvItem = kvItems[kvk];
-  var kvName = kvEsc(kvLang(kvItem.name));
-  var kvUrl = wxLangInternalHref(kvItem.url || "");
-  var kvSrc = kvImg(kvItem);
-  kvHtml += '<a href="' + kvUrl + '" class="kvCard">';
-  kvHtml += '<span class="kvImg">';
-  if (kvSrc) {
-    kvHtml += '<img src="' + kvEsc(kvSrc) + '" alt="' + kvName + '" loading="lazy" decoding="async" width="600" height="600" />';
+var backhtml = "";
+var ki;
+for (ki = 0; ki < items.length; ki++) {
+  var item = items[ki];
+  var itemName = k3Lang(item.name);
+  var itemUrl = item.url ? wxLangInternalHref(item.url) : wxLangInternalHref(item.path || "");
+  var itemImg = k3PickImg(item);
+
+  backhtml += '<a href="' + itemUrl + '" class="k3Card">';
+  backhtml += '<div class="k3Img">';
+  if (itemImg) {
+    backhtml += '<img src="' + itemImg + '" alt="' + itemName + '" loading="lazy" />';
   } else {
-    kvHtml += '<span class="kvHolder"><img src="/img/icon.png" alt="" loading="lazy" decoding="async" /></span>';
+    backhtml += '<div class="k3Placeholder"><span class="material-symbols-outlined">category</span></div>';
   }
-  kvHtml += '</span><span class="kvName">' + kvName + "</span></a>";
+  backhtml += '<div class="k3Overlay"><span class="k3Label">' + itemName + "</span></div>";
+  backhtml += "</div></a>";
 }
 
-html = html.replace(/\{\{html\}\}/g, kvHtml);
+html = html.replace(/\{\{html\}\}/g, backhtml);
