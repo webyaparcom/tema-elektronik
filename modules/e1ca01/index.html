@@ -7,7 +7,7 @@
 
 <style>
   /* cagri-yuzen-kart — İki katmanlı derinlik: renk bandı + yüzen kart; düz kutu ya da şerit değil. */
-  .modulex-cagri-yuzen-kart { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-cagri-yuzen-kart { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --yaziRenk--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
   .modulex-cagri-yuzen-kart *, .modulex-cagri-yuzen-kart *::before, .modulex-cagri-yuzen-kart *::after { box-sizing: border-box; }
   /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
   .modulex-cagri-yuzen-kart :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
@@ -30,13 +30,13 @@
   .modulex-cagri-yuzen-kart-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
   .modulex-cagri-yuzen-kart-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
   .modulex-cagri-yuzen-kart-dugme:hover { transform: translateY(-2px); }
-  .modulex-cagri-yuzen-kart-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-cagri-yuzen-kart-dugme--ikincil { background: transparent; color: --yaziRenk--; border-color: --cizgi--; }
   .modulex-cagri-yuzen-kart-dugme--ikincil:hover { border-color: --accent--; }
   .modulex-cagri-yuzen-kart-dugme .material-symbols-outlined { font-size: 20px; }
 
   .modulex-cagri-yuzen-kart { position: relative; isolation: isolate; }
   .modulex-cagri-yuzen-kart::before { content: ""; position: absolute; inset: 0 0 45% 0; z-index: -1; background: --vurguBg--; }
-  .modulex-cagri-yuzen-kart-kart { display: grid; justify-items: center; gap: 14px; padding: clamp(32px, 5vw, 60px) clamp(20px, 4vw, 56px); border-radius: --yuvarlak--; background: --kartBg--; text-align: center; box-shadow: 0 40px 80px -50px color-mix(in srgb, --text-- 80%, transparent); transition: transform 0.4s ease; }
+  .modulex-cagri-yuzen-kart-kart { display: grid; justify-items: center; gap: 14px; padding: clamp(32px, 5vw, 60px) clamp(20px, 4vw, 56px); border-radius: --yuvarlak--; background: --kartBg--; text-align: center; box-shadow: 0 40px 80px -50px color-mix(in srgb, --yaziRenk-- 80%, transparent); transition: transform 0.4s ease; }
   .modulex-cagri-yuzen-kart-kart:hover { transform: translateY(-6px); }
   .modulex-cagri-yuzen-kart-cta { justify-content: center; }
   @media (max-width: 768px) {
